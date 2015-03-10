@@ -1,0 +1,26 @@
+# XCode
+KentDAW/Builds/MacOSX/*/build
+KentDAW/Builds/MacOSX/*.pbxuser
+KentDAW/Builds/MacOSX/!default.pbxuser
+KentDAW/Builds/MacOSX/*.mode1v3
+KentDAW/Builds/MacOSX/!default.mode1v3
+KentDAW/Builds/MacOSX/*.mode2v3
+KentDAW/Builds/MacOSX/!default.mode2v3
+KentDAW/Builds/MacOSX/*.perspectivev3
+KentDAW/Builds/MacOSX/!default.perspectivev3
+KentDAW/Builds/MacOSX/xcuserdata
+KentDAW/Builds/MacOSX/*.xccheckout
+KentDAW/Builds/MacOSX/*.moved-aside
+KentDAW/Builds/MacOSX/DerivedData
+KentDAW/Builds/MacOSX/*.xcuserstate
+
+# VS
+KentDAW/Builds/*/Debug
+KentDAW/Builds/*/Release
+
+KentDAW/Builds/*/KentDAW.sdf
+KentDAW/Builds/*/KentDAW.opensdf
+
+# Vim
+*.swp
+*~*
