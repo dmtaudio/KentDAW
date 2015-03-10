@@ -10,8 +10,8 @@
 
 */
 
-#ifndef __APPHEADERFILE_LN8KJ1__
-#define __APPHEADERFILE_LN8KJ1__
+#ifndef __APPHEADERFILE_TPOFMF__
+#define __APPHEADERFILE_TPOFMF__
 
 #include "AppConfig.h"
 #include "modules/juce_audio_basics/juce_audio_basics.h"
@@ -43,4 +43,4 @@ namespace ProjectInfo
 }
 #endif
 
-#endif   // __APPHEADERFILE_LN8KJ1__
+#endif   // __APPHEADERFILE_TPOFMF__

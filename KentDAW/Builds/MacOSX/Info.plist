@@ -8,7 +8,7 @@
     <key>CFBundleIconFile</key>
     <string></string>
     <key>CFBundleIdentifier</key>
-    <string>ac.uk.kent.mscprojects.DAW</string>
+    <string>com.yourcompany.KentDAW</string>
     <key>CFBundleName</key>
     <string>KentDAW</string>
     <key>CFBundlePackageType</key>

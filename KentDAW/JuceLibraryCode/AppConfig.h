@@ -11,8 +11,8 @@
 
 */
 
-#ifndef __JUCE_APPCONFIG_LN8KJ1__
-#define __JUCE_APPCONFIG_LN8KJ1__
+#ifndef __JUCE_APPCONFIG_TPOFMF__
+#define __JUCE_APPCONFIG_TPOFMF__
 
 //==============================================================================
 // [BEGIN_USER_CODE_SECTION]
@@ -193,4 +193,4 @@
 #endif
 
 
-#endif  // __JUCE_APPCONFIG_LN8KJ1__
+#endif  // __JUCE_APPCONFIG_TPOFMF__
