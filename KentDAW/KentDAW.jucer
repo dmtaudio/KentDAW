@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="lN8kj1" name="KentDAW" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="ac.uk.kent.mscprojects.DAW" includeBinaryInAppConfig="1"
+              jucerVersion="3.1.0">
+  <MAINGROUP id="dmPZBf" name="KentDAW">
+    <GROUP id="{D2BA228E-7A7F-4739-31F8-609393FD3A98}" name="Source">
+      <FILE id="USylE0" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="1" optimisation="1" targetName="KentDAW"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="0" optimisation="2" targetName="KentDAW"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../Juce"/>
+        <MODULEPATH id="juce_events" path="../Juce"/>
+        <MODULEPATH id="juce_graphics" path="../Juce"/>
+        <MODULEPATH id="juce_data_structures" path="../Juce"/>
+        <MODULEPATH id="juce_gui_basics" path="../Juce"/>
+        <MODULEPATH id="juce_gui_extra" path="../Juce"/>
+        <MODULEPATH id="juce_cryptography" path="../Juce"/>
+        <MODULEPATH id="juce_video" path="../Juce"/>
+        <MODULEPATH id="juce_opengl" path="../Juce"/>
+        <MODULEPATH id="juce_audio_basics" path="../Juce"/>
+        <MODULEPATH id="juce_audio_devices" path="../Juce"/>
+        <MODULEPATH id="juce_audio_formats" path="../Juce"/>
+        <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <VS2015 targetFolder="Builds/VisualStudio2015">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="KentDAW"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="2" targetName="KentDAW"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../Juce"/>
+        <MODULEPATH id="juce_events" path="../Juce"/>
+        <MODULEPATH id="juce_graphics" path="../Juce"/>
+        <MODULEPATH id="juce_data_structures" path="../Juce"/>
+        <MODULEPATH id="juce_gui_basics" path="../Juce"/>
+        <MODULEPATH id="juce_gui_extra" path="../Juce"/>
+        <MODULEPATH id="juce_cryptography" path="../Juce"/>
+        <MODULEPATH id="juce_video" path="../Juce"/>
+        <MODULEPATH id="juce_opengl" path="../Juce"/>
+        <MODULEPATH id="juce_audio_basics" path="../Juce"/>
+        <MODULEPATH id="juce_audio_devices" path="../Juce"/>
+        <MODULEPATH id="juce_audio_formats" path="../Juce"/>
+        <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+      </MODULEPATHS>
+    </VS2015>
+    <VS2013 targetFolder="Builds/VisualStudio2013">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="KentDAW"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="2" targetName="KentDAW"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../Juce"/>
+        <MODULEPATH id="juce_events" path="../Juce"/>
+        <MODULEPATH id="juce_graphics" path="../Juce"/>
+        <MODULEPATH id="juce_data_structures" path="../Juce"/>
+        <MODULEPATH id="juce_gui_basics" path="../Juce"/>
+        <MODULEPATH id="juce_gui_extra" path="../Juce"/>
+        <MODULEPATH id="juce_cryptography" path="../Juce"/>
+        <MODULEPATH id="juce_video" path="../Juce"/>
+        <MODULEPATH id="juce_opengl" path="../Juce"/>
+        <MODULEPATH id="juce_audio_basics" path="../Juce"/>
+        <MODULEPATH id="juce_audio_devices" path="../Juce"/>
+        <MODULEPATH id="juce_audio_formats" path="../Juce"/>
+        <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+      </MODULEPATHS>
+    </VS2013>
+    <VS2012 targetFolder="Builds/VisualStudio2012">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="KentDAW"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="2" targetName="KentDAW"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../Juce"/>
+        <MODULEPATH id="juce_events" path="../Juce"/>
+        <MODULEPATH id="juce_graphics" path="../Juce"/>
+        <MODULEPATH id="juce_data_structures" path="../Juce"/>
+        <MODULEPATH id="juce_gui_basics" path="../Juce"/>
+        <MODULEPATH id="juce_gui_extra" path="../Juce"/>
+        <MODULEPATH id="juce_cryptography" path="../Juce"/>
+        <MODULEPATH id="juce_video" path="../Juce"/>
+        <MODULEPATH id="juce_opengl" path="../Juce"/>
+        <MODULEPATH id="juce_audio_basics" path="../Juce"/>
+        <MODULEPATH id="juce_audio_devices" path="../Juce"/>
+        <MODULEPATH id="juce_audio_formats" path="../Juce"/>
+        <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+      </MODULEPATHS>
+    </VS2012>
+    <ANDROID targetFolder="Builds/Android" androidActivityClass="com.yourcompany.kentdaw.KentDAW"
+             androidSDKPath="${user.home}/SDKs/android-sdk" androidNDKPath="${user.home}/SDKs/android-ndk"
+             androidMinimumSDK="8" androidInternetNeeded="1" androidKeyStore="${user.home}/.android/debug.keystore"
+             androidKeyStorePass="android" androidKeyAlias="androiddebugkey"
+             androidKeyAliasPass="android" androidCpp11="1">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" androidArchitectures="armeabi armeabi-v7a" isDebug="1"
+                       optimisation="1" targetName="KentDAW"/>
+        <CONFIGURATION name="Release" androidArchitectures="armeabi armeabi-v7a" isDebug="0"
+                       optimisation="2" targetName="KentDAW"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../Juce"/>
+        <MODULEPATH id="juce_events" path="../Juce"/>
+        <MODULEPATH id="juce_graphics" path="../Juce"/>
+        <MODULEPATH id="juce_data_structures" path="../Juce"/>
+        <MODULEPATH id="juce_gui_basics" path="../Juce"/>
+        <MODULEPATH id="juce_gui_extra" path="../Juce"/>
+        <MODULEPATH id="juce_cryptography" path="../Juce"/>
+        <MODULEPATH id="juce_video" path="../Juce"/>
+        <MODULEPATH id="juce_opengl" path="../Juce"/>
+        <MODULEPATH id="juce_audio_basics" path="../Juce"/>
+        <MODULEPATH id="juce_audio_devices" path="../Juce"/>
+        <MODULEPATH id="juce_audio_formats" path="../Juce"/>
+        <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+      </MODULEPATHS>
+    </ANDROID>
+    <CODEBLOCKS targetFolder="Builds/CodeBlocks">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="KentDAW"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="2" targetName="KentDAW"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../Juce"/>
+        <MODULEPATH id="juce_events" path="../Juce"/>
+        <MODULEPATH id="juce_graphics" path="../Juce"/>
+        <MODULEPATH id="juce_data_structures" path="../Juce"/>
+        <MODULEPATH id="juce_gui_basics" path="../Juce"/>
+        <MODULEPATH id="juce_gui_extra" path="../Juce"/>
+        <MODULEPATH id="juce_cryptography" path="../Juce"/>
+        <MODULEPATH id="juce_video" path="../Juce"/>
+        <MODULEPATH id="juce_opengl" path="../Juce"/>
+        <MODULEPATH id="juce_audio_basics" path="../Juce"/>
+        <MODULEPATH id="juce_audio_devices" path="../Juce"/>
+        <MODULEPATH id="juce_audio_formats" path="../Juce"/>
+        <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+      </MODULEPATHS>
+    </CODEBLOCKS>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_video" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>
