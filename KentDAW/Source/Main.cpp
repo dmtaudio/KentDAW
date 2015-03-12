@@ -10,13 +10,55 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
+#include "MainComponent.h"
+
+class KentDawWindow  : public DocumentWindow
+{
+public:
+    //==============================================================================
+    KentDawWindow()
+    : DocumentWindow (("UKC Digital Audio Workstation"),
+                      Colours::darkgrey,
+                      DocumentWindow::allButtons,
+                      true)
+    {
+        // Create an instance of our main content component, and add it
+        // to our window.
+        
+        MainComponent* contentComponent = new MainComponent();
+        
+        contentComponent->setSize(getWidth(), getHeight());
+        setContentComponent(contentComponent, true, true);
+        setFullScreen(true);
+        setResizable(true, false);
+        
+        setVisible (true);
+    }
+    
+    ~KentDawWindow()
+    {
+        // (the content component will be deleted automatically, so no need to do it here)
+    }
+    
+    //==============================================================================
+    void closeButtonPressed()
+    {
+        // When the user presses the close button, we'll tell the app to quit. This
+        // window will be deleted by our HelloWorldApplication::shutdown() method
+        //
+        JUCEApplication::quit();
+    }
+};
 
 //==============================================================================
 class KentDAWApplication  : public JUCEApplication
 {
+    KentDawWindow* kentDawWindow;
+
 public:
     //==============================================================================
-    KentDAWApplication() {}
+    KentDAWApplication()
+    :kentDawWindow(0){}
 
     const String getApplicationName() override       { return ProjectInfo::projectName; }
     const String getApplicationVersion() override    { return ProjectInfo::versionString; }
@@ -26,11 +68,14 @@ public:
     void initialise (const String& commandLine) override
     {
         // Add your application's initialisation code here..
+        kentDawWindow = new KentDawWindow();
     }
 
     void shutdown() override
     {
         // Add your application's shutdown code here..
+        if (kentDawWindow != 0)
+            delete kentDawWindow;
     }
 
     //==============================================================================
@@ -48,6 +93,7 @@ public:
         // the other instance's command-line arguments were.
     }
 };
+
 
 //==============================================================================
 // This macro generates the main() routine that launches the app.

@@ -94,6 +94,11 @@
       <Add library="kernel32"/>
       <Add library="comctl32"/>
     </Linker>
+    <Unit filename="../../Source/MainComponent.cpp"/>
+    <Unit filename="../../Source/MainComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/Main.cpp"/>
     <Unit filename="../../../Juce/juce_audio_basics/buffers/juce_AudioDataConverters.cpp">
       <Option compile="0"/>
