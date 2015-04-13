@@ -9,12 +9,13 @@
 */
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "Mixer.h"
 
-#include "MainComponent.h"
 
 class KentDawWindow  : public DocumentWindow
 {
 public:
+    
     //==============================================================================
     KentDawWindow()
     : DocumentWindow (("UKC Digital Audio Workstation"),
@@ -24,15 +25,10 @@ public:
     {
         // Create an instance of our main content component, and add it
         // to our window.
-        
-        MainComponent* contentComponent = new MainComponent();
-        
-        contentComponent->setSize(getWidth(), getHeight());
-        setContentComponent(contentComponent, true, true);
-        setFullScreen(true);
-        setResizable(true, false);
-        
+        mixer = new Mixer();
+        setContentOwned(new Mixer(), true);
         setVisible (true);
+        centreWithSize(getWidth(), getHeight());
     }
     
     ~KentDawWindow()
@@ -48,13 +44,14 @@ public:
         //
         JUCEApplication::quit();
     }
+private:
+    Mixer* mixer;
 };
 
 //==============================================================================
 class KentDAWApplication  : public JUCEApplication
 {
     KentDawWindow* kentDawWindow;
-
 public:
     //==============================================================================
     KentDAWApplication()

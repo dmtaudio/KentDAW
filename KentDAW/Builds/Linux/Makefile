@@ -51,7 +51,7 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
-  $(OBJDIR)/MainComponent_a6ffb4a5.o \
+  $(OBJDIR)/Mixer_d95e2aea.o \
   $(OBJDIR)/Main_90ebc5c2.o \
   $(OBJDIR)/juce_audio_basics_1e890073.o \
   $(OBJDIR)/juce_audio_devices_25f60471.o \
@@ -84,9 +84,9 @@ strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
 
-$(OBJDIR)/MainComponent_a6ffb4a5.o: ../../Source/MainComponent.cpp
+$(OBJDIR)/Mixer_d95e2aea.o: ../../Source/Mixer.cpp
 	-@mkdir -p $(OBJDIR)
-	@echo "Compiling MainComponent.cpp"
+	@echo "Compiling Mixer.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/Main_90ebc5c2.o: ../../Source/Main.cpp
