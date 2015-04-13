@@ -26,7 +26,7 @@ public:
         // Create an instance of our main content component, and add it
         // to our window.
         mixer = new Mixer();
-        setContentOwned(new Mixer(), true);
+        setContentOwned(mixer, true);
         setVisible (true);
         centreWithSize(getWidth(), getHeight());
     }
