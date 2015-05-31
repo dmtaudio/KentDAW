@@ -1509,6 +1509,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\Arrangement.h">
+      <Filter>KentDAW\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Mixer.h">
       <Filter>KentDAW\Source</Filter>
     </ClInclude>

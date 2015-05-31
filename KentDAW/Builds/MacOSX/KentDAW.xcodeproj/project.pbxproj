@@ -696,6 +696,7 @@
 		C602ECE17A467F3943B89ED2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_DrawableButton.h"; path = "../../../Juce/juce_gui_basics/buttons/juce_DrawableButton.h"; sourceTree = "SOURCE_ROOT"; };
 		C632093834C08890390F5F13 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_AudioDeviceManager.h"; path = "../../../Juce/juce_audio_devices/audio_io/juce_AudioDeviceManager.h"; sourceTree = "SOURCE_ROOT"; };
 		C66B0082B3CA8EA182BB8B36 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_File.h"; path = "../../../Juce/juce_core/files/juce_File.h"; sourceTree = "SOURCE_ROOT"; };
+		C6D0D1F54A1FC79A976B6A16 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Arrangement.h; path = ../../Source/Arrangement.h; sourceTree = "SOURCE_ROOT"; };
 		C70ED1B015B963F98BDC6930 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_win32_AudioCDReader.cpp"; path = "../../../Juce/juce_audio_devices/native/juce_win32_AudioCDReader.cpp"; sourceTree = "SOURCE_ROOT"; };
 		C73BE11DDF7346078D6553F0 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_Slider.cpp"; path = "../../../Juce/juce_gui_basics/widgets/juce_Slider.cpp"; sourceTree = "SOURCE_ROOT"; };
 		C7581BB605FAF2F7B95C45CB = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_gui_basics.h"; path = "../../../Juce/juce_gui_basics/juce_gui_basics.h"; sourceTree = "SOURCE_ROOT"; };
@@ -913,6 +914,7 @@
 		FFE3F2EF7611C7D9D017680D = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_SplashScreen.cpp"; path = "../../../Juce/juce_gui_extra/misc/juce_SplashScreen.cpp"; sourceTree = "SOURCE_ROOT"; };
 		FFFC525FB9F1C1847E98A485 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_ByteOrder.h"; path = "../../../Juce/juce_core/memory/juce_ByteOrder.h"; sourceTree = "SOURCE_ROOT"; };
 		6A68D13B76B120A49861F749 = {isa = PBXGroup; children = (
+					C6D0D1F54A1FC79A976B6A16,
 					79E4906631BA94584692099F,
 					B3FCD953BAA640E014D26D23,
 					D3897E991CEFB372A9A009EF, ); name = Source; sourceTree = "<group>"; };
