@@ -51,8 +51,9 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
-  $(OBJDIR)/Mixer_d95e2aea.o \
   $(OBJDIR)/Main_90ebc5c2.o \
+  $(OBJDIR)/MainComponent_a6ffb4a5.o \
+  $(OBJDIR)/Transport_32ccd00a.o \
   $(OBJDIR)/juce_audio_basics_1e890073.o \
   $(OBJDIR)/juce_audio_devices_25f60471.o \
   $(OBJDIR)/juce_audio_formats_54774e11.o \
@@ -84,14 +85,19 @@ strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
 
-$(OBJDIR)/Mixer_d95e2aea.o: ../../Source/Mixer.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling Mixer.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
 $(OBJDIR)/Main_90ebc5c2.o: ../../Source/Main.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling Main.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/MainComponent_a6ffb4a5.o: ../../Source/MainComponent.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling MainComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/Transport_32ccd00a.o: ../../Source/Transport.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling Transport.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/juce_audio_basics_1e890073.o: ../../../Juce/juce_audio_basics/juce_audio_basics.cpp

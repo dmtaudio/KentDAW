@@ -5,10 +5,12 @@
               jucerVersion="3.1.0">
   <MAINGROUP id="j2y9ol" name="KentDAW">
     <GROUP id="{2B1E57D9-2977-26CD-7BDA-F46EF07CAFDF}" name="Source">
-      <FILE id="Qjf5rY" name="Arrangement.h" compile="0" resource="0" file="Source/Arrangement.h"/>
-      <FILE id="X3S89L" name="Mixer.cpp" compile="1" resource="0" file="Source/Mixer.cpp"/>
-      <FILE id="sM6ibM" name="Mixer.h" compile="0" resource="0" file="Source/Mixer.h"/>
-      <FILE id="Nm740a" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="eqKNjN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="hTikNO" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="YpxPRg" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="XJZTVH" name="Transport.cpp" compile="1" resource="0" file="Source/Transport.cpp"/>
+      <FILE id="iiD5cO" name="Transport.h" compile="0" resource="0" file="Source/Transport.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
