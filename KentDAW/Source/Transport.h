@@ -30,14 +30,23 @@ public:
     
     
 private:
-    ImageButton *play;
-    TextButton *record;
-    ImageButton *stop;
-    TextButton *forward;
-    TextButton *backward;
-    TextButton *toStart;
-    TextButton *toEnd;
+    Image image;
+    Font *timeFont;
     
+    OwnedArray<ImageButton> transportButtons;
+    ImageButton *play;
+    ImageButton *record;
+    ImageButton *stop;
+    ImageButton *forward;
+    ImageButton *backward;
+    ImageButton *toStart;
+    ImageButton *toEnd;
+    
+    Label *timeTicks;
+    Label *timeSecs;
+    
+    void setButtonImage(ImageButton* button);
+    void initButtons(OwnedArray<ImageButton> &button);
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Transport)
 };

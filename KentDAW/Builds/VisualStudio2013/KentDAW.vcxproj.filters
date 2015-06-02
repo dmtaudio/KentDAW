@@ -301,6 +301,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\BinaryData.cpp">
+      <Filter>KentDAW\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Main.cpp">
       <Filter>KentDAW\Source</Filter>
     </ClCompile>
@@ -1512,6 +1515,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\BinaryData.h">
+      <Filter>KentDAW\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">
       <Filter>KentDAW\Source</Filter>
     </ClInclude>

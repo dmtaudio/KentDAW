@@ -5,6 +5,8 @@
               jucerVersion="3.1.0">
   <MAINGROUP id="j2y9ol" name="KentDAW">
     <GROUP id="{2B1E57D9-2977-26CD-7BDA-F46EF07CAFDF}" name="Source">
+      <FILE id="PPM103" name="BinaryData.cpp" compile="1" resource="0" file="Source/BinaryData.cpp"/>
+      <FILE id="dWho6i" name="BinaryData.h" compile="0" resource="0" file="Source/BinaryData.h"/>
       <FILE id="eqKNjN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="hTikNO" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
