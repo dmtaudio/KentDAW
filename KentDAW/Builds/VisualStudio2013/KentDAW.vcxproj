@@ -38,10 +38,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">KentDAW</TargetName>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">KentDAW</TargetName>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
     <PlatformToolset>v120</PlatformToolset>
@@ -131,6 +129,8 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\ArrangeAudioRegions.cpp"/>
+    <ClCompile Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\AudioEngine.cpp"/>
     <ClCompile Include="..\..\Source\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\Source\MainComponent.cpp"/>
@@ -1236,6 +1236,8 @@
     <ClCompile Include="..\..\..\Juce\juce_video\juce_video.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\ArrangeAudioRegions.h"/>
+    <ClInclude Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\AudioEngine.h"/>
     <ClInclude Include="..\..\Source\BinaryData.h"/>
     <ClInclude Include="..\..\Source\MainComponent.h"/>
     <ClInclude Include="..\..\Source\Transport.h"/>

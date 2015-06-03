@@ -8,6 +8,9 @@
     <Filter Include="KentDAW\Source">
       <UniqueIdentifier>{5AFC75CE-07DD-2E28-300F-794DC0EFB426}</UniqueIdentifier>
     </Filter>
+    <Filter Include="KentDAW\Source\AudioEngine">
+      <UniqueIdentifier>{19F9CC3A-D85F-3DC6-186A-29C384BB174F}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Juce Modules">
       <UniqueIdentifier>{422C46B7-0467-2DB0-BF3C-16DFCAFD69AC}</UniqueIdentifier>
     </Filter>
@@ -301,6 +304,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\ArrangeAudioRegions.cpp">
+      <Filter>KentDAW\Source\AudioEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\AudioEngine.cpp">
+      <Filter>KentDAW\Source\AudioEngine</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BinaryData.cpp">
       <Filter>KentDAW\Source</Filter>
     </ClCompile>
@@ -1515,6 +1524,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\ArrangeAudioRegions.h">
+      <Filter>KentDAW\Source\AudioEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\AudioEngine.h">
+      <Filter>KentDAW\Source\AudioEngine</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\BinaryData.h">
       <Filter>KentDAW\Source</Filter>
     </ClInclude>
