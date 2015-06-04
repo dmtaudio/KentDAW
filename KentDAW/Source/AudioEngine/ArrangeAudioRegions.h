@@ -8,6 +8,8 @@
 #ifndef ARRANGEAUDIOREGIONS_H
 #define	ARRANGEAUDIOREGIONS_H
 
+#include "../JuceLibraryCode/JuceHeader.h"
+
 struct AudioRegion
 {
     int regionID;
@@ -40,9 +42,9 @@ public:
     
     void setNextReadPosition (int32 newPosition);
     
-    int32 getNextReadPosition() const;
+    int64 getNextReadPosition() const;
 	
-    int32 getTotalLength() const;
+    int64 getTotalLength() const;
     
     bool isLooping() const;
 private:

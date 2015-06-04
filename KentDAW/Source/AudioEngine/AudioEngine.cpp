@@ -9,9 +9,9 @@
 
 AudioEngine::AudioEngine() {
 }
-
+/*
 AudioEngine::AudioEngine(const AudioEngine& orig) {
-}
+}*/
 
 AudioEngine::~AudioEngine() {
 }

@@ -22,8 +22,6 @@
 class MainContentComponent   : public Component,
                                public MenuBarModel
 {
-    StretchableLayoutManager verticalLayout;
-    StretchableLayoutResizerBar* verticalDividerBar;
 public:
     
     //==============================================================================
@@ -54,7 +52,7 @@ private:
     MenuBarModel *menuModel;
     MenuBarComponent menuBar;
     
-    Transport *transport;
+    //Transport *transport;
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)

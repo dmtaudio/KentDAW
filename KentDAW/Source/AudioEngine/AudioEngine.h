@@ -8,6 +8,8 @@
 #ifndef AUDIOENGINE_H
 #define	AUDIOENGINE_H
 
+#include "../JuceLibraryCode/JuceHeader.h"
+
 #define TRANSPORT_BUFFER 2048
 
 class AudioEngine {

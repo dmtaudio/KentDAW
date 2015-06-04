@@ -2,16 +2,16 @@
 
 <JUCERPROJECT id="tpOfMf" name="KentDAW" projectType="guiapp" version="1.0.0"
               bundleIdentifier="com.yourcompany.KentDAW" includeBinaryInAppConfig="1"
-              jucerVersion="3.1.1">
+              jucerVersion="3.1.0">
   <MAINGROUP id="j2y9ol" name="KentDAW">
     <GROUP id="{2B1E57D9-2977-26CD-7BDA-F46EF07CAFDF}" name="Source">
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="AudioEngine">
-        <FILE id="ccLFy1" name="ArrangeAudioRegions.cpp" compile="1" resource="0"
-              file="../../../Documents/KentDaw_Workspace/KentDAW/KentDAW/Source/AudioEngine/ArrangeAudioRegions.cpp"/>
-        <FILE id="NdfnNF" name="ArrangeAudioRegions.h" compile="0" resource="0"
-              file="../../../Documents/KentDaw_Workspace/KentDAW/KentDAW/Source/AudioEngine/ArrangeAudioRegions.h"/>
-        <FILE id="Ej5LU6" name="AudioEngine.cpp" compile="1" resource="0" file="../../../Documents/KentDaw_Workspace/KentDAW/KentDAW/Source/AudioEngine/AudioEngine.cpp"/>
-        <FILE id="afYDy3" name="AudioEngine.h" compile="0" resource="0" file="../../../Documents/KentDaw_Workspace/KentDAW/KentDAW/Source/AudioEngine/AudioEngine.h"/>
+        <FILE id="fnFVn1" name="ArrangeAudioRegions.cpp" compile="1" resource="0"
+              file="Source/AudioEngine/ArrangeAudioRegions.cpp"/>
+        <FILE id="zdXVas" name="ArrangeAudioRegions.h" compile="0" resource="0"
+              file="Source/AudioEngine/ArrangeAudioRegions.h"/>
+        <FILE id="wBp5wj" name="AudioEngine.cpp" compile="1" resource="0" file="Source/AudioEngine/AudioEngine.cpp"/>
+        <FILE id="XkJBgC" name="AudioEngine.h" compile="0" resource="0" file="Source/AudioEngine/AudioEngine.h"/>
       </GROUP>
       <FILE id="PPM103" name="BinaryData.cpp" compile="1" resource="0" file="Source/BinaryData.cpp"/>
       <FILE id="dWho6i" name="BinaryData.h" compile="0" resource="0" file="Source/BinaryData.h"/>

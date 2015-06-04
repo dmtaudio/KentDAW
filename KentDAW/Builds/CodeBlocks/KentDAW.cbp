@@ -94,13 +94,13 @@
       <Add library="kernel32"/>
       <Add library="comctl32"/>
     </Linker>
-    <Unit filename="../../../../../Documents/KentDaw_Workspace/KentDAW/KentDAW/Source/AudioEngine/ArrangeAudioRegions.cpp"/>
-    <Unit filename="../../../../../Documents/KentDaw_Workspace/KentDAW/KentDAW/Source/AudioEngine/ArrangeAudioRegions.h">
+    <Unit filename="../../Source/AudioEngine/ArrangeAudioRegions.cpp"/>
+    <Unit filename="../../Source/AudioEngine/ArrangeAudioRegions.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../../../../Documents/KentDaw_Workspace/KentDAW/KentDAW/Source/AudioEngine/AudioEngine.cpp"/>
-    <Unit filename="../../../../../Documents/KentDaw_Workspace/KentDAW/KentDAW/Source/AudioEngine/AudioEngine.h">
+    <Unit filename="../../Source/AudioEngine/AudioEngine.cpp"/>
+    <Unit filename="../../Source/AudioEngine/AudioEngine.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>

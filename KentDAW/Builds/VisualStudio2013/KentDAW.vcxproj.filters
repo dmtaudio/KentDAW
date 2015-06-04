@@ -304,10 +304,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\ArrangeAudioRegions.cpp">
+    <ClCompile Include="..\..\Source\AudioEngine\ArrangeAudioRegions.cpp">
       <Filter>KentDAW\Source\AudioEngine</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\AudioEngine.cpp">
+    <ClCompile Include="..\..\Source\AudioEngine\AudioEngine.cpp">
       <Filter>KentDAW\Source\AudioEngine</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BinaryData.cpp">
@@ -1524,10 +1524,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\ArrangeAudioRegions.h">
+    <ClInclude Include="..\..\Source\AudioEngine\ArrangeAudioRegions.h">
       <Filter>KentDAW\Source\AudioEngine</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Documents\KentDaw_Workspace\KentDAW\KentDAW\Source\AudioEngine\AudioEngine.h">
+    <ClInclude Include="..\..\Source\AudioEngine\AudioEngine.h">
       <Filter>KentDAW\Source\AudioEngine</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\BinaryData.h">

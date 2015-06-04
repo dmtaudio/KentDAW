@@ -16,9 +16,9 @@ MainContentComponent::MainContentComponent()
     setSize (getParentWidth(), getParentHeight());
     {
         addAndMakeVisible(&menuBar);
-        transport = new Transport();
-        addAndMakeVisible(*transport);
-        transport->setBounds(getWidth() / 2, getHeight() - 200, 600, 50);
+        //transport = new Transport();
+        //addAndMakeVisible(*transport);
+        //transport->setBounds(getWidth() / 2, getHeight() - 200, 600, 50);
     }
 }
 
