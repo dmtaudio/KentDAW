@@ -51,7 +51,6 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
-  $(OBJDIR)/ArrangeAudioRegions_b79ddb7f.o \
   $(OBJDIR)/AudioEngine_dd4973a2.o \
   $(OBJDIR)/BinaryData_5ba7f54.o \
   $(OBJDIR)/Main_90ebc5c2.o \
@@ -87,11 +86,6 @@ clean:
 strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
-
-$(OBJDIR)/ArrangeAudioRegions_b79ddb7f.o: ../../Source/AudioEngine/ArrangeAudioRegions.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling ArrangeAudioRegions.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/AudioEngine_dd4973a2.o: ../../Source/AudioEngine/AudioEngine.cpp
 	-@mkdir -p $(OBJDIR)

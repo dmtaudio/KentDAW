@@ -304,9 +304,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\AudioEngine\ArrangeAudioRegions.cpp">
-      <Filter>KentDAW\Source\AudioEngine</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\AudioEngine\AudioEngine.cpp">
       <Filter>KentDAW\Source\AudioEngine</Filter>
     </ClCompile>
@@ -1524,9 +1521,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\AudioEngine\ArrangeAudioRegions.h">
-      <Filter>KentDAW\Source\AudioEngine</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\AudioEngine\AudioEngine.h">
       <Filter>KentDAW\Source\AudioEngine</Filter>
     </ClInclude>

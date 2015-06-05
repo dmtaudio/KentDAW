@@ -6,10 +6,6 @@
   <MAINGROUP id="j2y9ol" name="KentDAW">
     <GROUP id="{2B1E57D9-2977-26CD-7BDA-F46EF07CAFDF}" name="Source">
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="AudioEngine">
-        <FILE id="fnFVn1" name="ArrangeAudioRegions.cpp" compile="1" resource="0"
-              file="Source/AudioEngine/ArrangeAudioRegions.cpp"/>
-        <FILE id="zdXVas" name="ArrangeAudioRegions.h" compile="0" resource="0"
-              file="Source/AudioEngine/ArrangeAudioRegions.h"/>
         <FILE id="wBp5wj" name="AudioEngine.cpp" compile="1" resource="0" file="Source/AudioEngine/AudioEngine.cpp"/>
         <FILE id="XkJBgC" name="AudioEngine.h" compile="0" resource="0" file="Source/AudioEngine/AudioEngine.h"/>
       </GROUP>
