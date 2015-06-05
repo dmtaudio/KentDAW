@@ -25,3 +25,4 @@ KentDAW/Builds/*/KentDAW.opensdf
 *.swp
 *~*
 /.project
+**/.idea
