@@ -97,5 +97,5 @@ void MainContentComponent::resized()
 	// components that your component contains..
 
     menuBar.setBounds(0, 0, getWidth(), 20);
-	arrangeWindow.setBounds(0, 20, 400, 600);
+	arrangeWindow.setBounds(0, 20, getParentWidth()/2, getParentHeight());
 }
