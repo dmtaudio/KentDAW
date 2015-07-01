@@ -10,6 +10,7 @@
 #define MAINCOMPONENT_H_INCLUDED
 
 #include "Transport.h"
+#include "ArrangeWindow.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 
 
@@ -49,8 +50,9 @@ public:
     };
 
 private:
-    MenuBarModel *menuModel;
+    MenuBarModel* menuModel;
     MenuBarComponent menuBar;
+	ArrangeWindow* arrangeWindow;
     
     //Transport *transport;
     

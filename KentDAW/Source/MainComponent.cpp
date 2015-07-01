@@ -16,9 +16,11 @@ MainContentComponent::MainContentComponent()
     setSize (getParentWidth(), getParentHeight());
     {
         addAndMakeVisible(&menuBar);
+		arrangeWindow = new ArrangeWindow;
+		addAndMakeVisible(arrangeWindow);
+		arrangeWindow->setBounds(0, 20, 400, 600);
         //transport = new Transport();
         //addAndMakeVisible(*transport);
-        //transport->setBounds(getWidth() / 2, getHeight() - 200, 600, 50);
     }
 }
 
@@ -92,5 +94,9 @@ void MainContentComponent::paint (Graphics& g)
 
 void MainContentComponent::resized()
 {
+	// This method is where you should set the bounds of any child
+	// components that your component contains..
+
     menuBar.setBounds(0, 0, getWidth(), 20);
+
 }

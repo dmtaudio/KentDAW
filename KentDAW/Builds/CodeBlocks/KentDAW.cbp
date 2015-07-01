@@ -94,6 +94,11 @@
       <Add library="kernel32"/>
       <Add library="comctl32"/>
     </Linker>
+    <Unit filename="../../Source/ArrangeWindow.cpp"/>
+    <Unit filename="../../Source/ArrangeWindow.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/AudioEngine/AudioEngine.cpp"/>
     <Unit filename="../../Source/AudioEngine/AudioEngine.h">
       <Option compile="0"/>

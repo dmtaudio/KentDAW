@@ -51,6 +51,7 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
+  $(OBJDIR)/ArrangeWindow_2dae1c1d.o \
   $(OBJDIR)/AudioEngine_dd4973a2.o \
   $(OBJDIR)/BinaryData_5ba7f54.o \
   $(OBJDIR)/Main_90ebc5c2.o \
@@ -86,6 +87,11 @@ clean:
 strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
+
+$(OBJDIR)/ArrangeWindow_2dae1c1d.o: ../../Source/ArrangeWindow.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling ArrangeWindow.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/AudioEngine_dd4973a2.o: ../../Source/AudioEngine/AudioEngine.cpp
 	-@mkdir -p $(OBJDIR)

@@ -5,6 +5,9 @@
               jucerVersion="3.1.0">
   <MAINGROUP id="j2y9ol" name="KentDAW">
     <GROUP id="{2B1E57D9-2977-26CD-7BDA-F46EF07CAFDF}" name="Source">
+      <FILE id="QCR3Y4" name="ArrangeWindow.cpp" compile="1" resource="0"
+            file="Source/ArrangeWindow.cpp"/>
+      <FILE id="TQfl9B" name="ArrangeWindow.h" compile="0" resource="0" file="Source/ArrangeWindow.h"/>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="AudioEngine">
         <FILE id="wBp5wj" name="AudioEngine.cpp" compile="1" resource="0" file="Source/AudioEngine/AudioEngine.cpp"/>
         <FILE id="XkJBgC" name="AudioEngine.h" compile="0" resource="0" file="Source/AudioEngine/AudioEngine.h"/>

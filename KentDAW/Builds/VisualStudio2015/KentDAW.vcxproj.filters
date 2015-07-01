@@ -304,6 +304,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ArrangeWindow.cpp">
+      <Filter>KentDAW\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\AudioEngine\AudioEngine.cpp">
       <Filter>KentDAW\Source\AudioEngine</Filter>
     </ClCompile>
@@ -1521,6 +1524,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\ArrangeWindow.h">
+      <Filter>KentDAW\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\AudioEngine\AudioEngine.h">
       <Filter>KentDAW\Source\AudioEngine</Filter>
     </ClInclude>
