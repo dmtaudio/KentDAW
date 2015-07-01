@@ -136,7 +136,7 @@
     <ClCompile Include="..\..\Source\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\Source\MainComponent.cpp"/>
-    <ClCompile Include="..\..\Source\Transport.cpp"/>
+    <ClCompile Include="..\..\..\..\..\Desktop\KentDAW\KentDAW\KentDAW\Source\TransportComponent.cpp"/>
     <ClCompile Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -1242,7 +1242,7 @@
     <ClInclude Include="..\..\Source\AudioEngine\AudioEngine.h"/>
     <ClInclude Include="..\..\Source\BinaryData.h"/>
     <ClInclude Include="..\..\Source\MainComponent.h"/>
-    <ClInclude Include="..\..\Source\Transport.h"/>
+    <ClInclude Include="..\..\..\..\..\Desktop\KentDAW\KentDAW\KentDAW\Source\TransportComponent.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioSampleBuffer.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_FloatVectorOperations.h"/>

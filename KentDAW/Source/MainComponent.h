@@ -9,7 +9,7 @@
 #ifndef MAINCOMPONENT_H_INCLUDED
 #define MAINCOMPONENT_H_INCLUDED
 
-#include "Transport.h"
+#include "TransportComponent.h"
 #include "ArrangeWindow.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 
@@ -54,7 +54,7 @@ private:
     MenuBarComponent menuBar;
 	ArrangeWindow arrangeWindow;
     
-    //Transport *transport;
+    ScopedPointer<TransportComponent> transport;
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)

@@ -304,6 +304,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ArrangeWindow.cpp">
+      <Filter>KentDAW\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\AudioEngine\AudioEngine.cpp">
       <Filter>KentDAW\Source\AudioEngine</Filter>
     </ClCompile>
@@ -316,7 +319,7 @@
     <ClCompile Include="..\..\Source\MainComponent.cpp">
       <Filter>KentDAW\Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Transport.cpp">
+    <ClCompile Include="..\..\..\..\..\Desktop\KentDAW\KentDAW\KentDAW\Source\TransportComponent.cpp">
       <Filter>KentDAW\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.cpp">
@@ -1521,6 +1524,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\ArrangeWindow.h">
+      <Filter>KentDAW\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\AudioEngine\AudioEngine.h">
       <Filter>KentDAW\Source\AudioEngine</Filter>
     </ClInclude>
@@ -1530,7 +1536,7 @@
     <ClInclude Include="..\..\Source\MainComponent.h">
       <Filter>KentDAW\Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Transport.h">
+    <ClInclude Include="..\..\..\..\..\Desktop\KentDAW\KentDAW\KentDAW\Source\TransportComponent.h">
       <Filter>KentDAW\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.h">
