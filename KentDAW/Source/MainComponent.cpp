@@ -11,14 +11,13 @@
 
 //==============================================================================
 MainContentComponent::MainContentComponent()
-: menuBar(this)
+: menuBar(this),
+  arrangeWindow()
 {
     setSize (getParentWidth(), getParentHeight());
     {
         addAndMakeVisible(&menuBar);
-		arrangeWindow = new ArrangeWindow;
-		addAndMakeVisible(arrangeWindow);
-		arrangeWindow->setBounds(0, 20, 400, 600);
+		addAndMakeVisible(&arrangeWindow);
         //transport = new Transport();
         //addAndMakeVisible(*transport);
     }
@@ -98,5 +97,5 @@ void MainContentComponent::resized()
 	// components that your component contains..
 
     menuBar.setBounds(0, 0, getWidth(), 20);
-	//arrangeWindow->setBounds(0, 20, 400, 600);
+	arrangeWindow.setBounds(0, 20, 400, 600);
 }

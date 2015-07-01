@@ -52,7 +52,7 @@ public:
 private:
     MenuBarModel* menuModel;
     MenuBarComponent menuBar;
-	ArrangeWindow* arrangeWindow;
+	ArrangeWindow arrangeWindow;
     
     //Transport *transport;
     
