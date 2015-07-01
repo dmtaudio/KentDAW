@@ -14,9 +14,8 @@
 //==============================================================================
 ArrangeWindow::ArrangeWindow()
 {
-    // In your constructor, you should add any child components, and
-    // initialise any special settings that your component needs.
-	//setBounds(0, 20, getParentWidth() - 400, getParentHeight() - 20);
+	// In your constructor, you should add any child components, and
+	// initialise any special settings that your component needs.
 }
 
 ArrangeWindow::~ArrangeWindow()
