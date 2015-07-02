@@ -307,6 +307,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ui\RightSidebar.cpp">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ui\ArrangeWindow.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
@@ -1527,6 +1533,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\ui\RightSidebar.h">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ui\LeftSidebar.h">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ui\ArrangeWindow.h">
       <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>

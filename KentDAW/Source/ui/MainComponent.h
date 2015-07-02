@@ -11,6 +11,8 @@
 
 #include "TransportComponent.h"
 #include "ArrangeWindow.h"
+#include "leftSideBar.h"
+#include "rightSideBar.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 
 
@@ -54,7 +56,9 @@ private:
     ScopedPointer<MenuBarComponent> menuBar;
     ScopedPointer<TransportComponent> transport;
     ScopedPointer<ArrangeWindow> arrangeWindow;
-    
+	ScopedPointer<LeftSidebar> leftSideBar;
+	ScopedPointer<RightSidebar> rightSideBar;
+
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)
 };

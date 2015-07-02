@@ -131,6 +131,8 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ui\RightSidebar.cpp"/>
+    <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp"/>
     <ClCompile Include="..\..\Source\ui\ArrangeWindow.cpp"/>
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
@@ -1238,6 +1240,8 @@
     <ClCompile Include="..\..\..\Juce\juce_video\juce_video.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\ui\RightSidebar.h"/>
+    <ClInclude Include="..\..\Source\ui\LeftSidebar.h"/>
     <ClInclude Include="..\..\Source\ui\ArrangeWindow.h"/>
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
     <ClInclude Include="..\..\Source\ui\MainComponent.h"/>

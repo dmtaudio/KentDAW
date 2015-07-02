@@ -15,11 +15,15 @@ MainContentComponent::MainContentComponent()
     menuBar = new MenuBarComponent(this);
     transport = new TransportComponent();
     arrangeWindow = new ArrangeWindow();
+	leftSideBar = new LeftSidebar();
+	rightSideBar = new RightSidebar();
     setSize (getParentWidth(), getParentHeight());
     {
         addAndMakeVisible(menuBar);
 		addAndMakeVisible(arrangeWindow);
         addAndMakeVisible(transport);
+		addAndMakeVisible(leftSideBar);
+		addAndMakeVisible(rightSideBar);
     }    
 }
 
@@ -96,6 +100,9 @@ void MainContentComponent::resized()
 	// components that your component contains..
 
     menuBar->setBounds(0, 0, getWidth(), 20);
-	arrangeWindow->setBounds(0, 20, getParentWidth()/2, getParentHeight());
-    transport->setBounds(20,20, getWidth()-20, getHeight()-20);
+	leftSideBar->setBounds(0, 20, getParentWidth() / 4, getParentHeight() - 20);
+	arrangeWindow->setBounds(getParentWidth()/4, 20, getParentWidth()/2, getParentHeight()-20);
+	rightSideBar->setBounds((getParentWidth() / 4) * 3, 20, getParentWidth() / 4, getParentHeight() - 20);
+    transport->setBounds((getParentWidth()/100)*40,0, getWidth(), getHeight());
+	
 }

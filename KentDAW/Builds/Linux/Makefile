@@ -51,6 +51,8 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
+  $(OBJDIR)/RightSidebar_4e68485c.o \
+  $(OBJDIR)/LeftSidebar_43b7b4a3.o \
   $(OBJDIR)/ArrangeWindow_d578844a.o \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
@@ -87,6 +89,16 @@ clean:
 strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
+
+$(OBJDIR)/RightSidebar_4e68485c.o: ../../Source/ui/RightSidebar.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling RightSidebar.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/LeftSidebar_43b7b4a3.o: ../../Source/ui/LeftSidebar.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling LeftSidebar.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/ArrangeWindow_d578844a.o: ../../Source/ui/ArrangeWindow.cpp
 	-@mkdir -p $(OBJDIR)

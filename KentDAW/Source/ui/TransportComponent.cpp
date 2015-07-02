@@ -181,7 +181,7 @@ void TransportComponent::getAllCommands(Array<CommandID> &commands)
 
 ApplicationCommandTarget* TransportComponent::getNextCommandTarget()
 {
-    
+	return nullptr;
 }
 
 
