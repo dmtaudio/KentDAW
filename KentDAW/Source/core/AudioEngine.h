@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   AudioEngine.h
  * Author: Dan
  *
@@ -10,7 +10,53 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
-#define TRANSPORT_BUFFER 2048
+
+class AudioCallBack : public AudioIODeviceCallback,
+                      public MidiInputCallback
+{
+public:
+    AudioCallBack();
+    
+    virtual ~AudioCallBack();
+    
+    enum CallbackType
+    {
+        Source,
+        Processor
+    };
+    
+    void setPlayableSource(AudioSource* source);
+    void setPlayableProcessor(AudioProcessor* processor);
+    
+    void audioDeviceIOCallback (const float** inputChannelData,
+                                int totalNumInputChannels,
+                                float** outputChannelData,
+                                int totalNumOutputChannels,
+                                int numSamples);
+    void audioDeviceAboutToStart (AudioIODevice* device);
+    void audioDeviceStopped();
+    
+    void prepareToPlay(double sampleRate, int blockSize);
+    
+private:
+    CallbackType callbackType;
+    CriticalSection lock;
+    AudioProcessor* processor;
+    AudioSource* source;
+    double sampleRate;
+    int bufferSize;
+    AudioSampleBuffer tempBuffer;
+    // Audio source stuff
+    float *sourceChannels[128], *sourceOutputChannels[128];
+    const float* sourceInputChannels[128];
+    float gain, previousGain;
+    bool isPrepared;
+    // Audio processor stuff
+    int processorInputChannels, processorOutputChannels;
+    HeapBlock<float*> processorChannels;
+    MidiBuffer incomingMidi;
+    
+};
 
 class AudioEngine {
 public:
@@ -18,29 +64,11 @@ public:
     
     virtual ~AudioEngine();
     
-    // Audio device control
-    StringArray getAvailableAudioDevices();
-    String setAudioDevice();
-    const String &getCurrentAudioDeviceName();
+    static AudioDeviceManager& getSharedAudioDeviceManager();
     
-    // Get channel names
-    StringArray getOutputChannelNames();
-    
-    // Sample rate control
-    std::vector<double> getAvailableSampleRates();
-    String setSampleRate(const double& sr);
-    double getSampleRate();
-    
-    // Buffer control
-    std::vector<int> getAvailableBufferSizes();
-    int defaultBufferSize();
-    int currentBufferSize();   
-    String setBufferSize(const int &bufferSizeSamps);
-    
-    // Track manipulation
-    bool setGain(int channel, double gain);
-    bool setSolo(int channel, bool enable);
-    bool setMute(int channel, bool enable);
+    // Global audio manipulation
+    bool setMasterMute(bool enable);
+    void setMasterGain(const float newGain);
     
     // Measurement for VU and other meters
     bool enableMeasurement(int channel, bool enable);
@@ -48,16 +76,11 @@ public:
     float getMeasuredDecayValue(int channel);
     float getMeasuredPeakValue(int channel);
     
-    // Modify routing
-    void setNewOutputRouting(int channel, int outputChannel);
-    void setPreviewOutputs(BigInteger prelistenOutputs);
-    void setPreviewGain(double preListenGain);
-    void enableNewRouting();
-    
     // File prelisten controls
     bool startPrelisten(const String &absFilenamePath, const int &startPos, const int &endPos);
     void stopPrelisten();
     
+    // This could be in the transport class, however as this controls the overall playback I think it's actually best here
     // Position controls
     int getCurrentPosition();
     void setPosition(int positionInSamples);
@@ -69,17 +92,26 @@ public:
     // CPU usage data
     double getProcessorUsage();
     
-    // Audio region controls
-    bool addAudioRegion(const int regionID, const int startPos, const int duration, const int fileOffset, String absFilenamePath);
-    bool modifyAudioRegion(const int regionID, const int newStartPos, const int newDuration, const int newOffset);
-    bool removeRegion(const int regionID);
-    void removeAllRegions();
+    enum ChannelType
+    {
+        INPUT = 1,
+        OUTPUT = 0
+    };
     
-    // Modify master gain
-    void setMasterGain(const float newGain);
+    double getDeviceSampleRate();
+    BigInteger getDeviceChannels(ChannelType type);
+    int getBitDepth();
+
+protected:
+    void setCallbackSampleRate(double sampleRate);
     
 private:
-// member variables go here
+    AudioCallBack* audioCallback;
+    //AudioFormatManager& formatManager;
+    double deviceSampleRate;
+    BigInteger deviceInputChannels;
+    BigInteger deviceOutputChannels;
+    int deviceBitDepth;
 };
 
 #endif	/* AUDIOENGINE_H */
