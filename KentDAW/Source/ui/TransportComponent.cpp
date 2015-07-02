@@ -111,7 +111,7 @@ void TransportComponent::initButtons(OwnedArray<juce::ImageButton> &buttons)
 
 void TransportComponent::setButtonBounds()
 {
-    int startposition = ((getWidth() - 8.0 * buttonWidth) / 2.0);
+	auto startposition = ((getWidth() - 8 * buttonWidth) / 2);
     
     toEndButton->setBounds(startposition, 0, 50, 40);
     forwardButton->setBounds(toEndButton->getRight(), 0, buttonWidth, buttonHeight);

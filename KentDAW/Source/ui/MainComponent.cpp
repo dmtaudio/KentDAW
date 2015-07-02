@@ -106,7 +106,7 @@ void MainContentComponent::resized()
 	leftSideBar->setBounds(0, 20, getParentWidth() / 4, getParentHeight() - 50);
 	arrangeWindow->setBounds(getParentWidth() / 4, 20, getParentWidth() / 2, (getParentHeight()/100)*80);
 	rightSideBar->setBounds((getParentWidth() / 4) * 3 + 1, 20, getParentWidth() / 4, getParentHeight()-50);
-	statusBar->setBounds(0, (getParentHeight()/100)*96.5, getParentWidth(), 30);
+	statusBar->setBounds(0, (getParentHeight() / 100) * 96, getParentWidth(), 30);
     //transport->setBounds((getParentWidth()/100)*40,0, getWidth(), getHeight());
 	
 }
