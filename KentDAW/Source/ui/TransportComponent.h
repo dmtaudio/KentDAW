@@ -27,6 +27,7 @@ public:
     public:
         enum TransportEvent
         {
+            Loop,
             Play,
             Record,
             Stop,
@@ -64,6 +65,7 @@ private:
     Image image;
 
     OwnedArray<ImageButton> transportButtons;
+    ImageButton* loopButton;
     ImageButton* playButton;
     ImageButton* recordButton;
     ImageButton* stopButton;

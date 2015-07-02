@@ -60,6 +60,7 @@ private:
 	ScopedPointer<LeftSidebar> leftSideBar;
 	ScopedPointer<RightSidebar> rightSideBar;
 	ScopedPointer<StatusBar> statusBar;
+    
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)

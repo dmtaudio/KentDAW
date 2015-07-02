@@ -14,7 +14,8 @@
 
 //==============================================================================
 TransportComponent::TransportComponent()
-: playButton(new ImageButton("Play")),
+: loopButton(new ImageButton("Loop")),
+  playButton(new ImageButton("Play")),
   recordButton(new ImageButton("Record")),
   stopButton(new ImageButton("Stop")),
   forwardButton(new ImageButton("Forward")),
@@ -25,6 +26,7 @@ TransportComponent::TransportComponent()
 {
     setButtonColours(Colours::transparentBlack, Colours::transparentBlack, Colours::transparentWhite);
     
+    transportButtons.add(loopButton);
     transportButtons.add(playButton);
     transportButtons.add(recordButton);
     transportButtons.add(stopButton);
@@ -42,6 +44,7 @@ TransportComponent::TransportComponent()
         transportButtons[i]->addListener(this);
     }
     
+    loopButton->setTooltip("Loop.");
     toEndButton->setTooltip("Skip to end.");
     forwardButton->setTooltip("Fast forward.");
     stopButton->setTooltip("Stop.");
@@ -57,7 +60,6 @@ TransportComponent::TransportComponent()
 
 TransportComponent::~TransportComponent()
 {
-    //deleteAllChildren();
 }
 
 void TransportComponent::setButtonColours(Colour normal, Colour hovered, Colour pressed)
