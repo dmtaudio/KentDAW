@@ -33,15 +33,15 @@ MainContentComponent::~MainContentComponent()
 
 StringArray MainContentComponent::getMenuBarNames()
 {
-    StringArray *menuItems = new StringArray();
-    menuItems->add("File");
-    menuItems->add("Edit");
-    menuItems->add("Transport");
-    menuItems->add("Arrange");
-    menuItems->add("Window");
-    menuItems->add("Help");
+    StringArray menuItems;
+    menuItems.add("File");
+    menuItems.add("Edit");
+    menuItems.add("Transport");
+    menuItems.add("Arrange");
+    menuItems.add("Window");
+    menuItems.add("Help");
     
-    return *menuItems;
+    return menuItems;
 }
 
 PopupMenu MainContentComponent::getMenuForIndex(int index, const String &name)
