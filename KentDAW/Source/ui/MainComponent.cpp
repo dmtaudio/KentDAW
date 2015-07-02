@@ -101,8 +101,8 @@ void MainContentComponent::resized()
 
     menuBar->setBounds(0, 0, getWidth(), 20);
 	leftSideBar->setBounds(0, 20, getParentWidth() / 4, getParentHeight() - 20);
-	arrangeWindow->setBounds(getParentWidth()/4, 20, getParentWidth()/2, getParentHeight()-20);
-	rightSideBar->setBounds((getParentWidth() / 4) * 3, 20, getParentWidth() / 4, getParentHeight() - 20);
+	arrangeWindow->setBounds(getParentWidth() / 4, 20, getParentWidth() / 2, (getParentHeight()/5)*4);
+	rightSideBar->setBounds((getParentWidth() / 4) * 3, 20, getParentWidth() / 4, getParentHeight()-20);
     transport->setBounds((getParentWidth()/100)*40,0, getWidth(), getHeight());
 	
 }
