@@ -51,12 +51,12 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
-  $(OBJDIR)/ArrangeWindow_2dae1c1d.o \
-  $(OBJDIR)/AudioEngine_dd4973a2.o \
-  $(OBJDIR)/BinaryData_5ba7f54.o \
+  $(OBJDIR)/ArrangeWindow_d578844a.o \
+  $(OBJDIR)/BinaryData_6333ce47.o \
+  $(OBJDIR)/MainComponent_4eca1cd2.o \
+  $(OBJDIR)/TransportComponent_90926750.o \
+  $(OBJDIR)/AudioEngine_7532591.o \
   $(OBJDIR)/Main_90ebc5c2.o \
-  $(OBJDIR)/MainComponent_a6ffb4a5.o \
-  $(OBJDIR)/TransportComponent_2551bb5d.o \
   $(OBJDIR)/juce_audio_basics_1e890073.o \
   $(OBJDIR)/juce_audio_devices_25f60471.o \
   $(OBJDIR)/juce_audio_formats_54774e11.o \
@@ -88,34 +88,34 @@ strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
 
-$(OBJDIR)/ArrangeWindow_2dae1c1d.o: ../../Source/ArrangeWindow.cpp
+$(OBJDIR)/ArrangeWindow_d578844a.o: ../../Source/ui/ArrangeWindow.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling ArrangeWindow.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/AudioEngine_dd4973a2.o: ../../Source/AudioEngine/AudioEngine.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling AudioEngine.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
-$(OBJDIR)/BinaryData_5ba7f54.o: ../../Source/BinaryData.cpp
+$(OBJDIR)/BinaryData_6333ce47.o: ../../Source/ui/BinaryData.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling BinaryData.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/MainComponent_4eca1cd2.o: ../../Source/ui/MainComponent.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling MainComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling TransportComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/AudioEngine_7532591.o: ../../Source/core/AudioEngine.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling AudioEngine.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/Main_90ebc5c2.o: ../../Source/Main.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling Main.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
-$(OBJDIR)/MainComponent_a6ffb4a5.o: ../../Source/MainComponent.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling MainComponent.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
-$(OBJDIR)/TransportComponent_2551bb5d.o: ../../Source/TransportComponent.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling TransportComponent.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/juce_audio_basics_1e890073.o: ../../../Juce/juce_audio_basics/juce_audio_basics.cpp

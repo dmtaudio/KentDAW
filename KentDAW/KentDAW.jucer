@@ -5,23 +5,25 @@
               jucerVersion="3.1.0">
   <MAINGROUP id="j2y9ol" name="KentDAW">
     <GROUP id="{2B1E57D9-2977-26CD-7BDA-F46EF07CAFDF}" name="Source">
-      <FILE id="QCR3Y4" name="ArrangeWindow.cpp" compile="1" resource="0"
-            file="Source/ArrangeWindow.cpp"/>
-      <FILE id="TQfl9B" name="ArrangeWindow.h" compile="0" resource="0" file="Source/ArrangeWindow.h"/>
-      <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="AudioEngine">
-        <FILE id="wBp5wj" name="AudioEngine.cpp" compile="1" resource="0" file="Source/AudioEngine/AudioEngine.cpp"/>
-        <FILE id="XkJBgC" name="AudioEngine.h" compile="0" resource="0" file="Source/AudioEngine/AudioEngine.h"/>
+      <GROUP id="{F1590CD7-AAC5-B3CD-0441-65B231D39579}" name="ui">
+        <FILE id="rSgCr6" name="ArrangeWindow.cpp" compile="1" resource="0"
+              file="Source/ui/ArrangeWindow.cpp"/>
+        <FILE id="XgqErS" name="ArrangeWindow.h" compile="0" resource="0" file="Source/ui/ArrangeWindow.h"/>
+        <FILE id="czvX5T" name="BinaryData.cpp" compile="1" resource="0" file="Source/ui/BinaryData.cpp"/>
+        <FILE id="JrE6iX" name="BinaryData.h" compile="0" resource="0" file="Source/ui/BinaryData.h"/>
+        <FILE id="xtY8Xu" name="MainComponent.cpp" compile="1" resource="0"
+              file="Source/ui/MainComponent.cpp"/>
+        <FILE id="zw1DKd" name="MainComponent.h" compile="0" resource="0" file="Source/ui/MainComponent.h"/>
+        <FILE id="NyilDO" name="TransportComponent.cpp" compile="1" resource="0"
+              file="Source/ui/TransportComponent.cpp"/>
+        <FILE id="Rry42D" name="TransportComponent.h" compile="0" resource="0"
+              file="Source/ui/TransportComponent.h"/>
       </GROUP>
-      <FILE id="PPM103" name="BinaryData.cpp" compile="1" resource="0" file="Source/BinaryData.cpp"/>
-      <FILE id="dWho6i" name="BinaryData.h" compile="0" resource="0" file="Source/BinaryData.h"/>
+      <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <FILE id="Fickz3" name="AudioEngine.cpp" compile="1" resource="0" file="Source/core/AudioEngine.cpp"/>
+        <FILE id="URPzkU" name="AudioEngine.h" compile="0" resource="0" file="Source/core/AudioEngine.h"/>
+      </GROUP>
       <FILE id="eqKNjN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
-      <FILE id="hTikNO" name="MainComponent.cpp" compile="1" resource="0"
-            file="Source/MainComponent.cpp"/>
-      <FILE id="YpxPRg" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
-      <FILE id="gsJNV2" name="TransportComponent.cpp" compile="1" resource="0"
-            file="Source/TransportComponent.cpp"/>
-      <FILE id="ZzKDug" name="TransportComponent.h" compile="0" resource="0"
-            file="Source/TransportComponent.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

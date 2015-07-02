@@ -8,8 +8,11 @@
     <Filter Include="KentDAW\Source">
       <UniqueIdentifier>{5AFC75CE-07DD-2E28-300F-794DC0EFB426}</UniqueIdentifier>
     </Filter>
-    <Filter Include="KentDAW\Source\AudioEngine">
-      <UniqueIdentifier>{19F9CC3A-D85F-3DC6-186A-29C384BB174F}</UniqueIdentifier>
+    <Filter Include="KentDAW\Source\ui">
+      <UniqueIdentifier>{C3CA4466-4018-55A8-B157-87301F721487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KentDAW\Source\core">
+      <UniqueIdentifier>{BBB98152-61BA-3DBE-7018-697205C68783}</UniqueIdentifier>
     </Filter>
     <Filter Include="Juce Modules">
       <UniqueIdentifier>{422C46B7-0467-2DB0-BF3C-16DFCAFD69AC}</UniqueIdentifier>
@@ -304,22 +307,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\ArrangeWindow.cpp">
-      <Filter>KentDAW\Source</Filter>
+    <ClCompile Include="..\..\Source\ui\ArrangeWindow.cpp">
+      <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\AudioEngine\AudioEngine.cpp">
-      <Filter>KentDAW\Source\AudioEngine</Filter>
+    <ClCompile Include="..\..\Source\ui\BinaryData.cpp">
+      <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BinaryData.cpp">
-      <Filter>KentDAW\Source</Filter>
+    <ClCompile Include="..\..\Source\ui\MainComponent.cpp">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ui\TransportComponent.cpp">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\core\AudioEngine.cpp">
+      <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Main.cpp">
-      <Filter>KentDAW\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\MainComponent.cpp">
-      <Filter>KentDAW\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TransportComponent.cpp">
       <Filter>KentDAW\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.cpp">
@@ -1524,20 +1527,20 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\ArrangeWindow.h">
-      <Filter>KentDAW\Source</Filter>
+    <ClInclude Include="..\..\Source\ui\ArrangeWindow.h">
+      <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\AudioEngine\AudioEngine.h">
-      <Filter>KentDAW\Source\AudioEngine</Filter>
+    <ClInclude Include="..\..\Source\ui\BinaryData.h">
+      <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\BinaryData.h">
-      <Filter>KentDAW\Source</Filter>
+    <ClInclude Include="..\..\Source\ui\MainComponent.h">
+      <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\MainComponent.h">
-      <Filter>KentDAW\Source</Filter>
+    <ClInclude Include="..\..\Source\ui\TransportComponent.h">
+      <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\TransportComponent.h">
-      <Filter>KentDAW\Source</Filter>
+    <ClInclude Include="..\..\Source\core\AudioEngine.h">
+      <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.h">
       <Filter>Juce Modules\juce_audio_basics\buffers</Filter>

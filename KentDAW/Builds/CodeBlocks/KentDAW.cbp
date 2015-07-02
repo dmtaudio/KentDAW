@@ -94,32 +94,32 @@
       <Add library="kernel32"/>
       <Add library="comctl32"/>
     </Linker>
-    <Unit filename="../../Source/ArrangeWindow.cpp"/>
-    <Unit filename="../../Source/ArrangeWindow.h">
+    <Unit filename="../../Source/ui/ArrangeWindow.cpp"/>
+    <Unit filename="../../Source/ui/ArrangeWindow.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../Source/AudioEngine/AudioEngine.cpp"/>
-    <Unit filename="../../Source/AudioEngine/AudioEngine.h">
+    <Unit filename="../../Source/ui/BinaryData.cpp"/>
+    <Unit filename="../../Source/ui/BinaryData.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../Source/BinaryData.cpp"/>
-    <Unit filename="../../Source/BinaryData.h">
+    <Unit filename="../../Source/ui/MainComponent.cpp"/>
+    <Unit filename="../../Source/ui/MainComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../Source/ui/TransportComponent.cpp"/>
+    <Unit filename="../../Source/ui/TransportComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../Source/core/AudioEngine.cpp"/>
+    <Unit filename="../../Source/core/AudioEngine.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
     <Unit filename="../../Source/Main.cpp"/>
-    <Unit filename="../../Source/MainComponent.cpp"/>
-    <Unit filename="../../Source/MainComponent.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-    <Unit filename="../../Source/TransportComponent.cpp"/>
-    <Unit filename="../../Source/TransportComponent.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
     <Unit filename="../../../Juce/juce_audio_basics/buffers/juce_AudioDataConverters.cpp">
       <Option compile="0"/>
       <Option link="0"/>

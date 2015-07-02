@@ -131,12 +131,12 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\ArrangeWindow.cpp"/>
-    <ClCompile Include="..\..\Source\AudioEngine\AudioEngine.cpp"/>
-    <ClCompile Include="..\..\Source\BinaryData.cpp"/>
+    <ClCompile Include="..\..\Source\ui\ArrangeWindow.cpp"/>
+    <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
+    <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
+    <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
+    <ClCompile Include="..\..\Source\core\AudioEngine.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
-    <ClCompile Include="..\..\Source\MainComponent.cpp"/>
-    <ClCompile Include="..\..\Source\TransportComponent.cpp"/>
     <ClCompile Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -1238,11 +1238,11 @@
     <ClCompile Include="..\..\..\Juce\juce_video\juce_video.cpp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\ArrangeWindow.h"/>
-    <ClInclude Include="..\..\Source\AudioEngine\AudioEngine.h"/>
-    <ClInclude Include="..\..\Source\BinaryData.h"/>
-    <ClInclude Include="..\..\Source\MainComponent.h"/>
-    <ClInclude Include="..\..\Source\TransportComponent.h"/>
+    <ClInclude Include="..\..\Source\ui\ArrangeWindow.h"/>
+    <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
+    <ClInclude Include="..\..\Source\ui\MainComponent.h"/>
+    <ClInclude Include="..\..\Source\ui\TransportComponent.h"/>
+    <ClInclude Include="..\..\Source\core\AudioEngine.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioSampleBuffer.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_FloatVectorOperations.h"/>
