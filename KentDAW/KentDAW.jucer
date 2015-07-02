@@ -18,10 +18,10 @@
       <FILE id="hTikNO" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <FILE id="YpxPRg" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
-      <FILE id="b0biLN" name="TransportComponent.cpp" compile="1" resource="0"
-            file="../../../Desktop/KentDAW/KentDAW/KentDAW/Source/TransportComponent.cpp"/>
-      <FILE id="AOo5b7" name="TransportComponent.h" compile="0" resource="0"
-            file="../../../Desktop/KentDAW/KentDAW/KentDAW/Source/TransportComponent.h"/>
+      <FILE id="gsJNV2" name="TransportComponent.cpp" compile="1" resource="0"
+            file="Source/TransportComponent.cpp"/>
+      <FILE id="ZzKDug" name="TransportComponent.h" compile="0" resource="0"
+            file="Source/TransportComponent.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

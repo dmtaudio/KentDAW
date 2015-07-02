@@ -56,7 +56,7 @@ OBJECTS := \
   $(OBJDIR)/BinaryData_5ba7f54.o \
   $(OBJDIR)/Main_90ebc5c2.o \
   $(OBJDIR)/MainComponent_a6ffb4a5.o \
-  $(OBJDIR)/TransportComponent_acca039c.o \
+  $(OBJDIR)/TransportComponent_2551bb5d.o \
   $(OBJDIR)/juce_audio_basics_1e890073.o \
   $(OBJDIR)/juce_audio_devices_25f60471.o \
   $(OBJDIR)/juce_audio_formats_54774e11.o \
@@ -113,7 +113,7 @@ $(OBJDIR)/MainComponent_a6ffb4a5.o: ../../Source/MainComponent.cpp
 	@echo "Compiling MainComponent.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/TransportComponent_acca039c.o: ../../../../../Desktop/KentDAW/KentDAW/KentDAW/Source/TransportComponent.cpp
+$(OBJDIR)/TransportComponent_2551bb5d.o: ../../Source/TransportComponent.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling TransportComponent.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"

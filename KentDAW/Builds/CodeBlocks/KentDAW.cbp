@@ -115,8 +115,8 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../../../../Desktop/KentDAW/KentDAW/KentDAW/Source/TransportComponent.cpp"/>
-    <Unit filename="../../../../../Desktop/KentDAW/KentDAW/KentDAW/Source/TransportComponent.h">
+    <Unit filename="../../Source/TransportComponent.cpp"/>
+    <Unit filename="../../Source/TransportComponent.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
