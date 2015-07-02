@@ -78,7 +78,7 @@ private:
     
     float normalImageOpacity = 1.0f;
     float hoveredImageOpacity = 1.0f;
-    float pressedImageOpacity = 1.0f;
+    float pressedImageOpacity = 0.5f;
     
     Colour normalImageColour;
     Colour hoveredImageColour;

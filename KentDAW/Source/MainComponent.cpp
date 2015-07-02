@@ -19,10 +19,8 @@ MainContentComponent::MainContentComponent()
     {
         addAndMakeVisible(menuBar);
 		addAndMakeVisible(arrangeWindow);
-    }
-    //transport->addToDesktop(ComponentPeer::windowHasMinimiseButton, 0);
-    addAndMakeVisible(transport);
-    
+        addAndMakeVisible(transport);
+    }    
 }
 
 MainContentComponent::~MainContentComponent()

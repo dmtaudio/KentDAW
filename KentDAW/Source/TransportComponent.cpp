@@ -23,7 +23,7 @@ TransportComponent::TransportComponent()
   toEndButton(new ImageButton("ToEnd")),
   buttonWidth(50), buttonHeight(50)
 {
-    setButtonColours(Colours::transparentBlack, Colours::transparentBlack, Colours::lightblue);
+    setButtonColours(Colours::transparentBlack, Colours::transparentBlack, Colours::transparentWhite);
     
     transportButtons.add(playButton);
     transportButtons.add(recordButton);
