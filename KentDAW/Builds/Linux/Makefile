@@ -51,6 +51,7 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
+  $(OBJDIR)/StatusBar_d572aa4f.o \
   $(OBJDIR)/RightSidebar_4e68485c.o \
   $(OBJDIR)/LeftSidebar_43b7b4a3.o \
   $(OBJDIR)/ArrangeWindow_d578844a.o \
@@ -89,6 +90,11 @@ clean:
 strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
+
+$(OBJDIR)/StatusBar_d572aa4f.o: ../../Source/ui/StatusBar.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling StatusBar.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/RightSidebar_4e68485c.o: ../../Source/ui/RightSidebar.cpp
 	-@mkdir -p $(OBJDIR)

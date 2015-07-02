@@ -17,13 +17,16 @@ MainContentComponent::MainContentComponent()
     arrangeWindow = new ArrangeWindow();
 	leftSideBar = new LeftSidebar();
 	rightSideBar = new RightSidebar();
+	statusBar = new StatusBar();
+
     setSize (getParentWidth(), getParentHeight());
     {
         addAndMakeVisible(menuBar);
 		addAndMakeVisible(arrangeWindow);
-        addAndMakeVisible(transport);
+        //addAndMakeVisible(transport);
 		addAndMakeVisible(leftSideBar);
 		addAndMakeVisible(rightSideBar);
+		addAndMakeVisible(statusBar);
     }    
 }
 
@@ -100,9 +103,10 @@ void MainContentComponent::resized()
 	// components that your component contains..
 
     menuBar->setBounds(0, 0, getWidth(), 20);
-	leftSideBar->setBounds(0, 20, getParentWidth() / 4, getParentHeight() - 20);
-	arrangeWindow->setBounds(getParentWidth() / 4, 20, getParentWidth() / 2, (getParentHeight()/5)*4);
-	rightSideBar->setBounds((getParentWidth() / 4) * 3, 20, getParentWidth() / 4, getParentHeight()-20);
-    transport->setBounds((getParentWidth()/100)*40,0, getWidth(), getHeight());
+	leftSideBar->setBounds(0, 20, getParentWidth() / 4, getParentHeight() - 50);
+	arrangeWindow->setBounds(getParentWidth() / 4, 20, getParentWidth() / 2, (getParentHeight()/100)*80);
+	rightSideBar->setBounds((getParentWidth() / 4) * 3 + 1, 20, getParentWidth() / 4, getParentHeight()-50);
+	statusBar->setBounds(0, (getParentHeight()/100)*96.5, getParentWidth(), 30);
+    //transport->setBounds((getParentWidth()/100)*40,0, getWidth(), getHeight());
 	
 }
