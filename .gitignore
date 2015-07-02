@@ -20,6 +20,8 @@ KentDAW/Builds/*/Release
 
 KentDAW/Builds/*/KentDAW.sdf
 KentDAW/Builds/*/KentDAW.opensdf
+KentDAW/Builds/*/*.suo
+KentDAW/Builds/*/*.user
 
 # Vim
 *.swp
