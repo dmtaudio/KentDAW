@@ -50,11 +50,10 @@ public:
     };
 
 private:
-    MenuBarModel* menuModel;
-    MenuBarComponent menuBar;
-	ArrangeWindow arrangeWindow;
-    
+    ScopedPointer<MenuBarModel> menuModel;
+    ScopedPointer<MenuBarComponent> menuBar;
     ScopedPointer<TransportComponent> transport;
+    ScopedPointer<ArrangeWindow> arrangeWindow;
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)

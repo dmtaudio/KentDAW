@@ -11,21 +11,21 @@
 
 //==============================================================================
 MainContentComponent::MainContentComponent()
-: menuBar(this),
-  arrangeWindow()
 {
+    menuBar = new MenuBarComponent(this);
     transport = new TransportComponent();
+    arrangeWindow = new ArrangeWindow();
     setSize (getParentWidth(), getParentHeight());
     {
-        addAndMakeVisible(&menuBar);
-		addAndMakeVisible(&arrangeWindow);
+        addAndMakeVisible(menuBar);
+		addAndMakeVisible(arrangeWindow);
     }
     addAndMakeVisible(transport);
+    transport->addToDesktop(ComponentPeer::windowHasMinimiseButton, 0);
 }
 
 MainContentComponent::~MainContentComponent()
 {
-    deleteAllChildren();
 }
 
 StringArray MainContentComponent::getMenuBarNames()
@@ -96,7 +96,7 @@ void MainContentComponent::resized()
 	// This method is where you should set the bounds of any child
 	// components that your component contains..
 
-    menuBar.setBounds(0, 0, getWidth(), 20);
-	arrangeWindow.setBounds(0, 20, getParentWidth()/2, getParentHeight());
+    menuBar->setBounds(0, 0, getWidth(), 20);
+	arrangeWindow->setBounds(0, 20, getParentWidth()/2, getParentHeight());
     transport->setBounds(20,20, getWidth()-20, getHeight()-20);
 }
