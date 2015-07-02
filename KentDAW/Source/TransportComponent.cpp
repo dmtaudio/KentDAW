@@ -23,7 +23,7 @@ TransportComponent::TransportComponent()
   toEndButton(new ImageButton("ToEnd")),
   buttonWidth(50), buttonHeight(50)
 {
-    setButtonColours(Colours::grey, Colours::lightblue, Colours::lightblue);
+    setButtonColours(Colours::transparentBlack, Colours::transparentBlack, Colours::lightblue);
     
     transportButtons.add(playButton);
     transportButtons.add(recordButton);
@@ -69,7 +69,7 @@ void TransportComponent::setButtonColours(Colour normal, Colour hovered, Colour 
 
 void TransportComponent::setButtonImage(ImageButton *button)
 {
-    button->setImages(false, true, true, image, normalImageOpacity, normalImageColour, image, hoveredImageOpacity, hoveredImageColour, image, pressedImageOpacity, pressedImageColour);
+    button->setImages(false, true, true, image, normalImageOpacity, normalImageColour, image, hoveredImageOpacity, hoveredImageColour, image, pressedImageOpacity, pressedImageColour, 0.0f);
 }
 
 void TransportComponent::initButtons(OwnedArray<juce::ImageButton> &buttons)
@@ -79,38 +79,33 @@ void TransportComponent::initButtons(OwnedArray<juce::ImageButton> &buttons)
         if(buttons[button]->getName() == "Play")
         {
             image = ImageCache::getFromMemory(BinaryData::playbutton_png, BinaryData::playbutton_pngSize);
-            setButtonImage(buttons[button]);
         }
         else if(buttons[button]->getName() == "Record")
         {
             image = ImageCache::getFromMemory(BinaryData::recordbutton_png, BinaryData::recordbutton_pngSize);
-            setButtonImage(buttons[button]);
         }
         else if(buttons[button]->getName() == "Stop")
         {
             image = ImageCache::getFromMemory(BinaryData::stopbutton_png, BinaryData::stopbutton_pngSize);
-            setButtonImage(buttons[button]);
         }
         else if(buttons[button]->getName() == "Forward")
         {
             image = ImageCache::getFromMemory(BinaryData::forwardbutton_png, BinaryData::forwardbutton_pngSize);
-            setButtonImage(buttons[button]);
         }
         else if(buttons[button]->getName() == "Backward")
         {
             image = ImageCache::getFromMemory(BinaryData::backwardbutton_png, BinaryData::backwardbutton_pngSize);
-            setButtonImage(buttons[button]);
         }
         else if(buttons[button]->getName() == "ToStart")
         {
             image = ImageCache::getFromMemory(BinaryData::toStartbutton_png, BinaryData::toStartbutton_pngSize);
-            setButtonImage(buttons[button]);
         }
         else if(buttons[button]->getName() == "ToEnd")
         {
             image = ImageCache::getFromMemory(BinaryData::toEndbutton_png, BinaryData::toEndbutton_pngSize);
-            setButtonImage(buttons[button]);
         }
+        setButtonImage(buttons[button]);
+        addAndMakeVisible(buttons[button]);
     }
 }
 
