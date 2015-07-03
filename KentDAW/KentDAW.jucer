@@ -27,7 +27,7 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
-        <FILE id="Fickz3" name="AudioEngine.cpp" compile="1" resource="0" file="Source/core/AudioEngine.cpp"/>
+        <FILE id="Fickz3" name="AudioEngine.cpp" compile="0" resource="0" file="Source/core/AudioEngine.cpp"/>
         <FILE id="URPzkU" name="AudioEngine.h" compile="0" resource="0" file="Source/core/AudioEngine.h"/>
       </GROUP>
       <FILE id="eqKNjN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>

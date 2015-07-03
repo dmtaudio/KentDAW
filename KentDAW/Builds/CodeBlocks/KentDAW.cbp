@@ -129,7 +129,10 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../Source/core/AudioEngine.cpp"/>
+    <Unit filename="../../Source/core/AudioEngine.cpp">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/core/AudioEngine.h">
       <Option compile="0"/>
       <Option link="0"/>
