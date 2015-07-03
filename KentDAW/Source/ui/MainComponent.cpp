@@ -27,6 +27,8 @@ MainContentComponent::MainContentComponent()
 		addAndMakeVisible(leftSideBar);
 		addAndMakeVisible(rightSideBar);
 		addAndMakeVisible(statusBar);
+
+		setOpaque(true);
     }    
 }
 

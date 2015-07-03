@@ -17,6 +17,7 @@
 /*
 */
 class RightSidebar    : public Component
+						// private FileBrowserListener
 {
 public:
 	RightSidebar();
@@ -29,16 +30,8 @@ private:
 	DirectoryContentsList directoryList;
 	FileTreeComponent fileTree;
 	TimeSliceThread tsThread;
-	/*
-	void fileClicked(const File&, const MouseEvent&);
-	void fileDoubleClicked(const File&);
-	void browserRootChanged(const File&);
-	void buttonClicked(Button* buttonThatWasClicked);
-	void sliderValueChanged(Slider* sliderThatWasMoved);
-	void changeListenerCallback(ChangeBroadcaster* source);
-	void selectionChanged();
-	*/
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RightSidebar)
+
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RightSidebar)
 };
 
 
