@@ -19,13 +19,16 @@
 class RightSidebar    : public Component
 {
 public:
-    RightSidebar();
+	RightSidebar();
     ~RightSidebar();
 
     void paint (Graphics&);
     void resized();
 
 private:
+	DirectoryContentsList directoryList;
+	FileTreeComponent fileTree;
+	TimeSliceThread tsThread;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RightSidebar)
 };
 

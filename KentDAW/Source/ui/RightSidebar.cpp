@@ -13,7 +13,11 @@
 
 //==============================================================================
 RightSidebar::RightSidebar()
+	: tsThread("File Tree Test"),
+	directoryList(nullptr, tsThread),
+	fileTree(directoryList)
 {
+	addAndMakeVisible(fileTree);
 }
 
 RightSidebar::~RightSidebar()
@@ -35,13 +39,11 @@ void RightSidebar::paint (Graphics& g)
     g.drawRect (getLocalBounds(), 1);   // draw an outline around the component
 
     g.setColour (Colours::lightblue);
-    g.setFont (14.0f);
-    g.drawText ("RightSidebar", getLocalBounds(),
-                Justification::centred, true);   // draw some placeholder text
 }
 
 void RightSidebar::resized()
 {
+	fileTree.setBounds(0,0,getParentWidth(),getParentHeight())
     // This method is where you should set the bounds of any child
     // components that your component contains..
 
