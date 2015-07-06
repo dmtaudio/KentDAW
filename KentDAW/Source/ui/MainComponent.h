@@ -32,6 +32,12 @@ public:
     MainContentComponent();
     ~MainContentComponent();
 
+	/*
+	The audio devices are owned by the application window. A reference of this
+	object can be passed to the object that needs to use it.
+	*/
+	AudioDeviceManager deviceManager;
+
     void paint (Graphics&);
     void resized();
     

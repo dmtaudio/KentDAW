@@ -15,6 +15,8 @@ MainContentComponent::MainContentComponent()
 	directoryList(nullptr, tsThread),
 	fileTree(directoryList)
 {
+	deviceManager.initialise(2, 2, nullptr, true);
+
 	//Menu Bar
     menuBar = new MenuBarComponent(this);
 
@@ -26,9 +28,6 @@ MainContentComponent::MainContentComponent()
 
 	//Left Side
 	leftSideBar = new LeftSidebar();
-
-	//Right Side
-	//rightSideBar = new RightSidebar();
 
 	//Status Bar
 	statusBar = new StatusBar();
