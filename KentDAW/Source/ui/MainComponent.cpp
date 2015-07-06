@@ -56,7 +56,6 @@ MainContentComponent::MainContentComponent()
 
 MainContentComponent::~MainContentComponent()
 {
-	deleteAllChildren();
 }
 
 StringArray MainContentComponent::getMenuBarNames()
@@ -133,7 +132,7 @@ void MainContentComponent::resized()
 	
 	Rectangle<int> rec((getParentWidth()/4)*3+1,20,getParentWidth()/4, getParentHeight()-50);
 	fileTree.setBounds(rec);
-	//rightSideBar->setBounds((getParentWidth() / 4) * 3 + 1, 20, getParentWidth() / 4, getParentHeight()-50);
+	
 	statusBar->setBounds(0, (getParentHeight() / 100) * 96, getParentWidth(), 30);
     //transport->setBounds((getParentWidth()/100)*40,0, getWidth(), getHeight());
 	

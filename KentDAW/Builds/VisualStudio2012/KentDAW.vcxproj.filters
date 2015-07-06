@@ -310,9 +310,6 @@
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\ui\RightSidebar.cpp">
-      <Filter>KentDAW\Source\ui</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
@@ -1537,9 +1534,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\ui\StatusBar.h">
-      <Filter>KentDAW\Source\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\ui\RightSidebar.h">
       <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ui\LeftSidebar.h">

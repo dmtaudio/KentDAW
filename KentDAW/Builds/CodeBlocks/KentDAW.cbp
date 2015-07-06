@@ -99,11 +99,6 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../Source/ui/RightSidebar.cpp"/>
-    <Unit filename="../../Source/ui/RightSidebar.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
     <Unit filename="../../Source/ui/LeftSidebar.cpp"/>
     <Unit filename="../../Source/ui/LeftSidebar.h">
       <Option compile="0"/>

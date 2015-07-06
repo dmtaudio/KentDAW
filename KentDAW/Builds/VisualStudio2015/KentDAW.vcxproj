@@ -132,7 +132,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp"/>
-    <ClCompile Include="..\..\Source\ui\RightSidebar.cpp"/>
     <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp"/>
     <ClCompile Include="..\..\Source\ui\ArrangeWindow.cpp"/>
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
@@ -1244,7 +1243,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\ui\StatusBar.h"/>
-    <ClInclude Include="..\..\Source\ui\RightSidebar.h"/>
     <ClInclude Include="..\..\Source\ui\LeftSidebar.h"/>
     <ClInclude Include="..\..\Source\ui\ArrangeWindow.h"/>
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
