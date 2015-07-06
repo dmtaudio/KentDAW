@@ -55,6 +55,7 @@
         <MODULEPATH id="juce_audio_devices" path="../Juce"/>
         <MODULEPATH id="juce_audio_formats" path="../Juce"/>
         <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+        <MODULEPATH id="juce_audio_utils" path="../Juce"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <VS2015 targetFolder="Builds/VisualStudio2015">
@@ -78,6 +79,7 @@
         <MODULEPATH id="juce_audio_devices" path="../Juce"/>
         <MODULEPATH id="juce_audio_formats" path="../Juce"/>
         <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+        <MODULEPATH id="juce_audio_utils" path="../Juce"/>
       </MODULEPATHS>
     </VS2015>
     <VS2013 targetFolder="Builds/VisualStudio2013">
@@ -101,6 +103,7 @@
         <MODULEPATH id="juce_audio_devices" path="../Juce"/>
         <MODULEPATH id="juce_audio_formats" path="../Juce"/>
         <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+        <MODULEPATH id="juce_audio_utils" path="../Juce"/>
       </MODULEPATHS>
     </VS2013>
     <VS2012 targetFolder="Builds/VisualStudio2012">
@@ -124,6 +127,7 @@
         <MODULEPATH id="juce_audio_devices" path="../Juce"/>
         <MODULEPATH id="juce_audio_formats" path="../Juce"/>
         <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+        <MODULEPATH id="juce_audio_utils" path="../Juce"/>
       </MODULEPATHS>
     </VS2012>
     <LINUX_MAKE targetFolder="Builds/Linux">
@@ -147,6 +151,7 @@
         <MODULEPATH id="juce_audio_devices" path="../Juce"/>
         <MODULEPATH id="juce_audio_formats" path="../Juce"/>
         <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+        <MODULEPATH id="juce_audio_utils" path="../Juce"/>
       </MODULEPATHS>
     </LINUX_MAKE>
     <CODEBLOCKS targetFolder="Builds/CodeBlocks">
@@ -168,6 +173,7 @@
         <MODULEPATH id="juce_audio_devices" path="../Juce"/>
         <MODULEPATH id="juce_audio_formats" path="../Juce"/>
         <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+        <MODULEPATH id="juce_audio_utils" path="../Juce"/>
       </MODULEPATHS>
     </CODEBLOCKS>
   </EXPORTFORMATS>
@@ -176,6 +182,7 @@
     <MODULES id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_utils" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_core" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>

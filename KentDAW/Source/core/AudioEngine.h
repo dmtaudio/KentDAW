@@ -25,8 +25,8 @@ public:
         Processor
     };
     
-    void setPlayableSource(AudioSource* source);
-    void setPlayableProcessor(AudioProcessor* processor);
+    void setAudioSourcePlayer(AudioSource* source);
+    void setProcessorPlayer(AudioProcessor* processor);
     
     void audioDeviceIOCallback (const float** inputChannelData,
                                 int totalNumInputChannels,
@@ -41,26 +41,22 @@ public:
 private:
     CallbackType callbackType;
     CriticalSection lock;
-    AudioProcessor* processor;
     AudioSource* source;
+    AudioSourcePlayer* sourcePlayer;
+    AudioProcessor* processor;
+    AudioProcessorPlayer* processorPlayer;
     double sampleRate;
     int bufferSize;
     AudioSampleBuffer tempBuffer;
-    // Audio source stuff
-    float *sourceChannels[128], *sourceOutputChannels[128];
-    const float* sourceInputChannels[128];
     float gain, previousGain;
-    bool isPrepared;
-    // Audio processor stuff
-    int processorInputChannels, processorOutputChannels;
-    HeapBlock<float*> processorChannels;
     MidiBuffer incomingMidi;
-    
+    bool sourceSet, processorSet;
 };
 
 class AudioEngine {
 public:
     AudioEngine();
+    AudioEngine(const size_t numberOfChannels);
     
     virtual ~AudioEngine();
     

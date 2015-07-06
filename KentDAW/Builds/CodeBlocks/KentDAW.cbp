@@ -759,6 +759,66 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/gui/juce_AudioAppComponent.cpp">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/gui/juce_AudioAppComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/gui/juce_AudioDeviceSelectorComponent.cpp">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/gui/juce_AudioDeviceSelectorComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/gui/juce_AudioThumbnail.cpp">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/gui/juce_AudioThumbnail.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/gui/juce_AudioThumbnailBase.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/gui/juce_AudioThumbnailCache.cpp">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/gui/juce_AudioThumbnailCache.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/gui/juce_MidiKeyboardComponent.cpp">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/gui/juce_MidiKeyboardComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/players/juce_AudioProcessorPlayer.cpp">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/players/juce_AudioProcessorPlayer.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/juce_module_info">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../../Juce/juce_audio_utils/juce_audio_utils.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../../Juce/juce_core/text/juce_CharacterFunctions.cpp">
       <Option compile="0"/>
       <Option link="0"/>
@@ -3515,6 +3575,7 @@
     <Unit filename="../../../Juce/juce_audio_devices/juce_audio_devices.cpp"/>
     <Unit filename="../../../Juce/juce_audio_formats/juce_audio_formats.cpp"/>
     <Unit filename="../../../Juce/juce_audio_processors/juce_audio_processors.cpp"/>
+    <Unit filename="../../../Juce/juce_audio_utils/juce_audio_utils.cpp"/>
     <Unit filename="../../../Juce/juce_core/juce_core.cpp"/>
     <Unit filename="../../../Juce/juce_cryptography/juce_cryptography.cpp"/>
     <Unit filename="../../../Juce/juce_data_structures/juce_data_structures.cpp"/>
