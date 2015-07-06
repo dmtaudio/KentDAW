@@ -2855,24 +2855,14 @@
 					"DEBUG=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
 					"JUCE_APP_VERSION=1.0.0",
-					"JUCE_APP_VERSION_HEX=0x10000",
-				);
+					"JUCE_APP_VERSION_HEX=0x10000", );
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					../../JuceLibraryCode,
-					../../../Juce,
-					"$(inherited)",
-				);
+				HEADER_SEARCH_PATHS = ("../../JuceLibraryCode", "../../../Juce", "$(inherited)");
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				SDKROOT_ppc = macosx10.5;
-			};
-			name = Debug;
-		};
-		4AA9B5E84E510F2E6CC1A5D0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				SDKROOT_ppc = macosx10.5; }; name = Debug; };
+		4AA9B5E84E510F2E6CC1A5D0 = {isa = XCBuildConfiguration; buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -2885,27 +2875,17 @@
 					"NDEBUG=1",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
 					"JUCE_APP_VERSION=1.0.0",
-					"JUCE_APP_VERSION_HEX=0x10000",
-				);
+					"JUCE_APP_VERSION_HEX=0x10000", );
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					../../JuceLibraryCode,
-					../../../Juce,
-					"$(inherited)",
-				);
+				HEADER_SEARCH_PATHS = ("../../JuceLibraryCode", "../../../Juce", "$(inherited)");
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				SDKROOT_ppc = macosx10.5;
-			};
-			name = Release;
-		};
-		BFC1CCE9D82A0B5B683A9DCA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				SDKROOT_ppc = macosx10.5; }; name = Release; };
+		BFC1CCE9D82A0B5B683A9DCA = {isa = XCBuildConfiguration; buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_MODEL_TUNING = G5;
@@ -2916,17 +2896,12 @@
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = KentDAW;
-				WARNING_CFLAGS = "-Wreorder";
-				ZERO_LINK = NO;
-			};
-			name = Debug;
-		};
-		D3566D8CBACACEFA94396283 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				PRODUCT_NAME = "KentDAW";
+				WARNING_CFLAGS = -Wreorder;
+				ZERO_LINK = NO; }; name = Debug; };
+		D3566D8CBACACEFA94396283 = {isa = XCBuildConfiguration; buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_MODEL_TUNING = G5;
@@ -2936,34 +2911,57 @@
 				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME = KentDAW;
-				WARNING_CFLAGS = "-Wreorder";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		2CDD3FC7EA5891276CAB7C82 /* Build configuration list for PBXNativeTarget "KentDAW" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				485294946550F0A35BB8D6B1 /* Debug */,
-				4AA9B5E84E510F2E6CC1A5D0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		7BE47271478DCDBDE28CEC65 /* Build configuration list for PBXProject "KentDAW" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BFC1CCE9D82A0B5B683A9DCA /* Debug */,
-				D3566D8CBACACEFA94396283 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-/* End XCConfigurationList section */
+				PRODUCT_NAME = "KentDAW";
+				WARNING_CFLAGS = -Wreorder;
+				ZERO_LINK = NO; }; name = Release; };
+		7BE47271478DCDBDE28CEC65 = {isa = XCConfigurationList; buildConfigurations = (
+					BFC1CCE9D82A0B5B683A9DCA,
+					D3566D8CBACACEFA94396283, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+		2CDD3FC7EA5891276CAB7C82 = {isa = XCConfigurationList; buildConfigurations = (
+					485294946550F0A35BB8D6B1,
+					4AA9B5E84E510F2E6CC1A5D0, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+		DB2FCD2F4919DA598FAC4897 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+					818AC509E0823A3AD14E36F0, ); runOnlyForDeploymentPostprocessing = 0; };
+		E650163C62DB8D8A7BA57C9E = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+					EF82E3A9F082C489FA5462E3,
+					F92488467F14077C471FFE18,
+					E5EBBA14E7784402D0E3FD53,
+					AF79A2E7B4AE9079397021F7,
+					F7CDE1ECFA82EE17781FEA35,
+					6ED159EF499CDA556D61A7BB,
+					3558E7E4876C923C24D308F9,
+					C3AFE260970BC431D2BDE837,
+					17E7887A960EC87B64EF3148,
+					42ADA6638E56D6056D6A11F1,
+					8E201CB49FC2334BDE7D22E5,
+					68FDCBE2B67C1F7CC9825050,
+					A3455198DEF8B8217DE44347,
+					B64AC30BB379886705C57B84,
+					D3F7C1CCED600C1E34678B98,
+					56A72FD3E9CCA4CE4ABB7379,
+					0137384653B6B247AAD6683A,
+					D6A105DD3C585DBF7AD8CCA4,
+					604EEE9C397E015E8E14432E,
+					A8651E17CE1D034475185FFE, ); runOnlyForDeploymentPostprocessing = 0; };
+		58242BC06A9C59542DA404F1 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
+					EBAB2308ABE2E3C1AA2981AE,
+					49270AFB01750224C94789DC,
+					EA2773E2D60B43D3E0A1B246,
+					957A149ADBD15DB60EA4EE81,
+					D8260AC8916B7BCB12868713,
+					175A3BD666F12B4398D894E9,
+					E4800409E96CA3532E5035C8,
+					AC83D1C7074A6851D95EA5B6,
+					297005E43CEB66A41B63EB0C,
+					D992ADEDC0894FFC98A1CF3D,
+					D73FED432452E74963BC7AD1,
+					470CB841480643572107C238,
+					B18991A7EF417189AF8BD80F, ); runOnlyForDeploymentPostprocessing = 0; };
+		4A5C7305B8D63A47EF6AE9F5 = {isa = PBXNativeTarget; buildConfigurationList = 2CDD3FC7EA5891276CAB7C82; buildPhases = (
+					DB2FCD2F4919DA598FAC4897,
+					E650163C62DB8D8A7BA57C9E,
+					58242BC06A9C59542DA404F1, ); buildRules = ( ); dependencies = ( ); name = KentDAW; productName = KentDAW; productReference = DD8C2258326440C4FCAF939F; productInstallPath = "$(HOME)/Applications"; productType = "com.apple.product-type.application"; };
+		1397253F6115D6AB959B25EF = {isa = PBXProject; buildConfigurationList = 7BE47271478DCDBDE28CEC65; attributes = { LastUpgradeCheck = 0440; }; compatibilityVersion = "Xcode 3.2"; hasScannedForEncodings = 0; mainGroup = 87830C8F6400F904DBCA16F4; projectDirPath = ""; projectRoot = ""; targets = ( 4A5C7305B8D63A47EF6AE9F5 ); };
 	};
-	rootObject = 1397253F6115D6AB959B25EF /* Project object */;
+	rootObject = 1397253F6115D6AB959B25EF;
 }

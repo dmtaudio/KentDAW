@@ -12,7 +12,7 @@
 #include "TransportComponent.h"
 #include "ArrangeWindow.h"
 #include "LeftSidebar.h"
-#include "RightSidebar.h"
+//#include "RightSidebar.h"
 #include "StatusBar.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 
@@ -31,6 +31,12 @@ public:
     //==============================================================================
     MainContentComponent();
     ~MainContentComponent();
+
+	/*
+	The audio devices are owned by the application window. A reference of this
+	object can be passed to the object that needs to use it.
+	*/
+	AudioDeviceManager deviceManager;
 
     void paint (Graphics&);
     void resized();
@@ -53,12 +59,24 @@ public:
     };
 
 private:
+	//Menu Bar
     ScopedPointer<MenuBarModel> menuModel;
     ScopedPointer<MenuBarComponent> menuBar;
+
+	//Transport
     ScopedPointer<TransportComponent> transport;
     ScopedPointer<ArrangeWindow> arrangeWindow;
+
+	//Left Side
 	ScopedPointer<LeftSidebar> leftSideBar;
-	ScopedPointer<RightSidebar> rightSideBar;
+
+	//Right Side
+	DirectoryContentsList directoryList;
+	FileTreeComponent fileTree;
+	TimeSliceThread tsThread;
+	//ScopedPointer<RightSidebar> rightSideBar;
+
+	//Status Bar
 	ScopedPointer<StatusBar> statusBar;
     
 

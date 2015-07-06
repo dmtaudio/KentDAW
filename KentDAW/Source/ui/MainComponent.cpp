@@ -11,13 +11,28 @@
 
 //==============================================================================
 MainContentComponent::MainContentComponent()
+	: tsThread("File Tree Test"),
+	directoryList(nullptr, tsThread),
+	fileTree(directoryList)
 {
+	deviceManager.initialise(2, 2, nullptr, true);
+
+	//Menu Bar
     menuBar = new MenuBarComponent(this);
+
+	//Transport
     transport = new TransportComponent();
+
+	//Arrange Window
     arrangeWindow = new ArrangeWindow();
+
+	//Left Side
 	leftSideBar = new LeftSidebar();
-	rightSideBar = new RightSidebar();
+
+	//Status Bar
 	statusBar = new StatusBar();
+
+	setOpaque(true);
 
     setSize (getParentWidth(), getParentHeight());
     {
@@ -25,9 +40,17 @@ MainContentComponent::MainContentComponent()
 		addAndMakeVisible(arrangeWindow);
         //addAndMakeVisible(transport);
 		addAndMakeVisible(leftSideBar);
-		addAndMakeVisible(rightSideBar);
+		addAndMakeVisible(fileTree);
+		//addAndMakeVisible(rightSideBar);
 		addAndMakeVisible(statusBar);
+
+		setOpaque(true);
     }    
+
+
+	directoryList.setDirectory(File::getSpecialLocation(File::userHomeDirectory), true, true);
+	tsThread.startThread(3);
+	fileTree.setColour(FileTreeComponent::backgroundColourId, Colours::lightgrey.withAlpha(0.6f));
 }
 
 MainContentComponent::~MainContentComponent()
@@ -105,7 +128,10 @@ void MainContentComponent::resized()
     menuBar->setBounds(0, 0, getWidth(), 20);
 	leftSideBar->setBounds(0, 20, getParentWidth() / 4, getParentHeight() - 50);
 	arrangeWindow->setBounds(getParentWidth() / 4, 20, getParentWidth() / 2, (getParentHeight()/100)*80);
-	rightSideBar->setBounds((getParentWidth() / 4) * 3 + 1, 20, getParentWidth() / 4, getParentHeight()-50);
+	
+	Rectangle<int> rec((getParentWidth()/4)*3+1,20,getParentWidth()/4, getParentHeight()-50);
+	fileTree.setBounds(rec);
+	
 	statusBar->setBounds(0, (getParentHeight() / 100) * 96, getParentWidth(), 30);
     //transport->setBounds((getParentWidth()/100)*40,0, getWidth(), getHeight());
 	

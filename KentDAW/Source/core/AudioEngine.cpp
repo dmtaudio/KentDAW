@@ -134,4 +134,5 @@ BigInteger AudioEngine::getDeviceChannels(ChannelType type)
             return deviceOutputChannels;
         }
     }
+	return 0;
 }
