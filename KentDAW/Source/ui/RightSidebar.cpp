@@ -16,20 +16,22 @@ RightSidebar::RightSidebar()
 	: tsThread("File Tree Test"),
 	directoryList(nullptr, tsThread),
 	fileTree(directoryList)
-{
-	addAndMakeVisible(fileTree);
+	{
+		//Adds a File Tree Component to the right hand side of the GUI
+	    addAndMakeVisible(fileTree);
 
-	directoryList.setDirectory(File::getSpecialLocation(File::userHomeDirectory), true, true);
-	tsThread.startThread(3);
+	    directoryList.setDirectory(File::getSpecialLocation(File::userHomeDirectory), true, true);
+	    tsThread.startThread(3);
 
-	fileTree.setColour(FileTreeComponent::backgroundColourId, Colours::lightgrey.withAlpha(0.6f));
-//	fileTree.addListener(this);
-
-	setOpaque(true);
+		fileTree.setColour(FileTreeComponent::backgroundColourId, Colours::lightgrey.withAlpha(0.6f));
+    	//fileTree.addListener(this);
+	    setOpaque(true);
 }
 
 RightSidebar::~RightSidebar()
 {
+	//fileTree.removeListener(this);
+	//deleteAllChildren();
 	//fileTree.removeListener(this);
 }
 
@@ -49,5 +51,9 @@ void RightSidebar::resized()
 
 }
 
-
-
+/*
+void selectionChanged() {}
+void fileClicked(const File&, const MouseEvent&) {}
+void fileDoubleClicked(const File&) {}
+void browserRootChanged(const File&) {}
+*/

@@ -12,7 +12,7 @@
 #include "TransportComponent.h"
 #include "ArrangeWindow.h"
 #include "LeftSidebar.h"
-#include "RightSidebar.h"
+//#include "RightSidebar.h"
 #include "StatusBar.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 
@@ -53,12 +53,24 @@ public:
     };
 
 private:
+	//Menu Bar
     ScopedPointer<MenuBarModel> menuModel;
     ScopedPointer<MenuBarComponent> menuBar;
+
+	//Transport
     ScopedPointer<TransportComponent> transport;
     ScopedPointer<ArrangeWindow> arrangeWindow;
+
+	//Left Side
 	ScopedPointer<LeftSidebar> leftSideBar;
-	ScopedPointer<RightSidebar> rightSideBar;
+
+	//Right Side
+	DirectoryContentsList directoryList;
+	FileTreeComponent fileTree;
+	TimeSliceThread tsThread;
+	//ScopedPointer<RightSidebar> rightSideBar;
+
+	//Status Bar
 	ScopedPointer<StatusBar> statusBar;
     
 
