@@ -8,6 +8,9 @@
     <Filter Include="KentDAW\Source">
       <UniqueIdentifier>{5AFC75CE-07DD-2E28-300F-794DC0EFB426}</UniqueIdentifier>
     </Filter>
+    <Filter Include="KentDAW\Source\utils">
+      <UniqueIdentifier>{FF324702-D321-B31F-65B8-2AAA9D79BCBA}</UniqueIdentifier>
+    </Filter>
     <Filter Include="KentDAW\Source\ui">
       <UniqueIdentifier>{C3CA4466-4018-55A8-B157-87301F721487}</UniqueIdentifier>
     </Filter>
@@ -316,7 +319,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ui\BufferDisplay.cpp">
+      <Filter>KentDAW\Source\utils</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ui\RightSidebar.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp">
@@ -1563,7 +1572,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\ui\BufferDisplay.h">
+      <Filter>KentDAW\Source\utils</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ui\StatusBar.h">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ui\RightSidebar.h">
       <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ui\LeftSidebar.h">

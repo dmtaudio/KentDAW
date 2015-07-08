@@ -27,6 +27,8 @@ public:
     
     void setAudioSourcePlayer(AudioSource* source);
     void setProcessorPlayer(AudioProcessor* processor);
+    void unsetAudioSourcePlayer();
+    void unsetProcessorPlayer();
     
     void audioDeviceIOCallback (const float** inputChannelData,
                                 int totalNumInputChannels,
@@ -39,7 +41,6 @@ public:
     void prepareToPlay(double sampleRate, int blockSize);
     
 private:
-    CallbackType callbackType;
     CriticalSection lock;
     AudioSource* source;
     AudioSourcePlayer* sourcePlayer;

@@ -94,8 +94,18 @@
       <Add library="kernel32"/>
       <Add library="comctl32"/>
     </Linker>
+    <Unit filename="../../Source/ui/BufferDisplay.cpp"/>
+    <Unit filename="../../Source/ui/BufferDisplay.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/ui/StatusBar.cpp"/>
     <Unit filename="../../Source/ui/StatusBar.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../Source/ui/RightSidebar.cpp"/>
+    <Unit filename="../../Source/ui/RightSidebar.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
@@ -124,10 +134,7 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../Source/core/AudioEngine.cpp">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
+    <Unit filename="../../Source/core/AudioEngine.cpp"/>
     <Unit filename="../../Source/core/AudioEngine.h">
       <Option compile="0"/>
       <Option link="0"/>
