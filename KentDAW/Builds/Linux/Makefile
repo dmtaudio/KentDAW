@@ -51,6 +51,7 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
+  $(OBJDIR)/WaveDisplay_a7b2730c.o \
   $(OBJDIR)/StatusBar_d572aa4f.o \
   $(OBJDIR)/LeftSidebar_43b7b4a3.o \
   $(OBJDIR)/ArrangeWindow_d578844a.o \
@@ -91,6 +92,11 @@ clean:
 strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
+
+$(OBJDIR)/WaveDisplay_a7b2730c.o: ../../Source/utils/WaveDisplay.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling WaveDisplay.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/StatusBar_d572aa4f.o: ../../Source/ui/StatusBar.cpp
 	-@mkdir -p $(OBJDIR)
