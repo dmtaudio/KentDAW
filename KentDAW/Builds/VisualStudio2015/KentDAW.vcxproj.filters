@@ -319,9 +319,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\utils\WaveDisplay.cpp">
-      <Filter>KentDAW\Source\utils</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
@@ -1575,9 +1572,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\utils\WaveDisplay.h">
-      <Filter>KentDAW\Source\utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h">
       <Filter>KentDAW\Source\utils</Filter>
     </ClInclude>
