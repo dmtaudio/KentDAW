@@ -77,9 +77,9 @@ private:
 	ScopedPointer<LeftSidebar> leftSideBar;
 
 	//Right Side
+    TimeSliceThread tsThread;
 	DirectoryContentsList directoryList;
 	FileTreeComponent fileTree;
-	TimeSliceThread tsThread;
 	//ScopedPointer<RightSidebar> rightSideBar;
 
 	//Status Bar

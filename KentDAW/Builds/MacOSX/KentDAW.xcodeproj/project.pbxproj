@@ -329,6 +329,7 @@
 		514FE26AD98751E7053276F0 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_CallbackMessage.h"; path = "../../../Juce/juce_events/messages/juce_CallbackMessage.h"; sourceTree = "SOURCE_ROOT"; };
 		51CCDD57A4380C0E32D10E93 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "juce_graphics.mm"; path = "../../../Juce/juce_graphics/juce_graphics.mm"; sourceTree = "SOURCE_ROOT"; };
 		5261204807E662978ED9422F = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_Message.h"; path = "../../../Juce/juce_events/messages/juce_Message.h"; sourceTree = "SOURCE_ROOT"; };
+		528F1C0BBF17B96CEF450081 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BufferDisplay.h; path = ../../Source/utils/BufferDisplay.h; sourceTree = "SOURCE_ROOT"; };
 		531183DB17E5EF3B5707A8AC = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_win32_ActiveXComponent.cpp"; path = "../../../Juce/juce_gui_extra/native/juce_win32_ActiveXComponent.cpp"; sourceTree = "SOURCE_ROOT"; };
 		531FEC1FCFD95B605C20ABA8 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_Thread.cpp"; path = "../../../Juce/juce_core/threads/juce_Thread.cpp"; sourceTree = "SOURCE_ROOT"; };
 		53308C23ECFABCE1C61840A4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_FileChooserDialogBox.cpp"; path = "../../../Juce/juce_gui_basics/filebrowser/juce_FileChooserDialogBox.cpp"; sourceTree = "SOURCE_ROOT"; };
@@ -952,6 +953,8 @@
 		FFC03EFF20B2BEDE11DB8B92 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_android_Fonts.cpp"; path = "../../../Juce/juce_graphics/native/juce_android_Fonts.cpp"; sourceTree = "SOURCE_ROOT"; };
 		FFE3F2EF7611C7D9D017680D = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_SplashScreen.cpp"; path = "../../../Juce/juce_gui_extra/misc/juce_SplashScreen.cpp"; sourceTree = "SOURCE_ROOT"; };
 		FFFC525FB9F1C1847E98A485 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_ByteOrder.h"; path = "../../../Juce/juce_core/memory/juce_ByteOrder.h"; sourceTree = "SOURCE_ROOT"; };
+		8C448663822D17F0CF204B09 = {isa = PBXGroup; children = (
+					528F1C0BBF17B96CEF450081, ); name = utils; sourceTree = "<group>"; };
 		462EA92F0ED34AC3794DFDE9 = {isa = PBXGroup; children = (
 					043E91A5CCB98B1E3865BC5E,
 					08D8B355DD92D9521A5B2D7B,
@@ -973,6 +976,7 @@
 					3B982B269E308A47382397F7,
 					2C132DDDD35E53B962A9E19A, ); name = core; sourceTree = "<group>"; };
 		6A68D13B76B120A49861F749 = {isa = PBXGroup; children = (
+					8C448663822D17F0CF204B09,
 					462EA92F0ED34AC3794DFDE9,
 					7787EF567859561F92E8CE33,
 					D3897E991CEFB372A9A009EF, ); name = Source; sourceTree = "<group>"; };
