@@ -51,20 +51,14 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
-  $(OBJDIR)/BufferDisplay_15729af0.o \
   $(OBJDIR)/StatusBar_d572aa4f.o \
-  $(OBJDIR)/RightSidebar_4e68485c.o \
   $(OBJDIR)/LeftSidebar_43b7b4a3.o \
   $(OBJDIR)/ArrangeWindow_d578844a.o \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
-<<<<<<< HEAD
   $(OBJDIR)/SettingsManager_9e3ee3.o \
   $(OBJDIR)/Track_5da0f6a4.o \
-=======
-  $(OBJDIR)/AudioEngine_7532591.o \
->>>>>>> origin/master
   $(OBJDIR)/Main_90ebc5c2.o \
   $(OBJDIR)/juce_audio_basics_1e890073.o \
   $(OBJDIR)/juce_audio_devices_25f60471.o \
@@ -98,19 +92,9 @@ strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
 
-$(OBJDIR)/BufferDisplay_15729af0.o: ../../Source/ui/BufferDisplay.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling BufferDisplay.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
 $(OBJDIR)/StatusBar_d572aa4f.o: ../../Source/ui/StatusBar.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling StatusBar.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
-$(OBJDIR)/RightSidebar_4e68485c.o: ../../Source/ui/RightSidebar.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling RightSidebar.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/LeftSidebar_43b7b4a3.o: ../../Source/ui/LeftSidebar.cpp
@@ -138,7 +122,6 @@ $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	@echo "Compiling TransportComponent.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-<<<<<<< HEAD
 $(OBJDIR)/SettingsManager_9e3ee3.o: ../../Source/core/SettingsManager.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling SettingsManager.cpp"
@@ -147,11 +130,6 @@ $(OBJDIR)/SettingsManager_9e3ee3.o: ../../Source/core/SettingsManager.cpp
 $(OBJDIR)/Track_5da0f6a4.o: ../../Source/core/Track.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling Track.cpp"
-=======
-$(OBJDIR)/AudioEngine_7532591.o: ../../Source/core/AudioEngine.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling AudioEngine.cpp"
->>>>>>> origin/master
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/Main_90ebc5c2.o: ../../Source/Main.cpp
