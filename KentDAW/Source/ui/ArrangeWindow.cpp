@@ -10,7 +10,6 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "ArrangeWindow.h"
-#include "../utils/BufferDisplay.h"
 
 //==============================================================================
 ArrangeWindow::ArrangeWindow()
