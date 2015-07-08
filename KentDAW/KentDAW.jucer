@@ -5,9 +5,17 @@
               jucerVersion="3.1.0">
   <MAINGROUP id="j2y9ol" name="KentDAW">
     <GROUP id="{2B1E57D9-2977-26CD-7BDA-F46EF07CAFDF}" name="Source">
+      <GROUP id="{9141BBFB-81C3-BFD8-954D-5C8A478078A2}" name="utils">
+        <FILE id="AwRNnf" name="BufferDisplay.cpp" compile="1" resource="0"
+              file="Source/ui/BufferDisplay.cpp"/>
+        <FILE id="HfJrfF" name="BufferDisplay.h" compile="0" resource="0" file="Source/ui/BufferDisplay.h"/>
+      </GROUP>
       <GROUP id="{F1590CD7-AAC5-B3CD-0441-65B231D39579}" name="ui">
         <FILE id="jeqFYu" name="StatusBar.cpp" compile="1" resource="0" file="Source/ui/StatusBar.cpp"/>
         <FILE id="GKx6vY" name="StatusBar.h" compile="0" resource="0" file="Source/ui/StatusBar.h"/>
+        <FILE id="zpieJR" name="RightSidebar.cpp" compile="1" resource="0"
+              file="Source/ui/RightSidebar.cpp"/>
+        <FILE id="Qq290E" name="RightSidebar.h" compile="0" resource="0" file="Source/ui/RightSidebar.h"/>
         <FILE id="q5jW0P" name="LeftSidebar.cpp" compile="1" resource="0" file="Source/ui/LeftSidebar.cpp"/>
         <FILE id="mRBNNt" name="LeftSidebar.h" compile="0" resource="0" file="Source/ui/LeftSidebar.h"/>
         <FILE id="rSgCr6" name="ArrangeWindow.cpp" compile="1" resource="0"
@@ -24,6 +32,7 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+<<<<<<< HEAD
         <FILE id="sqZzgX" name="SettingsManager.cpp" compile="1" resource="0"
               file="Source/core/SettingsManager.cpp"/>
         <FILE id="VpVzjc" name="SettingsManager.h" compile="0" resource="0"
@@ -31,6 +40,9 @@
         <FILE id="TBbQmA" name="Track.cpp" compile="1" resource="0" file="Source/core/Track.cpp"/>
         <FILE id="gLJTS7" name="Track.h" compile="0" resource="0" file="Source/core/Track.h"/>
         <FILE id="Fickz3" name="AudioEngine.cpp" compile="0" resource="0" file="Source/core/AudioEngine.cpp"/>
+=======
+        <FILE id="Fickz3" name="AudioEngine.cpp" compile="1" resource="0" file="Source/core/AudioEngine.cpp"/>
+>>>>>>> origin/master
         <FILE id="URPzkU" name="AudioEngine.h" compile="0" resource="0" file="Source/core/AudioEngine.h"/>
       </GROUP>
       <FILE id="eqKNjN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>

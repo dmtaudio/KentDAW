@@ -131,17 +131,23 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ui\BufferDisplay.cpp"/>
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp"/>
+    <ClCompile Include="..\..\Source\ui\RightSidebar.cpp"/>
     <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp"/>
     <ClCompile Include="..\..\Source\ui\ArrangeWindow.cpp"/>
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
+<<<<<<< HEAD
     <ClCompile Include="..\..\Source\core\SettingsManager.cpp"/>
     <ClCompile Include="..\..\Source\core\Track.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioEngine.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+=======
+    <ClCompile Include="..\..\Source\core\AudioEngine.cpp"/>
+>>>>>>> origin/master
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
@@ -1263,7 +1269,9 @@
     <ClCompile Include="..\..\..\Juce\juce_video\juce_video.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\ui\BufferDisplay.h"/>
     <ClInclude Include="..\..\Source\ui\StatusBar.h"/>
+    <ClInclude Include="..\..\Source\ui\RightSidebar.h"/>
     <ClInclude Include="..\..\Source\ui\LeftSidebar.h"/>
     <ClInclude Include="..\..\Source\ui\ArrangeWindow.h"/>
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>

@@ -43,6 +43,18 @@ void AudioCallBack::setProcessorPlayer(AudioProcessor *newProcessor)
     processorSet = true;
 }
 
+void AudioCallBack::unsetAudioSourcePlayer()
+{
+    setAudioSourcePlayer(nullptr);
+    sourceSet = false;
+}
+
+void AudioCallBack::unsetProcessorPlayer()
+{
+    setProcessorPlayer(nullptr);
+    processorSet = false;
+}
+
 
 void AudioCallBack::audioDeviceIOCallback(const float** inputChannelData, int totalNumInputChannels, float** outputChannelData, int totalNumOutputChannels, int numSamples)
 {
@@ -66,10 +78,14 @@ void AudioCallBack::audioDeviceAboutToStart(AudioIODevice* device)
     
     const ScopedLock sl (lock);
     
+    sampleRate = newSampleRate;
+    bufferSize = newBufferSize;
 }
 
 void AudioCallBack::audioDeviceStopped()
 {
+    if(processor != nullptr)
+    const ScopedLock sl (lock);
 
 }
 
