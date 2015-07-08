@@ -31,8 +31,8 @@
               file="Source/core/SettingsManager.cpp"/>
         <FILE id="VpVzjc" name="SettingsManager.h" compile="0" resource="0"
               file="Source/core/SettingsManager.h"/>
-        <FILE id="TBbQmA" name="Track.cpp" compile="1" resource="0" file="Source/core/Track.cpp"/>
-        <FILE id="gLJTS7" name="Track.h" compile="0" resource="0" file="Source/core/Track.h"/>
+        <FILE id="TBbQmA" name="AudioTrack.cpp" compile="1" resource="0" file="Source/core/AudioTrack.cpp"/>
+        <FILE id="gLJTS7" name="AudioTrack.h" compile="0" resource="0" file="Source/core/AudioTrack.h"/>
         <FILE id="Fickz3" name="AudioEngine.cpp" compile="0" resource="0" file="Source/core/AudioEngine.cpp"/>
         <FILE id="URPzkU" name="AudioEngine.h" compile="0" resource="0" file="Source/core/AudioEngine.h"/>
       </GROUP>
