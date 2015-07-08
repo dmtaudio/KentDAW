@@ -46,12 +46,16 @@ private:
     AudioSourcePlayer* sourcePlayer;
     AudioProcessor* processor;
     AudioProcessorPlayer* processorPlayer;
+    HeapBlock<float*> channels;
     double sampleRate;
     int bufferSize;
     AudioSampleBuffer tempBuffer;
     float gain, previousGain;
-    MidiBuffer incomingMidi;
     bool sourceSet, processorSet;
+    int numChannelsIn, numChannelsOut;
+    
+    MidiBuffer incomingMidi;
+    MidiMessageCollector messageCollector;
 };
 
 class AudioEngine {

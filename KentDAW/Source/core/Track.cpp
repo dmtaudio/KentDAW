@@ -9,3 +9,11 @@
 */
 
 #include "Track.h"
+
+class Track : public AudioSource
+{
+public:
+    void prepareToPlay(int expectedSamplePerBlock, double sampleRate);
+    void releaseResources();
+    void getNextAudioBlock(const AudioSourceChannelInfo &bufferToFill);
+};
