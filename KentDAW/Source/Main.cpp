@@ -19,7 +19,6 @@ public:
     //==============================================================================
     DAWApplication() {}
 
-    const String getApplicationName() override       { return ProjectInfo::projectName; }
     const String getApplicationVersion() override    { return ProjectInfo::versionString; }
     bool moreThanOneInstanceAllowed() override       { return true; }
 
@@ -45,6 +44,11 @@ public:
         // request and let the app carry on running, or call quit() to allow the app to close.
         quit();
     }
+
+	const String getApplicationName() override
+	{
+		return "MorDAW";
+	}
 
     void anotherInstanceStarted (const String& commandLine) override
     {

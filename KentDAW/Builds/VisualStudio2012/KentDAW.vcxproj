@@ -137,6 +137,8 @@
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
+    <ClCompile Include="..\..\Source\core\SettingsManager.cpp"/>
+    <ClCompile Include="..\..\Source\core\Track.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioEngine.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -1267,6 +1269,8 @@
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
     <ClInclude Include="..\..\Source\ui\MainComponent.h"/>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h"/>
+    <ClInclude Include="..\..\Source\core\SettingsManager.h"/>
+    <ClInclude Include="..\..\Source\core\Track.h"/>
     <ClInclude Include="..\..\Source\core\AudioEngine.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioSampleBuffer.h"/>

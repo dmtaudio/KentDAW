@@ -24,6 +24,12 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <FILE id="sqZzgX" name="SettingsManager.cpp" compile="1" resource="0"
+              file="Source/core/SettingsManager.cpp"/>
+        <FILE id="VpVzjc" name="SettingsManager.h" compile="0" resource="0"
+              file="Source/core/SettingsManager.h"/>
+        <FILE id="TBbQmA" name="Track.cpp" compile="1" resource="0" file="Source/core/Track.cpp"/>
+        <FILE id="gLJTS7" name="Track.h" compile="0" resource="0" file="Source/core/Track.h"/>
         <FILE id="Fickz3" name="AudioEngine.cpp" compile="0" resource="0" file="Source/core/AudioEngine.cpp"/>
         <FILE id="URPzkU" name="AudioEngine.h" compile="0" resource="0" file="Source/core/AudioEngine.h"/>
       </GROUP>

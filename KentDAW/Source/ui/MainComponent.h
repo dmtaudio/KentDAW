@@ -34,7 +34,7 @@ public:
 
 	/*
 	The audio devices are owned by the application window. A reference of this
-	object can be passed to the object that needs to use it.
+	object can be passed to the audio engine object!
 	*/
 	AudioDeviceManager deviceManager;
 
@@ -48,6 +48,7 @@ public:
     enum FileMenuIDs
     {
         NewProject = 1000, // replace with binary or hex numbers when appropriate
+		ImportAudio = 1005,
         Close = 1001
     };
     
@@ -57,6 +58,11 @@ public:
         Copy = 1003,
         Paste = 1004
     };
+
+	enum ToolMenuIDs
+	{
+		Settings = 1006
+	};
 
 private:
 	//Menu Bar

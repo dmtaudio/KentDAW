@@ -62,6 +62,7 @@ StringArray MainContentComponent::getMenuBarNames()
     StringArray menuItems;
     menuItems.add("File");
     menuItems.add("Edit");
+	menuItems.add("Tools");
     menuItems.add("Transport");
     menuItems.add("Arrange");
     menuItems.add("Window");
@@ -77,11 +78,14 @@ PopupMenu MainContentComponent::getMenuForIndex(int index, const String &name)
     if(name == "File") {
         // Add file menu items
         menu.addItem(NewProject, "New Project");
+		menu.addItem(ImportAudio, "Import Audio File");
         menu.addItem(Close, "Close");
-    } else if(name == "Edit") {
-        menu.addItem(Cut, "Cut");
-        menu.addItem(Copy, "Copy");
-        menu.addItem(Paste, "Paste");
+	} else if (name == "Edit") {
+		menu.addItem(Cut, "Cut");
+		menu.addItem(Copy, "Copy");
+		menu.addItem(Paste, "Paste");
+	} else if (name == "Tools") {
+		menu.addItem(Settings, "Settings");
     } else if(name == "Transport") {
         
     } else if(name == "Arrange") {
@@ -100,6 +104,8 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
     {
         case NewProject:
             break;
+		case ImportAudio:
+			break;
         case Close:
             JUCEApplication::getInstance()->systemRequestedQuit();
             break;
@@ -109,6 +115,23 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
             break;
         case Paste:
             break;
+		case Settings:
+			bool showMidiInputOptions = false;
+			bool showMidiOutputSelector = false;
+			bool showChanelsAsStereoPairs = true;
+			bool hideAdvancedOptions = false;
+			AudioDeviceSelectorComponent settings(deviceManager, 0, 0, 1, 2,
+				showMidiInputOptions,
+				showMidiOutputSelector,
+				showChanelsAsStereoPairs,
+				hideAdvancedOptions);
+			settings.setSize(500, 400);
+			DialogWindow::showModalDialog(String("Audio Settings"),
+				&settings,
+				TopLevelWindow::getTopLevelWindow(0),
+				Colours::white,
+				true);
+			break;
     }
 }
 
