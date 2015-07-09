@@ -58,7 +58,7 @@ OBJECTS := \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
   $(OBJDIR)/SettingsManager_9e3ee3.o \
-  $(OBJDIR)/Track_5da0f6a4.o \
+  $(OBJDIR)/AudioTrack_62b571a6.o \
   $(OBJDIR)/Main_90ebc5c2.o \
   $(OBJDIR)/juce_audio_basics_1e890073.o \
   $(OBJDIR)/juce_audio_devices_25f60471.o \
@@ -127,9 +127,9 @@ $(OBJDIR)/SettingsManager_9e3ee3.o: ../../Source/core/SettingsManager.cpp
 	@echo "Compiling SettingsManager.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/Track_5da0f6a4.o: ../../Source/core/Track.cpp
+$(OBJDIR)/AudioTrack_62b571a6.o: ../../Source/core/AudioTrack.cpp
 	-@mkdir -p $(OBJDIR)
-	@echo "Compiling Track.cpp"
+	@echo "Compiling AudioTrack.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/Main_90ebc5c2.o: ../../Source/Main.cpp

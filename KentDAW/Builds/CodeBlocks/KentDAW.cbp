@@ -133,8 +133,8 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../Source/core/Track.cpp"/>
-    <Unit filename="../../Source/core/Track.h">
+    <Unit filename="../../Source/core/AudioTrack.cpp"/>
+    <Unit filename="../../Source/core/AudioTrack.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
