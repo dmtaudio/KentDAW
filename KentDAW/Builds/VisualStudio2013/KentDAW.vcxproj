@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp"/>
     <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp"/>
     <ClCompile Include="..\..\Source\ui\ArrangeWindow.cpp"/>
@@ -147,6 +148,8 @@
     <ClCompile Include="..\..\Source\core\AudioEngine.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
 =======
+=======
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp" />
     <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp" />
     <ClCompile Include="..\..\Source\ui\ArrangeWindow.cpp" />
@@ -160,6 +163,9 @@
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\Source\Main.cpp" />
+<<<<<<< HEAD
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
     <ClCompile Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
@@ -1283,6 +1289,7 @@
   <ItemGroup>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h"/>
 >>>>>>> origin/master
@@ -1755,6 +1762,8 @@
     <ClInclude Include="..\..\JuceLibraryCode\AppConfig.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h"/>
 =======
+=======
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
     <ClInclude Include="..\..\Source\ui\StatusBar.h" />
     <ClInclude Include="..\..\Source\ui\LeftSidebar.h" />
     <ClInclude Include="..\..\Source\ui\ArrangeWindow.h" />
@@ -2218,6 +2227,9 @@
     <ClInclude Include="..\..\..\Juce\juce_video\juce_video.h" />
     <ClInclude Include="..\..\JuceLibraryCode\AppConfig.h" />
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h" />
+<<<<<<< HEAD
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
   </ItemGroup>
   <ItemGroup>
@@ -2241,4 +2253,8 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
+<<<<<<< HEAD
 </Project>
+=======
+</Project>
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
