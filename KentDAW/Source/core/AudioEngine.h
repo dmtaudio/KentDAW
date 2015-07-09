@@ -52,7 +52,7 @@ private:
     AudioSampleBuffer tempBuffer;
     float gain, previousGain;
     bool sourceSet, processorSet;
-    int numChannelsIn, numChannelsOut;
+    BigInteger numChannelsIn, numChannelsOut;
     
     MidiBuffer incomingMidi;
     MidiMessageCollector messageCollector;

@@ -78,7 +78,7 @@ void AudioCallBack::audioDeviceAboutToStart(AudioIODevice* device)
 {
     if(processorSet)
     {
-   /*     const double newSampleRate = device->getCurrentSampleRate();
+        const double newSampleRate = device->getCurrentSampleRate();
         const int newBufferSize = device->getCurrentSampleRate();
         const BigInteger numInputChannels = device->getActiveInputChannels();
         const BigInteger numOutputChannels = device->getActiveOutputChannels();
@@ -91,23 +91,21 @@ void AudioCallBack::audioDeviceAboutToStart(AudioIODevice* device)
         numChannelsOut = numOutputChannels;
         
         messageCollector.reset(sampleRate);
-        channels.calloc((size_t) jmax(numInputChannels, numOutputChannels) + 2);
+       // channels.calloc((size_t) jmax(numInputChannels, numOutputChannels) + 2);
         
         if(processor != nullptr)
         {
-            if(isPrepared)
+            if(true) // isPrepared
                 processor->releaseResources();
             
             AudioProcessor* const oldProcessor = processor;
-            setProcessor(nullptr);
-            setProcessor(oldProcessor);
+            //setProcessor(nullptr);
+            //setProcessor(oldProcessor);
         }
     }
     else if(sourceSet)
     {
         sampleRate = device->getCurrentSampleRate();
-        bufferSize = device-);
-        */
     }
 }
 
