@@ -10,152 +10,199 @@
 
 #include "AudioEngine.h"
 
-static ScopedPointer<AudioDeviceManager> sharedAudioDeviceManager;
+static AudioDeviceManager* sharedAudioDeviceManager;
 
-AudioCallBack::AudioCallBack()
-: source(nullptr), sourcePlayer(nullptr),
-  processor(nullptr), processorPlayer(nullptr),
-  sampleRate(0), bufferSize(0),
-  numChannelsIn(0), numChannelsOut(0),
-  tempBuffer(), messageCollector()
+AudioEngine::AudioEngine()
+: sourcePlayer()
 {
+    getSharedAudioDeviceManager();
 }
 
-// set player source to null
-AudioCallBack::~AudioCallBack()
-{
-    setAudioSourcePlayer(nullptr);
-    setProcessorPlayer(nullptr);
-}
-
-// set the audio source for the player - takes an AudioSource.
-void AudioCallBack::setAudioSourcePlayer(AudioSource *newSource)
-{
-    sourcePlayer->setSource(newSource);
-    sourceSet = true;
-    processorSet = false;
-}
-
-// set the audio processor for the player - takes an AudioProcessor
-void AudioCallBack::setProcessorPlayer(AudioProcessor *newProcessor)
-{
-    processorPlayer->setProcessor(newProcessor);
-    processorSet = true;
-    sourceSet = false;
-}
-
-void AudioCallBack::reset()
-{
-    source = nullptr;
-    sourcePlayer = nullptr;
-    processor = nullptr;
-    processorPlayer = nullptr;
-    sampleRate = 0;
-    bufferSize = 0;
-    numChannelsIn = 0;
-    numChannelsOut = 0;
-}
-
-
-void AudioCallBack::audioDeviceIOCallback(const float** inputChannelData, int totalNumInputChannels, float** outputChannelData, int totalNumOutputChannels, int numSamples)
-{
-    jassert(sampleRate > 0 && bufferSize > 0);
-    
-    const ScopedLock sl(lock);
-
-    incomingMidi.clear();
-    messageCollector.removeNextBlockOfMessages(incomingMidi, numSamples);
-
-    
-    if(sourceSet)
-    sourcePlayer->audioDeviceIOCallback(inputChannelData, totalNumInputChannels, outputChannelData, totalNumInputChannels, numSamples);
-
-    if(processorSet)
-    processorPlayer->audioDeviceIOCallback(inputChannelData, totalNumInputChannels, outputChannelData, totalNumOutputChannels, numSamples);
-}
-
-void AudioCallBack::audioDeviceAboutToStart(AudioIODevice* device)
-{
-    const double newSampleRate = device->getCurrentSampleRate();
-    const int newBufferSize = device->getCurrentSampleRate();
-    const int numInputChannels = device->getActiveInputChannels().countNumberOfSetBits();
-    const int numOutputChannels = device->getActiveOutputChannels().countNumberOfSetBits();
-    
-    const ScopedLock sl (lock);
-    
-    if(processorSet)
-    {
-        sampleRate = newSampleRate;
-        bufferSize = newBufferSize;
-        numChannelsIn = numInputChannels;
-        numChannelsOut = numOutputChannels;
-        
-        processorPlayer->audioDeviceAboutToStart(device);
-        messageCollector.reset(sampleRate);
-        
-        if(processor != nullptr)
-        {
-            processor->releaseResources();
-            
-            AudioProcessor* const oldProcessor = processor;
-            setProcessorPlayer(nullptr);
-            setProcessorPlayer(oldProcessor);
-        }
-    }
-    else if(sourceSet)
-    {
-        sampleRate = newSampleRate;
-        bufferSize = newBufferSize;
-        numChannelsIn = numInputChannels;
-        numChannelsOut = numOutputChannels;
-        
-        sourcePlayer->prepareToPlay(sampleRate, bufferSize);
-        sourcePlayer->audioDeviceAboutToStart(device);
-    }
-}
-
-void AudioCallBack::audioDeviceStopped()
-{
-    const ScopedLock sl(lock);
-    
-    if((processor != nullptr) || source != nullptr)
-    {
-        processor->releaseResources();
-        processorPlayer->audioDeviceStopped();
-        source->releaseResources();
-        sourcePlayer->audioDeviceStopped();
-    }
-    sampleRate = 0.0;
-    bufferSize = 0;
-    isPrepared = false;
-}
-    
 AudioEngine::~AudioEngine()
 {
+}
+
+void AudioEngine::handleIncomingMidiMessage(MidiInput* input, const MidiMessage& message)
+{
+    messageCollector.addMessageToQueue(message);
+}
+
+void AudioEngine::resetMidiMessages()
+{
+    messageCollector.reset(getSampleRate());
 }
 
 AudioDeviceManager& AudioEngine::getSharedAudioDeviceManager()
 {
     if(sharedAudioDeviceManager == nullptr)
     {
+        int numInputChannels = 2;
+        int numOutputChannels = 2;
         sharedAudioDeviceManager = new AudioDeviceManager();
-        sharedAudioDeviceManager->initialise(2, 2, 0, true, String::empty, 0);
+        sharedAudioDeviceManager->initialise(numInputChannels, numOutputChannels, 0, true);
     }
     return *sharedAudioDeviceManager;
 }
 
-double AudioEngine::getDeviceSampleRate()
+StringArray AudioEngine::getAvailableDeviceNames()
+{
+    AudioIODeviceType* audioIODeviceType = 0;
+    audioIODeviceType->scanForDevices();
+    StringArray deviceNames;
+    deviceNames = audioIODeviceType->getDeviceNames(false);
+    
+    return deviceNames;
+}
+
+String AudioEngine::setAudioDevice(const String &deviceName)
+{
+    StringArray availableDeviceNames = getAvailableDeviceNames();
+    
+    String deviceString;
+    
+    if(availableDeviceNames.contains(deviceName))
+    {
+        // do some stuff
+    }
+    return deviceString;
+}
+
+String AudioEngine::getCurrentDeviceName()
+{
+    AudioIODevice* currentDevice = sharedAudioDeviceManager->getCurrentAudioDevice();
+    return currentDevice->getName();
+}
+
+StringArray AudioEngine::getInputChannelNames()
+{
+    AudioIODevice* currentDevice = sharedAudioDeviceManager->getCurrentAudioDevice();
+    return currentDevice->getInputChannelNames();
+}
+
+StringArray AudioEngine::getOutputChannelNames()
+{
+    AudioIODevice* currentDevice = sharedAudioDeviceManager->getCurrentAudioDevice();
+    return currentDevice->getOutputChannelNames();
+}
+
+Array<double> AudioEngine::getAvailableSampleRates()
+{
+    Array<double> availableSampleRates;
+    AudioIODevice* currentDevice = sharedAudioDeviceManager->getCurrentAudioDevice();
+    availableSampleRates = currentDevice->getAvailableSampleRates();
+    return availableSampleRates;
+}
+
+void AudioEngine::setSampleRate(const double &sampleRate)
+{
+    Array<double> availableSampleRates = getAvailableSampleRates();
+    
+    if(availableSampleRates.contains(sampleRate))
+    {
+        bool isPlaying = transportSource.isPlaying();
+        int currentPosition;
+        if(isPlaying)
+        {
+            currentPosition = getCurrentPosition();
+            stop();
+        }
+    }
+}
+
+double AudioEngine::getSampleRate()
 {
     if(sharedAudioDeviceManager != nullptr)
     {
         deviceSampleRate = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentSampleRate();
         return deviceSampleRate;
     }
+    return 0.0f;
+}
+
+bool AudioEngine::setMasterMute(bool enable)
+{
+    if(enable)
+    {
+        transportSource.setGain(0.0);
+        return enable;
+    }
     else
     {
-        // no samplerate, set to 0.0
-        return 0.0;
+        transportSource.setGain(masterGain);
+        return false;
     }
+}
+
+void AudioEngine::setMasterGain(const float newGain)
+{
+    masterGain = newGain;
+    transportSource.setGain(newGain);
+}
+
+bool AudioEngine::enableMeasurement(int channel, bool enable)
+{
+    
+}
+
+bool AudioEngine::resetMeasurementPeakValue(int channel)
+{
+    
+}
+
+float AudioEngine::getMeasuredDecayValue(int channel)
+{
+    
+}
+
+float AudioEngine::getMeasuredPeakValue(int channel)
+{
+    
+}
+
+bool AudioEngine::startPrelisten(const String &absFilenamePath, const int &startPos, const int &endPos)
+{
+    
+}
+
+void AudioEngine::stopPrelisten()
+{
+    
+}
+
+void AudioEngine::start()
+{
+    
+}
+
+void AudioEngine::stop()
+{
+    if(transportSource.isPlaying())
+    {
+        transportSource.stop();
+    }
+    else
+    {
+        transportSource.setPosition(0);
+    }
+}
+
+int AudioEngine::getCurrentPosition()
+{
+    AudioIODevice* audioDevice = sharedAudioDeviceManager->getCurrentAudioDevice();
+    double deviceSampleRate = audioDevice->getCurrentSampleRate();
+    return (int) transportSource.getCurrentPosition() * deviceSampleRate;
+}
+
+void AudioEngine::setPosition(int positionInSamples)
+{
+    double deviceSampleRate = getSampleRate();
+    double positionInSeconds = (double)positionInSamples / deviceSampleRate;
+    transportSource.setPosition(positionInSeconds);
+}
+
+double AudioEngine::getProcessorUsage()
+{
+    return sharedAudioDeviceManager->getCpuUsage();
 }
 
 int AudioEngine::getBitDepth()
@@ -166,9 +213,7 @@ int AudioEngine::getBitDepth()
         return deviceBitDepth;
     }
     else
-    {
         return 0;
-    }
 }
 
 BigInteger AudioEngine::getDeviceChannels(ChannelType type)
