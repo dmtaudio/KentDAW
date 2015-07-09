@@ -28,6 +28,7 @@
 		6ED159EF499CDA556D61A7BB = {isa = PBXBuildFile; fileRef = 9E2288A3732FB50A3324C13B; };
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		C9D6437AE23A89D1710BB171 = {isa = PBXBuildFile; fileRef = 6B7FEF979F1D50CC8964FBE6; };
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
@@ -45,6 +46,12 @@
 		3B6EE53C49B9B61529D1591B = {isa = PBXBuildFile; fileRef = 3B982B269E308A47382397F7; };
 		A1846B00332AB91EA9299C15 = {isa = PBXBuildFile; fileRef = 2C132DDDD35E53B962A9E19A; };
 =======
+		2A6412D2E26249AA0C78C1B0 = {isa = PBXBuildFile; fileRef = 03BA9E43965A3B13E062B931; };
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
+		6630579E4C0F7C32647D2BD4 = {isa = PBXBuildFile; fileRef = 4F928CDF5A9080927D270A16; };
+		21054DEC5A8EED3DF9BA523B = {isa = PBXBuildFile; fileRef = 5E3A2E2E6E4749169CDADC45; };
+		0C766F21CF065EC2201F0104 = {isa = PBXBuildFile; fileRef = D98BD602E8C04E5E6BCEA554; };
 		2A6412D2E26249AA0C78C1B0 = {isa = PBXBuildFile; fileRef = 03BA9E43965A3B13E062B931; };
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 		3558E7E4876C923C24D308F9 = {isa = PBXBuildFile; fileRef = D3897E991CEFB372A9A009EF; };
@@ -852,12 +859,15 @@
 		E3E06B63B60A72775B21FE56 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_RelativePoint.cpp"; path = "../../../Juce/juce_gui_basics/positioning/juce_RelativePoint.cpp"; sourceTree = "SOURCE_ROOT"; };
 		E425113E9BC34B8A9CFD12F5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "juce_LocalisedStrings.h"; path = "../../../Juce/juce_core/text/juce_LocalisedStrings.h"; sourceTree = "SOURCE_ROOT"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		E440AF307A4A928C485B82E6 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_ModalComponentManager.cpp"; path = "../../../Juce/juce_gui_basics/components/juce_ModalComponentManager.cpp"; sourceTree = "SOURCE_ROOT"; };
 <<<<<<< HEAD
 		E4C335A97775B0EFA47B0774 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_AudioCDReader.cpp"; path = "../../../Juce/juce_audio_devices/audio_cd/juce_AudioCDReader.cpp"; sourceTree = "SOURCE_ROOT"; };
 =======
 		E552A21A41B6CEFFFC0BF296 = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "juce_FloatVectorOperations.cpp"; path = "../../../Juce/juce_audio_basics/buffers/juce_FloatVectorOperations.cpp"; sourceTree = "SOURCE_ROOT"; };
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 		EB8ABC5C86EA39F0DF14DE2A = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
@@ -1002,10 +1012,15 @@
 					A2C42CE86B3B0F355FCBD5A2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 					4F928CDF5A9080927D270A16,
 					6B7FEF979F1D50CC8964FBE6,
 >>>>>>> origin/master
+=======
+					03BA9E43965A3B13E062B931,
+					8133594925BBA1E0461695F8,
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 =======
 					03BA9E43965A3B13E062B931,
 					8133594925BBA1E0461695F8,
@@ -2206,6 +2221,7 @@
 					6ED159EF499CDA556D61A7BB,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					C9D6437AE23A89D1710BB171,
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
@@ -2223,6 +2239,12 @@
 					3B6EE53C49B9B61529D1591B,
 					A1846B00332AB91EA9299C15,
 =======
+					2A6412D2E26249AA0C78C1B0,
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
+					6630579E4C0F7C32647D2BD4,
+					21054DEC5A8EED3DF9BA523B,
+					0C766F21CF065EC2201F0104,
 					2A6412D2E26249AA0C78C1B0,
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 					3558E7E4876C923C24D308F9,

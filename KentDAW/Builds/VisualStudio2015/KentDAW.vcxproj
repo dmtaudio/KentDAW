@@ -141,6 +141,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <ClCompile Include="..\..\Source\core\AudioTrack.cpp"/>
 >>>>>>> origin/master
@@ -148,11 +149,16 @@
 =======
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
     <ClCompile Include="..\..\Source\core\Track.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioEngine.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
@@ -1288,9 +1294,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <ClInclude Include="..\..\Source\core\AudioTrack.h"/>
 >>>>>>> origin/master
+=======
+    <ClInclude Include="..\..\Source\core\Track.h"/>
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 =======
     <ClInclude Include="..\..\Source\core\Track.h"/>
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine

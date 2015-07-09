@@ -357,6 +357,12 @@
     <ClCompile Include="..\..\Source\core\Track.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
+<<<<<<< HEAD
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
+    <ClCompile Include="..\..\Source\core\Track.cpp">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClCompile>
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
     <ClCompile Include="..\..\Source\core\AudioEngine.cpp">
       <Filter>KentDAW\Source\core</Filter>
@@ -1618,6 +1624,12 @@
     </ClInclude>
 <<<<<<< HEAD
 >>>>>>> origin/master
+=======
+    <ClInclude Include="..\..\Source\core\Track.h">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClInclude>
+<<<<<<< HEAD
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 =======
     <ClInclude Include="..\..\Source\core\Track.h">
       <Filter>KentDAW\Source\core</Filter>

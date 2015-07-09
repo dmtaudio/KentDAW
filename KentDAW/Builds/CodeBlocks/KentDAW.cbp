@@ -130,12 +130,18 @@
     </Unit>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Unit filename="../../Source/core/AudioTrack.h"/>
 =======
+=======
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
     <Unit filename="../../Source/core/AudioTrack.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+<<<<<<< HEAD
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
     <Unit filename="../../Source/core/AudioTrack.cpp"/>
     <Unit filename="../../Source/core/FileManager.cpp"/>
@@ -143,6 +149,7 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+<<<<<<< HEAD
     <Unit filename="../../Source/core/SettingsManager.cpp"/>
 <<<<<<< HEAD
     <Unit filename="../../Source/core/SettingsManager.h"/>
@@ -155,6 +162,9 @@
     <Unit filename="../../Source/core/AudioEngine.cpp"/>
     <Unit filename="../../Source/core/AudioEngine.h"/>
 =======
+=======
+    <Unit filename="../../Source/core/SettingsManager.cpp"/>
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
     <Unit filename="../../Source/core/SettingsManager.h">
       <Option compile="0"/>
       <Option link="0"/>
@@ -172,6 +182,9 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+<<<<<<< HEAD
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
     <Unit filename="../../Source/Main.cpp"/>
     <Unit filename="../../../Juce/juce_audio_basics/buffers/juce_AudioDataConverters.cpp">

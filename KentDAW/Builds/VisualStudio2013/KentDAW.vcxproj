@@ -131,6 +131,7 @@
   <ItemGroup>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp"/>
     <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp"/>
     <ClCompile Include="..\..\Source\ui\ArrangeWindow.cpp"/>
@@ -150,6 +151,8 @@
 =======
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp" />
     <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp" />
     <ClCompile Include="..\..\Source\ui\ArrangeWindow.cpp" />
@@ -164,6 +167,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Main.cpp" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
@@ -1290,6 +1296,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h"/>
 >>>>>>> origin/master
@@ -1764,6 +1771,8 @@
 =======
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
     <ClInclude Include="..\..\Source\ui\StatusBar.h" />
     <ClInclude Include="..\..\Source\ui\LeftSidebar.h" />
     <ClInclude Include="..\..\Source\ui\ArrangeWindow.h" />
@@ -2228,6 +2237,9 @@
     <ClInclude Include="..\..\JuceLibraryCode\AppConfig.h" />
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
@@ -2254,7 +2266,11 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 </Project>
+=======
+</Project>
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 =======
 </Project>
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine

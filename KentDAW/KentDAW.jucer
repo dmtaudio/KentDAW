@@ -30,12 +30,19 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <FILE id="aPh2pr" name="AudioTrack.h" compile="1" resource="0" file="Source/core/AudioTrack.h"/>
         <FILE id="nAb3OB" name="AudioTrack.cpp" compile="1" resource="0" file="Source/core/AudioTrack.cpp"/>
         <FILE id="BJkIRz" name="FileManager.cpp" compile="1" resource="0" file="Source/core/FileManager.cpp"/>
         <FILE id="GuJK1X" name="FileManager.h" compile="1" resource="0" file="Source/core/FileManager.h"/>
 =======
 >>>>>>> origin/master
+=======
+        <FILE id="aPh2pr" name="AudioTrack.h" compile="0" resource="0" file="Source/core/AudioTrack.h"/>
+        <FILE id="nAb3OB" name="AudioTrack.cpp" compile="1" resource="0" file="Source/core/AudioTrack.cpp"/>
+        <FILE id="BJkIRz" name="FileManager.cpp" compile="1" resource="0" file="Source/core/FileManager.cpp"/>
+        <FILE id="GuJK1X" name="FileManager.h" compile="0" resource="0" file="Source/core/FileManager.h"/>
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 =======
         <FILE id="aPh2pr" name="AudioTrack.h" compile="0" resource="0" file="Source/core/AudioTrack.h"/>
         <FILE id="nAb3OB" name="AudioTrack.cpp" compile="1" resource="0" file="Source/core/AudioTrack.cpp"/>
@@ -55,6 +62,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <FILE id="TBbQmA" name="AudioTrack.cpp" compile="1" resource="0" file="Source/core/AudioTrack.cpp"/>
         <FILE id="gLJTS7" name="AudioTrack.h" compile="1" resource="0" file="Source/core/AudioTrack.h"/>
@@ -64,11 +72,16 @@
 =======
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
         <FILE id="TBbQmA" name="Track.cpp" compile="1" resource="0" file="Source/core/Track.cpp"/>
         <FILE id="gLJTS7" name="Track.h" compile="0" resource="0" file="Source/core/Track.h"/>
         <FILE id="Fickz3" name="AudioEngine.cpp" compile="0" resource="0" file="Source/core/AudioEngine.cpp"/>
         <FILE id="URPzkU" name="AudioEngine.h" compile="0" resource="0" file="Source/core/AudioEngine.h"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
