@@ -36,10 +36,10 @@ public:
     
 private:
     CriticalSection lock;
-    AudioSource* source;
-    AudioSourcePlayer* sourcePlayer;
-    AudioProcessor* processor;
-    AudioProcessorPlayer* processorPlayer;
+    ScopedPointer<AudioSource> source;
+    ScopedPointer<AudioSourcePlayer> sourcePlayer;
+    ScopedPointer<AudioProcessor> processor;
+    ScopedPointer<AudioProcessorPlayer> processorPlayer;
     HeapBlock<float*> channels;
     double sampleRate;
     int bufferSize;
@@ -102,6 +102,7 @@ protected:
     void setCallbackSampleRate(double sampleRate);
     
 private:
+    
     AudioCallBack* audioCallback;
     //AudioFormatManager& formatManager;
     double deviceSampleRate;
