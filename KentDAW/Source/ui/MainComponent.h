@@ -12,7 +12,6 @@
 #include "TransportComponent.h"
 #include "ArrangeWindow.h"
 #include "LeftSidebar.h"
-//#include "RightSidebar.h"
 #include "StatusBar.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 

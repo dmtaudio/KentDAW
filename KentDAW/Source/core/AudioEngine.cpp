@@ -16,8 +16,8 @@ AudioCallBack::AudioCallBack()
 : source(nullptr), sourcePlayer(nullptr),
   processor(nullptr), processorPlayer(nullptr),
   sampleRate(0), bufferSize(0),
-  numInputChannels(0), numOutputChannels(0),
-  ,tempBuffer(), messageCollector()
+  numChannelsIn(0), numChannelsOut(0),
+  tempBuffer(), messageCollector()
 {
 }
 
@@ -44,16 +44,16 @@ void AudioCallBack::setProcessorPlayer(AudioProcessor *newProcessor)
     sourceSet = false;
 }
 
-void AudioCallBack::unsetAudioSourcePlayer()
+void AudioCallBack::reset()
 {
-    setAudioSourcePlayer(nullptr);
-    sourceSet = false;
-}
-
-void AudioCallBack::unsetProcessorPlayer()
-{
-    setProcessorPlayer(nullptr);
-    processorSet = false;
+    source = nullptr;
+    sourcePlayer = nullptr;
+    processor = nullptr;
+    processorPlayer = nullptr;
+    sampleRate = 0;
+    bufferSize = 0;
+    numChannelsIn = 0;
+    numChannelsOut = 0;
 }
 
 
@@ -76,38 +76,41 @@ void AudioCallBack::audioDeviceIOCallback(const float** inputChannelData, int to
 
 void AudioCallBack::audioDeviceAboutToStart(AudioIODevice* device)
 {
+    const double newSampleRate = device->getCurrentSampleRate();
+    const int newBufferSize = device->getCurrentSampleRate();
+    const int numInputChannels = device->getActiveInputChannels().countNumberOfSetBits();
+    const int numOutputChannels = device->getActiveOutputChannels().countNumberOfSetBits();
+    
+    const ScopedLock sl (lock);
+    
     if(processorSet)
     {
-        const double newSampleRate = device->getCurrentSampleRate();
-        const int newBufferSize = device->getCurrentSampleRate();
-        const BigInteger numInputChannels = device->getActiveInputChannels();
-        const BigInteger numOutputChannels = device->getActiveOutputChannels();
-        
-        const ScopedLock sl (lock);
-        
         sampleRate = newSampleRate;
         bufferSize = newBufferSize;
         numChannelsIn = numInputChannels;
         numChannelsOut = numOutputChannels;
         
+        processorPlayer->audioDeviceAboutToStart(device);
         messageCollector.reset(sampleRate);
-        channels.calloc((size_t) jmax(numInputChannels, numOutputChannels) + 2);
         
         if(processor != nullptr)
         {
-            if(isPrepared)
-                processor->releaseResources();
+            processor->releaseResources();
             
             AudioProcessor* const oldProcessor = processor;
-            setProcessor(nullptr);
-            setProcessor(oldProcessor);
+            setProcessorPlayer(nullptr);
+            setProcessorPlayer(oldProcessor);
         }
     }
     else if(sourceSet)
     {
-        sampleRate = device->getCurrentSampleRate();
-        bufferSize = device->);
+        sampleRate = newSampleRate;
+        bufferSize = newBufferSize;
+        numChannelsIn = numInputChannels;
+        numChannelsOut = numOutputChannels;
         
+        sourcePlayer->prepareToPlay(sampleRate, bufferSize);
+        sourcePlayer->audioDeviceAboutToStart(device);
     }
 }
 
@@ -115,28 +118,20 @@ void AudioCallBack::audioDeviceStopped()
 {
     const ScopedLock sl(lock);
     
-    if((processor != nullptr && isPrepared) || source != nullptr)
+    if((processor != nullptr) || source != nullptr)
     {
         processor->releaseResources();
+        processorPlayer->audioDeviceStopped();
         source->releaseResources();
+        sourcePlayer->audioDeviceStopped();
     }
     sampleRate = 0.0;
     bufferSize = 0;
     isPrepared = false;
-    tempBuffer.setSize(1, 1);
-
-void AudioCallBack::handleIncomingMidiMessage(MidiInput* input, const MidiMessage& message)
-{
-    messageCollector.addMessageToQueue(message);
 }
-
-AudioEngine::AudioEngine()
-{
-}
-
+    
 AudioEngine::~AudioEngine()
 {
-    sharedAudioDeviceManager = nullptr;
 }
 
 AudioDeviceManager& AudioEngine::getSharedAudioDeviceManager()
