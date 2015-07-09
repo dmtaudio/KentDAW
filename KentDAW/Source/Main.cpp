@@ -79,6 +79,7 @@ public:
             setFullScreen(true);
             setTitleBarHeight(0);
             setVisible (true);
+			setResizable(true,true);
         }
 
         void closeButtonPressed() override

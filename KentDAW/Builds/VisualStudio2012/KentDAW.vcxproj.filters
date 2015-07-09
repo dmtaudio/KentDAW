@@ -8,9 +8,6 @@
     <Filter Include="KentDAW\Source">
       <UniqueIdentifier>{5AFC75CE-07DD-2E28-300F-794DC0EFB426}</UniqueIdentifier>
     </Filter>
-    <Filter Include="KentDAW\Source\utils">
-      <UniqueIdentifier>{FF324702-D321-B31F-65B8-2AAA9D79BCBA}</UniqueIdentifier>
-    </Filter>
     <Filter Include="KentDAW\Source\ui">
       <UniqueIdentifier>{C3CA4466-4018-55A8-B157-87301F721487}</UniqueIdentifier>
     </Filter>
@@ -337,10 +334,16 @@
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\core\AudioTrack.cpp">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\core\FileManager.cpp">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\core\SettingsManager.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\core\AudioTrack.cpp">
+    <ClCompile Include="..\..\Source\core\Track.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\core\AudioEngine.cpp">
@@ -1572,9 +1575,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\utils\BufferDisplay.h">
-      <Filter>KentDAW\Source\utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\ui\StatusBar.h">
       <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
@@ -1593,10 +1593,16 @@
     <ClInclude Include="..\..\Source\ui\TransportComponent.h">
       <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\core\AudioTrack.h">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\core\FileManager.h">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\core\SettingsManager.h">
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\core\AudioTrack.h">
+    <ClInclude Include="..\..\Source\core\Track.h">
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\AudioEngine.h">
