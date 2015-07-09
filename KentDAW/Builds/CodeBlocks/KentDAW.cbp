@@ -128,6 +128,11 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/core/FileManager.cpp"/>
+    <Unit filename="../../Source/core/FileManager.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/core/SettingsManager.cpp"/>
     <Unit filename="../../Source/core/SettingsManager.h"/>
     <Unit filename="../../Source/core/AudioTrack.cpp"/>

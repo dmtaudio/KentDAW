@@ -27,6 +27,8 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <FILE id="g9SJB1" name="FileManager.cpp" compile="1" resource="0" file="Source/core/FileManager.cpp"/>
+        <FILE id="kHigiq" name="FileManager.h" compile="0" resource="0" file="Source/core/FileManager.h"/>
         <FILE id="sqZzgX" name="SettingsManager.cpp" compile="1" resource="0"
               file="Source/core/SettingsManager.cpp"/>
         <FILE id="VpVzjc" name="SettingsManager.h" compile="1" resource="0"

@@ -137,6 +137,7 @@
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
+    <ClCompile Include="..\..\Source\core\FileManager.cpp"/>
     <ClCompile Include="..\..\Source\core\SettingsManager.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioTrack.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioEngine.cpp"/>
@@ -1268,6 +1269,7 @@
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
     <ClInclude Include="..\..\Source\ui\MainComponent.h"/>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h"/>
+    <ClInclude Include="..\..\Source\core\FileManager.h"/>
     <ClInclude Include="..\..\Source\core\SettingsManager.h"/>
     <ClInclude Include="..\..\Source\core\AudioTrack.h"/>
     <ClInclude Include="..\..\Source\core\AudioEngine.h"/>
