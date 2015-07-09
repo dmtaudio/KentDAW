@@ -128,69 +128,12 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <Unit filename="../../Source/core/AudioTrack.h"/>
-=======
-=======
->>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
-    <Unit filename="../../Source/core/AudioTrack.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-<<<<<<< HEAD
->>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
-=======
->>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
-    <Unit filename="../../Source/core/AudioTrack.cpp"/>
-    <Unit filename="../../Source/core/FileManager.cpp"/>
-    <Unit filename="../../Source/core/FileManager.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-<<<<<<< HEAD
-    <Unit filename="../../Source/core/SettingsManager.cpp"/>
-<<<<<<< HEAD
-    <Unit filename="../../Source/core/SettingsManager.h"/>
-=======
-=======
->>>>>>> origin/master
     <Unit filename="../../Source/core/SettingsManager.cpp"/>
     <Unit filename="../../Source/core/SettingsManager.h"/>
     <Unit filename="../../Source/core/AudioTrack.cpp"/>
     <Unit filename="../../Source/core/AudioTrack.h"/>
     <Unit filename="../../Source/core/AudioEngine.cpp"/>
     <Unit filename="../../Source/core/AudioEngine.h"/>
-<<<<<<< HEAD
-=======
-=======
-    <Unit filename="../../Source/core/SettingsManager.cpp"/>
->>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
-    <Unit filename="../../Source/core/SettingsManager.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-    <Unit filename="../../Source/core/Track.cpp"/>
-    <Unit filename="../../Source/core/Track.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-    <Unit filename="../../Source/core/AudioEngine.cpp">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-    <Unit filename="../../Source/core/AudioEngine.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-<<<<<<< HEAD
->>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
-=======
->>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
-=======
->>>>>>> origin/master
     <Unit filename="../../Source/Main.cpp"/>
     <Unit filename="../../../Juce/juce_audio_basics/buffers/juce_AudioDataConverters.cpp">
       <Option compile="0"/>
