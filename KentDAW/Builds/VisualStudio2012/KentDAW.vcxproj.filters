@@ -343,9 +343,6 @@
     <ClCompile Include="..\..\Source\core\SettingsManager.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\core\Track.cpp">
-      <Filter>KentDAW\Source\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\core\AudioEngine.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
@@ -1600,9 +1597,6 @@
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\SettingsManager.h">
-      <Filter>KentDAW\Source\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\core\Track.h">
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\AudioEngine.h">
