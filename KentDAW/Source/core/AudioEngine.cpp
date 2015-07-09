@@ -17,7 +17,8 @@ AudioCallBack::AudioCallBack()
   processor(nullptr), processorPlayer(nullptr),
   sampleRate(0), bufferSize(0),
   numChannelsIn(0), numChannelsOut(0),
-  tempBuffer(), messageCollector()
+  tempBuffer(), messageCollector(),
+  isPrepared(false)
 {
 }
 
@@ -76,31 +77,31 @@ void AudioCallBack::audioDeviceIOCallback(const float** inputChannelData, int to
 
 void AudioCallBack::audioDeviceAboutToStart(AudioIODevice* device)
 {
+    const double newSampleRate = device->getCurrentSampleRate();
+    const int newBufferSize = device->getCurrentSampleRate();
+    const int numInputChannels = device->getActiveInputChannels().countNumberOfSetBits();
+    const int numOutputChannels = device->getActiveOutputChannels().countNumberOfSetBits();
+    
+    const ScopedLock sl (lock);
+    
     if(processorSet)
     {
-        const double newSampleRate = device->getCurrentSampleRate();
-        const int newBufferSize = device->getCurrentSampleRate();
-        const BigInteger numInputChannels = device->getActiveInputChannels();
-        const BigInteger numOutputChannels = device->getActiveOutputChannels();
-        
-        const ScopedLock sl (lock);
-        
         sampleRate = newSampleRate;
         bufferSize = newBufferSize;
         numChannelsIn = numInputChannels;
         numChannelsOut = numOutputChannels;
         
         messageCollector.reset(sampleRate);
-       // channels.calloc((size_t) jmax(numInputChannels, numOutputChannels) + 2);
+        channels.calloc((size_t) jmax(numInputChannels, numOutputChannels) + 2);
         
         if(processor != nullptr)
         {
-            if(true) // isPrepared
+            if(isPrepared) // isPrepared
                 processor->releaseResources();
             
             AudioProcessor* const oldProcessor = processor;
-            //setProcessor(nullptr);
-            //setProcessor(oldProcessor);
+            setProcessorPlayer(nullptr);
+            setProcessorPlayer(oldProcessor);
         }
     }
     else if(sourceSet)

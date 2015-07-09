@@ -19,12 +19,6 @@ public:
     
     virtual ~AudioCallBack();
     
-    enum CallbackType
-    {
-        Source,
-        Processor
-    };
-    
     void setAudioSourcePlayer(AudioSource* source);
     void setProcessorPlayer(AudioProcessor* processor);
     void unsetAudioSourcePlayer();
@@ -51,7 +45,7 @@ private:
     int bufferSize;
     AudioSampleBuffer tempBuffer;
     float gain, previousGain;
-    bool sourceSet, processorSet;
+    bool sourceSet, processorSet, isPrepared;
     BigInteger numChannelsIn, numChannelsOut;
     
     MidiBuffer incomingMidi;
@@ -60,12 +54,13 @@ private:
 
 class AudioEngine {
 public:
+    
+    static AudioDeviceManager& getSharedAudioDeviceManager();
+    
     AudioEngine();
     AudioEngine(const size_t numberOfChannels);
     
     virtual ~AudioEngine();
-    
-    static AudioDeviceManager& getSharedAudioDeviceManager();
     
     // Global audio manipulation
     bool setMasterMute(bool enable);
