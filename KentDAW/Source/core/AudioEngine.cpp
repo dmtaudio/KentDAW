@@ -16,8 +16,8 @@ AudioCallBack::AudioCallBack()
 : source(nullptr), sourcePlayer(nullptr),
   processor(nullptr), processorPlayer(nullptr),
   sampleRate(0), bufferSize(0),
-  numInputChannels(0), numOutputChannels(0),
-  ,tempBuffer(), messageCollector()
+  numChannelsIn(0), numChannelsOut(0),
+  tempBuffer(), messageCollector()
 {
 }
 
@@ -78,7 +78,7 @@ void AudioCallBack::audioDeviceAboutToStart(AudioIODevice* device)
 {
     if(processorSet)
     {
-        const double newSampleRate = device->getCurrentSampleRate();
+   /*     const double newSampleRate = device->getCurrentSampleRate();
         const int newBufferSize = device->getCurrentSampleRate();
         const BigInteger numInputChannels = device->getActiveInputChannels();
         const BigInteger numOutputChannels = device->getActiveOutputChannels();
@@ -106,8 +106,8 @@ void AudioCallBack::audioDeviceAboutToStart(AudioIODevice* device)
     else if(sourceSet)
     {
         sampleRate = device->getCurrentSampleRate();
-        bufferSize = device->);
-        
+        bufferSize = device-);
+        */
     }
 }
 
@@ -115,28 +115,19 @@ void AudioCallBack::audioDeviceStopped()
 {
     const ScopedLock sl(lock);
     
-    if((processor != nullptr && isPrepared) || source != nullptr)
+    if((processor != nullptr) || source != nullptr)
     {
         processor->releaseResources();
         source->releaseResources();
     }
     sampleRate = 0.0;
     bufferSize = 0;
-    isPrepared = false;
+    //isPrepared = false;
     tempBuffer.setSize(1, 1);
-
-void AudioCallBack::handleIncomingMidiMessage(MidiInput* input, const MidiMessage& message)
-{
-    messageCollector.addMessageToQueue(message);
 }
-
-AudioEngine::AudioEngine()
-{
-}
-
+    
 AudioEngine::~AudioEngine()
 {
-    sharedAudioDeviceManager = nullptr;
 }
 
 AudioDeviceManager& AudioEngine::getSharedAudioDeviceManager()
