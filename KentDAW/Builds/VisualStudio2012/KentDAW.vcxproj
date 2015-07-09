@@ -137,9 +137,9 @@
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
+    <ClCompile Include="..\..\Source\core\RegionMixer.cpp"/>
     <ClCompile Include="..\..\Source\core\FileManager.cpp"/>
     <ClCompile Include="..\..\Source\core\SettingsManager.cpp"/>
-    <ClCompile Include="..\..\Source\core\AudioTrack.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioEngine.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.cpp">
@@ -1269,9 +1269,10 @@
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
     <ClInclude Include="..\..\Source\ui\MainComponent.h"/>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h"/>
+    <ClInclude Include="..\..\Source\core\Region.h"/>
+    <ClInclude Include="..\..\Source\core\RegionMixer.h"/>
     <ClInclude Include="..\..\Source\core\FileManager.h"/>
     <ClInclude Include="..\..\Source\core\SettingsManager.h"/>
-    <ClInclude Include="..\..\Source\core\AudioTrack.h"/>
     <ClInclude Include="..\..\Source\core\AudioEngine.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioSampleBuffer.h"/>

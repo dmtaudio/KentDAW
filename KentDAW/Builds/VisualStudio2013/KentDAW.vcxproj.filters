@@ -337,13 +337,13 @@
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\core\RegionMixer.cpp">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\core\FileManager.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\core\SettingsManager.cpp">
-      <Filter>KentDAW\Source\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\core\AudioTrack.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\core\AudioEngine.cpp">
@@ -1596,13 +1596,16 @@
     <ClInclude Include="..\..\Source\ui\TransportComponent.h">
       <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\core\Region.h">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\core\RegionMixer.h">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\core\FileManager.h">
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\SettingsManager.h">
-      <Filter>KentDAW\Source\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\core\AudioTrack.h">
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\AudioEngine.h">
