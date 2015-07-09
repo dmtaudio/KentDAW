@@ -94,6 +94,10 @@
       <Add library="kernel32"/>
       <Add library="comctl32"/>
     </Linker>
+    <Unit filename="../../Source/utils/BufferDisplay.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/ui/StatusBar.cpp"/>
     <Unit filename="../../Source/ui/StatusBar.h">
       <Option compile="0"/>
@@ -124,12 +128,19 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+<<<<<<< HEAD
     <Unit filename="../../Source/core/AudioTrack.h"/>
     <Unit filename="../../Source/core/AudioTrack.cpp"/>
     <Unit filename="../../Source/core/FileManager.cpp"/>
     <Unit filename="../../Source/core/FileManager.h"/>
     <Unit filename="../../Source/core/SettingsManager.cpp"/>
     <Unit filename="../../Source/core/SettingsManager.h"/>
+=======
+    <Unit filename="../../Source/core/SettingsManager.cpp"/>
+    <Unit filename="../../Source/core/SettingsManager.h"/>
+    <Unit filename="../../Source/core/AudioTrack.cpp"/>
+    <Unit filename="../../Source/core/AudioTrack.h"/>
+>>>>>>> origin/master
     <Unit filename="../../Source/core/AudioEngine.cpp"/>
     <Unit filename="../../Source/core/AudioEngine.h"/>
     <Unit filename="../../Source/Main.cpp"/>

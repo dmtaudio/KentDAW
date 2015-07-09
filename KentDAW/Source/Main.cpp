@@ -28,6 +28,7 @@ public:
     {
         // This method is where you should put your application's initialisation code..
 
+        AudioEngine::getSharedAudioDeviceManager();
         mainWindow = new MainWindow (getApplicationName());
     }
 
@@ -36,6 +37,7 @@ public:
         // Add your application's shutdown code here..
 
         mainWindow = nullptr; // (deletes our window)
+        AudioEngine::
     }
 
     //==============================================================================
