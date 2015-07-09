@@ -21,8 +21,8 @@ public:
     
     void setAudioSourcePlayer(AudioSource* source);
     void setProcessorPlayer(AudioProcessor* processor);
-    void unsetAudioSourcePlayer();
-    void unsetProcessorPlayer();
+    void reset();
+    void prepareToPlay();
     
     void audioDeviceIOCallback (const float** inputChannelData,
                                 int totalNumInputChannels,

@@ -17,8 +17,7 @@ AudioCallBack::AudioCallBack()
   processor(nullptr), processorPlayer(nullptr),
   sampleRate(0), bufferSize(0),
   numChannelsIn(0), numChannelsOut(0),
-  tempBuffer(), messageCollector(),
-  isPrepared(false)
+  tempBuffer(), messageCollector()
 {
 }
 
@@ -45,16 +44,16 @@ void AudioCallBack::setProcessorPlayer(AudioProcessor *newProcessor)
     sourceSet = false;
 }
 
-void AudioCallBack::unsetAudioSourcePlayer()
+void AudioCallBack::reset()
 {
-    setAudioSourcePlayer(nullptr);
-    sourceSet = false;
-}
-
-void AudioCallBack::unsetProcessorPlayer()
-{
-    setProcessorPlayer(nullptr);
-    processorSet = false;
+    source = nullptr;
+    sourcePlayer = nullptr;
+    processor = nullptr;
+    processorPlayer = nullptr;
+    sampleRate = 0;
+    bufferSize = 0;
+    numChannelsIn = 0;
+    numChannelsOut = 0;
 }
 
 
@@ -91,13 +90,12 @@ void AudioCallBack::audioDeviceAboutToStart(AudioIODevice* device)
         numChannelsIn = numInputChannels;
         numChannelsOut = numOutputChannels;
         
+        processorPlayer->audioDeviceAboutToStart(device);
         messageCollector.reset(sampleRate);
-        channels.calloc((size_t) jmax(numInputChannels, numOutputChannels) + 2);
         
         if(processor != nullptr)
         {
-            if(isPrepared) // isPrepared
-                processor->releaseResources();
+            processor->releaseResources();
             
             AudioProcessor* const oldProcessor = processor;
             setProcessorPlayer(nullptr);
@@ -106,7 +104,13 @@ void AudioCallBack::audioDeviceAboutToStart(AudioIODevice* device)
     }
     else if(sourceSet)
     {
-        sampleRate = device->getCurrentSampleRate();
+        sampleRate = newSampleRate;
+        bufferSize = newBufferSize;
+        numChannelsIn = numInputChannels;
+        numChannelsOut = numOutputChannels;
+        
+        sourcePlayer->prepareToPlay(sampleRate, bufferSize);
+        sourcePlayer->audioDeviceAboutToStart(device);
     }
 }
 
@@ -117,12 +121,13 @@ void AudioCallBack::audioDeviceStopped()
     if((processor != nullptr) || source != nullptr)
     {
         processor->releaseResources();
+        processorPlayer->audioDeviceStopped();
         source->releaseResources();
+        sourcePlayer->audioDeviceStopped();
     }
     sampleRate = 0.0;
     bufferSize = 0;
-    //isPrepared = false;
-    tempBuffer.setSize(1, 1);
+    isPrepared = false;
 }
     
 AudioEngine::~AudioEngine()
