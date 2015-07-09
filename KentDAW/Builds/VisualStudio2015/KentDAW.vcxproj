@@ -142,10 +142,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
-    <ClCompile Include="..\..\Source\core\AudioTrack.cpp"/>
+=======
 >>>>>>> origin/master
+    <ClCompile Include="..\..\Source\core\AudioTrack.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioEngine.cpp"/>
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
@@ -162,6 +165,8 @@
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
 =======
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
+>>>>>>> origin/master
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
@@ -1295,6 +1300,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <ClInclude Include="..\..\Source\core\AudioTrack.h"/>
 >>>>>>> origin/master
@@ -1307,6 +1313,9 @@
 =======
     <ClInclude Include="..\..\Source\core\Track.h"/>
 >>>>>>> parent of 59a07fa... Re-Enabled Dans Audio Engine
+=======
+    <ClInclude Include="..\..\Source\core\AudioTrack.h"/>
+>>>>>>> origin/master
     <ClInclude Include="..\..\Source\core\AudioEngine.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\buffers\juce_AudioSampleBuffer.h"/>
