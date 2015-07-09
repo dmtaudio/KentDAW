@@ -57,10 +57,9 @@ OBJECTS := \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
-  $(OBJDIR)/AudioTrack_62b571a6.o \
-  $(OBJDIR)/FileManager_917915ea.o \
   $(OBJDIR)/SettingsManager_9e3ee3.o \
-  $(OBJDIR)/Track_5da0f6a4.o \
+  $(OBJDIR)/AudioTrack_62b571a6.o \
+  $(OBJDIR)/AudioEngine_7532591.o \
   $(OBJDIR)/Main_90ebc5c2.o \
   $(OBJDIR)/juce_audio_basics_1e890073.o \
   $(OBJDIR)/juce_audio_devices_25f60471.o \
@@ -124,24 +123,19 @@ $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	@echo "Compiling TransportComponent.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/AudioTrack_62b571a6.o: ../../Source/core/AudioTrack.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling AudioTrack.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
-$(OBJDIR)/FileManager_917915ea.o: ../../Source/core/FileManager.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling FileManager.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
 $(OBJDIR)/SettingsManager_9e3ee3.o: ../../Source/core/SettingsManager.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling SettingsManager.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/Track_5da0f6a4.o: ../../Source/core/Track.cpp
+$(OBJDIR)/AudioTrack_62b571a6.o: ../../Source/core/AudioTrack.cpp
 	-@mkdir -p $(OBJDIR)
-	@echo "Compiling Track.cpp"
+	@echo "Compiling AudioTrack.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/AudioEngine_7532591.o: ../../Source/core/AudioEngine.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling AudioEngine.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/Main_90ebc5c2.o: ../../Source/Main.cpp
