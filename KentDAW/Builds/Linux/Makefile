@@ -57,6 +57,7 @@ OBJECTS := \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
+  $(OBJDIR)/AudioTrack_62b571a6.o \
   $(OBJDIR)/FileManager_917915ea.o \
   $(OBJDIR)/SettingsManager_9e3ee3.o \
   $(OBJDIR)/Track_5da0f6a4.o \
@@ -121,6 +122,11 @@ $(OBJDIR)/MainComponent_4eca1cd2.o: ../../Source/ui/MainComponent.cpp
 $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling TransportComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/AudioTrack_62b571a6.o: ../../Source/core/AudioTrack.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling AudioTrack.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/FileManager_917915ea.o: ../../Source/core/FileManager.cpp

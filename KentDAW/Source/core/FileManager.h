@@ -17,7 +17,6 @@ class FileManager
 {
 public:
 	static FileManager& getInstance();
-
 	bool canHandleFile(String path);
 
 protected:
