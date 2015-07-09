@@ -60,7 +60,7 @@ OBJECTS := \
   $(OBJDIR)/AudioTrack_62b571a6.o \
   $(OBJDIR)/FileManager_917915ea.o \
   $(OBJDIR)/SettingsManager_9e3ee3.o \
-  $(OBJDIR)/AudioEngine_7532591.o \
+  $(OBJDIR)/Track_5da0f6a4.o \
   $(OBJDIR)/Main_90ebc5c2.o \
   $(OBJDIR)/juce_audio_basics_1e890073.o \
   $(OBJDIR)/juce_audio_devices_25f60471.o \
@@ -139,9 +139,9 @@ $(OBJDIR)/SettingsManager_9e3ee3.o: ../../Source/core/SettingsManager.cpp
 	@echo "Compiling SettingsManager.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/AudioEngine_7532591.o: ../../Source/core/AudioEngine.cpp
+$(OBJDIR)/Track_5da0f6a4.o: ../../Source/core/Track.cpp
 	-@mkdir -p $(OBJDIR)
-	@echo "Compiling AudioEngine.cpp"
+	@echo "Compiling Track.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/Main_90ebc5c2.o: ../../Source/Main.cpp
