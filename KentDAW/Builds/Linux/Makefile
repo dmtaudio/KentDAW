@@ -58,7 +58,6 @@ OBJECTS := \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
   $(OBJDIR)/RegionMixer_8a1de2ce.o \
-  $(OBJDIR)/FileManager_917915ea.o \
   $(OBJDIR)/SettingsManager_9e3ee3.o \
   $(OBJDIR)/AudioEngine_7532591.o \
   $(OBJDIR)/Main_90ebc5c2.o \
@@ -127,11 +126,6 @@ $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 $(OBJDIR)/RegionMixer_8a1de2ce.o: ../../Source/core/RegionMixer.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling RegionMixer.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
-$(OBJDIR)/FileManager_917915ea.o: ../../Source/core/FileManager.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling FileManager.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/SettingsManager_9e3ee3.o: ../../Source/core/SettingsManager.cpp

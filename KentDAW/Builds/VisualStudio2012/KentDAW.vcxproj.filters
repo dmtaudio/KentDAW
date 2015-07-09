@@ -340,9 +340,6 @@
     <ClCompile Include="..\..\Source\core\RegionMixer.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\core\FileManager.cpp">
-      <Filter>KentDAW\Source\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\core\SettingsManager.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
@@ -1600,9 +1597,6 @@
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\RegionMixer.h">
-      <Filter>KentDAW\Source\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\core\FileManager.h">
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\SettingsManager.h">
