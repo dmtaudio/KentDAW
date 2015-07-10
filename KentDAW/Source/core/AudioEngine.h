@@ -24,6 +24,9 @@ public:
     
     static AudioDeviceManager& getSharedAudioDeviceManager();
     
+    void setDeviceCallback();
+    void setDeviceCallback(AudioIODeviceCallback* callback);
+    
     // Device information
     StringArray getAvailableDeviceNames();
     String setAudioDevice(const String& deviceName);
@@ -75,7 +78,6 @@ private:
     unsigned int regionIndex;
     MidiBuffer incomingMidi;
     MidiMessageCollector messageCollector;
-//	AudioMixer mixer;
     
     double masterGain;
     double deviceSampleRate;

@@ -16,6 +16,7 @@ AudioEngine::AudioEngine()
 : sourcePlayer()
 {
     getSharedAudioDeviceManager();
+    setDeviceCallback();
 }
 
 AudioEngine::~AudioEngine()
@@ -42,6 +43,16 @@ AudioDeviceManager& AudioEngine::getSharedAudioDeviceManager()
         sharedAudioDeviceManager->initialise(numInputChannels, numOutputChannels, 0, true);
     }
     return *sharedAudioDeviceManager;
+}
+
+void AudioEngine::setDeviceCallback()
+{
+    sharedAudioDeviceManager->addAudioCallback(sourcePlayer);
+}
+
+void AudioEngine::setDeviceCallback(AudioIODeviceCallback* callback)
+{
+    sharedAudioDeviceManager->addAudioCallback(callback);
 }
 
 StringArray AudioEngine::getAvailableDeviceNames()

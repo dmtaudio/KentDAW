@@ -7,6 +7,7 @@
 */
 
 #include "MainComponent.h"
+#include "AudioEngine.h"
 
 
 //==============================================================================
@@ -120,7 +121,7 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
 			bool showMidiOutputSelector = false;
 			bool showChanelsAsStereoPairs = true;
 			bool hideAdvancedOptions = false;
-			AudioDeviceSelectorComponent settings(deviceManager, 0, 0, 1, 2,
+            AudioDeviceSelectorComponent settings(AudioEngine::getSharedAudioDeviceManager(), 0, 0, 1, 2,
 				showMidiInputOptions,
 				showMidiOutputSelector,
 				showChanelsAsStereoPairs,
