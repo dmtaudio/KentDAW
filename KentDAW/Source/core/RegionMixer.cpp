@@ -51,6 +51,12 @@ bool AudioRegionMixer::addRegion(const int& regionID,
 		delete audioFormatReader;
 		return false;
 	}
+	else if (startPosition >= endPosition
+		|| startPosition < regionBeginPosition
+		|| endPosition - regionBeginPosition > audioFormatReader->lengthInSamples)
+	{
+		return false;
+	}
 	else
 	{
 		Region* audioRegionToAdd = new Region();
@@ -58,6 +64,9 @@ bool AudioRegionMixer::addRegion(const int& regionID,
 		audioRegionToAdd->startPostion = startPosition;
 		audioRegionToAdd->endPosition = endPosition;
 		audioRegionToAdd->regionBeginPosition = regionBeginPosition;
+		PositionableAudioSource *positionableAudioSource = new PositionableAudioSource();
+
+		audioRegionToAdd->;
 
 		regions.add(audioRegionToAdd);
 
@@ -84,7 +93,10 @@ bool AudioRegionMixer::modifyRegion(const int& regionID,
 
 		if (newStartPosition >= newEndPosition
 			|| newStartPosition < newRegionBeginPosition
-			|| newEndPosition - newRegionBeginPosition
+			|| newEndPosition - newRegionBeginPosition)
+		{
+
+		}
 			
 	}
 }

@@ -11,7 +11,6 @@
 #ifndef REGION_H_INCLUDED
 #define REGION_H_INCLUDED
 
-#include "Region.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 
 struct Region
@@ -37,6 +36,8 @@ struct Region
 	in samples.
 	*/
 	int regionBeginPosition;
+
+	PositionableAudioSource* positionableAudioSource;
 };
 
 class AudioRegionMixer : PositionableAudioSource
