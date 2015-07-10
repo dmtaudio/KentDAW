@@ -8,8 +8,8 @@
   ==============================================================================
 */
 
-#ifndef TRACK_H_INCLUDED
-#define TRACK_H_INCLUDED
+#ifndef AUDIO_TRACK_H_INCLUDED
+#define AUDIO_TRACK_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
@@ -22,4 +22,4 @@ public:
 };
 
 
-#endif  // TRACK_H_INCLUDED
+#endif  // AUDIO_TRACK_H_INCLUDED
