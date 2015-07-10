@@ -38,7 +38,7 @@ void AudioTrack::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill) {
 		if (region->getStartTime() >= _currentPosition && region->getEndTime() <= _currentPosition) {
 			region->getNextAudioBlock(bufferToFill);
 
-			_currentPosition += 1;
+			break;
 		}
 	}
 
