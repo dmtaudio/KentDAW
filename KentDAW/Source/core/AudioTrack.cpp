@@ -10,7 +10,7 @@
 
 #include "AudioTrack.h"
 
-AudioTrack::AudioTrack() {
+AudioTrack::AudioTrack() : _samples(0), _sampleRate(0), _currentPosition(0), _totalLength(0) {
 
 }
 
@@ -21,9 +21,16 @@ AudioTrack::~AudioTrack() {
 void AudioTrack::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
 	_samples = samplesPerBlockExpected;
 	_sampleRate = sampleRate;
+
+	for (auto region : regions) {
+		region->prepareToPlay(samplesPerBlockExpected, sampleRate);
+	}
 }
 
 void AudioTrack::releaseResources() {
+	for (auto region : regions) {
+		region->releaseResources();
+	}
 }
 
 void AudioTrack::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill) {
