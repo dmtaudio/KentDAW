@@ -138,13 +138,11 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../Source/core/MasterTrack.cpp"/>
-    <Unit filename="../../Source/core/MasterTrack.h">
+    <Unit filename="../../Source/core/MasterTrack.cpp">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../Source/core/RegionMixer.cpp"/>
-    <Unit filename="../../Source/core/RegionMixer.h">
+    <Unit filename="../../Source/core/MasterTrack.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
@@ -153,15 +151,24 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../Source/core/AudioMixer.cpp"/>
+    <Unit filename="../../Source/core/AudioMixer.cpp">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/core/AudioMixer.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
     <Unit filename="../../Source/core/SettingsManager.cpp"/>
-    <Unit filename="../../Source/core/SettingsManager.h"/>
+    <Unit filename="../../Source/core/SettingsManager.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/core/AudioEngine.cpp"/>
-    <Unit filename="../../Source/core/AudioEngine.h"/>
+    <Unit filename="../../Source/core/AudioEngine.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/Main.cpp"/>
     <Unit filename="../../../Juce/juce_audio_basics/buffers/juce_AudioDataConverters.cpp">
       <Option compile="0"/>

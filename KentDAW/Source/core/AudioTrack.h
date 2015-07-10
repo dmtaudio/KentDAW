@@ -35,10 +35,10 @@ public:
 	*/
 	bool add(const AudioRegion& region);
 	void remove(const AudioRegion& region);
-	void move(const AudioRegion& region, int64 newStartTime) const;
+	bool move(AudioRegion& region, int64 newStartTime) const;
 
 private:
-	std::list<AudioRegion *> regions;
+	std::list<const AudioRegion *> regions;
 };
 
 

@@ -59,10 +59,7 @@ OBJECTS := \
   $(OBJDIR)/TransportComponent_90926750.o \
   $(OBJDIR)/SampleAudioRegion_9d0c3739.o \
   $(OBJDIR)/AudioRegion_3ad9a943.o \
-  $(OBJDIR)/MasterTrack_b4a8cf62.o \
-  $(OBJDIR)/RegionMixer_8a1de2ce.o \
   $(OBJDIR)/AudioTrack_62b571a6.o \
-  $(OBJDIR)/AudioMixer_72677d64.o \
   $(OBJDIR)/SettingsManager_9e3ee3.o \
   $(OBJDIR)/AudioEngine_7532591.o \
   $(OBJDIR)/Main_90ebc5c2.o \
@@ -138,24 +135,9 @@ $(OBJDIR)/AudioRegion_3ad9a943.o: ../../Source/core/AudioRegion.cpp
 	@echo "Compiling AudioRegion.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/MasterTrack_b4a8cf62.o: ../../Source/core/MasterTrack.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling MasterTrack.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
-$(OBJDIR)/RegionMixer_8a1de2ce.o: ../../Source/core/RegionMixer.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling RegionMixer.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
 $(OBJDIR)/AudioTrack_62b571a6.o: ../../Source/core/AudioTrack.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling AudioTrack.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
-$(OBJDIR)/AudioMixer_72677d64.o: ../../Source/core/AudioMixer.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling AudioMixer.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/SettingsManager_9e3ee3.o: ../../Source/core/SettingsManager.cpp

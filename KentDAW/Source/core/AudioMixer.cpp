@@ -64,9 +64,9 @@ bool AudioMixer::addRegion(const int& regionID,
 		audioRegionToAdd->startPostion = startPosition;
 		audioRegionToAdd->endPosition = endPosition;
 		audioRegionToAdd->regionBeginPosition = regionBeginPosition;
-		PositionableAudioSource *positionableAudioSource = new PositionableAudioSource();
-
-		audioRegionToAdd->;
+//		PositionableAudioSource *positionableAudioSource = new PositionableAudioSource();
+//
+//		audioRegionToAdd->;
 
 		regions.add(audioRegionToAdd);
 
@@ -84,19 +84,20 @@ bool AudioMixer::modifyRegion(const int& regionID,
 	const int& newEndPosition,
 	const int& newRegionBeginPosition)
 {
-	int index;
-	bool foundTheRegion = findRegion(regionID, index);
-
-	if (foundTheRegion)
-	{
-		Region* audioRegionToModify = (Region*)regions[index];
-
-		if (newStartPosition >= newEndPosition
-			|| newStartPosition < newRegionBeginPosition
-			|| newEndPosition - newRegionBeginPosition)
-		{
-
-		}
-			
-	}
+//	int index;
+//	bool foundTheRegion = findRegion(regionID, index);
+//
+//	if (foundTheRegion)
+//	{
+//		Region* audioRegionToModify = (Region*)regions[index];
+//
+//		if (newStartPosition >= newEndPosition
+//			|| newStartPosition < newRegionBeginPosition
+//			|| newEndPosition - newRegionBeginPosition)
+//		{
+//
+//		}
+//			
+//	}
+	return false;
 }

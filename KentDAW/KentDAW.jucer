@@ -33,20 +33,18 @@
               file="Source/core/SampleAudioRegion.h"/>
         <FILE id="EqUQWQ" name="AudioRegion.cpp" compile="1" resource="0" file="Source/core/AudioRegion.cpp"/>
         <FILE id="BcGn2m" name="AudioRegion.h" compile="0" resource="0" file="Source/core/AudioRegion.h"/>
-        <FILE id="jp0vrU" name="MasterTrack.cpp" compile="1" resource="0" file="Source/core/MasterTrack.cpp"/>
+        <FILE id="jp0vrU" name="MasterTrack.cpp" compile="0" resource="0" file="Source/core/MasterTrack.cpp"/>
         <FILE id="AeMd2x" name="MasterTrack.h" compile="0" resource="0" file="Source/core/MasterTrack.h"/>
-        <FILE id="Yecfpo" name="RegionMixer.cpp" compile="1" resource="0" file="Source/core/RegionMixer.cpp"/>
-        <FILE id="GpqgC9" name="RegionMixer.h" compile="0" resource="0" file="Source/core/RegionMixer.h"/>
         <FILE id="cvG1uW" name="AudioTrack.cpp" compile="1" resource="0" file="Source/core/AudioTrack.cpp"/>
         <FILE id="ytbGVS" name="AudioTrack.h" compile="0" resource="0" file="Source/core/AudioTrack.h"/>
-        <FILE id="oZvhDE" name="AudioMixer.cpp" compile="1" resource="0" file="Source/core/AudioMixer.cpp"/>
+        <FILE id="oZvhDE" name="AudioMixer.cpp" compile="0" resource="0" file="Source/core/AudioMixer.cpp"/>
         <FILE id="iroEHv" name="AudioMixer.h" compile="0" resource="0" file="Source/core/AudioMixer.h"/>
         <FILE id="sqZzgX" name="SettingsManager.cpp" compile="1" resource="0"
               file="Source/core/SettingsManager.cpp"/>
-        <FILE id="VpVzjc" name="SettingsManager.h" compile="1" resource="0"
+        <FILE id="VpVzjc" name="SettingsManager.h" compile="0" resource="0"
               file="Source/core/SettingsManager.h"/>
         <FILE id="Fickz3" name="AudioEngine.cpp" compile="1" resource="0" file="Source/core/AudioEngine.cpp"/>
-        <FILE id="URPzkU" name="AudioEngine.h" compile="1" resource="0" file="Source/core/AudioEngine.h"/>
+        <FILE id="URPzkU" name="AudioEngine.h" compile="0" resource="0" file="Source/core/AudioEngine.h"/>
       </GROUP>
       <FILE id="eqKNjN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
     </GROUP>

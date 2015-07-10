@@ -43,11 +43,31 @@ bool AudioTrack::isLooping() const {
 }
 
 bool AudioTrack::add(const AudioRegion& region) {
+	for (auto existingRegion : regions) {
+		if (existingRegion->overlaps(region)) {
+			return false;
+		}
+	}
+
+	regions.push_back(&region);
+
 	return true;
 }
 
 void AudioTrack::remove(const AudioRegion& region) {
+	regions.remove(&region);
 }
 
-void AudioTrack::move(const AudioRegion& region, int64 newStartTime) const {
+bool AudioTrack::move(AudioRegion& region, int64 newStartTime) const {
+	auto newEndTime = newStartTime + region.getLength();
+
+	for (auto existingRegion : regions) {
+		if (&region != existingRegion && existingRegion->overlaps(newStartTime, newEndTime)) {
+			return false;
+		}
+	}
+
+	region.moveTo(newStartTime, newEndTime);
+
+	return true;
 }
