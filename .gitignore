@@ -28,3 +28,6 @@ KentDAW/Builds/*/*.user
 *~*
 /.project
 **/.idea
+
+# Mac
+**/.DS_Store

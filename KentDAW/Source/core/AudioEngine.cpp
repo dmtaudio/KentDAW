@@ -141,32 +141,31 @@ void AudioEngine::setMasterGain(const float newGain)
 
 bool AudioEngine::enableMeasurement(int channel, bool enable)
 {
-    
+    return false;
 }
 
 bool AudioEngine::resetMeasurementPeakValue(int channel)
 {
-    
+    return false;
 }
 
 float AudioEngine::getMeasuredDecayValue(int channel)
 {
-    
+    return 0.0f;
 }
 
 float AudioEngine::getMeasuredPeakValue(int channel)
 {
-    
+    return 0.0f;
 }
 
 bool AudioEngine::startPrelisten(const String &absFilenamePath, const int &startPos, const int &endPos)
 {
-    
+    return false;
 }
 
 void AudioEngine::stopPrelisten()
 {
-    
 }
 
 void AudioEngine::start()

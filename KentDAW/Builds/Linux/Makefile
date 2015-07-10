@@ -57,9 +57,14 @@ OBJECTS := \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
+<<<<<<< HEAD
   $(OBJDIR)/MasterTrack_b4a8cf62.o \
   $(OBJDIR)/RegionMixer_8a1de2ce.o \
   $(OBJDIR)/RoutingAudioSource_4eb0867c.o \
+=======
+  $(OBJDIR)/AudioTrack_62b571a6.o \
+  $(OBJDIR)/AudioMixer_72677d64.o \
+>>>>>>> origin/master
   $(OBJDIR)/SettingsManager_9e3ee3.o \
   $(OBJDIR)/AudioEngine_7532591.o \
   $(OBJDIR)/Main_90ebc5c2.o \
@@ -125,6 +130,7 @@ $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	@echo "Compiling TransportComponent.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
+<<<<<<< HEAD
 $(OBJDIR)/MasterTrack_b4a8cf62.o: ../../Source/core/MasterTrack.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling MasterTrack.cpp"
@@ -138,6 +144,16 @@ $(OBJDIR)/RegionMixer_8a1de2ce.o: ../../Source/core/RegionMixer.cpp
 $(OBJDIR)/RoutingAudioSource_4eb0867c.o: ../../Source/core/RoutingAudioSource.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling RoutingAudioSource.cpp"
+=======
+$(OBJDIR)/AudioTrack_62b571a6.o: ../../Source/core/AudioTrack.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling AudioTrack.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/AudioMixer_72677d64.o: ../../Source/core/AudioMixer.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling AudioMixer.cpp"
+>>>>>>> origin/master
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/SettingsManager_9e3ee3.o: ../../Source/core/SettingsManager.cpp
