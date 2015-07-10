@@ -343,6 +343,12 @@
     <ClCompile Include="..\..\Source\core\AudioRegion.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\core\MasterTrack.cpp">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\core\RegionMixer.cpp">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\core\AudioTrack.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
@@ -1606,6 +1612,12 @@
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\AudioRegion.h">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\core\MasterTrack.h">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\core\RegionMixer.h">
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\AudioTrack.h">

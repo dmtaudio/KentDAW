@@ -139,6 +139,8 @@
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
     <ClCompile Include="..\..\Source\core\SampleAudioRegion.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioRegion.cpp"/>
+    <ClCompile Include="..\..\Source\core\MasterTrack.cpp"/>
+    <ClCompile Include="..\..\Source\core\RegionMixer.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioTrack.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioMixer.cpp"/>
     <ClCompile Include="..\..\Source\core\SettingsManager.cpp"/>
@@ -1273,6 +1275,8 @@
     <ClInclude Include="..\..\Source\ui\TransportComponent.h"/>
     <ClInclude Include="..\..\Source\core\SampleAudioRegion.h"/>
     <ClInclude Include="..\..\Source\core\AudioRegion.h"/>
+    <ClInclude Include="..\..\Source\core\MasterTrack.h"/>
+    <ClInclude Include="..\..\Source\core\RegionMixer.h"/>
     <ClInclude Include="..\..\Source\core\AudioTrack.h"/>
     <ClInclude Include="..\..\Source\core\AudioMixer.h"/>
     <ClInclude Include="..\..\Source\core\SettingsManager.h"/>

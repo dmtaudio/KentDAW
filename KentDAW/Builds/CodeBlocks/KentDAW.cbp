@@ -138,6 +138,16 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/core/MasterTrack.cpp"/>
+    <Unit filename="../../Source/core/MasterTrack.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../Source/core/RegionMixer.cpp"/>
+    <Unit filename="../../Source/core/RegionMixer.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/core/AudioTrack.cpp"/>
     <Unit filename="../../Source/core/AudioTrack.h">
       <Option compile="0"/>
