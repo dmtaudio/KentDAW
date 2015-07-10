@@ -57,7 +57,11 @@ OBJECTS := \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
+<<<<<<< HEAD
   $(OBJDIR)/RegionMixer_8a1de2ce.o \
+=======
+  $(OBJDIR)/RoutingAudioSource_4eb0867c.o \
+>>>>>>> origin/master
   $(OBJDIR)/SettingsManager_9e3ee3.o \
   $(OBJDIR)/AudioEngine_7532591.o \
   $(OBJDIR)/Main_90ebc5c2.o \
@@ -123,9 +127,15 @@ $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	@echo "Compiling TransportComponent.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
+<<<<<<< HEAD
 $(OBJDIR)/RegionMixer_8a1de2ce.o: ../../Source/core/RegionMixer.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling RegionMixer.cpp"
+=======
+$(OBJDIR)/RoutingAudioSource_4eb0867c.o: ../../Source/core/RoutingAudioSource.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling RoutingAudioSource.cpp"
+>>>>>>> origin/master
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/SettingsManager_9e3ee3.o: ../../Source/core/SettingsManager.cpp

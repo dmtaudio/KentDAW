@@ -128,12 +128,17 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+<<<<<<< HEAD
     <Unit filename="../../Source/core/Region.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
     <Unit filename="../../Source/core/RegionMixer.cpp"/>
     <Unit filename="../../Source/core/RegionMixer.h">
+=======
+    <Unit filename="../../Source/core/RoutingAudioSource.cpp"/>
+    <Unit filename="../../Source/core/RoutingAudioSource.h">
+>>>>>>> origin/master
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
