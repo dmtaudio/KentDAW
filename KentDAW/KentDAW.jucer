@@ -27,6 +27,9 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <FILE id="XSVtQk" name="Region.h" compile="0" resource="0" file="Source/core/Region.h"/>
+        <FILE id="Yecfpo" name="RegionMixer.cpp" compile="1" resource="0" file="Source/core/RegionMixer.cpp"/>
+        <FILE id="GpqgC9" name="RegionMixer.h" compile="0" resource="0" file="Source/core/RegionMixer.h"/>
         <FILE id="sqZzgX" name="SettingsManager.cpp" compile="1" resource="0"
               file="Source/core/SettingsManager.cpp"/>
         <FILE id="VpVzjc" name="SettingsManager.h" compile="1" resource="0"
