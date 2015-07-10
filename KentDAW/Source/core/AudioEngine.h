@@ -9,6 +9,7 @@
 #define	AUDIOENGINE_H
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "AudioMixer.h"
 
 class AudioEngine : public MidiInputCallback{
 public:
@@ -74,6 +75,7 @@ private:
     unsigned int regionIndex;
     MidiBuffer incomingMidi;
     MidiMessageCollector messageCollector;
+	AudioMixer mixer;
     
     double masterGain;
     double deviceSampleRate;

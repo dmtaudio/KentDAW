@@ -27,6 +27,10 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <FILE id="cvG1uW" name="AudioTrack.cpp" compile="1" resource="0" file="Source/core/AudioTrack.cpp"/>
+        <FILE id="ytbGVS" name="AudioTrack.h" compile="0" resource="0" file="Source/core/AudioTrack.h"/>
+        <FILE id="oZvhDE" name="AudioMixer.cpp" compile="1" resource="0" file="Source/core/AudioMixer.cpp"/>
+        <FILE id="iroEHv" name="AudioMixer.h" compile="0" resource="0" file="Source/core/AudioMixer.h"/>
         <FILE id="sqZzgX" name="SettingsManager.cpp" compile="1" resource="0"
               file="Source/core/SettingsManager.cpp"/>
         <FILE id="VpVzjc" name="SettingsManager.h" compile="1" resource="0"
