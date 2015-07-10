@@ -128,6 +128,16 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/core/SampleAudioRegion.cpp"/>
+    <Unit filename="../../Source/core/SampleAudioRegion.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../Source/core/AudioRegion.cpp"/>
+    <Unit filename="../../Source/core/AudioRegion.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/core/AudioTrack.cpp"/>
     <Unit filename="../../Source/core/AudioTrack.h">
       <Option compile="0"/>

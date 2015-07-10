@@ -57,6 +57,8 @@ OBJECTS := \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
+  $(OBJDIR)/SampleAudioRegion_9d0c3739.o \
+  $(OBJDIR)/AudioRegion_3ad9a943.o \
   $(OBJDIR)/AudioTrack_62b571a6.o \
   $(OBJDIR)/AudioMixer_72677d64.o \
   $(OBJDIR)/SettingsManager_9e3ee3.o \
@@ -122,6 +124,16 @@ $(OBJDIR)/MainComponent_4eca1cd2.o: ../../Source/ui/MainComponent.cpp
 $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling TransportComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/SampleAudioRegion_9d0c3739.o: ../../Source/core/SampleAudioRegion.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling SampleAudioRegion.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/AudioRegion_3ad9a943.o: ../../Source/core/AudioRegion.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling AudioRegion.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/AudioTrack_62b571a6.o: ../../Source/core/AudioTrack.cpp
