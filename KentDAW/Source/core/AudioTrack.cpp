@@ -90,7 +90,7 @@ void AudioTrack::remove(AudioRegion& region) {
 }
 
 bool AudioTrack::move(AudioRegion& region, int64 newStartTime) {
-	auto newEndTime = newStartTime + region.getLength();
+	auto newEndTime = newStartTime + region.getTotalLength();
 
 	for (auto existingRegion : regions) {
 		if (&region != existingRegion && existingRegion->overlaps(newStartTime, newEndTime)) {
