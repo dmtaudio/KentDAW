@@ -27,6 +27,12 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <GROUP id="{C9BA90C3-DE21-BB85-3536-68430932875F}" name="audiosources">
+          <FILE id="hQ1KAo" name="RoutingAudioSource.cpp" compile="1" resource="0"
+                file="Source/core/RoutingAudioSource.cpp"/>
+          <FILE id="t26PZf" name="RoutingAudioSource.h" compile="0" resource="0"
+                file="Source/core/RoutingAudioSource.h"/>
+        </GROUP>
         <FILE id="sqZzgX" name="SettingsManager.cpp" compile="1" resource="0"
               file="Source/core/SettingsManager.cpp"/>
         <FILE id="VpVzjc" name="SettingsManager.h" compile="1" resource="0"

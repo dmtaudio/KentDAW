@@ -17,6 +17,9 @@
     <Filter Include="KentDAW\Source\core">
       <UniqueIdentifier>{BBB98152-61BA-3DBE-7018-697205C68783}</UniqueIdentifier>
     </Filter>
+    <Filter Include="KentDAW\Source\core\audiosources">
+      <UniqueIdentifier>{7FB1C65A-D26E-F5F4-3C6E-6AE176AB01D2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Juce Modules">
       <UniqueIdentifier>{422C46B7-0467-2DB0-BF3C-16DFCAFD69AC}</UniqueIdentifier>
     </Filter>
@@ -336,6 +339,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp">
       <Filter>KentDAW\Source\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\core\RoutingAudioSource.cpp">
+      <Filter>KentDAW\Source\core\audiosources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\core\SettingsManager.cpp">
       <Filter>KentDAW\Source\core</Filter>
@@ -1589,6 +1595,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h">
       <Filter>KentDAW\Source\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\core\RoutingAudioSource.h">
+      <Filter>KentDAW\Source\core\audiosources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\SettingsManager.h">
       <Filter>KentDAW\Source\core</Filter>
