@@ -26,7 +26,6 @@ int64 AudioRegion::getLength() const {
 void AudioRegion::moveTo(int64 newStartTime, int64 newEndTime) {
 	_startTime = newStartTime;
 	_endTime = newEndTime;
-	_length = newEndTime - newStartTime;
 }
 
 bool AudioRegion::overlaps(const AudioRegion& region) const {
