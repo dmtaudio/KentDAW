@@ -31,11 +31,13 @@ public:
 	virtual bool overlaps(const AudioRegion& region) const final;
 	virtual bool overlaps(int64 startTime, int64 endTime) const final;
 
-private:
+protected:
 	int64 _startTime;
 	int64 _endTime;
 	int64 _length;
 	int64 _position;
+	int _samples;
+	double _sampleRate;
 };
 
 
