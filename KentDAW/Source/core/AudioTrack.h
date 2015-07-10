@@ -33,12 +33,17 @@ public:
 	/*
 	Check if the region can be added and does not overlap with another one before adding
 	*/
-	bool add(const AudioRegion& region);
-	void remove(const AudioRegion& region);
-	bool move(AudioRegion& region, int64 newStartTime) const;
+	bool add(AudioRegion& region);
+	void remove(AudioRegion& region);
+	void updateTotalLengthIfNeeded(int64 new_end_time);
+	bool move(AudioRegion& region, int64 newStartTime);
 
 private:
-	std::list<const AudioRegion *> regions;
+	std::list<AudioRegion *> regions;
+	int _samples;
+	double _sampleRate;
+	int64 _currentPosition;
+	int64 _totalLength;
 };
 
 

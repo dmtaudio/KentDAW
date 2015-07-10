@@ -13,18 +13,18 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
-class AudioRegion {
+class AudioRegion : public PositionableAudioSource {
 public:
 
 	virtual ~AudioRegion() {
 	}
 
-	int64 getStartTime() const;
-	int64 getEndTime() const;
-	int64 getLength() const;
-	void moveTo(int64 newStartTime, int64 newEndTime);
-	bool overlaps(const AudioRegion& region) const;
-	bool overlaps(int64 startTime, int64 endTime) const;
+	virtual int64 getStartTime() const final;
+	virtual int64 getEndTime() const final;
+	virtual int64 getLength() const final;
+	virtual void moveTo(int64 newStartTime, int64 newEndTime) final;
+	virtual bool overlaps(const AudioRegion& region) const final;
+	virtual bool overlaps(int64 startTime, int64 endTime) const final;
 
 private:
 	int64 _startTime;
