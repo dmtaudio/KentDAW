@@ -27,6 +27,8 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <FILE id="mwxW0W" name="Project.cpp" compile="1" resource="0" file="Source/core/Project.cpp"/>
+        <FILE id="J3guom" name="Project.h" compile="0" resource="0" file="Source/core/Project.h"/>
         <FILE id="FbGTym" name="SampleAudioRegion.cpp" compile="1" resource="0"
               file="Source/core/SampleAudioRegion.cpp"/>
         <FILE id="L3mY3g" name="SampleAudioRegion.h" compile="0" resource="0"

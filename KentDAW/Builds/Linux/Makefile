@@ -57,6 +57,7 @@ OBJECTS := \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
+  $(OBJDIR)/Project_366e4072.o \
   $(OBJDIR)/SampleAudioRegion_9d0c3739.o \
   $(OBJDIR)/AudioRegion_3ad9a943.o \
   $(OBJDIR)/AudioTrack_62b571a6.o \
@@ -123,6 +124,11 @@ $(OBJDIR)/MainComponent_4eca1cd2.o: ../../Source/ui/MainComponent.cpp
 $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling TransportComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/Project_366e4072.o: ../../Source/core/Project.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling Project.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/SampleAudioRegion_9d0c3739.o: ../../Source/core/SampleAudioRegion.cpp
