@@ -12,5 +12,12 @@
 
 void Project::createBasicProject(const String& projName)
 {
-    XmlElement projectFile("PROJECT SETTINGS");
+    XmlElement project("PROJECT");
+    
+    XmlElement* projectSettings = new XmlElement("Settings");
+    
+    projectSettings->setAttribute("name", projName);
+    
+    project.addChildElement(projectSettings);
+    String xmlDoc = project.createDocument(String::empty);
 }
