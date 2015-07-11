@@ -31,12 +31,6 @@ public:
     MainContentComponent();
     ~MainContentComponent();
 
-	/*
-	The audio devices are owned by the application window. A reference of this
-	object can be passed to the audio engine object!
-	*/
-	AudioDeviceManager deviceManager;
-
     void paint (Graphics&);
     void resized();
     
@@ -71,7 +65,7 @@ public:
     };
 
 private:
-    Array< Component::SafePointer<Component> > windows;
+    Array<Component::SafePointer<Component>> windows;
     
 	//Menu Bar
     ScopedPointer<MenuBarModel> menuModel;

@@ -16,8 +16,6 @@ MainContentComponent::MainContentComponent()
 	directoryList(nullptr, tsThread),
 	fileTree(directoryList)
 {
-	deviceManager.initialise(2, 2, nullptr, true);
-
 	//Menu Bar
     menuBar = new MenuBarComponent(this);
 
