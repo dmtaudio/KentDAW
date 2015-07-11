@@ -58,6 +58,19 @@ MainContentComponent::~MainContentComponent()
 {
 }
 
+void MainContentComponent::showTransportWindow()
+{
+    TransportComponent* transportComponent = transport;
+    transport->addToDesktop (ComponentPeer::windowAppearsOnTaskbar);
+    windows.add(transportComponent);
+    
+    Rectangle<int> area (0,0 , getWidth(), 100);
+    const RectanglePlacement placement (RectanglePlacement::xLeft + RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
+    Rectangle<int> result (placement.appliedTo (area, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (20)));
+    transportComponent->setBounds (result);
+    transportComponent->setVisible (true);
+}
+
 StringArray MainContentComponent::getMenuBarNames()
 {
     StringArray menuItems;
@@ -92,7 +105,7 @@ PopupMenu MainContentComponent::getMenuForIndex(int index, const String &name)
     } else if(name == "Arrange") {
         
     } else if(name == "Window") {
-        
+        menu.addItem(TransportWindow, "Transport");
     } else if(name == "Help") {
         
     }
@@ -115,6 +128,9 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
         case Copy:
             break;
         case Paste:
+            break;
+        case TransportWindow:
+            showTransportWindow();
             break;
 		case Settings:
 			bool showMidiInputOptions = false;

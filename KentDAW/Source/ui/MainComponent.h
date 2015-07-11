@@ -44,6 +44,8 @@ public:
     PopupMenu getMenuForIndex(int index, const String &name);
     void menuItemSelected(int menuItemID, int index);
     
+    void showTransportWindow();
+    
     enum FileMenuIDs
     {
         NewProject = 1000, // replace with binary or hex numbers when appropriate
@@ -62,8 +64,15 @@ public:
 	{
 		Settings = 1006
 	};
+    
+    enum WindowMenuIDs
+    {
+        TransportWindow = 1007
+    };
 
 private:
+    Array< Component::SafePointer<Component> > windows;
+    
 	//Menu Bar
     ScopedPointer<MenuBarModel> menuModel;
     ScopedPointer<MenuBarComponent> menuBar;

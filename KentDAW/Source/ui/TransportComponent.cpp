@@ -115,13 +115,14 @@ void TransportComponent::setButtonBounds()
 {
 	auto startposition = ((getWidth() - 8 * buttonWidth) / 2);
     
-    toEndButton->setBounds(startposition, 0, 50, 40);
-    forwardButton->setBounds(toEndButton->getRight(), 0, buttonWidth, buttonHeight);
-    stopButton->setBounds(forwardButton->getRight(), 0, buttonWidth, buttonHeight);
-    playButton->setBounds(stopButton->getRight(), 0, buttonWidth, buttonHeight);
-    recordButton->setBounds(playButton->getRight(), 0, buttonWidth, buttonHeight);
-    backwardButton->setBounds(recordButton->getRight(), 0, buttonWidth, buttonHeight);
-    toStartButton->setBounds(backwardButton->getRight(), 0, buttonWidth, buttonHeight);
+    loopButton->setBounds(startposition, 0, 50, 40);
+    toStartButton->setBounds(loopButton->getRight(), 0, buttonWidth, buttonHeight);
+    backwardButton->setBounds(toStartButton->getRight(), 0, buttonWidth, buttonHeight);
+    recordButton->setBounds(backwardButton->getRight(), 0, buttonWidth, buttonHeight);
+    playButton->setBounds(recordButton->getRight(), 0, buttonWidth, buttonHeight);
+    stopButton->setBounds(playButton->getRight(), 0, buttonWidth, buttonHeight);
+    forwardButton->setBounds(stopButton->getRight(), 0, buttonWidth, buttonHeight);
+    toEndButton->setBounds(forwardButton->getRight(), 0, buttonWidth, buttonHeight);
 }
 
 void TransportComponent::addListener(TransportComponent::Listener *listener)
