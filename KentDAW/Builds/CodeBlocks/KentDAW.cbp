@@ -128,6 +128,11 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/core/Mixer.cpp"/>
+    <Unit filename="../../Source/core/Mixer.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/core/Project.cpp"/>
     <Unit filename="../../Source/core/Project.h">
       <Option compile="0"/>
@@ -143,24 +148,8 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../Source/core/MasterTrack.cpp">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-    <Unit filename="../../Source/core/MasterTrack.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
     <Unit filename="../../Source/core/AudioTrack.cpp"/>
     <Unit filename="../../Source/core/AudioTrack.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-    <Unit filename="../../Source/core/AudioMixer.cpp">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-    <Unit filename="../../Source/core/AudioMixer.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
