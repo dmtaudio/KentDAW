@@ -19,7 +19,7 @@ class Project
 public:
     Project();
     ~Project();
-    void createBasicProject(const String& projName);
+    void createBasicProject(const String& projName, const Array<String>);
     
 private:
 };
