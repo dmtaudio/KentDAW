@@ -78,7 +78,11 @@ void TransportComponent::initButtons(OwnedArray<juce::ImageButton> &buttons)
 {
     for(int button = 0; button < buttons.size(); ++button)
     {
-        if(buttons[button]->getName() == "Play")
+        if(buttons[button]->getName() == "Loop")
+        {
+            image = ImageCache::getFromMemory(BinaryData::loopbutton_png, BinaryData::loopbutton_pngSize);
+        }
+        else if(buttons[button]->getName() == "Play")
         {
             image = ImageCache::getFromMemory(BinaryData::playbutton_png, BinaryData::playbutton_pngSize);
         }
