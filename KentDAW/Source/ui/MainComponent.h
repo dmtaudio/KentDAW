@@ -72,7 +72,7 @@ private:
     ScopedPointer<MenuBarComponent> menuBar;
 
 	//Transport
-    ScopedPointer<TransportComponent> transport;
+    TransportComponent* transport;
     ScopedPointer<ArrangeWindow> arrangeWindow;
 
 	//Left Side

@@ -58,15 +58,15 @@ MainContentComponent::~MainContentComponent()
 
 void MainContentComponent::showTransportWindow()
 {
-    TransportComponent* transportComponent = transport;
+    //TransportComponent* transportComponent = transport;
     transport->addToDesktop (ComponentPeer::windowAppearsOnTaskbar);
-    windows.add(transportComponent);
+    windows.add(transport);
     
     Rectangle<int> area (0,0 , getWidth(), 100);
     const RectanglePlacement placement (RectanglePlacement::xLeft + RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
     Rectangle<int> result (placement.appliedTo (area, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (20)));
-    transportComponent->setBounds (result);
-    transportComponent->setVisible (true);
+    transport->setBounds (result);
+    transport->setVisible (true);
 }
 
 StringArray MainContentComponent::getMenuBarNames()
@@ -103,7 +103,8 @@ PopupMenu MainContentComponent::getMenuForIndex(int index, const String &name)
     } else if(name == "Arrange") {
         
     } else if(name == "Window") {
-        menu.addItem(TransportWindow, "Transport");
+        //menu.addItem(TransportWindow, "Transport");
+        menu.addItem(TransportWindow, "Transport", true, false);
     } else if(name == "Help") {
         
     }
@@ -128,7 +129,17 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
         case Paste:
             break;
         case TransportWindow:
-            showTransportWindow();
+            if(!transport->isVisible())
+            {
+                showTransportWindow();
+                transport->setVisible(true);
+            }
+            else if(!transport->isShowing())
+            {
+                transport->broughtToFront();
+            }
+            else
+                transport->setVisible(false);
             break;
 		case Settings:
 			bool showMidiInputOptions = false;
@@ -171,6 +182,4 @@ void MainContentComponent::resized()
 	fileTree.setBounds(rec);
 	
 	statusBar->setBounds(0, (getParentHeight() / 100) * 96, getParentWidth(), 30);
-    //transport->setBounds((getParentWidth()/100)*40,0, getWidth(), getHeight());
-	
 }
