@@ -9,8 +9,8 @@
 */
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "ui/MainComponent.h"
-#include "core/AudioEngine.h"
+#include "../ui/MainComponent.h"
+#include "../core/AudioEngine.h"
 
 
 //==============================================================================

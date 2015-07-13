@@ -7,7 +7,7 @@
 */
 
 #include "MainComponent.h"
-#include "AudioEngine.h"
+#include "../core/AudioEngine.h"
 
 
 //==============================================================================
