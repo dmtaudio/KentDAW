@@ -54,6 +54,7 @@ MainContentComponent::MainContentComponent()
 
 MainContentComponent::~MainContentComponent()
 {
+    delete transport;
 }
 
 void MainContentComponent::showTransportWindow()
@@ -67,6 +68,8 @@ void MainContentComponent::showTransportWindow()
     Rectangle<int> result (placement.appliedTo (area, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (20)));
     transport->setBounds (result);
     transport->setVisible (true);
+    transport->setAlwaysOnTop(true);
+    
 }
 
 StringArray MainContentComponent::getMenuBarNames()
@@ -133,10 +136,6 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
             {
                 showTransportWindow();
                 transport->setVisible(true);
-            }
-            else if(!transport->isShowing())
-            {
-                transport->broughtToFront();
             }
             else
                 transport->setVisible(false);
