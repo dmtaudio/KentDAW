@@ -45,6 +45,10 @@ public:
     const String getProgramName(int index) { return String::empty; }
     void changeProgramName(int index,const String& name) {};
     
+    bool silenceInProducesOutput() const { return false; }
+    double getTailLengthSeconds() const { return 0.0f; }
+    bool hasEditor() const { return false; }
+    
     void getStateInformation(MemoryBlock& destData) {};
     void setStateInformation(const void* data, int sizeBytes) {};
     
