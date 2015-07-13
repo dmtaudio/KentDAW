@@ -37,16 +37,16 @@ public:
     const String getParameterName(int paramaterIndex) { return String::empty; }
     float getParameter(int parameterIndex) { return 0.0f; }
     const String getParameterText(int parameterIndex) { return String::empty; }
-    void setParameter(int parameterIndex, float newValue);
+    void setParameter(int parameterIndex, float newValue) {};
     
     int getNumPrograms() { return 0; }
     int getCurrentProgram() { return 0; }
-    void setCurrentProgram(int index);
+    void setCurrentProgram(int index) {};
     const String getProgramName(int index) { return String::empty; }
-    void changeProgramName(int index,const String& name);
+    void changeProgramName(int index,const String& name) {};
     
-    void getStateInformation(MemoryBlock& destData);
-    void setStateInformation(const void* data, int sizeBytes);
+    void getStateInformation(MemoryBlock& destData) {};
+    void setStateInformation(const void* data, int sizeBytes) {};
     
     AudioProcessorEditor* createEditor() { return 0; }
     
