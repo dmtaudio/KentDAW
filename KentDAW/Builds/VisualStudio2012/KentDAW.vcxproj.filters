@@ -319,6 +319,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ui\TimelineComponent.cpp">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
@@ -336,6 +339,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp">
       <Filter>KentDAW\Source\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\core\AudioSourceProcessor.cpp">
+      <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\core\Mixer.cpp">
       <Filter>KentDAW\Source\core</Filter>
@@ -1587,6 +1593,9 @@
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h">
       <Filter>KentDAW\Source\utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\ui\TimelineComponent.h">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ui\StatusBar.h">
       <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
@@ -1604,6 +1613,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h">
       <Filter>KentDAW\Source\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\core\AudioSourceProcessor.h">
+      <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\Mixer.h">
       <Filter>KentDAW\Source\core</Filter>

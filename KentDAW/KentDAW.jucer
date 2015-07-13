@@ -9,6 +9,10 @@
         <FILE id="g35lzt" name="BufferDisplay.h" compile="0" resource="0" file="Source/utils/BufferDisplay.h"/>
       </GROUP>
       <GROUP id="{F1590CD7-AAC5-B3CD-0441-65B231D39579}" name="ui">
+        <FILE id="hLGCZc" name="TimelineComponent.cpp" compile="1" resource="0"
+              file="Source/ui/TimelineComponent.cpp"/>
+        <FILE id="AyVdZH" name="TimelineComponent.h" compile="0" resource="0"
+              file="Source/ui/TimelineComponent.h"/>
         <FILE id="jeqFYu" name="StatusBar.cpp" compile="1" resource="0" file="Source/ui/StatusBar.cpp"/>
         <FILE id="GKx6vY" name="StatusBar.h" compile="0" resource="0" file="Source/ui/StatusBar.h"/>
         <FILE id="q5jW0P" name="LeftSidebar.cpp" compile="1" resource="0" file="Source/ui/LeftSidebar.cpp"/>
@@ -27,6 +31,10 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <FILE id="Mz6Vq5" name="AudioSourceProcessor.cpp" compile="1" resource="0"
+              file="Source/core/AudioSourceProcessor.cpp"/>
+        <FILE id="jogLGW" name="AudioSourceProcessor.h" compile="0" resource="0"
+              file="Source/core/AudioSourceProcessor.h"/>
         <FILE id="mJ5BK7" name="Mixer.cpp" compile="1" resource="0" file="Source/core/Mixer.cpp"/>
         <FILE id="sBQ8WF" name="Mixer.h" compile="0" resource="0" file="Source/core/Mixer.h"/>
         <FILE id="mwxW0W" name="Project.cpp" compile="1" resource="0" file="Source/core/Project.cpp"/>

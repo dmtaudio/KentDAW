@@ -51,12 +51,14 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
+  $(OBJDIR)/TimelineComponent_ac5a16ca.o \
   $(OBJDIR)/StatusBar_d572aa4f.o \
   $(OBJDIR)/LeftSidebar_43b7b4a3.o \
   $(OBJDIR)/ArrangeWindow_d578844a.o \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
+  $(OBJDIR)/AudioSourceProcessor_d46aa592.o \
   $(OBJDIR)/Mixer_6d530262.o \
   $(OBJDIR)/Project_366e4072.o \
   $(OBJDIR)/SampleAudioRegion_9d0c3739.o \
@@ -97,6 +99,11 @@ strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
 
+$(OBJDIR)/TimelineComponent_ac5a16ca.o: ../../Source/ui/TimelineComponent.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling TimelineComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
 $(OBJDIR)/StatusBar_d572aa4f.o: ../../Source/ui/StatusBar.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling StatusBar.cpp"
@@ -125,6 +132,11 @@ $(OBJDIR)/MainComponent_4eca1cd2.o: ../../Source/ui/MainComponent.cpp
 $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling TransportComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/AudioSourceProcessor_d46aa592.o: ../../Source/core/AudioSourceProcessor.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling AudioSourceProcessor.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/Mixer_6d530262.o: ../../Source/core/Mixer.cpp

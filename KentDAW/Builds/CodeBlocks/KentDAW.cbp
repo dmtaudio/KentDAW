@@ -98,6 +98,11 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/ui/TimelineComponent.cpp"/>
+    <Unit filename="../../Source/ui/TimelineComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/ui/StatusBar.cpp"/>
     <Unit filename="../../Source/ui/StatusBar.h">
       <Option compile="0"/>
@@ -125,6 +130,11 @@
     </Unit>
     <Unit filename="../../Source/ui/TransportComponent.cpp"/>
     <Unit filename="../../Source/ui/TransportComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../Source/core/AudioSourceProcessor.cpp"/>
+    <Unit filename="../../Source/core/AudioSourceProcessor.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>

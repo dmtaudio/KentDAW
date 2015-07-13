@@ -131,12 +131,14 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ui\TimelineComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp"/>
     <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp"/>
     <ClCompile Include="..\..\Source\ui\ArrangeWindow.cpp"/>
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
+    <ClCompile Include="..\..\Source\core\AudioSourceProcessor.cpp"/>
     <ClCompile Include="..\..\Source\core\Mixer.cpp"/>
     <ClCompile Include="..\..\Source\core\Project.cpp"/>
     <ClCompile Include="..\..\Source\core\SampleAudioRegion.cpp"/>
@@ -1266,12 +1268,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h"/>
+    <ClInclude Include="..\..\Source\ui\TimelineComponent.h"/>
     <ClInclude Include="..\..\Source\ui\StatusBar.h"/>
     <ClInclude Include="..\..\Source\ui\LeftSidebar.h"/>
     <ClInclude Include="..\..\Source\ui\ArrangeWindow.h"/>
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
     <ClInclude Include="..\..\Source\ui\MainComponent.h"/>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h"/>
+    <ClInclude Include="..\..\Source\core\AudioSourceProcessor.h"/>
     <ClInclude Include="..\..\Source\core\Mixer.h"/>
     <ClInclude Include="..\..\Source\core\Project.h"/>
     <ClInclude Include="..\..\Source\core\SampleAudioRegion.h"/>
