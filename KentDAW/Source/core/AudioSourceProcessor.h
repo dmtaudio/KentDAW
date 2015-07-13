@@ -45,7 +45,7 @@ public:
     const String getProgramName(int index) { return String::empty; }
     void changeProgramName(int index,const String& name) {};
     
-    bool silenceInProducesOut() const { return false; }
+    bool silenceInProducesSilenceOut() const { return false; }
     double getTailLengthSeconds() const { return 0.0f; }
     bool hasEditor() const { return false; }
     
