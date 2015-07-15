@@ -19,9 +19,11 @@ AudioEngine::AudioEngine()
     deviceSampleRate = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentSampleRate();
     deviceBitDepth = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentBitDepth();
     deviceBufferSize = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentBufferSizeSamples();
-    mixer = new AudioMixer(deviceSampleRate, deviceBufferSize);
-    setDeviceCallback();
-    graphPlayer->setProcessor(mixer->getAudioProcessorGraph());
+    mixer = new AudioMixer();
+	graphPlayer->setProcessor(mixer->getAudioProcessorGraph());
+	setDeviceCallback();
+	mixer->resetGraph(deviceSampleRate, deviceBufferSize);
+   
 }
 
 AudioEngine::~AudioEngine()
