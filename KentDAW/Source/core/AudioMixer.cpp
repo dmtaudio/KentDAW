@@ -1,16 +1,16 @@
 /*
   ==============================================================================
 
-    Mixer.cpp
+    AudioMixer.cpp
     Created: 11 Jul 2015 1:51:41pm
     Author:  Matt
 
   ==============================================================================
 */
 
-#include "Mixer.h"
+#include "AudioMixer.h"
 
-Mixer::Mixer() {
+AudioMixer::AudioMixer() {
 	inputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode);
 	outputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode);
 	setPlayConfigDetails(0, 2, 44100, 512);
@@ -22,10 +22,10 @@ Mixer::Mixer() {
 	trackNumber = 1;
 }
 
-Mixer::~Mixer() {
+AudioMixer::~AudioMixer() {
 }
 
-void Mixer::createProcessorFromSource(AudioTrack* source)
+void AudioMixer::createProcessorFromSource(AudioTrack* source)
 {
 	//AudioSourceProcessor asProcessor(source, false);
 	//sources.push_back(asProcessor);
@@ -35,27 +35,27 @@ void Mixer::createProcessorFromSource(AudioTrack* source)
 	//trackNumber++;
 }
 
-void Mixer::addMuteControl()
+void AudioMixer::addMuteControl()
 {
 
 }
 
-void Mixer::addPanningControl()
+void AudioMixer::addPanningControl()
 {
 
 }
 
-void Mixer::addFaderControl()
+void AudioMixer::addFaderControl()
 {
 
 }
 
-void Mixer::addtoGraph()
+void AudioMixer::addtoGraph()
 {
 
 }
 
-void Mixer::removeFromGraph(uint32 trackID)
+void AudioMixer::removeFromGraph(uint32 trackID)
 {
 	removeNode(trackID);
 }

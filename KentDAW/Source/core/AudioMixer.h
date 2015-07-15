@@ -8,18 +8,18 @@
   ==============================================================================
 */
 
-#ifndef MIXER_H_INCLUDED
-#define MIXER_H_INCLUDED
+#ifndef AUDIOMIXER_H_INCLUDED
+#define AUDIOMIXER_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "AudioTrack.h"
 #include "AudioSourceProcessor.h"
 
-class Mixer	: public AudioProcessorGraph
+class AudioMixer	: public AudioProcessorGraph
 {
 public:
-	Mixer();
-	~Mixer();
+	AudioMixer();
+	~AudioMixer();
 
 	void createProcessorFromSource(AudioTrack* source);
 	void addMuteControl();
@@ -41,4 +41,4 @@ private:
 };
 
 
-#endif  // MIXER_H_INCLUDED
+#endif  // AUDIOMIXER_H_INCLUDED
