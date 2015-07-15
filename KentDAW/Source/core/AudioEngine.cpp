@@ -117,9 +117,8 @@ void AudioEngine::setSampleRate(const double &sampleRate)
     
     if(availableSampleRates.contains(sampleRate))
     {
-        bool isPlaying = transportSource->isPlaying();
         int currentPosition;
-        if(isPlaying)
+        
         {
             currentPosition = getCurrentPosition();
             stop();
