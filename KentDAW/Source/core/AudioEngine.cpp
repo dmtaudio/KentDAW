@@ -13,8 +13,7 @@
 static AudioDeviceManager* sharedAudioDeviceManager;
 
 AudioEngine::AudioEngine()
-: sourcePlayer(),
-  graphPlayer()
+: graphPlayer()
 {
     getSharedAudioDeviceManager();
     deviceSampleRate = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentSampleRate();
@@ -53,7 +52,7 @@ AudioDeviceManager& AudioEngine::getSharedAudioDeviceManager()
 
 void AudioEngine::setDeviceCallback()
 {
-    sharedAudioDeviceManager->addAudioCallback(sourcePlayer);
+    sharedAudioDeviceManager->addAudioCallback(graphPlayer);
 }
 
 void AudioEngine::setDeviceCallback(AudioIODeviceCallback* callback)
@@ -116,7 +115,7 @@ void AudioEngine::setSampleRate(const double &sampleRate)
     
     if(availableSampleRates.contains(sampleRate))
     {
-        bool isPlaying = transportSource.isPlaying();
+        bool isPlaying = transportSource->isPlaying();
         int currentPosition;
         if(isPlaying)
         {
@@ -140,12 +139,12 @@ bool AudioEngine::setMasterMute(bool enable)
 {
     if(enable)
     {
-        transportSource.setGain(0.0);
+        transportSource->setGain(0.0);
         return enable;
     }
     else
     {
-        transportSource.setGain(masterGain);
+        transportSource->setGain(masterGain);
         return false;
     }
 }
@@ -153,7 +152,7 @@ bool AudioEngine::setMasterMute(bool enable)
 void AudioEngine::setMasterGain(const float newGain)
 {
     masterGain = newGain;
-    transportSource.setGain(newGain);
+    transportSource->setGain(newGain);
 }
 
 bool AudioEngine::enableMeasurement(int channel, bool enable)
@@ -187,18 +186,17 @@ void AudioEngine::stopPrelisten()
 
 void AudioEngine::start()
 {
-    
 }
 
 void AudioEngine::stop()
 {
-    if(transportSource.isPlaying())
+    if(transportSource->isPlaying())
     {
-        transportSource.stop();
+        transportSource->stop();
     }
     else
     {
-        transportSource.setPosition(0);
+        transportSource->setPosition(0);
     }
 }
 
@@ -206,14 +204,14 @@ int AudioEngine::getCurrentPosition()
 {
     AudioIODevice* audioDevice = sharedAudioDeviceManager->getCurrentAudioDevice();
     double deviceSampleRate = audioDevice->getCurrentSampleRate();
-    return (int) transportSource.getCurrentPosition() * deviceSampleRate;
+    return (int) transportSource->getCurrentPosition() * deviceSampleRate;
 }
 
 void AudioEngine::setPosition(int positionInSamples)
 {
     double deviceSampleRate = getSampleRate();
     double positionInSeconds = (double)positionInSamples / deviceSampleRate;
-    transportSource.setPosition(positionInSeconds);
+    transportSource->setPosition(positionInSeconds);
 }
 
 double AudioEngine::getProcessorUsage()

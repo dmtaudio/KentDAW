@@ -13,8 +13,10 @@
 #include "TransportComponent.h"
 //==============================================================================
 TimerComponent::TimerComponent()
-: isRecording(false), isRunning(false),
-  totalTime(0), totalRecordTime(0)
+: totalTime(0),
+  isRunning(false),
+  isRecording(false),
+  totalRecordTime(0)
 {
     timerFont = Font("Default Light", 30, Font::plain);
     startTimer(1000);
