@@ -9,13 +9,14 @@
 #define	AUDIOENGINE_H
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "AudioMixer.h"
 
 class AudioEngine : public MidiInputCallback{
 public:
     
     AudioEngine();
     AudioEngine(const size_t numberOfChannels);
-    virtual ~AudioEngine();
+    ~AudioEngine();
     
     void handleIncomingMidiMessage(MidiInput*, const MidiMessage&) override;
     void resetMidiMessages();
@@ -73,6 +74,8 @@ public:
 private:
     CriticalSection lock;
     ScopedPointer<AudioSourcePlayer> sourcePlayer;
+    ScopedPointer<AudioProcessorPlayer> graphPlayer;
+    ScopedPointer<AudioMixer> mixer;
     AudioTransportSource transportSource;
     unsigned int regionIndex;
     MidiBuffer incomingMidi;
@@ -81,6 +84,7 @@ private:
     double masterGain;
     double deviceSampleRate;
     int deviceBitDepth;
+    int deviceBufferSize;
     BigInteger deviceInputChannels, deviceOutputChannels;
     
     
