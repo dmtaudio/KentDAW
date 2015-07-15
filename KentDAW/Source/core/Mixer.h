@@ -21,7 +21,7 @@ public:
 	Mixer();
 	~Mixer();
 
-	AudioSourceProcessor createProcessorFromSource(AudioTrack* source);
+	void createProcessorFromSource(AudioTrack* source);
 	void addMuteControl();
 	void addPanningControl();
 	void addFaderControl();
@@ -34,6 +34,7 @@ public:
 private:
 	//std::list<AudioSourceProcessor> sources;
 	HashMap<uint32, AudioSourceProcessor> sourceProcessors;
+	HashMap<uint32, AudioTrack> sources; //Not Sure if this is needed
 	AudioGraphIOProcessor* inputNode;
 	AudioGraphIOProcessor* outputNode;
 

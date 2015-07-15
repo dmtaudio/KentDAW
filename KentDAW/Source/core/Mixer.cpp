@@ -25,14 +25,14 @@ Mixer::Mixer() {
 Mixer::~Mixer() {
 }
 
-AudioSourceProcessor Mixer::createProcessorFromSource(AudioTrack* source)
+void Mixer::createProcessorFromSource(AudioTrack* source)
 {
 	AudioSourceProcessor asProcessor(source, false);
 	//sources.push_back(asProcessor);
 	sourceProcessors.set(trackNumber, asProcessor);
+	sources.set(trackNumber, *source);
+	addNode(&asProcessor, trackNumber); //temporary untill other functions written
 	trackNumber++;
-
-	return asProcessor;
 }
 
 void Mixer::addMuteControl()
