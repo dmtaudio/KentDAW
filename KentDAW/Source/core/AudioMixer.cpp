@@ -10,20 +10,22 @@
 
 #include "AudioMixer.h"
 
-AudioMixer::AudioMixer(int sampleRate, int bufferSize) {
+AudioMixer::AudioMixer() {
 	processorGraph = new AudioProcessorGraph();
-	inputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode);
-	outputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode);
-	processorGraph->setPlayConfigDetails(0, 2, sampleRate, bufferSize);
-	processorGraph->addNode(inputNode);
-	processorGraph->addNode(outputNode);
-	processorGraph->addConnection(1, 1, 2, 1);
-	processorGraph->prepareToPlay(sampleRate, bufferSize);
-
 	trackNumber = 1;
 }
 
 AudioMixer::~AudioMixer() {
+}
+
+void AudioMixer::resetGraph(int sampleRate, int bufferSize) {
+	processorGraph->clear();
+	inputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode);
+	outputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode);
+	processorGraph->addNode(inputNode);
+	processorGraph->addNode(outputNode);
+	processorGraph->addConnection(1, 1, 2, 1);
+	processorGraph->prepareToPlay(sampleRate, bufferSize)
 }
 
 ScopedPointer<AudioProcessorGraph> AudioMixer::getAudioProcessorGraph(){

@@ -18,13 +18,14 @@
 class AudioMixer
 {
 public:
-	AudioMixer(int sampleRate, int bufferSize);
+	AudioMixer();
 	~AudioMixer();
 
 	void createProcessorFromSource(AudioTrack* source);
 	void addMuteControl();
 	void addPanningControl();
 	void addFaderControl();
+	void resetGraph(int sampleRate, int bufferSize);
 
 	ScopedPointer<AudioProcessorGraph> getAudioProcessorGraph();
 
