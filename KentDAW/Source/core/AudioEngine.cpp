@@ -19,9 +19,9 @@ AudioEngine::AudioEngine()
     deviceSampleRate = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentSampleRate();
     deviceBitDepth = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentBitDepth();
     deviceBufferSize = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentBufferSizeSamples();
+    setDeviceCallback();
     mixer = new AudioMixer();
 	graphPlayer->setProcessor(mixer->getAudioProcessorGraph());
-	setDeviceCallback();
 	mixer->resetGraph(deviceSampleRate, deviceBufferSize);
    
 }
@@ -141,7 +141,6 @@ bool AudioEngine::setMasterMute(bool enable)
 {
     if(enable)
     {
-        transportSource->setGain(0.0);
         return enable;
     }
     else
@@ -154,7 +153,6 @@ bool AudioEngine::setMasterMute(bool enable)
 void AudioEngine::setMasterGain(const float newGain)
 {
     masterGain = newGain;
-    transportSource->setGain(newGain);
 }
 
 bool AudioEngine::enableMeasurement(int channel, bool enable)
@@ -192,28 +190,20 @@ void AudioEngine::start()
 
 void AudioEngine::stop()
 {
-    if(transportSource->isPlaying())
-    {
-        transportSource->stop();
-    }
-    else
-    {
-        transportSource->setPosition(0);
-    }
 }
 
 int AudioEngine::getCurrentPosition()
 {
     AudioIODevice* audioDevice = sharedAudioDeviceManager->getCurrentAudioDevice();
     double deviceSampleRate = audioDevice->getCurrentSampleRate();
-    return (int) transportSource->getCurrentPosition() * deviceSampleRate;
+    //return (int) transportSource->getCurrentPosition() * deviceSampleRate;
+    return 0;
 }
 
 void AudioEngine::setPosition(int positionInSamples)
 {
     double deviceSampleRate = getSampleRate();
     double positionInSeconds = (double)positionInSamples / deviceSampleRate;
-    transportSource->setPosition(positionInSeconds);
 }
 
 double AudioEngine::getProcessorUsage()

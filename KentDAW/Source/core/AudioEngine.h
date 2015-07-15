@@ -74,7 +74,6 @@ public:
 private:
     CriticalSection lock;
     ScopedPointer<AudioProcessorPlayer> graphPlayer;
-    ScopedPointer<AudioTransportSource> transportSource;
     ScopedPointer<AudioMixer> mixer;
     unsigned int regionIndex;
     MidiBuffer incomingMidi;
