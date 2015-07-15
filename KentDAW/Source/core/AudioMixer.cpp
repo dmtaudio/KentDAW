@@ -25,7 +25,7 @@ void AudioMixer::resetGraph(int sampleRate, int bufferSize) {
 	processorGraph->addNode(inputNode);
 	processorGraph->addNode(outputNode);
 	processorGraph->addConnection(1, 1, 2, 1);
-	processorGraph->prepareToPlay(sampleRate, bufferSize)
+	processorGraph->prepareToPlay(sampleRate, bufferSize);
 }
 
 ScopedPointer<AudioProcessorGraph> AudioMixer::getAudioProcessorGraph(){
