@@ -11,18 +11,23 @@
 #include "AudioMixer.h"
 
 AudioMixer::AudioMixer() {
+	processorGraph = new AudioProcessorGraph();
 	inputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode);
 	outputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode);
-	setPlayConfigDetails(0, 2, 44100, 512);
-	addNode(inputNode);
-	addNode(outputNode);
-	addConnection(1, 1, 2, 1);
-	prepareToPlay(44100, 512);
+	processorGraph->setPlayConfigDetails(0, 2, 44100, 512);
+	processorGraph->addNode(inputNode);
+	processorGraph->addNode(outputNode);
+	processorGraph->addConnection(1, 1, 2, 1);
+	processorGraph->prepareToPlay(44100, 512);
 
 	trackNumber = 1;
 }
 
 AudioMixer::~AudioMixer() {
+}
+
+AudioProcessorGraph AudioMixer::getAudioProcessorGraph(){
+	//return
 }
 
 void AudioMixer::createProcessorFromSource(AudioTrack* source)
@@ -57,5 +62,5 @@ void AudioMixer::addtoGraph()
 
 void AudioMixer::removeFromGraph(uint32 trackID)
 {
-	removeNode(trackID);
+	processorGraph->removeNode(trackID);
 }

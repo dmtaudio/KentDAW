@@ -15,7 +15,7 @@
 #include "AudioTrack.h"
 #include "AudioSourceProcessor.h"
 
-class AudioMixer	: public AudioProcessorGraph
+class AudioMixer
 {
 public:
 	AudioMixer();
@@ -26,6 +26,8 @@ public:
 	void addPanningControl();
 	void addFaderControl();
 
+	AudioProcessorGraph getAudioProcessorGraph();
+
 	void addtoGraph();
 	void removeFromGraph(uint32 trackID);
 	int trackNumber;
@@ -35,8 +37,9 @@ private:
 	//std::list<AudioSourceProcessor> sources;
 	HashMap<uint32, AudioSourceProcessor> sourceProcessors;
 	HashMap<uint32, AudioTrack> sources; //Not Sure if this is needed
-	AudioGraphIOProcessor* inputNode;
-	AudioGraphIOProcessor* outputNode;
+	AudioProcessorGraph* processorGraph;
+	AudioProcessorGraph::AudioGraphIOProcessor* inputNode;
+	AudioProcessorGraph::AudioGraphIOProcessor* outputNode;
 
 };
 
