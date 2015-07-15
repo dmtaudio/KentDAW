@@ -16,12 +16,51 @@
 //==============================================================================
 /*
 */
+
+class TimerComponent    : public Component,
+                          public Timer
+{
+public:
+    TimerComponent();
+    ~TimerComponent();
+    
+    
+    void start();
+    void stop();
+    void startRecording();
+    void stopRecording();
+    void resetRecordTime();
+    void paint (Graphics&);
+    
+    String formatTimeToString(unsigned int val);
+    
+    void timerCallback();
+    
+private:
+    Font timerFont;
+    
+    String timerString;
+    
+    void drawCurrentTime(Graphics& g);
+    
+    int64 totalTime;
+    int64 lastTime;
+    int64 totalRecordTime;
+    
+    int64 currentTime;
+    
+    bool isRunning;
+    bool isRecording;
+    
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TimerComponent)
+};
+
 class TransportComponent    : public Component,
                               public ApplicationCommandTarget,
                               public Button::Listener
 {
 public:
-    
+    friend class TimerComponent;
     class Listener
     {
     public:

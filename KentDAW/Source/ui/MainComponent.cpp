@@ -21,6 +21,7 @@ MainContentComponent::MainContentComponent()
 
 	//Transport
     transport = new TransportComponent();
+    timer = new TimerComponent();
 
 	//Arrange Window
     arrangeWindow = new ArrangeWindow();
@@ -54,22 +55,34 @@ MainContentComponent::MainContentComponent()
 
 MainContentComponent::~MainContentComponent()
 {
+    transport->setVisible(false);
     delete transport;
+    timer->setVisible(false);
+    delete timer;
 }
 
 void MainContentComponent::showTransportWindow()
 {
     //TransportComponent* transportComponent = transport;
     transport->addToDesktop (ComponentPeer::windowAppearsOnTaskbar);
+    timer->addToDesktop(ComponentPeer::windowAppearsOnTaskbar);
     windows.add(transport);
+    windows.add(timer);
+
+    Rectangle<int> timerArea (0,0 , getWidth() / 2, 100);
+    const RectanglePlacement placement1 (RectanglePlacement::xLeft + RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
+    Rectangle<int> timerResult (placement1.appliedTo (timerArea, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (20)));
     
-    Rectangle<int> area (0,0 , getWidth(), 100);
-    const RectanglePlacement placement (RectanglePlacement::xLeft + RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
-    Rectangle<int> result (placement.appliedTo (area, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (20)));
-    transport->setBounds (result);
+    timer->setBounds(timerResult);
+    timer->setVisible(true);
+    timer->setAlwaysOnTop(true);
+    
+    Rectangle<int> buttonsArea (0,0 , getWidth(), 100);
+    const RectanglePlacement placement2 (RectanglePlacement::xLeft + RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
+    Rectangle<int> buttonsResult (placement2.appliedTo (buttonsArea, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (20)));
+    transport->setBounds (buttonsResult);
     transport->setVisible (true);
     transport->setAlwaysOnTop(true);
-    
 }
 
 StringArray MainContentComponent::getMenuBarNames()
@@ -121,24 +134,32 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
         case NewProject:
             break;
 		case ImportAudio:
+            timer->stop();
 			break;
         case Close:
             JUCEApplication::getInstance()->systemRequestedQuit();
             break;
         case Cut:
+            timer->start();
             break;
         case Copy:
+            timer->startRecording();
             break;
         case Paste:
+            timer->stopRecording();
             break;
         case TransportWindow:
-            if(!transport->isVisible())
+            if(!transport->isVisible() || !timer->isVisible())
             {
                 showTransportWindow();
                 transport->setVisible(true);
+                timer->setVisible(true);
             }
             else
+            {
                 transport->setVisible(false);
+                timer->setVisible(false);
+            }
             break;
 		case Settings:
 			bool showMidiInputOptions = false;

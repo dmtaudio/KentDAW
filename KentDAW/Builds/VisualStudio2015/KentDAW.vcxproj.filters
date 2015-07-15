@@ -319,9 +319,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\ui\TimelineComponent.cpp">
-      <Filter>KentDAW\Source\ui</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
@@ -1590,11 +1587,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\utils\BufferDisplay.h">
+    <ClInclude Include="..\..\Source\core\CommandIDs.h">
       <Filter>KentDAW\Source\utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\ui\TimelineComponent.h">
-      <Filter>KentDAW\Source\ui</Filter>
+    <ClInclude Include="..\..\Source\utils\BufferDisplay.h">
+      <Filter>KentDAW\Source\utils</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ui\StatusBar.h">
       <Filter>KentDAW\Source\ui</Filter>

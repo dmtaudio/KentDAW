@@ -11,8 +11,143 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "BinaryData.h"
 #include "TransportComponent.h"
-
 //==============================================================================
+TimerComponent::TimerComponent()
+: isRecording(false), isRunning(false),
+  totalTime(0), totalRecordTime(0)
+{
+    timerFont = Font("Default Light", 30, Font::plain);
+    startTimer(1000);
+}
+
+TimerComponent::~TimerComponent()
+{}
+
+void TimerComponent::paint(Graphics& g)
+{
+    if(isRecording)
+    {
+        g.fillAll(Colour(58,58,58));
+    }
+    else
+    {
+        g.fillAll(Colour(58,58,58));
+    }
+    drawCurrentTime(g);
+}
+
+void TimerComponent::drawCurrentTime(Graphics& g)
+{
+    if(isRunning)
+    {
+        int64 current = Time::currentTimeMillis();
+        int64 difference = current - lastTime;
+        totalTime += difference;
+        
+        if(isRecording)
+        {
+            totalRecordTime += difference;
+        }
+        lastTime = Time::currentTimeMillis();
+    }
+    
+    int minutes, seconds;
+    
+    if(isRecording)
+    {
+        g.setColour(Colour(255,0,0));
+        minutes = floor(totalRecordTime/60000.0);
+        seconds = floor((totalRecordTime - minutes*60000.0)/1000.0);
+    }
+    else
+    {
+        if(isRunning)
+            g.setColour(Colours::green);
+        else
+            g.setColour(Colours::whitesmoke);
+        
+        minutes = floor(totalRecordTime/60000.0);
+        seconds = floor((totalRecordTime - minutes*60000.0)/1000.0);
+    }
+    
+    String m = formatTimeToString(minutes);
+    String s = formatTimeToString(seconds);
+    
+    timerString = "";
+    
+    timerString += m;
+    timerString += " : ";
+    timerString += s;
+    
+    g.setFont(timerFont);
+    g.drawText(timerString, getWidth()/2, 20, getWidth()/2, getHeight(), Justification::left, false);
+}
+
+void TimerComponent::start()
+{
+    if(!isRunning)
+    {
+        isRunning = true;
+        lastTime = Time::currentTimeMillis();
+    }
+}
+
+void TimerComponent::stop()
+{
+    if(isRunning)
+    {
+        isRunning = false;
+        isRecording = false;
+    }
+}
+
+void TimerComponent::startRecording()
+{
+    if(!isRecording)
+    {
+        isRecording = true;
+        start();
+    }
+}
+
+void TimerComponent::stopRecording()
+{
+    if(isRecording)
+    {
+        isRecording = false;
+        stop();
+    }
+}
+
+void TimerComponent::resetRecordTime()
+{
+    totalRecordTime = 0;
+}
+
+String TimerComponent::formatTimeToString(unsigned int val)
+{
+    char buff[500];
+    String str;
+    if(val < 10)
+    {
+        sprintf(buff, "0%u", val);
+        str = buff;
+    }
+    else
+    {
+        sprintf(buff, "%u", val);
+        str = buff;
+    }
+    return(str);
+}
+
+void TimerComponent::timerCallback()
+{
+    repaint();
+}
+
+
+
 TransportComponent::TransportComponent()
 : loopButton(new ImageButton("Loop")),
   playButton(new ImageButton("Play")),

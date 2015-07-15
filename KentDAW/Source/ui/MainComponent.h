@@ -67,12 +67,14 @@ public:
 private:
     Array<Component::SafePointer<Component>> windows;
     
+    ScopedPointer<ApplicationCommandManager> commandManager;
 	//Menu Bar
     ScopedPointer<MenuBarModel> menuModel;
     ScopedPointer<MenuBarComponent> menuBar;
 
 	//Transport
     TransportComponent* transport;
+    TimerComponent* timer;
     ScopedPointer<ArrangeWindow> arrangeWindow;
 
 	//Left Side
