@@ -145,7 +145,6 @@ bool AudioEngine::setMasterMute(bool enable)
     }
     else
     {
-        transportSource->setGain(masterGain);
         return false;
     }
 }
