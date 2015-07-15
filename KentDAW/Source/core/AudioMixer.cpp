@@ -26,8 +26,8 @@ AudioMixer::AudioMixer() {
 AudioMixer::~AudioMixer() {
 }
 
-AudioProcessorGraph AudioMixer::getAudioProcessorGraph(){
-	//return
+ScopedPointer<AudioProcessorGraph> AudioMixer::getAudioProcessorGraph(){
+	return processorGraph;
 }
 
 void AudioMixer::createProcessorFromSource(AudioTrack* source)
@@ -36,7 +36,7 @@ void AudioMixer::createProcessorFromSource(AudioTrack* source)
 	//sources.push_back(asProcessor);
 	//sourceProcessors.set(trackNumber, asProcessor);
 	//sources.set(trackNumber, *source);
-	//addNode(&asProcessor, trackNumber); //temporary untill other functions written
+	//processorGraph->addNode(&asProcessor, trackNumber); //temporary until other functions written
 	//trackNumber++;
 }
 

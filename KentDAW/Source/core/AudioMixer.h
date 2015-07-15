@@ -26,7 +26,7 @@ public:
 	void addPanningControl();
 	void addFaderControl();
 
-	AudioProcessorGraph getAudioProcessorGraph();
+	ScopedPointer<AudioProcessorGraph> getAudioProcessorGraph();
 
 	void addtoGraph();
 	void removeFromGraph(uint32 trackID);
@@ -37,7 +37,7 @@ private:
 	//std::list<AudioSourceProcessor> sources;
 	HashMap<uint32, AudioSourceProcessor> sourceProcessors;
 	HashMap<uint32, AudioTrack> sources; //Not Sure if this is needed
-	AudioProcessorGraph* processorGraph;
+	ScopedPointer<AudioProcessorGraph> processorGraph;
 	AudioProcessorGraph::AudioGraphIOProcessor* inputNode;
 	AudioProcessorGraph::AudioGraphIOProcessor* outputNode;
 
