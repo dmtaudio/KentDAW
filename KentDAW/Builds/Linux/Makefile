@@ -58,7 +58,7 @@ OBJECTS := \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
   $(OBJDIR)/AudioSourceProcessor_d46aa592.o \
-  $(OBJDIR)/Mixer_6d530262.o \
+  $(OBJDIR)/AudioMixer_72677d64.o \
   $(OBJDIR)/Project_366e4072.o \
   $(OBJDIR)/SampleAudioRegion_9d0c3739.o \
   $(OBJDIR)/AudioRegion_3ad9a943.o \
@@ -133,9 +133,9 @@ $(OBJDIR)/AudioSourceProcessor_d46aa592.o: ../../Source/core/AudioSourceProcesso
 	@echo "Compiling AudioSourceProcessor.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/Mixer_6d530262.o: ../../Source/core/Mixer.cpp
+$(OBJDIR)/AudioMixer_72677d64.o: ../../Source/core/AudioMixer.cpp
 	-@mkdir -p $(OBJDIR)
-	@echo "Compiling Mixer.cpp"
+	@echo "Compiling AudioMixer.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/Project_366e4072.o: ../../Source/core/Project.cpp

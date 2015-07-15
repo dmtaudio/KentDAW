@@ -30,26 +30,26 @@
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
         <FILE id="Mz6Vq5" name="AudioSourceProcessor.cpp" compile="1" resource="0"
               file="Source/core/AudioSourceProcessor.cpp"/>
-        <FILE id="jogLGW" name="AudioSourceProcessor.h" compile="0" resource="0"
+        <FILE id="jogLGW" name="AudioSourceProcessor.h" compile="1" resource="0"
               file="Source/core/AudioSourceProcessor.h"/>
-        <FILE id="mJ5BK7" name="Mixer.cpp" compile="1" resource="0" file="Source/core/Mixer.cpp"/>
-        <FILE id="sBQ8WF" name="Mixer.h" compile="0" resource="0" file="Source/core/Mixer.h"/>
+        <FILE id="mJ5BK7" name="AudioMixer.cpp" compile="1" resource="0" file="Source/core/AudioMixer.cpp"/>
+        <FILE id="sBQ8WF" name="AudioMixer.h" compile="1" resource="0" file="Source/core/AudioMixer.h"/>
         <FILE id="mwxW0W" name="Project.cpp" compile="1" resource="0" file="Source/core/Project.cpp"/>
-        <FILE id="J3guom" name="Project.h" compile="0" resource="0" file="Source/core/Project.h"/>
+        <FILE id="J3guom" name="Project.h" compile="1" resource="0" file="Source/core/Project.h"/>
         <FILE id="FbGTym" name="SampleAudioRegion.cpp" compile="1" resource="0"
               file="Source/core/SampleAudioRegion.cpp"/>
-        <FILE id="L3mY3g" name="SampleAudioRegion.h" compile="0" resource="0"
+        <FILE id="L3mY3g" name="SampleAudioRegion.h" compile="1" resource="0"
               file="Source/core/SampleAudioRegion.h"/>
         <FILE id="EqUQWQ" name="AudioRegion.cpp" compile="1" resource="0" file="Source/core/AudioRegion.cpp"/>
-        <FILE id="BcGn2m" name="AudioRegion.h" compile="0" resource="0" file="Source/core/AudioRegion.h"/>
+        <FILE id="BcGn2m" name="AudioRegion.h" compile="1" resource="0" file="Source/core/AudioRegion.h"/>
         <FILE id="cvG1uW" name="AudioTrack.cpp" compile="1" resource="0" file="Source/core/AudioTrack.cpp"/>
-        <FILE id="ytbGVS" name="AudioTrack.h" compile="0" resource="0" file="Source/core/AudioTrack.h"/>
+        <FILE id="ytbGVS" name="AudioTrack.h" compile="1" resource="0" file="Source/core/AudioTrack.h"/>
         <FILE id="sqZzgX" name="SettingsManager.cpp" compile="1" resource="0"
               file="Source/core/SettingsManager.cpp"/>
-        <FILE id="VpVzjc" name="SettingsManager.h" compile="0" resource="0"
+        <FILE id="VpVzjc" name="SettingsManager.h" compile="1" resource="0"
               file="Source/core/SettingsManager.h"/>
         <FILE id="Fickz3" name="AudioEngine.cpp" compile="1" resource="0" file="Source/core/AudioEngine.cpp"/>
-        <FILE id="URPzkU" name="AudioEngine.h" compile="0" resource="0" file="Source/core/AudioEngine.h"/>
+        <FILE id="URPzkU" name="AudioEngine.h" compile="1" resource="0" file="Source/core/AudioEngine.h"/>
       </GROUP>
       <FILE id="eqKNjN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
     </GROUP>

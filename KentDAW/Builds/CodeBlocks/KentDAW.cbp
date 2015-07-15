@@ -133,45 +133,21 @@
       <Option link="0"/>
     </Unit>
     <Unit filename="../../Source/core/AudioSourceProcessor.cpp"/>
-    <Unit filename="../../Source/core/AudioSourceProcessor.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
-    <Unit filename="../../Source/core/Mixer.cpp"/>
-    <Unit filename="../../Source/core/Mixer.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
+    <Unit filename="../../Source/core/AudioSourceProcessor.h"/>
+    <Unit filename="../../Source/core/AudioMixer.cpp"/>
+    <Unit filename="../../Source/core/AudioMixer.h"/>
     <Unit filename="../../Source/core/Project.cpp"/>
-    <Unit filename="../../Source/core/Project.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
+    <Unit filename="../../Source/core/Project.h"/>
     <Unit filename="../../Source/core/SampleAudioRegion.cpp"/>
-    <Unit filename="../../Source/core/SampleAudioRegion.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
+    <Unit filename="../../Source/core/SampleAudioRegion.h"/>
     <Unit filename="../../Source/core/AudioRegion.cpp"/>
-    <Unit filename="../../Source/core/AudioRegion.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
+    <Unit filename="../../Source/core/AudioRegion.h"/>
     <Unit filename="../../Source/core/AudioTrack.cpp"/>
-    <Unit filename="../../Source/core/AudioTrack.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
+    <Unit filename="../../Source/core/AudioTrack.h"/>
     <Unit filename="../../Source/core/SettingsManager.cpp"/>
-    <Unit filename="../../Source/core/SettingsManager.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
+    <Unit filename="../../Source/core/SettingsManager.h"/>
     <Unit filename="../../Source/core/AudioEngine.cpp"/>
-    <Unit filename="../../Source/core/AudioEngine.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
+    <Unit filename="../../Source/core/AudioEngine.h"/>
     <Unit filename="../../Source/Main.cpp"/>
     <Unit filename="../../../Juce/juce_audio_basics/buffers/juce_AudioDataConverters.cpp">
       <Option compile="0"/>
