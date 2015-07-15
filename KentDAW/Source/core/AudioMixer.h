@@ -18,7 +18,7 @@
 class AudioMixer
 {
 public:
-	AudioMixer();
+	AudioMixer(int sampleRate, int bufferSize);
 	~AudioMixer();
 
 	void createProcessorFromSource(AudioTrack* source);

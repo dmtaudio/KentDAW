@@ -10,15 +10,15 @@
 
 #include "AudioMixer.h"
 
-AudioMixer::AudioMixer() {
+AudioMixer::AudioMixer(int sampleRate, int bufferSize) {
 	processorGraph = new AudioProcessorGraph();
 	inputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode);
 	outputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode);
-	processorGraph->setPlayConfigDetails(0, 2, 44100, 512);
+	processorGraph->setPlayConfigDetails(0, 2, sampleRate, bufferSize);
 	processorGraph->addNode(inputNode);
 	processorGraph->addNode(outputNode);
 	processorGraph->addConnection(1, 1, 2, 1);
-	processorGraph->prepareToPlay(44100, 512);
+	processorGraph->prepareToPlay(sampleRate, bufferSize);
 
 	trackNumber = 1;
 }
