@@ -29,7 +29,6 @@ public:
 	void addPanningControl();
 	void addFaderControl();
 	
-
 	ScopedPointer<AudioProcessorGraph> getAudioProcessorGraph();
 
 	void addtoGraph();

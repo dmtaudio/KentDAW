@@ -59,10 +59,6 @@ void AudioMixer::addFaderControl() {
 
 }
 
-void AudioMixer::addtoGraph() {
-
-}
-
 void AudioMixer::removeFromGraph(uint32 trackID) {
 	processorGraph->removeNode(trackID);
 }

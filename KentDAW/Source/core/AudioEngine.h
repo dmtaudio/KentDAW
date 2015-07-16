@@ -11,16 +11,13 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "AudioMixer.h"
 
-class AudioEngine : public MidiInputCallback{
+class AudioEngine
+{
 public:
     
     AudioEngine();
     AudioEngine(const size_t numberOfChannels);
     ~AudioEngine();
-    
-    void handleIncomingMidiMessage(MidiInput*, const MidiMessage&) override;
-    void resetMidiMessages();
-    MidiMessageCollector& getMidiMessageCollector() noexcept {return messageCollector;}
     
     static AudioDeviceManager& getSharedAudioDeviceManager();
     
@@ -84,9 +81,6 @@ private:
     int deviceBitDepth;
     int deviceBufferSize;
     BigInteger deviceInputChannels, deviceOutputChannels;
-    
-    
-    
     
 };
 

@@ -30,16 +30,6 @@ AudioEngine::~AudioEngine()
 {
 }
 
-void AudioEngine::handleIncomingMidiMessage(MidiInput* input, const MidiMessage& message)
-{
-    messageCollector.addMessageToQueue(message);
-}
-
-void AudioEngine::resetMidiMessages()
-{
-    messageCollector.reset(getSampleRate());
-}
-
 AudioDeviceManager& AudioEngine::getSharedAudioDeviceManager()
 {
     if(sharedAudioDeviceManager == nullptr)
@@ -55,6 +45,7 @@ AudioDeviceManager& AudioEngine::getSharedAudioDeviceManager()
 void AudioEngine::setDeviceCallback()
 {
     sharedAudioDeviceManager->addAudioCallback(graphPlayer);
+    sharedAudioDeviceManager->addMidiInputCallback(String::empty, graphPlayer);
 }
 
 void AudioEngine::setDeviceCallback(AudioIODeviceCallback* callback)
