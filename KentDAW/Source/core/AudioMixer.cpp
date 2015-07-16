@@ -22,7 +22,7 @@ void AudioMixer::resetGraph(int sampleRate, int bufferSize) {
 	processorGraph->clear();
 	inputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode);
 	outputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode);
-	processorGraph->setPlayConfigDetails(processorGraph->getNumInputChannels(),processorGraph->getNumOutputChannels(), sampleRate, bufferSize);
+	//processorGraph->setPlayConfigDetails(processorGraph->getNumInputChannels(),processorGraph->getNumOutputChannels(), sampleRate, bufferSize);
 	processorGraph->addNode(inputNode);
 	processorGraph->addNode(outputNode);
 	processorGraph->addConnection(1, 1, 2, 1);
@@ -41,10 +41,10 @@ void AudioMixer::addTrack() {
 void AudioMixer::createProcessorFromSource(AudioTrack* source) {
 	AudioSourceProcessor* asProcessor = new AudioSourceProcessor(source, false);
 	//sources.push_back(asProcessor);
-	sourceProcessors.set(trackNumber, *asProcessor);
+	//sourceProcessors.set(trackNumber, *asProcessor);
 	//sources.set(trackNumber, *source);
 	processorGraph->addNode(asProcessor, trackNumber); //temporary until other functions written
-	trackNumber++;
+	//trackNumber++;
 }
 
 void AudioMixer::addMuteControl() {
