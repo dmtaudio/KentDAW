@@ -9,6 +9,7 @@
 #ifndef MAINCOMPONENT_H_INCLUDED
 #define MAINCOMPONENT_H_INCLUDED
 
+#include "CommandIDs.h"
 #include "TransportComponent.h"
 #include "ArrangeWindow.h"
 #include "LeftSidebar.h"
@@ -23,7 +24,8 @@
     your controls and content.
 */
 class MainContentComponent   : public Component,
-                               public MenuBarModel
+                               public MenuBarModel,
+                               public ApplicationCommandTarget
 {
 public:
     
@@ -40,29 +42,10 @@ public:
     
     void showTransportWindow();
     
-    enum FileMenuIDs
-    {
-        NewProject = 1000, // replace with binary or hex numbers when appropriate
-		ImportAudio = 1005,
-        Close = 1001
-    };
-    
-    enum EditMenuIDs
-    {
-        Cut = 1002,
-        Copy = 1003,
-        Paste = 1004
-    };
-
-	enum ToolMenuIDs
-	{
-		Settings = 1006
-	};
-    
-    enum WindowMenuIDs
-    {
-        TransportWindow = 1007
-    };
+    ApplicationCommandTarget* getNextCommandTarget() override;
+    void getAllCommands (Array <CommandID>& commands) override;
+    void getCommandInfo (CommandID commandID, ApplicationCommandInfo& result) override;
+    bool perform (const InvocationInfo& info) override;
 
 private:
     Array<Component::SafePointer<Component>> windows;

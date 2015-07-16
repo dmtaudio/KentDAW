@@ -16,8 +16,8 @@ AudioEngine::AudioEngine()
 : graphPlayer()
 {
     getSharedAudioDeviceManager();
-    deviceSampleRate = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentSampleRate();
-    deviceBitDepth = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentBitDepth();
+    deviceSampleRate = getSampleRate();
+    deviceBitDepth = getBitDepth();
     deviceBufferSize = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentBufferSizeSamples();
     setDeviceCallback();
     mixer = new AudioMixer();
@@ -184,6 +184,8 @@ void AudioEngine::stopPrelisten()
 
 void AudioEngine::start()
 {
+    AudioProcessor* processor = graphPlayer->getCurrentProcessor();
+    processor->prepareToPlay(deviceSampleRate, deviceBufferSize);
 }
 
 void AudioEngine::stop()

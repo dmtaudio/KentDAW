@@ -64,7 +64,8 @@ public:
         This class implements the desktop window that contains an instance of
         our MainContentComponent class.
     */
-    class MainWindow    : public DocumentWindow
+    class MainWindow    : public DocumentWindow,
+                          public ApplicationCommandTarget
     {
     public:
         MainWindow (String name)  : DocumentWindow (name,
@@ -79,6 +80,43 @@ public:
             setTitleBarHeight(0);
             setVisible (true);
 			setResizable(true,true);
+        }
+        
+        ApplicationCommandTarget* getNextCommandTarget()
+        {
+            return nullptr;
+        }
+        
+        void getAllCommands (Array <CommandID>& commands)
+        {
+            const CommandID ids[] = { CommandIDs::close };
+            commands.addArray(ids, numElementsInArray(ids));
+        }
+        void getCommandInfo (CommandID commandID, ApplicationCommandInfo& result)
+        {
+            switch (commandID)
+            {
+                case CommandIDs::close:
+                    result.setInfo ("Close Window", "Closes the current window", CommandCategories::file, 0);
+                    result.defaultKeypresses.add (KeyPress ('w', ModifierKeys::commandModifier, 0));
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+        bool perform (const InvocationInfo& info)
+        {
+            switch(info.commandID)
+            {
+                case CommandIDs::close:
+                    getInstance()->systemRequestedQuit();
+                    break;
+                    
+                default:
+                    return false;
+            }
+            return true;
         }
 
         void closeButtonPressed() override

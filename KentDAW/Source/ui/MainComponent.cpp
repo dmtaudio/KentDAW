@@ -38,12 +38,10 @@ MainContentComponent::MainContentComponent()
     {
         addAndMakeVisible(menuBar);
 		addAndMakeVisible(arrangeWindow);
-        //addAndMakeVisible(transport);
 		addAndMakeVisible(leftSideBar);
 		addAndMakeVisible(fileTree);
 		//addAndMakeVisible(rightSideBar);
 		addAndMakeVisible(statusBar);
-
 		setOpaque(true);
     }    
 
@@ -87,16 +85,8 @@ void MainContentComponent::showTransportWindow()
 
 StringArray MainContentComponent::getMenuBarNames()
 {
-    StringArray menuItems;
-    menuItems.add("File");
-    menuItems.add("Edit");
-	menuItems.add("Tools");
-    menuItems.add("Transport");
-    menuItems.add("Arrange");
-    menuItems.add("Window");
-    menuItems.add("Help");
-    
-    return menuItems;
+    const char* const names[] = { "File", "Edit", "Tools", "Transport", "Arrange", "Window", "Help", nullptr };
+    return StringArray(names);
 }
 
 PopupMenu MainContentComponent::getMenuForIndex(int index, const String &name)
@@ -105,22 +95,21 @@ PopupMenu MainContentComponent::getMenuForIndex(int index, const String &name)
 
     if(name == "File") {
         // Add file menu items
-        menu.addItem(NewProject, "New Project");
-		menu.addItem(ImportAudio, "Import Audio File");
-        menu.addItem(Close, "Close");
+        menu.addCommandItem(commandManager, CommandIDs::newProject);
+        menu.addCommandItem(commandManager, CommandIDs::importAudio);
+        menu.addCommandItem(commandManager, CommandIDs::close);
 	} else if (name == "Edit") {
-		menu.addItem(Cut, "Cut");
-		menu.addItem(Copy, "Copy");
-		menu.addItem(Paste, "Paste");
+        menu.addCommandItem(commandManager, CommandIDs::cut);
+        menu.addCommandItem(commandManager, CommandIDs::copy);
+		menu.addCommandItem(commandManager, CommandIDs::paste);
 	} else if (name == "Tools") {
-		menu.addItem(Settings, "Settings");
+        menu.addCommandItem(commandManager, CommandIDs::settings);
     } else if(name == "Transport") {
         
     } else if(name == "Arrange") {
         
     } else if(name == "Window") {
-        //menu.addItem(TransportWindow, "Transport");
-        menu.addItem(TransportWindow, "Transport", true, false);
+        menu.addCommandItem(commandManager, CommandIDs::transport);
     } else if(name == "Help") {
         
     }
@@ -131,24 +120,21 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
 {
     switch(menuItemID)
     {
-        case NewProject:
+        case CommandIDs::newProject:
             break;
-		case ImportAudio:
+		case CommandIDs::importAudio:
             timer->stop();
 			break;
-        case Close:
+        case CommandIDs::close:
             JUCEApplication::getInstance()->systemRequestedQuit();
             break;
-        case Cut:
-            timer->start();
+        case CommandIDs::cut:
             break;
-        case Copy:
-            timer->startRecording();
+        case CommandIDs::copy:
             break;
-        case Paste:
-            timer->stopRecording();
+        case CommandIDs::paste:
             break;
-        case TransportWindow:
+        case CommandIDs::transport:
             if(!transport->isVisible() || !timer->isVisible())
             {
                 showTransportWindow();
@@ -161,7 +147,7 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
                 timer->setVisible(false);
             }
             break;
-		case Settings:
+		case CommandIDs::settings:
 			bool showMidiInputOptions = false;
 			bool showMidiOutputSelector = false;
 			bool showChanelsAsStereoPairs = true;
@@ -179,6 +165,42 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
 				true);
 			break;
     }
+}
+
+ApplicationCommandTarget* MainContentComponent::getNextCommandTarget()
+{
+    return findFirstTargetParentComponent();
+}
+
+void MainContentComponent::getAllCommands(Array<CommandID> &commands)
+{
+    const CommandID ids[] =
+    {
+        CommandIDs::newProject,
+        CommandIDs::openProject,
+        CommandIDs::close,
+        CommandIDs::copy,
+        CommandIDs::cut,
+        CommandIDs::paste,
+        CommandIDs::play,
+        CommandIDs::stop,
+        CommandIDs::record,
+        CommandIDs::forward,
+        CommandIDs::backward,
+        CommandIDs::toStart,
+        CommandIDs::toEnd,
+        CommandIDs::transport
+    };
+    commands.addArray(ids, numElementsInArray(ids));
+}
+
+void MainContentComponent::getCommandInfo(const CommandID commandID, ApplicationCommandInfo &result)
+{
+    switch(commandID)
+    {
+            
+    }
+    
 }
 
 void MainContentComponent::paint (Graphics& g)
