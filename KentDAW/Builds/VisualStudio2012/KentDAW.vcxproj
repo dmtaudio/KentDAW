@@ -1266,7 +1266,6 @@
     <ClCompile Include="..\..\..\Juce\juce_video\juce_video.cpp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\core\CommandIDs.h"/>
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h"/>
     <ClInclude Include="..\..\Source\ui\StatusBar.h"/>
     <ClInclude Include="..\..\Source\ui\LeftSidebar.h"/>

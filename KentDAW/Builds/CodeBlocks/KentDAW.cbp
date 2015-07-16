@@ -94,10 +94,6 @@
       <Add library="kernel32"/>
       <Add library="comctl32"/>
     </Linker>
-    <Unit filename="../../Source/core/CommandIDs.h">
-      <Option compile="0"/>
-      <Option link="0"/>
-    </Unit>
     <Unit filename="../../Source/utils/BufferDisplay.h">
       <Option compile="0"/>
       <Option link="0"/>

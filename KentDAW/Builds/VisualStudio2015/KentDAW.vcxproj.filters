@@ -1587,9 +1587,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\core\CommandIDs.h">
-      <Filter>KentDAW\Source\utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h">
       <Filter>KentDAW\Source\utils</Filter>
     </ClInclude>

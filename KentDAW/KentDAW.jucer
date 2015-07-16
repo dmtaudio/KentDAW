@@ -6,7 +6,6 @@
   <MAINGROUP id="j2y9ol" name="KentDAW">
     <GROUP id="{2B1E57D9-2977-26CD-7BDA-F46EF07CAFDF}" name="Source">
       <GROUP id="{9141BBFB-81C3-BFD8-954D-5C8A478078A2}" name="utils">
-        <FILE id="kR3NQ4" name="CommandIDs.h" compile="0" resource="0" file="Source/core/CommandIDs.h"/>
         <FILE id="g35lzt" name="BufferDisplay.h" compile="0" resource="0" file="Source/utils/BufferDisplay.h"/>
       </GROUP>
       <GROUP id="{F1590CD7-AAC5-B3CD-0441-65B231D39579}" name="ui">
