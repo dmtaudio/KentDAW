@@ -198,8 +198,9 @@ void MainContentComponent::resized()
 	leftSideBar->setBounds(0, 20, getParentWidth() / 4, getParentHeight() - 50);
 	arrangeWindow->setBounds(getParentWidth() / 4, 20, getParentWidth() / 2, (getParentHeight()/100)*80);
 	
-	Rectangle<int> rec((getParentWidth()/4)*3+1,20,getParentWidth()/4, getParentHeight()-50);
-	fileTree.setBounds(rec);
+	//File Tree Right Side Of Screen
+	Rectangle<int> fileTreeContainer((getParentWidth()/4)*3+1,20,getParentWidth()/4, getParentHeight()-50);
+	fileTree.setBounds(fileTreeContainer);
 	
 	statusBar->setBounds(0, (getParentHeight() / 100) * 96, getParentWidth(), 30);
 }

@@ -21,11 +21,14 @@ public:
 	AudioMixer();
 	~AudioMixer();
 
+	void resetGraph(int sampleRate, int bufferSize);
+
+	void addTrack();
 	void createProcessorFromSource(AudioTrack* source);
 	void addMuteControl();
 	void addPanningControl();
 	void addFaderControl();
-	void resetGraph(int sampleRate, int bufferSize);
+	
 
 	ScopedPointer<AudioProcessorGraph> getAudioProcessorGraph();
 
