@@ -8,8 +8,8 @@
   ==============================================================================
 */
 
-#include "PluginProcessor.h"
-#include "PluginEditor.h"
+#include "GainPluginProcessor.h"
+#include "GainPluginEditor.h"
 
 
 //==============================================================================
