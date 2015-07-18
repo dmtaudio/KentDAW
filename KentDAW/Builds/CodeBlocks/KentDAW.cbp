@@ -128,6 +128,11 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/core/GainProcessor.cpp"/>
+    <Unit filename="../../Source/core/GainProcessor.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/core/AudioSourceProcessor.cpp"/>
     <Unit filename="../../Source/core/AudioSourceProcessor.h"/>
     <Unit filename="../../Source/core/AudioMixer.cpp"/>

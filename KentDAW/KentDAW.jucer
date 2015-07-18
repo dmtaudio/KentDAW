@@ -27,6 +27,9 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <FILE id="c4W61U" name="GainProcessor.cpp" compile="1" resource="0"
+              file="Source/core/GainProcessor.cpp"/>
+        <FILE id="AneaZO" name="GainProcessor.h" compile="0" resource="0" file="Source/core/GainProcessor.h"/>
         <FILE id="Mz6Vq5" name="AudioSourceProcessor.cpp" compile="1" resource="0"
               file="Source/core/AudioSourceProcessor.cpp"/>
         <FILE id="jogLGW" name="AudioSourceProcessor.h" compile="1" resource="0"
