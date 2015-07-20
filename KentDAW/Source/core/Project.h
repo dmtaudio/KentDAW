@@ -19,9 +19,14 @@ class Project
 public:
     Project();
     ~Project();
-    void createBasicProject(const String& projName, const Array<String>);
+
+	//void createBasicProject(const String& projName, const Array<String>);
+	void saveProject();
+	void loadProject();
+	void setProjectDetails(int elementNumber, const String& projName, const Array<String> projFiles);
     
 private:
+	OwnedArray<XmlElement> projectElements;
 };
 
 
