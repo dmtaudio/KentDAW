@@ -3,7 +3,7 @@
 
     Project.cpp
     Created: 11 Jul 2015 9:26:48am
-    Author:  dtl
+    Author:  Dtl + Matt
 
   ==============================================================================
 */
@@ -12,7 +12,7 @@
 
 Project::Project()
 {
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < projectElements.size(); i++)
 	{
 		projectElements.add(new XmlElement(String(i)));
 	}
@@ -92,10 +92,10 @@ void Project::loadProject()
 	if (loadFileChooser.browseForFileToOpen())
 	{
 		File loadedFile(loadFileChooser.getResult());
-		
-		for (int i = 0; i < 2; i++)
+		ScopedPointer<XmlElement> loadedXml = XmlDocument::parse(loadedFile);
+
+		for (int i = 0; i < projectElements.size(); i++)
 		{
-			ScopedPointer<XmlElement> loadedXml = XmlDocument::parse(loadedFile);
 			XmlElement* childToInsert = loadedXml->getChildByName(String(i));
 			projectElements.insert(i, childToInsert);
 			loadedXml->removeChildElement(childToInsert, false);
