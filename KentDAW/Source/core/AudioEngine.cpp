@@ -175,10 +175,12 @@ void AudioEngine::stopPrelisten()
 
 void AudioEngine::start()
 {
+    mixer->start();
 }
 
 void AudioEngine::stop()
 {
+    mixer->stop();
 }
 
 int AudioEngine::getCurrentPosition()
