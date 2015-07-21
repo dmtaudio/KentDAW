@@ -44,6 +44,6 @@ void ArrangeWindow::paint (Graphics& g)
 
 void ArrangeWindow::resized()
 {
-    channelStrip->setBounds(0, 0, 200, 300);
+    channelStrip->setBounds(0, 0, 100, getHeight() * 0.6);
 
 }
