@@ -105,3 +105,35 @@ void AudioMixer::removeTrack(int trackNumber)
 		}
 	}
 }
+
+void AudioMixer::start()
+{
+    for(int i = 0; i < transportSources.size(); ++i)
+    {
+        transportSources[i]->start();
+    }
+}
+
+void AudioMixer::stop()
+{
+    for(int i = 0; i < transportSources.size(); ++i)
+    {
+        transportSources[i]->stop();
+    }
+}
+
+void AudioMixer::setPosition(double position)
+{
+    for(int i = 0; i < transportSources.size(); ++i)
+    {
+        if(transportSources[i]->getTotalLength() < position)
+        {
+            transportSources[i]->setPosition(position);
+        }
+        else
+        {
+            transportSources[i]->setLooping(false);
+            transportSources[i]->setPosition(transportSources[i]->getTotalLength());
+        }
+    }
+}

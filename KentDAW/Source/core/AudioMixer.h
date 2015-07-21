@@ -29,8 +29,12 @@ public:
 	void removeTrack(int trackNumber);
 
 	void addToGraph(AudioSourceProcessor* asProcessor, ChannelStripProcessor* channelStrip);
-	
     
+    void start();
+    void stop();
+    
+    void setPosition(double position);
+	
     // level type for meter
     struct Level
     {
@@ -39,7 +43,6 @@ public:
     };
 
 private:
-	//std::list<AudioSourceProcessor> sources;
 	Array<AudioTrack*>trackSources;
 	Array<AudioTransportSource*> transportSources;
 	Array<ChannelStripProcessor*> channelStrips;
