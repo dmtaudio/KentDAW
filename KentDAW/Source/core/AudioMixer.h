@@ -13,6 +13,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "AudioTrack.h"
+#include "ChannelStripProcessor.h"
 #include "AudioSourceProcessor.h"
 
 class AudioMixer
@@ -24,7 +25,7 @@ public:
 	void resetGraph(int sampleRate, int bufferSize);
 
 	void addTrack();
-	void createProcessorFromSource(AudioTrack* source);
+	//void createProcessorFromSource(AudioTrack* source);
 	void addMuteControl();
 	void addPanningControl();
 	void addFaderControl();
@@ -33,7 +34,7 @@ public:
 
 	void addtoGraph();
 	void removeFromGraph(uint32 trackID);
-	int trackNumber;
+	
     
     // level type for meter
     struct Level
@@ -44,12 +45,18 @@ public:
 
 private:
 	//std::list<AudioSourceProcessor> sources;
-	HashMap<uint32, AudioSourceProcessor> sourceProcessors;
-	HashMap<uint32, AudioTrack> sources; //Not Sure if this is needed
+	Array<AudioTrack*>trackSources;
+	Array<AudioTransportSource*> transportSources;
+	Array<ChannelStripProcessor*> channelStrips;
+	Array<AudioSourceProcessor*> sourceProcessors;
+	TimeSliceThread* slice;
+	//HashMap<uint32, AudioSourceProcessor> sourceProcessors;
+	//HashMap<uint32, AudioTrack> sources; //Not Sure if this is needed
 	ScopedPointer<AudioProcessorGraph> processorGraph;
 	AudioProcessorGraph::AudioGraphIOProcessor* inputNode;
 	AudioProcessorGraph::AudioGraphIOProcessor* outputNode;
 
+	uint64 nodeNumber;
 };
 
 

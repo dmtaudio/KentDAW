@@ -60,7 +60,7 @@ OBJECTS := \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
-  $(OBJDIR)/GainProcessor_34fabd2c.o \
+  $(OBJDIR)/ChannelStripProcessor_1de3a096.o \
   $(OBJDIR)/AudioSourceProcessor_d46aa592.o \
   $(OBJDIR)/AudioMixer_72677d64.o \
   $(OBJDIR)/Project_366e4072.o \
@@ -147,9 +147,9 @@ $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	@echo "Compiling TransportComponent.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/GainProcessor_34fabd2c.o: ../../Source/core/GainProcessor.cpp
+$(OBJDIR)/ChannelStripProcessor_1de3a096.o: ../../Source/core/ChannelStripProcessor.cpp
 	-@mkdir -p $(OBJDIR)
-	@echo "Compiling GainProcessor.cpp"
+	@echo "Compiling ChannelStripProcessor.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/AudioSourceProcessor_d46aa592.o: ../../Source/core/AudioSourceProcessor.cpp

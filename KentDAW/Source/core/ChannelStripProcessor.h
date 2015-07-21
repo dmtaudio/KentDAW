@@ -14,11 +14,11 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 //==============================================================================
-class GainProcessor : public AudioProcessor
+class ChannelStripProcessor : public AudioProcessor
 {
 public:
-	GainProcessor();
-	~GainProcessor();
+	ChannelStripProcessor();
+	~ChannelStripProcessor();
 
 	void prepareToPlay(double sampleRate, int samplesPerBlock) override;
 	void releaseResources() override;
@@ -51,10 +51,15 @@ public:
 	void getStateInformation(MemoryBlock& destData) override;
 	void setStateInformation(const void* data, int sizeInBytes) override;
 
+	const String getName() const override;
+	AudioProcessorEditor* createEditor() override;
+	bool hasEditor() const override;
+	
+
 	float gain;
 
 private:
-	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(GainProcessor)
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ChannelStripProcessor)
 };
 
 #endif  // GAINPROCESSOR_H_INCLUDED

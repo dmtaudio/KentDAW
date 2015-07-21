@@ -140,7 +140,7 @@
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
-    <ClCompile Include="..\..\Source\core\GainProcessor.cpp"/>
+    <ClCompile Include="..\..\Source\core\ChannelStripProcessor.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioSourceProcessor.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioMixer.cpp"/>
     <ClCompile Include="..\..\Source\core\Project.cpp"/>
@@ -1280,7 +1280,7 @@
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
     <ClInclude Include="..\..\Source\ui\MainComponent.h"/>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h"/>
-    <ClInclude Include="..\..\Source\core\GainProcessor.h"/>
+    <ClInclude Include="..\..\Source\core\ChannelStripProcessor.h"/>
     <ClInclude Include="..\..\Source\core\AudioSourceProcessor.h"/>
     <ClInclude Include="..\..\Source\core\AudioMixer.h"/>
     <ClInclude Include="..\..\Source\core\Project.h"/>

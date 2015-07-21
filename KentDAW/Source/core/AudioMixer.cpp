@@ -9,10 +9,27 @@
 */
 
 #include "AudioMixer.h"
+#include "AudioEngine.h"
 
-AudioMixer::AudioMixer() {
+AudioMixer::AudioMixer()
+			:	trackSources(),
+				transportSources(),
+				channelStrips(),
+				sourceProcessors()
+{
 	processorGraph = new AudioProcessorGraph();
-	trackNumber = 1;
+	AudioIODevice* device = AudioEngine::getSharedAudioDeviceManager().getCurrentAudioDevice();
+	int sampleRate = device->getCurrentSampleRate();
+	int bufferSize = device->getCurrentBufferSizeSamples();
+
+	slice = new TimeSliceThread("slice");
+	
+	resetGraph(sampleRate, bufferSize);
+	
+	//Node number is 3 as input node = node 1 and output node = node 2
+	//Track 1 = node 3 Track 1 channel strip = node 4
+	//Track 2 = node 4 Track 2 channel strip = node 5 etc...
+	nodeNumber = 3;
 }
 
 AudioMixer::~AudioMixer() {
@@ -35,9 +52,27 @@ ScopedPointer<AudioProcessorGraph> AudioMixer::getAudioProcessorGraph(){
 
 void AudioMixer::addTrack() {
 	AudioTrack* track = new AudioTrack();
-	createProcessorFromSource(track);
+	trackSources.add(track);
+
+	AudioTransportSource* transportSource = new AudioTransportSource();
+	transportSource->setSource(track, 0, slice);
+	transportSources.add(transportSource);
+
+	AudioSourceProcessor* asProcessor = new AudioSourceProcessor(transportSource, false);
+	sourceProcessors.add(asProcessor);
+
+	ChannelStripProcessor* channelStrip = new ChannelStripProcessor();
+	channelStrips.add(channelStrip);
+
+	processorGraph->addNode(asProcessor, nodeNumber);
+	nodeNumber++;
+	processorGraph->addNode(channelStrip, nodeNumber);
+	nodeNumber++;
+	processorGraph->addConnection(nodeNumber - 1, 1, nodeNumber, 1);
+	processorGraph->addConnection(nodeNumber, 1, 2, 1);
 }
 
+/*
 void AudioMixer::createProcessorFromSource(AudioTrack* source) {
 	AudioSourceProcessor* asProcessor = new AudioSourceProcessor(source, false);
 	//sources.push_back(asProcessor);
@@ -46,6 +81,7 @@ void AudioMixer::createProcessorFromSource(AudioTrack* source) {
 	processorGraph->addNode(asProcessor, trackNumber); //temporary until other functions written
 	//trackNumber++;
 }
+*/
 
 void AudioMixer::addMuteControl() {
 
