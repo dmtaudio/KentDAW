@@ -98,6 +98,11 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/ui/MeterComponent.cpp"/>
+    <Unit filename="../../Source/ui/MeterComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/ui/StatusBar.cpp"/>
     <Unit filename="../../Source/ui/StatusBar.h">
       <Option compile="0"/>

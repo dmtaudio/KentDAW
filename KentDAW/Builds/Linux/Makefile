@@ -51,6 +51,7 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
+  $(OBJDIR)/MeterComponent_6c7c4a70.o \
   $(OBJDIR)/StatusBar_d572aa4f.o \
   $(OBJDIR)/LeftSidebar_43b7b4a3.o \
   $(OBJDIR)/ArrangeWindow_d578844a.o \
@@ -98,6 +99,11 @@ clean:
 strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
+
+$(OBJDIR)/MeterComponent_6c7c4a70.o: ../../Source/ui/MeterComponent.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling MeterComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/StatusBar_d572aa4f.o: ../../Source/ui/StatusBar.cpp
 	-@mkdir -p $(OBJDIR)
