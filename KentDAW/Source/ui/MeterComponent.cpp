@@ -53,7 +53,7 @@ void MeterComponent::paint (Graphics& g)
     g.fillRect (rect);
 }
 
-void MeterComponent::setMeterLevel(Mixer::Level newLevel)
+void MeterComponent::setMeterLevel(AudioMixer::Level newLevel)
 {
     mLevel = newLevel;
     repaint(rect);

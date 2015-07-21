@@ -51,6 +51,8 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
+  $(OBJDIR)/MixerComponent_356b39f0.o \
+  $(OBJDIR)/ChannelStripComponent_7b124736.o \
   $(OBJDIR)/MeterComponent_6c7c4a70.o \
   $(OBJDIR)/StatusBar_d572aa4f.o \
   $(OBJDIR)/LeftSidebar_43b7b4a3.o \
@@ -99,6 +101,16 @@ clean:
 strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
+
+$(OBJDIR)/MixerComponent_356b39f0.o: ../../Source/ui/MixerComponent.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling MixerComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/ChannelStripComponent_7b124736.o: ../../Source/ui/ChannelStripComponent.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling ChannelStripComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/MeterComponent_6c7c4a70.o: ../../Source/ui/MeterComponent.cpp
 	-@mkdir -p $(OBJDIR)

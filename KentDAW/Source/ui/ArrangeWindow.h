@@ -12,6 +12,7 @@
 #define ARRANGEWINDOW_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "ChannelStripComponent.h"
 
 //==============================================================================
 /*
@@ -26,6 +27,7 @@ public:
     void resized();
 
 private:
+    ChannelStripComponent* channelStrip;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ArrangeWindow)
 };
 

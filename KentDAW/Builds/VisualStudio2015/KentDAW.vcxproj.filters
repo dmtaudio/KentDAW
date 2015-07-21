@@ -319,6 +319,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ui\MixerComponent.cpp">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ui\ChannelStripComponent.cpp">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ui\MeterComponent.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
@@ -1595,6 +1601,12 @@
   <ItemGroup>
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h">
       <Filter>KentDAW\Source\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ui\MixerComponent.h">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ui\ChannelStripComponent.h">
+      <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ui\MeterComponent.h">
       <Filter>KentDAW\Source\ui</Filter>

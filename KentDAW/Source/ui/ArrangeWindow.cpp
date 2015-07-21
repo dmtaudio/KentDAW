@@ -14,8 +14,7 @@
 //==============================================================================
 ArrangeWindow::ArrangeWindow()
 {
-	// In your constructor, you should add any child components, and
-	// initialise any special settings that your component needs.
+    addAndMakeVisible(channelStrip = new ChannelStripComponent());
 }
 
 ArrangeWindow::~ArrangeWindow()
@@ -45,7 +44,6 @@ void ArrangeWindow::paint (Graphics& g)
 
 void ArrangeWindow::resized()
 {
-    // This method is where you should set the bounds of any child
-    // components that your component contains..
+    channelStrip->setBounds(0, 0, 200, 300);
 
 }

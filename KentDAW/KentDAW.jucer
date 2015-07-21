@@ -9,6 +9,14 @@
         <FILE id="g35lzt" name="BufferDisplay.h" compile="0" resource="0" file="Source/utils/BufferDisplay.h"/>
       </GROUP>
       <GROUP id="{F1590CD7-AAC5-B3CD-0441-65B231D39579}" name="ui">
+        <FILE id="WtPUfm" name="MixerComponent.cpp" compile="1" resource="0"
+              file="Source/ui/MixerComponent.cpp"/>
+        <FILE id="frzKUK" name="MixerComponent.h" compile="0" resource="0"
+              file="Source/ui/MixerComponent.h"/>
+        <FILE id="zOVFws" name="ChannelStripComponent.cpp" compile="1" resource="0"
+              file="Source/ui/ChannelStripComponent.cpp"/>
+        <FILE id="fDF14A" name="ChannelStripComponent.h" compile="0" resource="0"
+              file="Source/ui/ChannelStripComponent.h"/>
         <FILE id="fH0HS6" name="MeterComponent.cpp" compile="1" resource="0"
               file="Source/ui/MeterComponent.cpp"/>
         <FILE id="l593Bd" name="MeterComponent.h" compile="0" resource="0"

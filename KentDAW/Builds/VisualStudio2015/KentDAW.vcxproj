@@ -131,6 +131,8 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ui\MixerComponent.cpp"/>
+    <ClCompile Include="..\..\Source\ui\ChannelStripComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\MeterComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\StatusBar.cpp"/>
     <ClCompile Include="..\..\Source\ui\LeftSidebar.cpp"/>
@@ -1269,6 +1271,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h"/>
+    <ClInclude Include="..\..\Source\ui\MixerComponent.h"/>
+    <ClInclude Include="..\..\Source\ui\ChannelStripComponent.h"/>
     <ClInclude Include="..\..\Source\ui\MeterComponent.h"/>
     <ClInclude Include="..\..\Source\ui\StatusBar.h"/>
     <ClInclude Include="..\..\Source\ui\LeftSidebar.h"/>

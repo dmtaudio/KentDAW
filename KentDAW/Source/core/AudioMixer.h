@@ -34,7 +34,13 @@ public:
 	void addtoGraph();
 	void removeFromGraph(uint32 trackID);
 	int trackNumber;
-
+    
+    // level type for meter
+    struct Level
+    {
+        float peak;
+        bool isClipping;
+    };
 
 private:
 	//std::list<AudioSourceProcessor> sources;

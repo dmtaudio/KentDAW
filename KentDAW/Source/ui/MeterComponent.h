@@ -12,7 +12,7 @@
 #define METERCOMPONENT_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "Mixer.h"
+#include "../core/AudioMixer.h"
 
 //==============================================================================
 /*
@@ -33,16 +33,14 @@ public:
     void paint (Graphics&);
     void resized();
 
-    void setMeterLevel(Mixer::Level newLevel);
+    void setMeterLevel(AudioMixer::Level newLevel);
     
     void setHorizontalType(bool isHorizontal);
     void setVerticalType(bool isVertical);
     
-    
-
 private:
     Rectangle<int> rect;
-    Mixer::Level mLevel;
+    AudioMixer::Level mLevel;
     Type meterType;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MeterComponent)
 };
