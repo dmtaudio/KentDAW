@@ -23,17 +23,12 @@ public:
 	~AudioMixer();
 
 	void resetGraph(int sampleRate, int bufferSize);
-
-	void addTrack();
-	//void createProcessorFromSource(AudioTrack* source);
-	void addMuteControl();
-	void addPanningControl();
-	void addFaderControl();
-	
 	ScopedPointer<AudioProcessorGraph> getAudioProcessorGraph();
 
-	void addtoGraph();
-	void removeFromGraph(uint32 trackID);
+	void addTrack();
+	void removeTrack(int trackNumber);
+
+	void addToGraph(AudioSourceProcessor* asProcessor, ChannelStripProcessor* channelStrip);
 	
     
     // level type for meter
@@ -50,13 +45,14 @@ private:
 	Array<ChannelStripProcessor*> channelStrips;
 	Array<AudioSourceProcessor*> sourceProcessors;
 	TimeSliceThread* slice;
-	//HashMap<uint32, AudioSourceProcessor> sourceProcessors;
-	//HashMap<uint32, AudioTrack> sources; //Not Sure if this is needed
 	ScopedPointer<AudioProcessorGraph> processorGraph;
 	AudioProcessorGraph::AudioGraphIOProcessor* inputNode;
 	AudioProcessorGraph::AudioGraphIOProcessor* outputNode;
 
-	uint64 nodeNumber;
+	uint32 nodeNumber;
+	int trackNumber;
+	int sampleRate;
+	int bufferSize;
 };
 
 

@@ -18,6 +18,8 @@ class AudioSourceProcessor : public AudioProcessor
 public:
     AudioSourceProcessor(AudioSource* const input, bool deleteSource);
     ~AudioSourceProcessor();
+
+	void setTrackNumber(int newTrackNumber);
     
     void prepareToPlay(double sampleRate, int samplesPerBlock);
     void processBlock(AudioSampleBuffer& buffer, MidiBuffer& midiMessages);
@@ -57,6 +59,7 @@ public:
 private:
     AudioSource* source;
     bool deleteSource;
+	int trackNumber;
 };
 
 

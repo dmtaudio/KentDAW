@@ -21,6 +21,11 @@ AudioSourceProcessor::~AudioSourceProcessor()
         delete source;
 }
 
+void AudioSourceProcessor::setTrackNumber(int newTrackNumber)
+{
+	trackNumber = newTrackNumber;
+}
+
 const String AudioSourceProcessor::getName() const
 {
     return String("AudioSourceWrapper");

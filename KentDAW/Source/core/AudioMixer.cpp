@@ -19,16 +19,17 @@ AudioMixer::AudioMixer()
 {
 	processorGraph = new AudioProcessorGraph();
 	AudioIODevice* device = AudioEngine::getSharedAudioDeviceManager().getCurrentAudioDevice();
-	int sampleRate = device->getCurrentSampleRate();
-	int bufferSize = device->getCurrentBufferSizeSamples();
+	sampleRate = device->getCurrentSampleRate();
+	bufferSize = device->getCurrentBufferSizeSamples();
 
 	slice = new TimeSliceThread("slice");
 	
 	resetGraph(sampleRate, bufferSize);
 	
 	//Node number is 3 as input node = node 1 and output node = node 2
-	//Track 1 = node 3 Track 1 channel strip = node 4
-	//Track 2 = node 4 Track 2 channel strip = node 5 etc...
+	//Track 1 = node 3 - Track 1 channel strip = node 4
+	//Track 2 = node 4 - Track 2 channel strip = node 5 etc...
+	trackNumber = 1;
 	nodeNumber = 3;
 }
 
@@ -59,11 +60,18 @@ void AudioMixer::addTrack() {
 	transportSources.add(transportSource);
 
 	AudioSourceProcessor* asProcessor = new AudioSourceProcessor(transportSource, false);
+	asProcessor->setTrackNumber(trackNumber);
+	trackNumber++;
 	sourceProcessors.add(asProcessor);
 
 	ChannelStripProcessor* channelStrip = new ChannelStripProcessor();
 	channelStrips.add(channelStrip);
 
+	addToGraph(asProcessor, channelStrip);
+}
+
+void AudioMixer::addToGraph(AudioSourceProcessor* asProcessor, ChannelStripProcessor* channelStrip)
+{
 	processorGraph->addNode(asProcessor, nodeNumber);
 	nodeNumber++;
 	processorGraph->addNode(channelStrip, nodeNumber);
@@ -72,29 +80,28 @@ void AudioMixer::addTrack() {
 	processorGraph->addConnection(nodeNumber, 1, 2, 1);
 }
 
-/*
-void AudioMixer::createProcessorFromSource(AudioTrack* source) {
-	AudioSourceProcessor* asProcessor = new AudioSourceProcessor(source, false);
-	//sources.push_back(asProcessor);
-	//sourceProcessors.set(trackNumber, *asProcessor);
-	//sources.set(trackNumber, *source);
-	processorGraph->addNode(asProcessor, trackNumber); //temporary until other functions written
-	//trackNumber++;
-}
-*/
+void AudioMixer::removeTrack(int trackNumber)
+{
+	//Remove track and related processors from arrays
+	trackSources.remove(trackNumber - 1);
+	transportSources.remove(trackNumber - 1);
+	sourceProcessors.remove(trackNumber - 1);
+	channelStrips.remove(trackNumber - 1);
+	
+	//reset trackNumber and nodeNumber to initial value
+	trackNumber = 1;
+	nodeNumber = 3;
+	//reset the graph to allow track reallocation
+	resetGraph(sampleRate, bufferSize);
 
-void AudioMixer::addMuteControl() {
-
-}
-
-void AudioMixer::addPanningControl() {
-
-}
-
-void AudioMixer::addFaderControl() {
-
-}
-
-void AudioMixer::removeFromGraph(uint32 trackID) {
-	processorGraph->removeNode(trackID);
+	//If there are still tracks after removal; Add them back to the graph
+	if (sourceProcessors.size() > 0)
+	{
+		for (int i = 0; i < sourceProcessors.size(); i++)
+		{
+			sourceProcessors[i]->setTrackNumber(trackNumber);
+			trackNumber++;
+			addToGraph(sourceProcessors[i], channelStrips[i]);
+		}
+	}
 }
