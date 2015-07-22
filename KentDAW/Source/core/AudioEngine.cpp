@@ -108,12 +108,6 @@ void AudioEngine::setSampleRate(const double &sampleRate)
     
     if(availableSampleRates.contains(sampleRate))
     {
-        int currentPosition;
-        
-        {
-            currentPosition = getCurrentPosition();
-            stop();
-        }
     }
 }
 
@@ -171,30 +165,6 @@ bool AudioEngine::startPrelisten(const String &absFilenamePath, const int &start
 
 void AudioEngine::stopPrelisten()
 {
-}
-
-void AudioEngine::start()
-{
-    mixer->start();
-}
-
-void AudioEngine::stop()
-{
-    mixer->stop();
-}
-
-int AudioEngine::getCurrentPosition()
-{
-    AudioIODevice* audioDevice = sharedAudioDeviceManager->getCurrentAudioDevice();
-    double deviceSampleRate = audioDevice->getCurrentSampleRate();
-    //return (int) transportSource->getCurrentPosition() * deviceSampleRate;
-    return 0;
-}
-
-void AudioEngine::setPosition(int positionInSamples)
-{
-    double deviceSampleRate = getSampleRate();
-    double positionInSeconds = (double)positionInSamples / deviceSampleRate;
 }
 
 double AudioEngine::getProcessorUsage()

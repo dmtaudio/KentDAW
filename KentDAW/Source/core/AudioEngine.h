@@ -49,12 +49,6 @@ public:
     bool startPrelisten(const String &absFilenamePath, const int &startPos, const int &endPos);
     void stopPrelisten();
     
-    // Transport controls
-    void start();
-    void stop();
-    int getCurrentPosition();
-    void setPosition(int positionInSamples);
-    
     // CPU usage data
     double getProcessorUsage();
     
