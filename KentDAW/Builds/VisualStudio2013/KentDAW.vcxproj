@@ -143,7 +143,7 @@
     <ClCompile Include="..\..\Source\core\ChannelStripProcessor.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioSourceProcessor.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioMixer.cpp"/>
-    <ClCompile Include="..\..\Source\core\Project.cpp"/>
+    <ClCompile Include="..\..\Source\core\ProjectManager.cpp"/>
     <ClCompile Include="..\..\Source\core\SampleAudioRegion.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioRegion.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioTrack.cpp"/>
@@ -1283,7 +1283,7 @@
     <ClInclude Include="..\..\Source\core\ChannelStripProcessor.h"/>
     <ClInclude Include="..\..\Source\core\AudioSourceProcessor.h"/>
     <ClInclude Include="..\..\Source\core\AudioMixer.h"/>
-    <ClInclude Include="..\..\Source\core\Project.h"/>
+    <ClInclude Include="..\..\Source\core\ProjectManager.h"/>
     <ClInclude Include="..\..\Source\core\SampleAudioRegion.h"/>
     <ClInclude Include="..\..\Source\core\AudioRegion.h"/>
     <ClInclude Include="..\..\Source\core\AudioTrack.h"/>

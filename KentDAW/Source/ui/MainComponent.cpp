@@ -9,12 +9,12 @@
 #include "MainComponent.h"
 #include "../core/AudioEngine.h"
 
-
 //==============================================================================
 MainContentComponent::MainContentComponent()
 	: tsThread("File Tree Test"),
 	directoryList(nullptr, tsThread),
-	fileTree(directoryList)
+	fileTree(directoryList),
+	projectManager()
 {
 	//Menu Bar
     menuBar = new MenuBarComponent(this);
@@ -106,6 +106,8 @@ PopupMenu MainContentComponent::getMenuForIndex(int index, const String &name)
     if(name == "File") {
         // Add file menu items
         menu.addItem(NewProject, "New Project");
+		menu.addItem(SaveProject, "Save Project");
+		menu.addItem(LoadProject, "Load Project");
 		menu.addItem(ImportAudio, "Import Audio File");
         menu.addItem(Close, "Close");
 	} else if (name == "Edit") {
@@ -133,8 +135,15 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
     {
         case NewProject:
             break;
+		case SaveProject:
+			projectManager.saveProject();
+			break;
+		case LoadProject:
+			projectManager.loadProject();
+			break;
 		case ImportAudio:
-            timer->stop();
+			projectManager.importAudioFileToProjectManager();
+            //timer->stop();
 			break;
         case Close:
             JUCEApplication::getInstance()->systemRequestedQuit();

@@ -83,9 +83,16 @@ void AudioMixer::addToGraph(AudioSourceProcessor* asProcessor, ChannelStripProce
 void AudioMixer::removeTrack(int trackNumber)
 {
 	//Remove track and related processors from arrays
+	delete trackSources[trackNumber - 1];
 	trackSources.remove(trackNumber - 1);
+
+	delete transportSources[trackNumber - 1];
 	transportSources.remove(trackNumber - 1);
+
+	delete sourceProcessors[trackNumber - 1];
 	sourceProcessors.remove(trackNumber - 1);
+
+	delete channelStrips[trackNumber - 1];
 	channelStrips.remove(trackNumber - 1);
 	
 	//reset trackNumber and nodeNumber to initial value

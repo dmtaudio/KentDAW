@@ -355,7 +355,7 @@
     <ClCompile Include="..\..\Source\core\AudioMixer.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\core\Project.cpp">
+    <ClCompile Include="..\..\Source\core\ProjectManager.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\core\SampleAudioRegion.cpp">
@@ -1638,7 +1638,7 @@
     <ClInclude Include="..\..\Source\core\AudioMixer.h">
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\core\Project.h">
+    <ClInclude Include="..\..\Source\core\ProjectManager.h">
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\SampleAudioRegion.h">

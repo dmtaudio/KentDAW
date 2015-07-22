@@ -14,6 +14,7 @@
 #include "LeftSidebar.h"
 #include "StatusBar.h"
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "../core/ProjectManager.h"
 
 
 
@@ -43,31 +44,34 @@ public:
     enum FileMenuIDs
     {
         NewProject = 1000, // replace with binary or hex numbers when appropriate
-		ImportAudio = 1005,
-        Close = 1001
+		SaveProject = 1001,
+		LoadProject = 1002,
+		ImportAudio = 1003,
+        Close = 1004
     };
     
     enum EditMenuIDs
     {
-        Cut = 1002,
-        Copy = 1003,
-        Paste = 1004
+        Cut = 1005,
+        Copy = 1006,
+        Paste = 1007
     };
 
 	enum ToolMenuIDs
 	{
-		Settings = 1006
+		Settings = 1008
 	};
     
     enum WindowMenuIDs
     {
-        TransportWindow = 1007
+        TransportWindow = 1009
     };
 
 private:
     Array<Component::SafePointer<Component>> windows;
     
     ScopedPointer<ApplicationCommandManager> commandManager;
+	ProjectManager projectManager;
 	//Menu Bar
     ScopedPointer<MenuBarModel> menuModel;
     ScopedPointer<MenuBarComponent> menuBar;

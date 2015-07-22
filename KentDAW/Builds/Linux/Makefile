@@ -63,7 +63,7 @@ OBJECTS := \
   $(OBJDIR)/ChannelStripProcessor_1de3a096.o \
   $(OBJDIR)/AudioSourceProcessor_d46aa592.o \
   $(OBJDIR)/AudioMixer_72677d64.o \
-  $(OBJDIR)/Project_366e4072.o \
+  $(OBJDIR)/ProjectManager_bb0c2f65.o \
   $(OBJDIR)/SampleAudioRegion_9d0c3739.o \
   $(OBJDIR)/AudioRegion_3ad9a943.o \
   $(OBJDIR)/AudioTrack_62b571a6.o \
@@ -162,9 +162,9 @@ $(OBJDIR)/AudioMixer_72677d64.o: ../../Source/core/AudioMixer.cpp
 	@echo "Compiling AudioMixer.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/Project_366e4072.o: ../../Source/core/Project.cpp
+$(OBJDIR)/ProjectManager_bb0c2f65.o: ../../Source/core/ProjectManager.cpp
 	-@mkdir -p $(OBJDIR)
-	@echo "Compiling Project.cpp"
+	@echo "Compiling ProjectManager.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/SampleAudioRegion_9d0c3739.o: ../../Source/core/SampleAudioRegion.cpp

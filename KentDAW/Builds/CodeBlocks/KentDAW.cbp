@@ -152,8 +152,8 @@
     <Unit filename="../../Source/core/AudioSourceProcessor.h"/>
     <Unit filename="../../Source/core/AudioMixer.cpp"/>
     <Unit filename="../../Source/core/AudioMixer.h"/>
-    <Unit filename="../../Source/core/Project.cpp"/>
-    <Unit filename="../../Source/core/Project.h"/>
+    <Unit filename="../../Source/core/ProjectManager.cpp"/>
+    <Unit filename="../../Source/core/ProjectManager.h"/>
     <Unit filename="../../Source/core/SampleAudioRegion.cpp"/>
     <Unit filename="../../Source/core/SampleAudioRegion.h"/>
     <Unit filename="../../Source/core/AudioRegion.cpp"/>
