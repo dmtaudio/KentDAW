@@ -23,13 +23,15 @@ public:
 	//ProjectManager Management
 	void saveProject();
 	void loadProject();
-	void setProjectManagerDetails(int elementNumber, const String& projName);
+	void createBasicProject(const String& projName);
 
 	void importAudioFileToProjectManager();
     
 private:
+	ScopedPointer<XmlElement>pElements;
 	OwnedArray<XmlElement> projectElements;
 	Array<String> projFilePaths;
+	AudioFormatManager formatManager;
 };
 
 

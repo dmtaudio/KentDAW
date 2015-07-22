@@ -12,10 +12,9 @@
 
 ProjectManager::ProjectManager() : projFilePaths()
 {
-	for (int i = 0; i < projectElements.size(); i++)
-	{
-		projectElements.add(new XmlElement(String(i)));
-	}
+	pElements = new XmlElement("Project_Elements");
+	formatManager.registerBasicFormats();
+	createBasicProject("New Project");
 }
 
 ProjectManager::~ProjectManager()
@@ -54,8 +53,8 @@ void ProjectManager::saveProject()
 	{
 		File savedFile(locationChooser.getResult());
 		String stringFile = savedFile.getFullPathName();
-		stringFile = stringFile + ".mor";
-		savedFile = stringFile;
+		//stringFile = stringFile + ".mor";
+		//savedFile = stringFile;
 
 		bool overwrite = true;
 
@@ -68,16 +67,9 @@ void ProjectManager::saveProject()
 		{
 			savedFile.deleteFile();
 			savedFile.create();
-
-			XmlElement *project = new XmlElement("SAVED_PROJECT");
 			
-			for (int i = 0; i < 2; i++)
-			{
-				project->addChildElement(projectElements[i]);
-			}
-
 			//Create XML
-			String xmlDoc = project->createDocument(String::empty, false);
+			String xmlDoc = pElements->createDocument(String::empty, false);
 			//Append to savefile
 			savedFile.appendText(xmlDoc);
 		}
@@ -93,34 +85,29 @@ void ProjectManager::loadProject()
 	{
 		File loadedFile(loadFileChooser.getResult());
 		ScopedPointer<XmlElement> loadedXml = XmlDocument::parse(loadedFile);
-
-		for (int i = 0; i < projectElements.size(); i++)
-		{
-			XmlElement* childToInsert = loadedXml->getChildByName(String(i));
-			projectElements.insert(i, childToInsert);
-			loadedXml->removeChildElement(childToInsert, false);
-		}
+		pElements = loadedXml->getChildByName("Project_Elements");
+		loadedXml->removeChildElement(pElements, false);
 	}
 }
 
-void ProjectManager::setProjectManagerDetails(int elementNumber, const String &projName)
+void ProjectManager::createBasicProject(const String &projName)
 {
-	projectElements[elementNumber]->deleteAllChildElements();
+	pElements->deleteAllChildElements();
 
 	//Add Settings as a child element to project
 	XmlElement* projectSettings = new XmlElement("Settings");
-	projectSettings->setAttribute("ProjectManagerName", projName);
-	projectElements[elementNumber]->addChildElement(projectSettings);
+	projectSettings->setAttribute("Project_Name", projName);
+	pElements->addChildElement(projectSettings);
 
 	//Add file paths and add projectFiles as a child element to project
-	XmlElement* projectFiles = new XmlElement("Paths");
+	XmlElement* projectFilePaths = new XmlElement("File_Paths");
 	for (auto file : projFilePaths)
 	{
 		int i = 1;
-		projectFiles->setAttribute((String)i, file);
+		projectFilePaths->setAttribute((String)i, file);
 		i++;
 	}
-	projectElements[elementNumber]->addChildElement(projectFiles);
+	pElements->addChildElement(projectFilePaths);
 }
 
 void ProjectManager::importAudioFileToProjectManager()
