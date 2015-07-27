@@ -134,6 +134,7 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
     switch(menuItemID)
     {
         case NewProject:
+			projectManager.createBasicProject("Untitled Project");
             break;
 		case SaveProject:
 			projectManager.saveProject();

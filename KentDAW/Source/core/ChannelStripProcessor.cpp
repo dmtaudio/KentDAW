@@ -14,6 +14,8 @@
 ChannelStripProcessor::ChannelStripProcessor()
 {
 	gain = 1.0f;
+	muteGain = 0.0f;
+	muted = false;
 }
 
 ChannelStripProcessor::~ChannelStripProcessor()
@@ -22,27 +24,68 @@ ChannelStripProcessor::~ChannelStripProcessor()
 
 int ChannelStripProcessor::getNumParameters()
 {
-	return 1;
+	return 2;
 }
 
 float ChannelStripProcessor::getParameter(int index)
 {
-	return gain;
+	if (index == 1)
+	{
+		return gain;
+	}
+	if (index == 2)
+	{
+		return muteGain;
+	}
 }
 
 void ChannelStripProcessor::setParameter(int index, float newValue)
 {
-	gain = newValue;
+	if (index == 1)
+	{
+		gain = newValue;
+	}
+	//Even though muteGain stays the same; in here for reasons
+	if (index == 2)
+	{
+		muteGain = 0.0f;
+	}
+}
+
+void ChannelStripProcessor::changeMute()
+{
+	if (muted == true)
+	{
+		muted == false;
+	}
+	else
+	{
+		muted == true;
+	}
 }
 
 const String ChannelStripProcessor::getParameterName(int index)
 {
-	return "Gain";
+	if (index == 1)
+	{
+		return "Gain";
+	}
+	if (index == 2)
+	{
+		return "Mute";
+	}
 }
 
 const String ChannelStripProcessor::getParameterText(int index)
 {
-	return String(gain);
+	if (index == 1)
+	{
+		return String(gain);
+	}
+	if (index == 2)
+	{
+		return String(muted);
+	}
 }
 
 const String ChannelStripProcessor::getInputChannelName(int channelIndex) const
@@ -129,8 +172,14 @@ void ChannelStripProcessor::releaseResources()
 
 void ChannelStripProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& midiMessages)
 {
-	buffer.applyGain(gain);
-
+	if (muted == false)
+	{
+		buffer.applyGain(gain);
+	}
+	else if (muted == true)
+	{
+		buffer.applyGain(0.0);
+	}
 	for (int i = getNumInputChannels(); i < getNumOutputChannels(); ++i)
 		buffer.clear(i, 0, buffer.getNumSamples());
 }

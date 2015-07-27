@@ -10,11 +10,11 @@
 
 #include "ProjectManager.h"
 
-ProjectManager::ProjectManager() : projFilePaths()
+ProjectManager::ProjectManager() : projectFilePathsArray()
 {
 	pElements = new XmlElement("Project_Elements");
 	formatManager.registerBasicFormats();
-	createBasicProject("New Project");
+	createBasicProject("Untitled Project");
 }
 
 ProjectManager::~ProjectManager()
@@ -100,14 +100,14 @@ void ProjectManager::createBasicProject(const String &projName)
 	pElements->addChildElement(projectSettings);
 
 	//Add file paths and add projectFiles as a child element to project
-	XmlElement* projectFilePaths = new XmlElement("File_Paths");
-	for (auto file : projFilePaths)
+	XmlElement* projectFilePathsXML = new XmlElement("File_Paths");
+	int i = 1;
+	for (auto file : projectFilePathsArray)
 	{
-		int i = 1;
-		projectFilePaths->setAttribute((String)i, file);
+		projectFilePathsXML->setAttribute((String)i, file);
 		i++;
 	}
-	pElements->addChildElement(projectFilePaths);
+	pElements->addChildElement(projectFilePathsXML);
 }
 
 void ProjectManager::importAudioFileToProjectManager()
@@ -118,6 +118,6 @@ void ProjectManager::importAudioFileToProjectManager()
 	if (chooser.browseForFileToOpen()) {
 		File audioFile(chooser.getResult());
 		String filePath(audioFile.getFullPathName());
-		projFilePaths.add(filePath);
+		projectFilePathsArray.add(filePath);
 	}
 }

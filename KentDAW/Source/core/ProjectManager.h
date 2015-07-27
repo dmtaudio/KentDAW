@@ -29,11 +29,7 @@ public:
     
 private:
 	ScopedPointer<XmlElement>pElements;
-	OwnedArray<XmlElement> projectElements;
-	Array<String> projFilePaths;
+	Array<String> projectFilePathsArray;
 	AudioFormatManager formatManager;
 };
-
-
-
 #endif  // PROJECT_H_INCLUDED
