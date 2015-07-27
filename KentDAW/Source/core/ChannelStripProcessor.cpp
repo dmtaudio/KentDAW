@@ -14,6 +14,7 @@
 ChannelStripProcessor::ChannelStripProcessor()
 {
 	gain = 1.0f;
+	panning = 0.5f;
 	muteGain = 0.0f;
 	muted = false;
 }
@@ -24,7 +25,7 @@ ChannelStripProcessor::~ChannelStripProcessor()
 
 int ChannelStripProcessor::getNumParameters()
 {
-	return 2;
+	return 3;
 }
 
 float ChannelStripProcessor::getParameter(int index)
@@ -33,7 +34,11 @@ float ChannelStripProcessor::getParameter(int index)
 	{
 		return gain;
 	}
-	if (index == 2)
+	else if (index == 2)
+	{
+		return panning;
+	}
+	else if (index == 3)
 	{
 		return muteGain;
 	}
@@ -45,14 +50,13 @@ void ChannelStripProcessor::setParameter(int index, float newValue)
 	{
 		gain = newValue;
 	}
-	//Even though muteGain stays the same; in here for reasons
-	if (index == 2)
+	else if (index == 2)
 	{
-		muteGain = 0.0f;
+		panning = newValue;
 	}
 }
 
-void ChannelStripProcessor::changeMute()
+void ChannelStripProcessor::setMuteParameter()
 {
 	if (muted == true)
 	{
@@ -70,7 +74,11 @@ const String ChannelStripProcessor::getParameterName(int index)
 	{
 		return "Gain";
 	}
-	if (index == 2)
+	else if (index == 2)
+	{
+		return "Panning";
+	}
+	else if (index == 3)
 	{
 		return "Mute";
 	}
@@ -82,7 +90,11 @@ const String ChannelStripProcessor::getParameterText(int index)
 	{
 		return String(gain);
 	}
-	if (index == 2)
+	else if (index == 2)
+	{
+		return String(panning);
+	}
+	else if (index == 3)
 	{
 		return String(muted);
 	}
@@ -174,12 +186,26 @@ void ChannelStripProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& 
 {
 	if (muted == false)
 	{
-		buffer.applyGain(gain);
+		if (panning == 0.5)
+		{
+			buffer.applyGain(gain);
+		}
+		else if (panning < 0.5)
+		{
+			buffer.applyGain(0, 0, buffer.getNumSamples(), gain);
+			buffer.applyGain(1, 0, buffer.getNumSamples(), gain / panning);
+		}
+		else if (panning > 0.5)
+		{
+			buffer.applyGain(0, 0, buffer.getNumSamples(), gain / (panning - 0.5));
+			buffer.applyGain(1, 0, buffer.getNumSamples(), gain);
+		}
 	}
 	else if (muted == true)
 	{
 		buffer.applyGain(0.0);
 	}
+
 	for (int i = getNumInputChannels(); i < getNumOutputChannels(); ++i)
 		buffer.clear(i, 0, buffer.getNumSamples());
 }
