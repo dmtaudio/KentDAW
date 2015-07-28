@@ -58,7 +58,7 @@ void ChannelStripProcessor::setParameter(int index, float newValue)
 
 void ChannelStripProcessor::setMuteParameter()
 {
-	if (muted == true)
+	if (muted)
 	{
 		muted == false;
 	}
@@ -184,7 +184,7 @@ void ChannelStripProcessor::releaseResources()
 
 void ChannelStripProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& midiMessages)
 {
-	if (muted == false)
+	if (!muted)
 	{
 		if (panning == 0.5)
 		{
@@ -201,7 +201,7 @@ void ChannelStripProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& 
 			buffer.applyGain(1, 0, buffer.getNumSamples(), gain);
 		}
 	}
-	else if (muted == true)
+	else if (muted)
 	{
 		buffer.applyGain(0.0);
 	}
