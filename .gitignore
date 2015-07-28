@@ -21,6 +21,7 @@ KentDAW/Builds/*/Release
 KentDAW/Builds/*/KentDAW.sdf
 KentDAW/Builds/*/KentDAW.opensdf
 KentDAW/Builds/*/*.suo
+KentDaw/Builds/VisualStudio2015/.vs
 KentDAW/Builds/*/*.user
 
 # Vim

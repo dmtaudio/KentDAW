@@ -9,7 +9,9 @@
 */
 
 #include "../../JuceLibraryCode/JuceHeader.h"
+#include <list>
 #include "ChannelStripComponent.h"
+#include "../core/AudioRegionFactory.h"
 
 //==============================================================================
 ChannelStripComponent::ChannelStripComponent()
@@ -23,7 +25,7 @@ ChannelStripComponent::ChannelStripComponent()
     addAndMakeVisible(label = new Label(String::empty, String::empty));
     label->setFont(Font(11.0f, Font::FontStyleFlags::plain));
     label->setJustificationType(Justification::centred);
-    label->setEditable(false, true, true);
+    label->setEditable(false, true);
     label->addListener(this);
     
     // some method should be used to return the name of a track
@@ -100,6 +102,39 @@ void ChannelStripComponent::resized()
     meter->setVisible(true);
     meter->setBounds((getWidth() - remainingWidth) + (remainingWidth - meterWidth) / 2, offsetY, meterWidth, totalHeight);
     
+}
+
+bool ChannelStripComponent::isInterestedInFileDrag(const StringArray & files)
+{
+    bool accepted;
+    std::list<String> extensions;
+    extensions.push_back(".wav");
+    extensions.push_back(".flac");
+
+    for (auto currentFile = files.begin(), end = files.end(); currentFile != end; ++currentFile) {
+        accepted = false;
+        for (auto extension = extensions.begin(), endExtensions = extensions.end(); extension != endExtensions; ++extension) {
+            if (currentFile->endsWith(*extension)) {
+                accepted = true;
+                break;
+            }
+        }
+
+        if (!accepted) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+void ChannelStripComponent::filesDropped(const StringArray & files, int x, int y)
+{
+    for (auto current = files.begin(), end = files.end(); current != end; ++current) {
+        AudioRegion *region = AudioRegionFactory::build(*current, 0);
+
+        track.add(*region);
+    }
 }
 
 void ChannelStripComponent::sliderValueChanged(Slider* movedSlider)

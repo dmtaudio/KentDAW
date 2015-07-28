@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="tpOfMf" name="KentDAW" projectType="guiapp" version="1.0.0"
               bundleIdentifier="com.yourcompany.KentDAW" includeBinaryInAppConfig="1"
-              jucerVersion="3.1.0">
+              jucerVersion="3.2.0">
   <MAINGROUP id="j2y9ol" name="KentDAW">
     <GROUP id="{2B1E57D9-2977-26CD-7BDA-F46EF07CAFDF}" name="Source">
       <GROUP id="{9141BBFB-81C3-BFD8-954D-5C8A478078A2}" name="utils">
@@ -39,6 +39,10 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <FILE id="hDLwiB" name="AudioRegionFactory.cpp" compile="1" resource="0"
+              file="Source/core/AudioRegionFactory.cpp"/>
+        <FILE id="MPW9Wd" name="AudioRegionFactory.h" compile="0" resource="0"
+              file="Source/core/AudioRegionFactory.h"/>
         <FILE id="c4W61U" name="ChannelStripProcessor.cpp" compile="1" resource="0"
               file="Source/core/ChannelStripProcessor.cpp"/>
         <FILE id="AneaZO" name="ChannelStripProcessor.h" compile="0" resource="0"

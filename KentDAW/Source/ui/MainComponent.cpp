@@ -51,6 +51,7 @@ MainContentComponent::MainContentComponent()
 	directoryList.setDirectory(File::getSpecialLocation(File::userHomeDirectory), true, true);
 	tsThread.startThread(3);
 	fileTree.setColour(FileTreeComponent::backgroundColourId, Colours::lightgrey.withAlpha(0.6f));
+    fileTree.setDragAndDropDescription("Test");
 }
 
 MainContentComponent::~MainContentComponent()

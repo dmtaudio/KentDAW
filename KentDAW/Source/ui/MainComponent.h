@@ -24,7 +24,8 @@
     your controls and content.
 */
 class MainContentComponent   : public Component,
-                               public MenuBarModel
+                               public MenuBarModel,
+                               public DragAndDropContainer
 {
 public:
     

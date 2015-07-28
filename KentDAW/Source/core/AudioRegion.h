@@ -15,13 +15,12 @@
 
 class AudioRegion : public PositionableAudioSource {
 protected:
-	AudioRegion(int64 startTime, int64 endTime, int64 length);
+    AudioRegion(int64 startTime, int64 endTime, int64 length);
 	virtual ~AudioRegion() {
 	}
 
 public:
-
-	void setNextReadPosition(int64 newPosition) override;
+    void setNextReadPosition(int64 newPosition) override;
 	int64 getNextReadPosition() const override;
 	int64 getTotalLength() const override;
 

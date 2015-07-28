@@ -38,10 +38,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">KentDAW</TargetName>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">KentDAW</TargetName>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
     <PlatformToolset>v140</PlatformToolset>
@@ -140,6 +138,7 @@
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
+    <ClCompile Include="..\..\Source\core\AudioRegionFactory.cpp"/>
     <ClCompile Include="..\..\Source\core\ChannelStripProcessor.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioSourceProcessor.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioMixer.cpp"/>
@@ -1280,6 +1279,7 @@
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
     <ClInclude Include="..\..\Source\ui\MainComponent.h"/>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h"/>
+    <ClInclude Include="..\..\Source\core\AudioRegionFactory.h"/>
     <ClInclude Include="..\..\Source\core\ChannelStripProcessor.h"/>
     <ClInclude Include="..\..\Source\core\AudioSourceProcessor.h"/>
     <ClInclude Include="..\..\Source\core\AudioMixer.h"/>
