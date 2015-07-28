@@ -14,6 +14,9 @@
 ChannelStripProcessor::ChannelStripProcessor()
 {
 	gain = 1.0f;
+	panning = 0.5f;
+	muteGain = 0.0f;
+	muted = false;
 }
 
 ChannelStripProcessor::~ChannelStripProcessor()
@@ -22,27 +25,79 @@ ChannelStripProcessor::~ChannelStripProcessor()
 
 int ChannelStripProcessor::getNumParameters()
 {
-	return 1;
+	return 3;
 }
 
 float ChannelStripProcessor::getParameter(int index)
 {
-	return gain;
+	if (index == 1)
+	{
+		return gain;
+	}
+	else if (index == 2)
+	{
+		return panning;
+	}
+	else if (index == 3)
+	{
+		return muteGain;
+	}
 }
 
 void ChannelStripProcessor::setParameter(int index, float newValue)
 {
-	gain = newValue;
+	if (index == 1)
+	{
+		gain = newValue;
+	}
+	else if (index == 2)
+	{
+		panning = newValue;
+	}
+}
+
+void ChannelStripProcessor::setMuteParameter()
+{
+	if (muted)
+	{
+		muted == false;
+	}
+	else
+	{
+		muted == true;
+	}
 }
 
 const String ChannelStripProcessor::getParameterName(int index)
 {
-	return "Gain";
+	if (index == 1)
+	{
+		return "Gain";
+	}
+	else if (index == 2)
+	{
+		return "Panning";
+	}
+	else if (index == 3)
+	{
+		return "Mute";
+	}
 }
 
 const String ChannelStripProcessor::getParameterText(int index)
 {
-	return String(gain);
+	if (index == 1)
+	{
+		return String(gain);
+	}
+	else if (index == 2)
+	{
+		return String(panning);
+	}
+	else if (index == 3)
+	{
+		return String(muted);
+	}
 }
 
 const String ChannelStripProcessor::getInputChannelName(int channelIndex) const
@@ -129,7 +184,27 @@ void ChannelStripProcessor::releaseResources()
 
 void ChannelStripProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& midiMessages)
 {
-	buffer.applyGain(gain);
+	if (!muted)
+	{
+		if (panning == 0.5)
+		{
+			buffer.applyGain(gain);
+		}
+		else if (panning < 0.5)
+		{
+			buffer.applyGain(0, 0, buffer.getNumSamples(), gain);
+			buffer.applyGain(1, 0, buffer.getNumSamples(), gain / panning);
+		}
+		else if (panning > 0.5)
+		{
+			buffer.applyGain(0, 0, buffer.getNumSamples(), gain / (panning - 0.5));
+			buffer.applyGain(1, 0, buffer.getNumSamples(), gain);
+		}
+	}
+	else if (muted)
+	{
+		buffer.applyGain(0.0);
+	}
 
 	for (int i = getNumInputChannels(); i < getNumOutputChannels(); ++i)
 		buffer.clear(i, 0, buffer.getNumSamples());
