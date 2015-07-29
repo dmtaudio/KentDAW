@@ -271,5 +271,5 @@ void MainContentComponent::getAllCommands(Array<CommandID>& commands)
 }
 bool MainContentComponent::perform (const ApplicationCommandTarget::InvocationInfo& info)
 {
-    
+    return false;
 }
