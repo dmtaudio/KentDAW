@@ -10,11 +10,15 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "ArrangeWindow.h"
+#include "../core/AudioTrackFactory.h"
 
 //==============================================================================
-ArrangeWindow::ArrangeWindow()
+ArrangeWindow::ArrangeWindow(AudioEngine *audioEngine) : audioEngine(audioEngine)
 {
-    addAndMakeVisible(channelStrip = new ChannelStripComponent());
+    btn = new TextButton("Add track", "Add track");
+
+    addAndMakeVisible(btn);
+    btn->addListener(this);
 }
 
 ArrangeWindow::~ArrangeWindow()
@@ -23,14 +27,6 @@ ArrangeWindow::~ArrangeWindow()
 
 void ArrangeWindow::paint (Graphics& g)
 {
-    /* This demo code just fills the component's background and
-       draws some placeholder text to get you started.
-
-       You should replace everything in this method with your own
-       drawing code..
-    */
-
-	
     g.fillAll (Colours::white);   // clear the background
 
     g.setColour (Colours::grey);
@@ -44,6 +40,31 @@ void ArrangeWindow::paint (Graphics& g)
 
 void ArrangeWindow::resized()
 {
-    channelStrip->setBounds(0, 0, 100, getHeight() * 0.6);
+    int i = 0;
 
+    for (auto current = channelStrips.begin(), end = channelStrips.end(); current != end; ++current) {
+        (*current)->setBounds(0, i++ * 300, 100, 300 * 0.6);
+    }
+
+    btn->setBounds(getWidth() / 2 - btn->getWidth() / 2, 0, 200, 60);
+}
+
+void ArrangeWindow::createGuiForTrack(AudioTrack * track)
+{
+    ChannelStripComponent *channelStrip = new ChannelStripComponent(track);
+
+    channelStrips.push_back(channelStrip);
+    addAndMakeVisible(channelStrip);
+    resized();
+}
+
+void ArrangeWindow::buttonClicked(Button *button)
+{
+    if (button == btn) {
+        AudioTrack *track = AudioTrackFactory::build();
+
+        // Command stuff
+        audioEngine->getMixer()->addTrack(track);
+        createGuiForTrack(track);
+    }
 }

@@ -14,7 +14,7 @@
 #include "../core/AudioRegionFactory.h"
 
 //==============================================================================
-ChannelStripComponent::ChannelStripComponent()
+ChannelStripComponent::ChannelStripComponent(AudioTrack *track) : track(track)
 {
     // just for testing purposes
     mLevel.peak = 0.3;
@@ -133,7 +133,7 @@ void ChannelStripComponent::filesDropped(const StringArray & files, int x, int y
     for (auto current = files.begin(), end = files.end(); current != end; ++current) {
         AudioRegion *region = AudioRegionFactory::build(*current, 0);
 
-        track.add(*region);
+        track->add(*region);
     }
 }
 

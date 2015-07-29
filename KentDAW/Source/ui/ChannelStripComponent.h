@@ -25,7 +25,7 @@ class ChannelStripComponent    : public Component,
                                  public FileDragAndDropTarget
 {
 public:
-    ChannelStripComponent();
+    ChannelStripComponent(AudioTrack *track);
     ~ChannelStripComponent();
     
     void sliderValueChanged(Slider* movedSlider);
@@ -46,7 +46,7 @@ private:
     MeterComponent* meter;
     AudioMixer::Level mLevel;
 
-    AudioTrack track;
+    AudioTrack *track;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ChannelStripComponent)
 
     // Inherited via FileDragAndDropTarget

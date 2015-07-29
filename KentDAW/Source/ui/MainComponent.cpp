@@ -16,7 +16,9 @@ MainContentComponent::MainContentComponent()
 	fileTree(directoryList),
 	projectManager()
 {
-	//Menu Bar
+    audioEngine = new AudioEngine();
+    
+    //Menu Bar
     menuBar = new MenuBarComponent(this);
 
 	//Transport
@@ -24,15 +26,13 @@ MainContentComponent::MainContentComponent()
     timer = new TimerComponent();
 
 	//Arrange Window
-    arrangeWindow = new ArrangeWindow();
+    arrangeWindow = new ArrangeWindow(audioEngine);
 
 	//Left Side
 	leftSideBar = new LeftSidebar();
 
 	//Status Bar
 	statusBar = new StatusBar();
-    
-    audioEngine = new AudioEngine();
 
 	setOpaque(true);
 

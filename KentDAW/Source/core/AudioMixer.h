@@ -25,7 +25,7 @@ public:
 	void resetGraph(int sampleRate, int bufferSize);
 	ScopedPointer<AudioProcessorGraph> getAudioProcessorGraph();
 
-	void addTrack();
+	void addTrack(AudioTrack *track);
 	void removeTrack(int trackNumber);
 
 	void addToGraph(AudioSourceProcessor* asProcessor, ChannelStripProcessor* channelStrip);

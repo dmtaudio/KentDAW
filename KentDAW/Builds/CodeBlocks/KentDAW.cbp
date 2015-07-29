@@ -143,6 +143,11 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/core/AudioTrackFactory.cpp"/>
+    <Unit filename="../../Source/core/AudioTrackFactory.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/core/AudioRegionFactory.cpp"/>
     <Unit filename="../../Source/core/AudioRegionFactory.h">
       <Option compile="0"/>
