@@ -221,3 +221,55 @@ void MainContentComponent::resized()
 	
 	statusBar->setBounds(0, (getParentHeight() / 100) * 96, getParentWidth(), 30);
 }
+
+ApplicationCommandTarget* MainContentComponent::getNextCommandTarget()
+{
+    return findFirstTargetParentComponent();
+}
+
+void MainContentComponent::getCommandInfo(CommandID commandID, ApplicationCommandInfo& result)
+{
+    const String fileCategory ("File Menu");
+    const String editCategory ("Edit Menu");
+    const String toolsCategory ("Tools Menu");
+    const String windowCategory ("Window Menu");
+    const String transportCategory ("Transport Controls");
+    
+    switch(commandID)
+    {
+        case MainContentComponent::FileMenuIDs::NewProject:
+            result.setInfo ("New Project", "Create an new project", fileCategory, 0);
+        case MainContentComponent::FileMenuIDs::ImportAudio:
+            result.setInfo ("Import Audio", "Import audio into the project", fileCategory, 0);
+        case MainContentComponent::FileMenuIDs::Close:
+            result.setInfo ("Close", "Close the program", fileCategory, 0);
+        case MainContentComponent::FileMenuIDs::LoadProject:
+            result.setInfo ("Load", "Load the project", fileCategory, 0);
+        case MainContentComponent::FileMenuIDs::SaveProject:
+            result.setInfo ("Save", "Save the project", editCategory, 0);
+        case MainContentComponent::EditMenuIDs::Copy:
+            result.setInfo ("Copy", "Copy to the clipboard", editCategory, 0);
+        case MainContentComponent::EditMenuIDs::Cut:
+            result.setInfo ("Cut", "Cut to the clipboard", editCategory, 0);
+        case MainContentComponent::EditMenuIDs::Paste:
+            result.setInfo ("Paste", "Paste from the clipboard", editCategory, 0);
+        case MainContentComponent::ToolMenuIDs::Settings:
+            result.setInfo ("Settings", "Change the device settings", toolsCategory, 0);
+        case MainContentComponent::WindowMenuIDs::TransportWindow:
+            result.setInfo ("TransportWindow", "Show the transport window", toolsCategory, 0);
+        case MainContentComponent::TransportIDs::Play:
+            result.setInfo ("Play", "Play the track", transportCategory, 0);
+        case MainContentComponent::TransportIDs::Stop:
+            result.setInfo ("Stop", "Stop the track", transportCategory, 0);
+        case MainContentComponent::TransportIDs::Forward:
+            result.setInfo ("Forward", "Stop the track", transportCategory, 0);
+    }
+}
+void MainContentComponent::getAllCommands(Array<CommandID>& commands)
+{
+    
+}
+bool MainContentComponent::perform (const ApplicationCommandTarget::InvocationInfo& info)
+{
+    
+}

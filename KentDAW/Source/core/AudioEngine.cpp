@@ -21,7 +21,6 @@ AudioEngine::AudioEngine()
     deviceBufferSize = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentBufferSizeSamples();
     mixer = new AudioMixer();
 	mixer->resetGraph(deviceSampleRate, deviceBufferSize);
-   
 }
 
 AudioEngine::~AudioEngine()

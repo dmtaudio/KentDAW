@@ -26,6 +26,7 @@
 */
 class MainContentComponent   : public Component,
                                public MenuBarModel,
+                               public ApplicationCommandTarget,
                                public DragAndDropContainer
 {
 public:
@@ -81,6 +82,11 @@ public:
         Forward = 0x201f,
         ToEnd = 0x2020
     };
+    
+    ApplicationCommandTarget* getNextCommandTarget() override;
+    void getCommandInfo(CommandID commandID, ApplicationCommandInfo& result) override;
+    void getAllCommands(Array<CommandID>& commands) override;
+    bool perform (const ApplicationCommandTarget::InvocationInfo& info) override;
 
 private:
     Array<Component*> windows;
