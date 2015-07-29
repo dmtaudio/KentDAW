@@ -138,6 +138,7 @@
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
+    <ClCompile Include="..\..\Source\core\AudioTrackFactory.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioRegionFactory.cpp"/>
     <ClCompile Include="..\..\Source\core\ChannelStripProcessor.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioSourceProcessor.cpp"/>
@@ -1279,6 +1280,7 @@
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
     <ClInclude Include="..\..\Source\ui\MainComponent.h"/>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h"/>
+    <ClInclude Include="..\..\Source\core\AudioTrackFactory.h"/>
     <ClInclude Include="..\..\Source\core\AudioRegionFactory.h"/>
     <ClInclude Include="..\..\Source\core\ChannelStripProcessor.h"/>
     <ClInclude Include="..\..\Source\core\AudioSourceProcessor.h"/>

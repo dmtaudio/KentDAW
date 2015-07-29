@@ -13,11 +13,14 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "ChannelStripComponent.h"
+#include "../core/AudioTrack.h"
+#include <list>
 
 //==============================================================================
 /*
 */
-class ArrangeWindow    : public Component
+class ArrangeWindow    : public Viewport,
+    Button::Listener
 {
 public:
     ArrangeWindow();
@@ -25,10 +28,15 @@ public:
 
     void paint (Graphics&);
     void resized();
+    void createGuiForTrack(AudioTrack *track);
 
 private:
-    ChannelStripComponent* channelStrip;
+    TextButton *btn;
+    std::list<ChannelStripComponent *> channelStrips;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ArrangeWindow)
+
+        // Inherited via Listener
+        virtual void buttonClicked(Button *) override;
 };
 
 

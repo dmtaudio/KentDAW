@@ -58,6 +58,7 @@ OBJECTS := \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
+  $(OBJDIR)/AudioTrackFactory_b681268e.o \
   $(OBJDIR)/AudioRegionFactory_43999451.o \
   $(OBJDIR)/ChannelStripProcessor_1de3a096.o \
   $(OBJDIR)/AudioSourceProcessor_d46aa592.o \
@@ -144,6 +145,11 @@ $(OBJDIR)/MainComponent_4eca1cd2.o: ../../Source/ui/MainComponent.cpp
 $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling TransportComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/AudioTrackFactory_b681268e.o: ../../Source/core/AudioTrackFactory.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling AudioTrackFactory.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/AudioRegionFactory_43999451.o: ../../Source/core/AudioRegionFactory.cpp

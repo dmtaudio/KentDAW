@@ -39,6 +39,10 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <FILE id="ps6msJ" name="AudioTrackFactory.cpp" compile="1" resource="0"
+              file="Source/core/AudioTrackFactory.cpp"/>
+        <FILE id="Fp0m6A" name="AudioTrackFactory.h" compile="0" resource="0"
+              file="Source/core/AudioTrackFactory.h"/>
         <FILE id="hDLwiB" name="AudioRegionFactory.cpp" compile="1" resource="0"
               file="Source/core/AudioRegionFactory.cpp"/>
         <FILE id="MPW9Wd" name="AudioRegionFactory.h" compile="0" resource="0"
