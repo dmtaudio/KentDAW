@@ -12,6 +12,7 @@
 #define TRANSPORTCOMPONENT_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "../core/AudioEngine.h"
 
 //==============================================================================
 /*
@@ -89,11 +90,10 @@ public:
     
     virtual void buttonClicked(Button* button);
     
-    // Keyboard shortcut command interface
-    virtual void getCommandInfo(CommandID commandID, ApplicationCommandInfo& result);
-    virtual void getAllCommands(Array<CommandID>& commands);
-    virtual bool perform (const ApplicationCommandTarget::InvocationInfo& info);
-    ApplicationCommandTarget* getNextCommandTarget();
+    ApplicationCommandTarget* getNextCommandTarget() override;
+    void getCommandInfo(CommandID commandID, ApplicationCommandInfo& result) override;
+    void getAllCommands(Array<CommandID>& commands) override;
+    bool perform (const ApplicationCommandTarget::InvocationInfo& info) override;
 
     void paint (Graphics&);
     void resized();
@@ -130,6 +130,7 @@ private:
     
     void setButtonBounds();
     void setButtonColours(Colour normal, Colour hovered, Colour pressed);
+    
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TransportComponent)
 };
 

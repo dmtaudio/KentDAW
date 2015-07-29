@@ -19,9 +19,7 @@ AudioEngine::AudioEngine()
     deviceSampleRate = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentSampleRate();
     deviceBitDepth = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentBitDepth();
     deviceBufferSize = getSharedAudioDeviceManager().getCurrentAudioDevice()->getCurrentBufferSizeSamples();
-    setDeviceCallback();
     mixer = new AudioMixer();
-	graphPlayer->setProcessor(mixer->getAudioProcessorGraph());
 	mixer->resetGraph(deviceSampleRate, deviceBufferSize);
    
 }
@@ -199,4 +197,9 @@ BigInteger AudioEngine::getDeviceChannels(ChannelType type)
         }
     }
 	return 0;
+}
+
+AudioMixer* AudioEngine::getMixer()
+{
+    return mixer;
 }

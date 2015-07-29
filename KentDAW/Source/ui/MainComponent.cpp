@@ -31,6 +31,8 @@ MainContentComponent::MainContentComponent()
 
 	//Status Bar
 	statusBar = new StatusBar();
+    
+    audioEngine = new AudioEngine();
 
 	setOpaque(true);
 
@@ -38,10 +40,8 @@ MainContentComponent::MainContentComponent()
     {
         addAndMakeVisible(menuBar);
 		addAndMakeVisible(arrangeWindow);
-        //addAndMakeVisible(transport);
 		addAndMakeVisible(leftSideBar);
 		addAndMakeVisible(fileTree);
-		//addAndMakeVisible(rightSideBar);
 		addAndMakeVisible(statusBar);
 
 		setOpaque(true);
@@ -57,20 +57,18 @@ MainContentComponent::MainContentComponent()
 MainContentComponent::~MainContentComponent()
 {
     transport->setVisible(false);
-    delete transport;
     timer->setVisible(false);
-    delete timer;
 }
 
 void MainContentComponent::showTransportWindow()
 {
-    //TransportComponent* transportComponent = transport;
-    transport->addToDesktop (ComponentPeer::windowAppearsOnTaskbar);
-    timer->addToDesktop(ComponentPeer::windowAppearsOnTaskbar);
+    transport->addToDesktop (ComponentPeer::windowHasCloseButton);
+    timer->addToDesktop(ComponentPeer::windowHasCloseButton);
+
     windows.add(transport);
     windows.add(timer);
 
-    Rectangle<int> timerArea (0,0 , getWidth() / 2, 100);
+    Rectangle<int> timerArea (0,0, getWidth()/2, 100);
     const RectanglePlacement placement1 (RectanglePlacement::xLeft + RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
     Rectangle<int> timerResult (placement1.appliedTo (timerArea, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (20)));
     
@@ -78,7 +76,7 @@ void MainContentComponent::showTransportWindow()
     timer->setVisible(true);
     timer->setAlwaysOnTop(true);
     
-    Rectangle<int> buttonsArea (0,0 , getWidth(), 100);
+    Rectangle<int> buttonsArea (0,0, getWidth()/2, 100);
     const RectanglePlacement placement2 (RectanglePlacement::xLeft + RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
     Rectangle<int> buttonsResult (placement2.appliedTo (buttonsArea, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (20)));
     transport->setBounds (buttonsResult);
@@ -118,7 +116,8 @@ PopupMenu MainContentComponent::getMenuForIndex(int index, const String &name)
 	} else if (name == "Tools") {
 		menu.addItem(Settings, "Settings");
     } else if(name == "Transport") {
-        
+        menu.addItem(Play, "Play");
+        menu.addItem(Stop, "Stop");
     } else if(name == "Arrange") {
         
     } else if(name == "Window") {
@@ -145,19 +144,21 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
 			break;
 		case ImportAudio:
 			projectManager.importAudioFileToProjectManager();
-            //timer->stop();
 			break;
         case Close:
             JUCEApplication::getInstance()->systemRequestedQuit();
             break;
         case Cut:
-            timer->start();
             break;
         case Copy:
-            timer->startRecording();
             break;
         case Paste:
-            timer->stopRecording();
+            break;
+        case Play:
+            audioEngine->getMixer()->start();
+            break;
+        case Stop:
+            audioEngine->getMixer()->start();
             break;
         case TransportWindow:
             if(!transport->isVisible() || !timer->isVisible())
@@ -190,6 +191,11 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
 				true);
 			break;
     }
+}
+
+AudioEngine* MainContentComponent::getAudioEngine()
+{
+    return audioEngine;
 }
 
 void MainContentComponent::paint (Graphics& g)

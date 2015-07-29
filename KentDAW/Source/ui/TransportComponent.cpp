@@ -11,6 +11,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "BinaryData.h"
 #include "TransportComponent.h"
+#include "MainComponent.h"
 //==============================================================================
 TimerComponent::TimerComponent()
 : totalTime(0),
@@ -288,11 +289,9 @@ void TransportComponent::buttonClicked(Button *button)
     }
     else if(button == stopButton)
     {
-        
     }
     else if(button == playButton)
     {
-        
     }
     else if (button == recordButton)
     {
@@ -320,12 +319,12 @@ bool TransportComponent::perform(const ApplicationCommandTarget::InvocationInfo 
 
 void TransportComponent::getAllCommands(Array<CommandID> &commands)
 {
-    
+
 }
 
 ApplicationCommandTarget* TransportComponent::getNextCommandTarget()
 {
-	return nullptr;
+	return findFirstTargetParentComponent();
 }
 
 

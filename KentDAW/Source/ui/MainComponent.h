@@ -15,6 +15,7 @@
 #include "StatusBar.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "../core/ProjectManager.h"
+#include "../core/AudioEngine.h"
 
 
 
@@ -42,34 +43,47 @@ public:
     
     void showTransportWindow();
     
+    AudioEngine* getAudioEngine();
+    
     enum FileMenuIDs
     {
-        NewProject = 1000, // replace with binary or hex numbers when appropriate
-		SaveProject = 1001,
-		LoadProject = 1002,
-		ImportAudio = 1003,
-        Close = 1004
+        NewProject = 0x2000, 
+		SaveProject = 0x2001,
+		LoadProject = 0x2002,
+		ImportAudio = 0x2003,
+        Close = 0x2004
     };
     
     enum EditMenuIDs
     {
-        Cut = 1005,
-        Copy = 1006,
-        Paste = 1007
+        Cut = 0x2005,
+        Copy = 0x2006,
+        Paste = 0x2008
     };
 
 	enum ToolMenuIDs
 	{
-		Settings = 1008
+		Settings = 0x2009
 	};
     
     enum WindowMenuIDs
     {
-        TransportWindow = 1009
+        TransportWindow = 0x2010
+    };
+    
+    enum TransportIDs
+    {
+        ToStart = 0x201a,
+        Backward = 0x201b,
+        Record = 0x201c,
+        Stop = 0x201d,
+        Play = 0x201e,
+        Forward = 0x201f,
+        ToEnd = 0x2020
     };
 
 private:
-    Array<Component::SafePointer<Component>> windows;
+    Array<Component*> windows;
     
     ScopedPointer<ApplicationCommandManager> commandManager;
 	ProjectManager projectManager;
@@ -78,8 +92,8 @@ private:
     ScopedPointer<MenuBarComponent> menuBar;
 
 	//Transport
-    TransportComponent* transport;
-    TimerComponent* timer;
+    ScopedPointer<TransportComponent> transport;
+    ScopedPointer<TimerComponent> timer;
     ScopedPointer<ArrangeWindow> arrangeWindow;
 
 	//Left Side
@@ -94,6 +108,8 @@ private:
 	//Status Bar
 	ScopedPointer<StatusBar> statusBar;
     
+    // Audio Engine
+    ScopedPointer<AudioEngine> audioEngine;
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)

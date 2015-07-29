@@ -61,6 +61,7 @@ public:
     BigInteger getDeviceChannels(ChannelType type);
     int getBitDepth();
     
+    AudioMixer* getMixer();
 
 private:
     CriticalSection lock;
