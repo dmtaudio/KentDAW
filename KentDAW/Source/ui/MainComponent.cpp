@@ -158,7 +158,7 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
             audioEngine->getMixer()->start();
             break;
         case Stop:
-            audioEngine->getMixer()->start();
+            audioEngine->getMixer()->stop();
             break;
         case TransportWindow:
             if(!transport->isVisible() || !timer->isVisible())
