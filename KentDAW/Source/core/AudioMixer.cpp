@@ -41,8 +41,8 @@ void AudioMixer::resetGraph(int sampleRate, int bufferSize) {
 	inputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode);
 	outputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode);
 	//processorGraph->setPlayConfigDetails(processorGraph->getNumInputChannels(),processorGraph->getNumOutputChannels(), sampleRate, bufferSize);
-	processorGraph->addNode(inputNode);
-	processorGraph->addNode(outputNode);
+	processorGraph->addNode(inputNode, 1);
+	processorGraph->addNode(outputNode, 2);
 	processorGraph->addConnection(1, 1, 2, 1);
 	processorGraph->prepareToPlay(sampleRate, bufferSize);
 }
@@ -51,8 +51,7 @@ ScopedPointer<AudioProcessorGraph> AudioMixer::getAudioProcessorGraph(){
 	return processorGraph;
 }
 
-void AudioMixer::addTrack() {
-	AudioTrack* track = new AudioTrack();
+void AudioMixer::addTrack(AudioTrack *track) {
 	trackSources.add(track);
 
 	AudioTransportSource* transportSource = new AudioTransportSource();
@@ -72,12 +71,10 @@ void AudioMixer::addTrack() {
 
 void AudioMixer::addToGraph(AudioSourceProcessor* asProcessor, ChannelStripProcessor* channelStrip)
 {
-	processorGraph->addNode(asProcessor, nodeNumber);
-	nodeNumber++;
-	processorGraph->addNode(channelStrip, nodeNumber);
-	nodeNumber++;
-	processorGraph->addConnection(nodeNumber - 1, 1, nodeNumber, 1);
-	processorGraph->addConnection(nodeNumber, 1, 2, 1);
+	processorGraph->addNode(asProcessor, nodeNumber++);
+	processorGraph->addNode(channelStrip, nodeNumber++);
+	processorGraph->addConnection(nodeNumber - 2, 1, nodeNumber - 1, 1);
+	processorGraph->addConnection(nodeNumber - 1, 1, 2, 1);
 }
 
 void AudioMixer::removeTrack(int trackNumber)

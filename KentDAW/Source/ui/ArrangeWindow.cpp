@@ -13,7 +13,7 @@
 #include "../core/AudioTrackFactory.h"
 
 //==============================================================================
-ArrangeWindow::ArrangeWindow()
+ArrangeWindow::ArrangeWindow(AudioEngine *audioEngine) : audioEngine(audioEngine)
 {
     btn = new TextButton("Add track", "Add track");
 
@@ -64,6 +64,7 @@ void ArrangeWindow::buttonClicked(Button *button)
         AudioTrack *track = AudioTrackFactory::build();
 
         // Command stuff
+        audioEngine->getMixer()->addTrack(track);
         createGuiForTrack(track);
     }
 }

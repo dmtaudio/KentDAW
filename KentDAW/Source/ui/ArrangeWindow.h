@@ -14,6 +14,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "ChannelStripComponent.h"
 #include "../core/AudioTrack.h"
+#include "../core/AudioEngine.h"
 #include <list>
 
 //==============================================================================
@@ -23,7 +24,7 @@ class ArrangeWindow    : public Viewport,
     Button::Listener
 {
 public:
-    ArrangeWindow();
+    ArrangeWindow(AudioEngine *audioEngine);
     ~ArrangeWindow();
 
     void paint (Graphics&);
@@ -32,6 +33,7 @@ public:
 
 private:
     TextButton *btn;
+    AudioEngine *audioEngine;
     std::list<ChannelStripComponent *> channelStrips;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ArrangeWindow)
 
