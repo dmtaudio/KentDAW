@@ -21,6 +21,7 @@ AudioEngine::AudioEngine()
     mixer = new AudioMixer();
     graphPlayer = new AudioProcessorPlayer();
 	mixer->resetGraph(deviceSampleRate, deviceBufferSize);
+    graphPlayer->setProcessor(mixer->getAudioProcessorGraph());
     setDeviceCallback();
 }
 
