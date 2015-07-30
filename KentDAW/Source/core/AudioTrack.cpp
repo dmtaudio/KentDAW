@@ -71,6 +71,7 @@ bool AudioTrack::add(AudioRegion& region) {
 	regions.push_back(&region);
 
 	updateTotalLengthIfNeeded(region.getEndTime());
+    region.prepareToPlay(_samples, _sampleRate);
 
 	return true;
 }

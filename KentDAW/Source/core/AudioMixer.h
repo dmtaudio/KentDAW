@@ -23,7 +23,7 @@ public:
 	~AudioMixer();
 
 	void resetGraph(int sampleRate, int bufferSize);
-	ScopedPointer<AudioProcessorGraph> getAudioProcessorGraph();
+	AudioProcessorGraph * getAudioProcessorGraph();
 
 	void addTrack(AudioTrack *track);
 	void removeTrack(int trackNumber);
@@ -48,7 +48,7 @@ private:
 	Array<ChannelStripProcessor*> channelStrips;
 	Array<AudioSourceProcessor*> sourceProcessors;
 	TimeSliceThread* slice;
-	ScopedPointer<AudioProcessorGraph> processorGraph;
+	AudioProcessorGraph *processorGraph;
 	AudioProcessorGraph::AudioGraphIOProcessor* inputNode;
 	AudioProcessorGraph::AudioGraphIOProcessor* outputNode;
 
