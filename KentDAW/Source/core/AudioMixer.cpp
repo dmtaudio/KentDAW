@@ -36,6 +36,11 @@ AudioMixer::AudioMixer()
 AudioMixer::~AudioMixer() {
 }
 
+AudioProcessorGraph* AudioMixer::getAudioProcessorGraph()
+{
+    return processorGraph;
+}
+
 void AudioMixer::resetGraph(int sampleRate, int bufferSize) {
 	processorGraph->clear();
 	inputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode);
@@ -44,10 +49,6 @@ void AudioMixer::resetGraph(int sampleRate, int bufferSize) {
 	processorGraph->addNode(inputNode, 1);
 	processorGraph->addNode(outputNode, 2);
 	processorGraph->addConnection(1, 1, 2, 1);
-}
-
-AudioProcessorGraph *AudioMixer::getAudioProcessorGraph(){
-	return processorGraph;
 }
 
 void AudioMixer::addTrack(AudioTrack *track) {

@@ -23,7 +23,7 @@ public:
 	~AudioMixer();
 
 	void resetGraph(int sampleRate, int bufferSize);
-	AudioProcessorGraph * getAudioProcessorGraph();
+	AudioProcessorGraph* getAudioProcessorGraph();
 
 	void addTrack(AudioTrack *track);
 	void removeTrack(int trackNumber);
