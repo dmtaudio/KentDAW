@@ -128,54 +128,6 @@
         <MODULEPATH id="juce_audio_utils" path="../Juce"/>
       </MODULEPATHS>
     </VS2015>
-    <VS2013 targetFolder="Builds/VisualStudio2013">
-      <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
-                       isDebug="1" optimisation="1" targetName="KentDAW"/>
-        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
-                       isDebug="0" optimisation="2" targetName="KentDAW"/>
-      </CONFIGURATIONS>
-      <MODULEPATHS>
-        <MODULEPATH id="juce_core" path="../Juce"/>
-        <MODULEPATH id="juce_events" path="../Juce"/>
-        <MODULEPATH id="juce_graphics" path="../Juce"/>
-        <MODULEPATH id="juce_data_structures" path="../Juce"/>
-        <MODULEPATH id="juce_gui_basics" path="../Juce"/>
-        <MODULEPATH id="juce_gui_extra" path="../Juce"/>
-        <MODULEPATH id="juce_cryptography" path="../Juce"/>
-        <MODULEPATH id="juce_video" path="../Juce"/>
-        <MODULEPATH id="juce_opengl" path="../Juce"/>
-        <MODULEPATH id="juce_audio_basics" path="../Juce"/>
-        <MODULEPATH id="juce_audio_devices" path="../Juce"/>
-        <MODULEPATH id="juce_audio_formats" path="../Juce"/>
-        <MODULEPATH id="juce_audio_processors" path="../Juce"/>
-        <MODULEPATH id="juce_audio_utils" path="../Juce"/>
-      </MODULEPATHS>
-    </VS2013>
-    <VS2012 targetFolder="Builds/VisualStudio2012">
-      <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
-                       isDebug="1" optimisation="1" targetName="KentDAW"/>
-        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
-                       isDebug="0" optimisation="2" targetName="KentDAW"/>
-      </CONFIGURATIONS>
-      <MODULEPATHS>
-        <MODULEPATH id="juce_core" path="../Juce"/>
-        <MODULEPATH id="juce_events" path="../Juce"/>
-        <MODULEPATH id="juce_graphics" path="../Juce"/>
-        <MODULEPATH id="juce_data_structures" path="../Juce"/>
-        <MODULEPATH id="juce_gui_basics" path="../Juce"/>
-        <MODULEPATH id="juce_gui_extra" path="../Juce"/>
-        <MODULEPATH id="juce_cryptography" path="../Juce"/>
-        <MODULEPATH id="juce_video" path="../Juce"/>
-        <MODULEPATH id="juce_opengl" path="../Juce"/>
-        <MODULEPATH id="juce_audio_basics" path="../Juce"/>
-        <MODULEPATH id="juce_audio_devices" path="../Juce"/>
-        <MODULEPATH id="juce_audio_formats" path="../Juce"/>
-        <MODULEPATH id="juce_audio_processors" path="../Juce"/>
-        <MODULEPATH id="juce_audio_utils" path="../Juce"/>
-      </MODULEPATHS>
-    </VS2012>
     <LINUX_MAKE targetFolder="Builds/Linux">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" libraryPath="/usr/X11R6/lib/" isDebug="1" optimisation="1"

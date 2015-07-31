@@ -174,6 +174,9 @@
     <ClCompile Include="..\..\..\Juce\juce_audio_basics\midi\juce_MidiMessageSequence.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\..\Juce\juce_audio_basics\effects\juce_FFT.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\Juce\juce_audio_basics\effects\juce_IIRFilter.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -576,6 +579,9 @@
     <ClCompile Include="..\..\..\Juce\juce_core\native\juce_android_Threads.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\..\Juce\juce_core\native\juce_curl_Network.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\Juce\juce_core\native\juce_linux_CommonFile.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -624,10 +630,16 @@
     <ClCompile Include="..\..\..\Juce\juce_cryptography\hashing\juce_SHA256.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\..\Juce\juce_cryptography\hashing\juce_Whirlpool.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\Juce\juce_data_structures\values\juce_Value.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\Juce\juce_data_structures\values\juce_ValueTree.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Juce\juce_data_structures\values\juce_ValueTreeSynchroniser.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\Juce\juce_data_structures\undomanager\juce_UndoManager.cpp">
@@ -1300,6 +1312,7 @@
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\midi\juce_MidiMessage.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\midi\juce_MidiMessageSequence.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\effects\juce_Decibels.h"/>
+    <ClInclude Include="..\..\..\Juce\juce_audio_basics\effects\juce_FFT.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\effects\juce_IIRFilter.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\effects\juce_LagrangeInterpolator.h"/>
     <ClInclude Include="..\..\..\Juce\juce_audio_basics\effects\juce_Reverb.h"/>
@@ -1494,9 +1507,11 @@
     <ClInclude Include="..\..\..\Juce\juce_cryptography\encryption\juce_RSAKey.h"/>
     <ClInclude Include="..\..\..\Juce\juce_cryptography\hashing\juce_MD5.h"/>
     <ClInclude Include="..\..\..\Juce\juce_cryptography\hashing\juce_SHA256.h"/>
+    <ClInclude Include="..\..\..\Juce\juce_cryptography\hashing\juce_Whirlpool.h"/>
     <ClInclude Include="..\..\..\Juce\juce_cryptography\juce_cryptography.h"/>
     <ClInclude Include="..\..\..\Juce\juce_data_structures\values\juce_Value.h"/>
     <ClInclude Include="..\..\..\Juce\juce_data_structures\values\juce_ValueTree.h"/>
+    <ClInclude Include="..\..\..\Juce\juce_data_structures\values\juce_ValueTreeSynchroniser.h"/>
     <ClInclude Include="..\..\..\Juce\juce_data_structures\undomanager\juce_UndoableAction.h"/>
     <ClInclude Include="..\..\..\Juce\juce_data_structures\undomanager\juce_UndoManager.h"/>
     <ClInclude Include="..\..\..\Juce\juce_data_structures\app_properties\juce_ApplicationProperties.h"/>
