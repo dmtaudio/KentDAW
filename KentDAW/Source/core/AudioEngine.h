@@ -1,12 +1,15 @@
 /*
- * File:   AudioEngine.h
- * Author: Dan
- *
- * Created on 02 June 2015, 16:34
+ ==============================================================================
+ 
+ AudioEngine.h
+ Created: 31 Jul 2015 2:51:40pm
+ Author:  dtl
+ 
+ ==============================================================================
  */
 
-#ifndef AUDIOENGINE_H
-#define	AUDIOENGINE_H
+#ifndef AUDIOENGINE_H_INCLUDED
+#define AUDIOENGINE_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "AudioMixer.h"
@@ -14,70 +17,53 @@
 class AudioEngine
 {
 public:
-    
     AudioEngine();
-    AudioEngine(const size_t numberOfChannels);
     ~AudioEngine();
     
     static AudioDeviceManager& getSharedAudioDeviceManager();
     
-    void setDeviceCallback();
+    // Set the device callback either to the default
+    void setDefaultDeviceCallback();
     void setDeviceCallback(AudioIODeviceCallback* callback);
     
-    // Device information
+    // Deivce Information
     StringArray getAvailableDeviceNames();
-    String setAudioDevice(const String& deviceName);
+    void setCurrentAudioDevice(const String& deviceName);
     String getCurrentDeviceName();
     StringArray getInputChannelNames();
     StringArray getOutputChannelNames();
     Array<double> getAvailableSampleRates();
     
+    // Sample rate accessors
     void setSampleRate(const double& sampleRate);
     double getSampleRate();
     
-    // Global audio manipulation
-    bool setMasterMute(bool enable);
-    void setMasterGain(const float newGain);
-    
-    // Measurement for VU and other meters
-    bool enableMeasurement(int channel, bool enable);
-    bool resetMeasurementPeakValue(int channel);
-    float getMeasuredDecayValue(int channel);
-    float getMeasuredPeakValue(int channel);
-    
-    // File prelisten controls
-    bool startPrelisten(const String &absFilenamePath, const int &startPos, const int &endPos);
-    void stopPrelisten();
-    
-    // CPU usage data
-    double getProcessorUsage();
-    
-    enum ChannelType
-    {
-        INPUT = 1,
-        OUTPUT = 0
-    };
-    
-    BigInteger getDeviceChannels(ChannelType type);
+    // Bit depth accessors
     int getBitDepth();
     
+    // Channel Info
+    enum ChannelType { INPUT, OUTPUT };
+    BigInteger getDeviceChannels(ChannelType type);
+    
+    double getProcessorUsage();
     AudioMixer* getMixer();
-
+    
 private:
+    // Callback related stuff
     CriticalSection lock;
-    AudioProcessorPlayer *graphPlayer;
-    AudioMixer *mixer;
-    unsigned int regionIndex;
+    AudioProcessorPlayer graphPlayer;
+    AudioMixer* mixer;
+    
+    // Midi
     MidiBuffer incomingMidi;
     MidiMessageCollector messageCollector;
     
-    double masterGain;
+    // Device Info
     double deviceSampleRate;
     int deviceBitDepth;
     int deviceBufferSize;
     BigInteger deviceInputChannels, deviceOutputChannels;
-    
 };
 
-#endif	/* AUDIOENGINE_H */
+#endif  // AUDIOENGINE_H_INCLUDED
 

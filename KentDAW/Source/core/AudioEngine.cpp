@@ -1,11 +1,11 @@
 /*
- * File:   AudioEngine.cpp
- * Author: Dan
- *
- * Created on 02 June 2015, 16:34
- *
- * AudioCallBack implementation derived from AudioSourcePlayer and AudioProcessorPlayer with custom code
- * and modifications.
+ ==============================================================================
+ 
+ AudioEngine.cpp
+ Created: 31 Jul 2015 2:51:40pm
+ Author:  dtl
+ 
+ ==============================================================================
  */
 
 #include "AudioEngine.h"
@@ -13,21 +13,17 @@
 static AudioDeviceManager* sharedAudioDeviceManager;
 
 AudioEngine::AudioEngine()
+: graphPlayer()
 {
-    getSharedAudioDeviceManager();
     deviceSampleRate = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentSampleRate();
     deviceBitDepth = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentBitDepth();
     deviceBufferSize = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentBufferSizeSamples();
     mixer = new AudioMixer();
-    graphPlayer = new AudioProcessorPlayer();
-	mixer->resetGraph(deviceSampleRate, deviceBufferSize);
-    graphPlayer->setProcessor(mixer->getAudioProcessorGraph());
-    setDeviceCallback();
+    graphPlayer.setProcessor(mixer->getAudioProcessorGraph());
 }
 
 AudioEngine::~AudioEngine()
-{
-}
+{}
 
 AudioDeviceManager& AudioEngine::getSharedAudioDeviceManager()
 {
@@ -41,10 +37,10 @@ AudioDeviceManager& AudioEngine::getSharedAudioDeviceManager()
     return *sharedAudioDeviceManager;
 }
 
-void AudioEngine::setDeviceCallback()
+void AudioEngine::setDefaultDeviceCallback()
 {
-    sharedAudioDeviceManager->addAudioCallback(graphPlayer);
-    sharedAudioDeviceManager->addMidiInputCallback(String::empty, graphPlayer);
+    sharedAudioDeviceManager->addAudioCallback(&graphPlayer);
+    sharedAudioDeviceManager->addMidiInputCallback(String::empty, &graphPlayer);
 }
 
 void AudioEngine::setDeviceCallback(AudioIODeviceCallback* callback)
@@ -62,7 +58,7 @@ StringArray AudioEngine::getAvailableDeviceNames()
     return deviceNames;
 }
 
-String AudioEngine::setAudioDevice(const String &deviceName)
+void AudioEngine::setCurrentAudioDevice(const String &deviceName)
 {
     StringArray availableDeviceNames = getAvailableDeviceNames();
     
@@ -70,9 +66,8 @@ String AudioEngine::setAudioDevice(const String &deviceName)
     
     if(availableDeviceNames.contains(deviceName))
     {
-        // do some stuff
+        sharedAudioDeviceManager->setCurrentAudioDeviceType(deviceName, true);
     }
-    return deviceString;
 }
 
 String AudioEngine::getCurrentDeviceName()
@@ -101,103 +96,47 @@ Array<double> AudioEngine::getAvailableSampleRates()
     return availableSampleRates;
 }
 
-void AudioEngine::setSampleRate(const double &sampleRate)
+void AudioEngine::setSampleRate(const double& sampleRate)
 {
     Array<double> availableSampleRates = getAvailableSampleRates();
-    
     if(availableSampleRates.contains(sampleRate))
     {
+        AudioDeviceManager::AudioDeviceSetup setup;
+        sharedAudioDeviceManager->getAudioDeviceSetup(setup);
+        setup.sampleRate = sampleRate;
+        sharedAudioDeviceManager->setAudioDeviceSetup(setup, true);
     }
 }
 
 double AudioEngine::getSampleRate()
 {
-    if(sharedAudioDeviceManager != nullptr)
-    {
-        deviceSampleRate = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentSampleRate();
-        return deviceSampleRate;
-    }
-    return 0.0f;
-}
-
-bool AudioEngine::setMasterMute(bool enable)
-{
-    if(enable)
-    {
-        return enable;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-void AudioEngine::setMasterGain(const float newGain)
-{
-    masterGain = newGain;
-}
-
-bool AudioEngine::enableMeasurement(int channel, bool enable)
-{
-    return false;
-}
-
-bool AudioEngine::resetMeasurementPeakValue(int channel)
-{
-    return false;
-}
-
-float AudioEngine::getMeasuredDecayValue(int channel)
-{
-    return 0.0f;
-}
-
-float AudioEngine::getMeasuredPeakValue(int channel)
-{
-    return 0.0f;
-}
-
-bool AudioEngine::startPrelisten(const String &absFilenamePath, const int &startPos, const int &endPos)
-{
-    return false;
-}
-
-void AudioEngine::stopPrelisten()
-{
-}
-
-double AudioEngine::getProcessorUsage()
-{
-    return sharedAudioDeviceManager->getCpuUsage();
+    deviceSampleRate = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentSampleRate();
+    return deviceSampleRate;
 }
 
 int AudioEngine::getBitDepth()
 {
-    if(sharedAudioDeviceManager != nullptr)
-    {
-        deviceBitDepth = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentBitDepth();
-        return deviceBitDepth;
-    }
-    else
-        return 0;
+    deviceBitDepth = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentBitDepth();
+    return deviceBitDepth;
 }
 
 BigInteger AudioEngine::getDeviceChannels(ChannelType type)
 {
-    if(sharedAudioDeviceManager != nullptr)
+    if(type == INPUT)
     {
-        if(type == INPUT)
-        {
-            deviceInputChannels = sharedAudioDeviceManager->getCurrentAudioDevice()->getActiveInputChannels();
-            return deviceInputChannels;
-        }
-        else if(type == OUTPUT)
-        {
-            deviceOutputChannels = sharedAudioDeviceManager->getCurrentAudioDevice()->getActiveOutputChannels();
-            return deviceOutputChannels;
-        }
+        deviceInputChannels = sharedAudioDeviceManager->getCurrentAudioDevice()->getActiveInputChannels();
+        return deviceInputChannels;
     }
-	return 0;
+    else if(type == OUTPUT)
+    {
+        deviceOutputChannels = sharedAudioDeviceManager->getCurrentAudioDevice()->getActiveOutputChannels();
+        return deviceOutputChannels;
+    }
+    else
+    {
+        // -1 signifies no channels
+        return -1;
+    }
 }
 
 AudioMixer* AudioEngine::getMixer()
