@@ -15,6 +15,22 @@ static AudioDeviceManager* sharedAudioDeviceManager;
 AudioEngine::AudioEngine()
 : graphPlayer()
 {
+	bool showMidiInputOptions = false;
+	bool showMidiOutputSelector = false;
+	bool showChanelsAsStereoPairs = true;
+	bool hideAdvancedOptions = false;
+	AudioDeviceSelectorComponent settings(getSharedAudioDeviceManager(), 0, 0, 1, 2,
+		showMidiInputOptions,
+		showMidiOutputSelector,
+		showChanelsAsStereoPairs,
+		hideAdvancedOptions);
+	settings.setSize(500, 400);
+	DialogWindow::showModalDialog(String("Audio Settings"),
+		&settings,
+		TopLevelWindow::getTopLevelWindow(0),
+		Colours::white,
+		true);
+
     deviceSampleRate = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentSampleRate();
     deviceBitDepth = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentBitDepth();
     deviceBufferSize = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentBufferSizeSamples();
