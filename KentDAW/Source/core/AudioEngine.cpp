@@ -20,6 +20,8 @@ AudioEngine::AudioEngine()
     deviceBufferSize = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentBufferSizeSamples();
     mixer = new AudioMixer();
     graphPlayer.setProcessor(mixer->getAudioProcessorGraph());
+    setDefaultDeviceCallback();
+    mixer->resetGraph(deviceSampleRate, deviceBufferSize);
 }
 
 AudioEngine::~AudioEngine()
