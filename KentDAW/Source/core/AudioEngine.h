@@ -12,7 +12,7 @@
 #define AUDIOENGINE_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "AudioMixer.h"
+#include "AudioMixer2.h"
 
 class AudioEngine
 {
@@ -46,13 +46,13 @@ public:
     BigInteger getDeviceChannels(ChannelType type);
     
     double getProcessorUsage();
-    AudioMixer* getMixer();
+    AudioMixer2* getMixer();
     
 private:
     // Callback related stuff
     CriticalSection lock;
     AudioProcessorPlayer graphPlayer;
-    AudioMixer* mixer;
+    AudioMixer2* mixer;
     
     // Midi
     MidiBuffer incomingMidi;

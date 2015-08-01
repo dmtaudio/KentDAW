@@ -38,12 +38,15 @@ initialised(false)
     deviceBufferSize = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentBufferSizeSamples();
     
 	//Create a mixer, set up the player and callback.
-	mixer = new AudioMixer();
+	mixer = new AudioMixer2();
 
 	if (!initialised) {
-		graphPlayer.setProcessor(mixer->getAudioProcessorGraph());
+		graphPlayer.setProcessor(mixer->getProcessorGraph());
 		setDefaultDeviceCallback();
-		mixer->resetGraph(deviceSampleRate, deviceBufferSize);
+        mixer->createDefaultNodes();
+        mixer->addTestProcessorChain(1001);
+        mixer->start();
+		//mixer->resetGraph(deviceSampleRate, deviceBufferSize);
 		initialised = true;
 	}
 }
@@ -171,7 +174,7 @@ BigInteger AudioEngine::getDeviceChannels(ChannelType type)
     }
 }
 
-AudioMixer* AudioEngine::getMixer()
+AudioMixer2* AudioEngine::getMixer()
 {
     return mixer;
 }
