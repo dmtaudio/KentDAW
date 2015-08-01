@@ -63,6 +63,9 @@ private:
     int deviceBitDepth;
     int deviceBufferSize;
     BigInteger deviceInputChannels, deviceOutputChannels;
+
+	// Graph
+	bool initialised;
 };
 
 #endif  // AUDIOENGINE_H_INCLUDED
