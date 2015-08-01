@@ -155,7 +155,7 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
         case Paste:
             break;
         case Play:
-            //audioEngine->getMixer()->start();
+            audioEngine->getMixer()->start();
             break;
         case Stop:
             //audioEngine->getMixer()->stop();

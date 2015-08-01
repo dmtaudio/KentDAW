@@ -16,7 +16,8 @@ AudioEngine::AudioEngine()
 : graphPlayer(),
 initialised(false)
 {
-	
+	if(sharedAudioDeviceManager == nullptr)
+    {
 	bool showMidiInputOptions = false;
 	bool showMidiOutputSelector = false;
 	bool showChanelsAsStereoPairs = true;
@@ -32,7 +33,7 @@ initialised(false)
 		TopLevelWindow::getTopLevelWindow(0),
 		Colours::white,
 		true);
-	
+    }
     deviceSampleRate = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentSampleRate();
     deviceBitDepth = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentBitDepth();
     deviceBufferSize = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentBufferSizeSamples();
@@ -40,15 +41,11 @@ initialised(false)
 	//Create a mixer, set up the player and callback.
 	mixer = new AudioMixer2();
 
-	if (!initialised) {
 		graphPlayer.setProcessor(mixer->getProcessorGraph());
 		setDefaultDeviceCallback();
         mixer->createDefaultNodes();
-        mixer->addTestProcessorChain(1001);
-        mixer->start();
 		//mixer->resetGraph(deviceSampleRate, deviceBufferSize);
-		initialised = true;
-	}
+
 }
 
 AudioEngine::~AudioEngine()
