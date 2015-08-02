@@ -15,7 +15,6 @@
 //==============================================================================
 ArrangeWindow::ArrangeWindow(AudioEngine *audioEngine) : audioEngine(audioEngine)
 {
-
 }
 
 ArrangeWindow::~ArrangeWindow()
@@ -29,20 +28,27 @@ void ArrangeWindow::paint (Graphics& g)
     g.setColour (Colours::grey);
     g.drawRect (getLocalBounds(), 1);   // draw an outline around the component
 
-    g.setColour (Colours::lightblue);
-    g.setFont (14.0f);
-    g.drawText ("ArrangeWindow", getLocalBounds(),
-                Justification::centred, true);   // draw some placeholder text
+    //g.setColour (Colours::lightblue);
+    //g.setFont (14.0f);
+    //g.drawText ("ArrangeWindow", getLocalBounds(),
+    //           Justification::centred, true);   // draw some placeholder text
 }
 
 void ArrangeWindow::resized()
 {
+	int i = 0;
 
+	for (auto current = trackComponents.begin(), end = trackComponents.end(); current != end; ++current) {
+		(*current)->setBounds(0, i++ * 200, getParentWidth(), 200);
+	}
 }
 
-void ArrangeWindow::createGuiForTrack(AudioTrack * track)
-{
-	
+void ArrangeWindow::createGuiForTrack(AudioTrack* track)
+{	
+	TrackComponent *trackGUI = new TrackComponent(track);
+	trackComponents.push_back(trackGUI);
+	addAndMakeVisible(trackGUI);
+	resized();
 	//ChannelStripComponent *channelStrip = new ChannelStripComponent(track);
 	//channelStrips.push_back(channelStrip);
     //addAndMakeVisible(channelStrip);

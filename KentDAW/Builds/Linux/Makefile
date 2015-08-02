@@ -49,6 +49,7 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
+  $(OBJDIR)/TrackComponent_467eefee.o \
   $(OBJDIR)/MixerComponent_356b39f0.o \
   $(OBJDIR)/ChannelStripComponent_7b124736.o \
   $(OBJDIR)/MeterComponent_6c7c4a70.o \
@@ -101,6 +102,11 @@ clean:
 strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
+
+$(OBJDIR)/TrackComponent_467eefee.o: ../../Source/ui/TrackComponent.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling TrackComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/MixerComponent_356b39f0.o: ../../Source/ui/MixerComponent.cpp
 	-@mkdir -p $(OBJDIR)

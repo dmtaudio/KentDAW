@@ -129,6 +129,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ui\TrackComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\MixerComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\ChannelStripComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\MeterComponent.cpp"/>
@@ -1283,6 +1284,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h"/>
+    <ClInclude Include="..\..\Source\ui\TrackComponent.h"/>
     <ClInclude Include="..\..\Source\ui\MixerComponent.h"/>
     <ClInclude Include="..\..\Source\ui\ChannelStripComponent.h"/>
     <ClInclude Include="..\..\Source\ui\MeterComponent.h"/>

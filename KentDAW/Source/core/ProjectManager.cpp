@@ -9,10 +9,9 @@
 */
 
 #include "ProjectManager.h"
-#include "AudioRegionFactory.h"
-#include "AudioTrackFactory.h"
 
-ProjectManager::ProjectManager(AudioEngine *audioEngine) : audioEngine(audioEngine),
+ProjectManager::ProjectManager(AudioEngine *audioEngine, ArrangeWindow* arrangeWindow) : audioEngine(audioEngine),
+	arrangeWindow(arrangeWindow),
 	projectFilePathsArray()
 {
 	pElements = new XmlElement("Project_Elements");
@@ -126,5 +125,6 @@ void ProjectManager::importAudioFileToProjectManager()
 		audioEngine->getMixer()->addTrack(track);
 		AudioRegion *region = AudioRegionFactory::build(filePath, 0);
 		track->add(*region);
+		arrangeWindow->createGuiForTrack(track);
 	}
 }

@@ -7,7 +7,6 @@
 */
 
 #include "MainComponent.h"
-#include "../core/AudioEngine.h"
 
 //==============================================================================
 MainContentComponent::MainContentComponent()
@@ -16,7 +15,6 @@ MainContentComponent::MainContentComponent()
 	fileTree(directoryList)
 {
     audioEngine = new AudioEngine();
-	projectManager = new ProjectManager(audioEngine);
     
     //Menu Bar
     menuBar = new MenuBarComponent(this);
@@ -27,6 +25,7 @@ MainContentComponent::MainContentComponent()
 
 	//Arrange Window
     arrangeWindow = new ArrangeWindow(audioEngine);
+	projectManager = new ProjectManager(audioEngine, arrangeWindow);
 
 	//Left Side
 	leftSideBar = new LeftSidebar();

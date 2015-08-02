@@ -12,10 +12,12 @@
 #define ARRANGEWINDOW_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "ChannelStripComponent.h"
+#include "TrackComponent.h"
 #include "../core/AudioTrack.h"
+#include "../core/AudioRegion.h"
 #include "../core/AudioEngine.h"
 #include <list>
+#include <map>
 
 //==============================================================================
 /*
@@ -28,11 +30,11 @@ public:
 
     void paint (Graphics&);
     void resized();
-    void createGuiForTrack(AudioTrack *track);
+    void createGuiForTrack(AudioTrack* track);
 
 private:
 	AudioEngine *audioEngine;
-
+	std::list<TrackComponent*> trackComponents;
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ArrangeWindow)
 
    
