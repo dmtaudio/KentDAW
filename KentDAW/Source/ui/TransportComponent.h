@@ -57,7 +57,6 @@ private:
 };
 
 class TransportComponent    : public Component,
-                              public ApplicationCommandTarget,
                               public Button::Listener
 {
 public:
@@ -82,7 +81,7 @@ public:
         virtual void updateTransportComponent(TransportComponent* transport, TransportEvent event);
     };
     
-    TransportComponent();
+    TransportComponent(AudioEngine* engine);
     ~TransportComponent();
     
     void addListener(TransportComponent::Listener* listener);
@@ -90,19 +89,14 @@ public:
     
     virtual void buttonClicked(Button* button);
     
-    ApplicationCommandTarget* getNextCommandTarget() override;
-    void getCommandInfo(CommandID commandID, ApplicationCommandInfo& result) override;
-    void getAllCommands(Array<CommandID>& commands) override;
-    bool perform (const ApplicationCommandTarget::InvocationInfo& info) override;
-
     void paint (Graphics&);
     void resized();
 
 private:
     ListenerList<TransportComponent::Listener> listenerList;
-    
+    AudioEngine *_engine;
     Image image;
-
+    
     OwnedArray<ImageButton> transportButtons;
     ImageButton* loopButton;
     ImageButton* playButton;

@@ -191,18 +191,18 @@ void AudioMixer::stop()
     }
 }
 
-void AudioMixer::setPosition(double position)
+void AudioMixer::setPosition(int position)
 {
-    for(int i = 0; i < transportMap.size(); ++i)
+    for(int i = 0; i < transportMap.size(); i++)
     {
-        if(transportMap[i]->getTotalLength() < position)
-            transportMap[i]->setPosition(position);
-        else
-        {
-            transportMap[i]->setLooping(false);
-            transportMap[i]->setPosition(transportMap[i]->getTotalLength());
-        }
+        transportMap[i]->setPosition(position);
+        _position = position;
     }
+}
+
+int AudioMixer::getPosition()
+{
+    return _position;
 }
 
 

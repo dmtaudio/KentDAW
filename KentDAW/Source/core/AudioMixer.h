@@ -27,13 +27,14 @@ public:
     void removeTrack(int trackNumber);
     void remapGraph();
     void resetGraph();
+    int getPosition();
     
     AudioProcessorGraph* getProcessorGraph();
     
     void start();
     void stop();
     
-    void setPosition(double position);
+    void setPosition(int position);
     
     struct Level
     {
@@ -43,6 +44,8 @@ public:
 
 private:
     int currentProcessor;
+    
+    int _position;
     
     AudioProcessorGraph* processorGraph;
     
@@ -61,6 +64,8 @@ private:
     };
     
     int trackNodeID, mixerNodeID;
+    
+    TimeSliceThread* readAheadThread;
 };
 
 

@@ -22,7 +22,7 @@ MainContentComponent::MainContentComponent()
     menuBar = new MenuBarComponent(this);
 
 	//Transport
-    transport = new TransportComponent();
+    transport = new TransportComponent(audioEngine);
     timer = new TimerComponent();
 
 	//Arrange Window
@@ -62,23 +62,20 @@ MainContentComponent::~MainContentComponent()
 
 void MainContentComponent::showTransportWindow()
 {
-    transport->addToDesktop (ComponentPeer::windowHasCloseButton);
-    timer->addToDesktop(ComponentPeer::windowHasCloseButton);
-
-    windows.add(transport);
-    windows.add(timer);
+    addAndMakeVisible(transport);
+    addAndMakeVisible(timer);
 
     Rectangle<int> timerArea (0,0, getWidth()/2, 100);
-    const RectanglePlacement placement1 (RectanglePlacement::xLeft + RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
-    Rectangle<int> timerResult (placement1.appliedTo (timerArea, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (20)));
+    const RectanglePlacement placement1 (RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
+    Rectangle<int> timerResult (placement1.appliedTo (timerArea, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (80)));
     
     timer->setBounds(timerResult);
     timer->setVisible(true);
     timer->setAlwaysOnTop(true);
     
     Rectangle<int> buttonsArea (0,0, getWidth()/2, 100);
-    const RectanglePlacement placement2 (RectanglePlacement::xLeft + RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
-    Rectangle<int> buttonsResult (placement2.appliedTo (buttonsArea, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (20)));
+    const RectanglePlacement placement2 (RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
+    Rectangle<int> buttonsResult (placement2.appliedTo (buttonsArea, Desktop::getInstance().getDisplays().getMainDisplay().userArea.reduced (80)));
     transport->setBounds (buttonsResult);
     transport->setVisible (true);
     transport->setAlwaysOnTop(true);

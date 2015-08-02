@@ -20,7 +20,7 @@ TimerComponent::TimerComponent()
   totalRecordTime(0)
 {
     timerFont = Font("Default Light", 30, Font::plain);
-    startTimer(1000);
+    startTimer(100);
 }
 
 TimerComponent::~TimerComponent()
@@ -151,7 +151,7 @@ void TimerComponent::timerCallback()
 
 
 
-TransportComponent::TransportComponent()
+TransportComponent::TransportComponent(AudioEngine* engine)
 : loopButton(new ImageButton("Loop")),
   playButton(new ImageButton("Play")),
   recordButton(new ImageButton("Record")),
@@ -160,7 +160,8 @@ TransportComponent::TransportComponent()
   backwardButton(new ImageButton("Backward")),
   toStartButton(new ImageButton("ToStart")),
   toEndButton(new ImageButton("ToEnd")),
-  buttonWidth(50), buttonHeight(50)
+  buttonWidth(50), buttonHeight(50),
+  _engine(engine)
 {
     setButtonColours(Colours::transparentBlack, Colours::transparentBlack, Colours::transparentWhite);
     
@@ -198,6 +199,7 @@ TransportComponent::TransportComponent()
 
 TransportComponent::~TransportComponent()
 {
+    removeAllChildren();
 }
 
 void TransportComponent::setButtonColours(Colour normal, Colour hovered, Colour pressed)
@@ -281,17 +283,17 @@ void TransportComponent::buttonClicked(Button *button)
 {
     if(button == toEndButton)
     {
-        
     }
     else if(button == forwardButton)
     {
-        
     }
     else if(button == stopButton)
     {
+        _engine->getMixer()->stop();
     }
     else if(button == playButton)
     {
+        _engine->getMixer()->start();
     }
     else if (button == recordButton)
     {
@@ -299,35 +301,11 @@ void TransportComponent::buttonClicked(Button *button)
     }
     else if(button == backwardButton)
     {
-        
     }
     else if(button == toStartButton)
     {
-        
     }
 }
-
-void TransportComponent::getCommandInfo(CommandID commandID, ApplicationCommandInfo &result)
-{
-    
-}
-
-bool TransportComponent::perform(const ApplicationCommandTarget::InvocationInfo &info)
-{
-    return false;
-}
-
-void TransportComponent::getAllCommands(Array<CommandID> &commands)
-{
-
-}
-
-ApplicationCommandTarget* TransportComponent::getNextCommandTarget()
-{
-	return findFirstTargetParentComponent();
-}
-
-
 
 void TransportComponent::paint (Graphics& g)
 {
