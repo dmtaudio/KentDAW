@@ -319,6 +319,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ui\RegionComponent.cpp">
+      <Filter>KentDAW\Source\ui</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ui\TrackComponent.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
@@ -1622,6 +1625,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h">
       <Filter>KentDAW\Source\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ui\RegionComponent.h">
+      <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ui\TrackComponent.h">
       <Filter>KentDAW\Source\ui</Filter>

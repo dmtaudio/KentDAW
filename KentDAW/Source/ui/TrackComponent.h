@@ -15,12 +15,14 @@
 #include "../core/AudioTrack.h"
 
 class TrackComponent : public Component
-	//private ScrollBarListener,
+	//private ScrollBarListener
 	//private Timer
 {
 public:
 	TrackComponent(AudioTrack *track);
 	~TrackComponent();
+
+	void updateTrackRegions();
 
 	void paint(Graphics& g);
 	void resized();
