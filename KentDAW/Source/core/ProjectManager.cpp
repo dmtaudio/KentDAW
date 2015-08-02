@@ -9,8 +9,10 @@
 */
 
 #include "ProjectManager.h"
+#include "AudioRegionFactory.h"
 
-ProjectManager::ProjectManager() : projectFilePathsArray()
+ProjectManager::ProjectManager(AudioEngine *audioEngine) : audioEngine(audioEngine),
+	projectFilePathsArray()
 {
 	pElements = new XmlElement("Project_Elements");
 	formatManager.registerBasicFormats();
@@ -119,5 +121,8 @@ void ProjectManager::importAudioFileToProjectManager()
 		File audioFile(chooser.getResult());
 		String filePath(audioFile.getFullPathName());
 		projectFilePathsArray.add(filePath);
+		audioEngine->getMixer()->addTrack(track);
+		AudioRegion *region = AudioRegionFactory::build(filePath, 0);
+		track->add(*region);
 	}
 }

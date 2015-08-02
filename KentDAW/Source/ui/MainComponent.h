@@ -92,7 +92,6 @@ private:
     Array<Component*> windows;
     
     ScopedPointer<ApplicationCommandManager> commandManager;
-	ProjectManager projectManager;
 	//Menu Bar
     ScopedPointer<MenuBarModel> menuModel;
     ScopedPointer<MenuBarComponent> menuBar;
@@ -116,6 +115,7 @@ private:
     
     // Audio Engine
     ScopedPointer<AudioEngine> audioEngine;
+	ScopedPointer<ProjectManager> projectManager;
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)

@@ -13,10 +13,10 @@
 MainContentComponent::MainContentComponent()
 	: tsThread("File Tree Test"),
 	directoryList(nullptr, tsThread),
-	fileTree(directoryList),
-	projectManager()
+	fileTree(directoryList)
 {
     audioEngine = new AudioEngine();
+	projectManager = new ProjectManager(audioEngine);
     
     //Menu Bar
     menuBar = new MenuBarComponent(this);
@@ -134,16 +134,16 @@ void MainContentComponent::menuItemSelected(int menuItemID, int index)
     switch(menuItemID)
     {
         case NewProject:
-			projectManager.createBasicProject("Untitled Project");
+			projectManager->createBasicProject("Untitled Project");
             break;
 		case SaveProject:
-			projectManager.saveProject();
+			projectManager->saveProject();
 			break;
 		case LoadProject:
-			projectManager.loadProject();
+			projectManager->loadProject();
 			break;
 		case ImportAudio:
-			projectManager.importAudioFileToProjectManager();
+			projectManager->importAudioFileToProjectManager();
 			break;
         case Close:
             JUCEApplication::getInstance()->systemRequestedQuit();

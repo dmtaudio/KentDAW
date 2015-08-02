@@ -12,12 +12,14 @@
 #define PROJECT_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "AudioTrack.h"
+#include "AudioEngine.h"
 
 class ProjectManager
 {
     
 public:
-    ProjectManager();
+    ProjectManager(AudioEngine* audioEngine);
     ~ProjectManager();
 
 	//ProjectManager Management
@@ -28,6 +30,8 @@ public:
 	void importAudioFileToProjectManager();
     
 private:
+	AudioTrack* track;
+	AudioEngine* audioEngine;
 	ScopedPointer<XmlElement>pElements;
 	Array<String> projectFilePathsArray;
 	AudioFormatManager formatManager;
