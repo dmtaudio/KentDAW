@@ -2,149 +2,205 @@
   ==============================================================================
 
     AudioMixer.cpp
-    Created: 11 Jul 2015 1:51:41pm
-    Author:  Matt
+    Created: 1 Aug 2015 10:23:26am
+    Author:  dtl
 
   ==============================================================================
 */
 
 #include "AudioMixer.h"
 #include "AudioEngine.h"
+#include "AudioSourceProcessor.h"
+
 
 AudioMixer::AudioMixer()
-			:	trackSources(),
-				transportSources(),
-				channelStrips(),
-				sourceProcessors()
+: currentProcessor()
 {
-	processorGraph = new AudioProcessorGraph();
-	AudioIODevice* device = AudioEngine::getSharedAudioDeviceManager().getCurrentAudioDevice();
-	sampleRate = device->getCurrentSampleRate();
-	bufferSize = device->getCurrentBufferSizeSamples();
-
-	slice = new TimeSliceThread("slice");
-	
-	//Node number is 3 as input node = node 1 and output node = node 2
-	//Track 1 = node 3 - Track 1 channel strip = node 4
-	//Track 2 = node 4 - Track 2 channel strip = node 5 etc...
-	trackNumber = 1;
-	nodeNumber = 3;
+    int iChannels(2), oChannels(2);
+    double sampleRate(0.0f);
+    int bufferSize(0);
+    trackNodeID = 4000;
+    mixerNodeID = 5000;
+    AudioIODevice* current = AudioEngine::getSharedAudioDeviceManager().getCurrentAudioDevice();
+    sampleRate = current->getCurrentSampleRate();
+    bufferSize = current->getCurrentBufferSizeSamples();
+    
+    processorGraph = new AudioProcessorGraph();
+    
+    processorGraph->setPlayConfigDetails(iChannels, // number of inputs
+                         oChannels, // number of outputs
+                         sampleRate, // sampleRate
+                         bufferSize);
 }
 
-AudioMixer::~AudioMixer() {
-}
+AudioMixer::~AudioMixer(){}
 
-AudioProcessorGraph* AudioMixer::getAudioProcessorGraph()
+void AudioMixer::resetGraph()
 {
-    return processorGraph;
+    processorGraph->clear();
+    createDefaultNodes();
+    
 }
 
-void AudioMixer::resetGraph(int sampleRate, int bufferSize) {
-	//Remove all nodes from the graph
-	processorGraph->clear();
-
-	//Create Input and output nodes
-	inputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode);
-	outputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode);
-
-	//processorGraph->setPlayConfigDetails(processorGraph->getNumInputChannels(),processorGraph->getNumOutputChannels(), sampleRate, bufferSize);
-
-	processorGraph->addNode(inputNode, 1);
-	processorGraph->addNode(outputNode, 2);
-
-	processorGraph->addConnection(1, 1, 2, 1);
-	processorGraph->addConnection(1, 2, 2, 2);
-}
-
-void AudioMixer::addTrack(AudioTrack *track) {
-	trackSources.add(track);
-
-	AudioTransportSource* transportSource = new AudioTransportSource();
-	transportSource->setSource(track, 0, slice);
-	transportSources.add(transportSource);
-
-	AudioSourceProcessor* asProcessor = new AudioSourceProcessor(transportSource, false);
-	asProcessor->setTrackNumber(trackNumber++);
-	sourceProcessors.add(asProcessor);
-
-	ChannelStripProcessor* channelStrip = new ChannelStripProcessor();
-	channelStrips.add(channelStrip);
-
-	addToGraph(asProcessor, channelStrip);
-}
-
-void AudioMixer::addToGraph(AudioSourceProcessor* asProcessor, ChannelStripProcessor* channelStrip)
+void AudioMixer::remapGraph()
 {
-	processorGraph->addNode(asProcessor, nodeNumber++);
-	//processorGraph->addNode(channelStrip, nodeNumber++);
-	
-	processorGraph->addConnection(nodeNumber - 1, 1, 2, 1);
-	processorGraph->addConnection(nodeNumber - 1, 2, 2, 2);
+    int node = 4000;
+    HashMap<int, AudioTrack*>::Iterator track (trackMap);
+    while(track.next())
+    {
+        trackMap.set(node, track.getValue());
+        ++node;
+    }
+    trackMap.remove(trackMap.size() - 1);
+    node = 4000;
+    HashMap<int, AudioTransportSource*>::Iterator transport (transportMap);
+    while(transport.next())
+    {
+        transportMap.set(node, transport.getValue());
+        ++node;
+    }
+    transportMap.remove(transportMap.size() - 1);
+    node = 4000;
+    HashMap<int, AudioSourceProcessor*>::Iterator processor (sourceProcessorMap);
+    while(processor.next())
+    {
+        sourceProcessorMap.set(node, processor.getValue());
+        processorGraph->addNode(processor.getValue(), node);
+        ++node;
+    }
+    sourceProcessorMap.remove(sourceProcessorMap.size() - 1);
+    node = 5000;
+    HashMap<int, ChannelStripProcessor*>::Iterator channelStrip (channelStripMap);
+    while(channelStrip.next())
+    {
+        channelStripMap.set(node, channelStrip.getValue());
+        processorGraph->addNode(channelStrip.getValue(), node);
+        processorGraph->addConnection(node, 0, node - 1000, 0);
+        processorGraph->addConnection(node, 1, node - 1000, 1);
+        processorGraph->addConnection(node, 0, OUTPUT_NODE_ID, 0);
+        processorGraph->addConnection(node, 1, OUTPUT_NODE_ID, 1);
+        ++node;
+    }
+    channelStripMap.remove(channelStripMap.size() - 1);
+}
+
+void AudioMixer::createDefaultNodes()
+{
+    AudioProcessorGraph::AudioGraphIOProcessor* inputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode);
+    AudioProcessorGraph::AudioGraphIOProcessor* outputNode = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode);
+
+    processorGraph->addNode(inputNode, INPUT_NODE_ID);
+    processorGraph->addNode(outputNode, OUTPUT_NODE_ID);
+}
+
+void AudioMixer::addTrack(AudioTrack *track)
+{
+    if(track != 0)
+    {
+        trackMap.set(trackNodeID, track);
+        AudioTransportSource* trackTransport = new AudioTransportSource();
+        trackTransport->setSource(track);
+        transportMap.set(trackNodeID, trackTransport);
+        AudioSourceProcessor* trackProcessor = new AudioSourceProcessor(trackTransport, false);
+        sourceProcessorMap.set(trackNodeID, trackProcessor);
+        processorGraph->addNode(trackProcessor, trackNodeID);
+        
+        ChannelStripProcessor* stripProcessor = new ChannelStripProcessor();
+        processorGraph->addNode(stripProcessor, mixerNodeID);
+        channelStripMap.set(mixerNodeID, stripProcessor);
+        processorGraph->addConnection(trackNodeID, 0, mixerNodeID, 0);
+        processorGraph->addConnection(trackNodeID, 1, mixerNodeID, 1);
+        
+        processorGraph->addConnection(mixerNodeID, 0, OUTPUT_NODE_ID, 0);
+        processorGraph->addConnection(mixerNodeID, 1, OUTPUT_NODE_ID, 1);
+        ++trackNodeID;
+        ++mixerNodeID;
+    }
 }
 
 void AudioMixer::removeTrack(int trackNumber)
 {
-	//Remove track and related processors from arrays
-	delete trackSources[trackNumber - 1];
-	trackSources.remove(trackNumber - 1);
+    resetGraph();
+    int node = 4000 + (trackNumber - 1);
+    HashMap<int, AudioTrack*>::Iterator track (trackMap);
+    while(track.next())
+    {
+        if(track.getKey() == node)
+        {
+            delete track.getValue();
+        }
+    }
+    trackMap.remove(node);
+    HashMap<int, AudioTransportSource*>::Iterator transport (transportMap);
+    while(transport.next())
+    {
+        if(transport.getKey() == node)
+        {
+            delete transport.getValue();
+        }
+    }
+    transportMap.remove(node);
+    HashMap<int, AudioSourceProcessor*>::Iterator source(sourceProcessorMap);
+    while(source.next())
+    {
+        if(source.getKey() == node)
+        {
+            delete source.getValue();
+        }
+    }
+    sourceProcessorMap.remove(node);
+    node = 5000 + (trackNumber - 1);
+    HashMap<int, ChannelStripProcessor*>::Iterator channelStrip(channelStripMap);
+    while(channelStrip.next())
+    {
+        if(source.getKey() == node)
+        {
+            delete source.getValue();
+        }
+    }
+    channelStripMap.remove(node);
+	remapGraph();
+}
 
-	delete transportSources[trackNumber - 1];
-	transportSources.remove(trackNumber - 1);
-
-	delete sourceProcessors[trackNumber - 1];
-	sourceProcessors.remove(trackNumber - 1);
-
-	delete channelStrips[trackNumber - 1];
-	channelStrips.remove(trackNumber - 1);
-	
-	//reset trackNumber and nodeNumber to initial value
-	trackNumber = 1;
-	nodeNumber = 3;
-	//reset the graph to allow track reallocation
-	resetGraph(sampleRate, bufferSize);
-
-	//If there are still tracks after removal; Add them back to the graph
-	if (sourceProcessors.size() > 0)
-	{
-		for (int i = 0; i < sourceProcessors.size(); i++)
-		{
-			sourceProcessors[i]->setTrackNumber(trackNumber);
-			trackNumber++;
-			addToGraph(sourceProcessors[i], channelStrips[i]);
-		}
-	}
+AudioProcessorGraph* AudioMixer::getProcessorGraph()
+{
+    return processorGraph;
 }
 
 void AudioMixer::start()
 {
-    processorGraph->prepareToPlay(sampleRate, bufferSize);
-    for(int i = 0; i < transportSources.size(); ++i)
+    HashMap<int, AudioTransportSource*>::Iterator i (transportMap);
+    
+    while(i.next())
     {
-        transportSources[i]->start();
+        i.getValue()->setNextReadPosition(0);
+        i.getValue()->start();
     }
 }
 
 void AudioMixer::stop()
 {
-    for(int i = 0; i < transportSources.size(); ++i)
+    HashMap<int, AudioTransportSource*>::Iterator i (transportMap);
+    
+    while(i.next())
     {
-        transportSources[i]->stop();
+        i.getValue()->stop();
     }
-    processorGraph->releaseResources();
 }
 
 void AudioMixer::setPosition(double position)
 {
-    for(int i = 0; i < transportSources.size(); ++i)
+    for(int i = 0; i < transportMap.size(); ++i)
     {
-        if(transportSources[i]->getTotalLength() < position)
-        {
-            transportSources[i]->setPosition(position);
-        }
+        if(transportMap[i]->getTotalLength() < position)
+            transportMap[i]->setPosition(position);
         else
         {
-            transportSources[i]->setLooping(false);
-            transportSources[i]->setPosition(transportSources[i]->getTotalLength());
+            transportMap[i]->setLooping(false);
+            transportMap[i]->setPosition(transportMap[i]->getTotalLength());
         }
     }
 }
+
+
+

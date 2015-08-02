@@ -58,12 +58,11 @@ OBJECTS := \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
-  $(OBJDIR)/AudioMixer2_daa84518.o \
+  $(OBJDIR)/AudioMixer_72677d64.o \
   $(OBJDIR)/AudioTrackFactory_b681268e.o \
   $(OBJDIR)/AudioRegionFactory_43999451.o \
   $(OBJDIR)/ChannelStripProcessor_1de3a096.o \
   $(OBJDIR)/AudioSourceProcessor_d46aa592.o \
-  $(OBJDIR)/AudioMixer_72677d64.o \
   $(OBJDIR)/ProjectManager_bb0c2f65.o \
   $(OBJDIR)/SampleAudioRegion_9d0c3739.o \
   $(OBJDIR)/AudioRegion_3ad9a943.o \
@@ -148,9 +147,9 @@ $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	@echo "Compiling TransportComponent.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
-$(OBJDIR)/AudioMixer2_daa84518.o: ../../Source/core/AudioMixer2.cpp
+$(OBJDIR)/AudioMixer_72677d64.o: ../../Source/core/AudioMixer.cpp
 	-@mkdir -p $(OBJDIR)
-	@echo "Compiling AudioMixer2.cpp"
+	@echo "Compiling AudioMixer.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/AudioTrackFactory_b681268e.o: ../../Source/core/AudioTrackFactory.cpp
@@ -171,11 +170,6 @@ $(OBJDIR)/ChannelStripProcessor_1de3a096.o: ../../Source/core/ChannelStripProces
 $(OBJDIR)/AudioSourceProcessor_d46aa592.o: ../../Source/core/AudioSourceProcessor.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling AudioSourceProcessor.cpp"
-	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
-
-$(OBJDIR)/AudioMixer_72677d64.o: ../../Source/core/AudioMixer.cpp
-	-@mkdir -p $(OBJDIR)
-	@echo "Compiling AudioMixer.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/ProjectManager_bb0c2f65.o: ../../Source/core/ProjectManager.cpp

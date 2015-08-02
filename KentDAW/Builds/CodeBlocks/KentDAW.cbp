@@ -143,8 +143,8 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
-    <Unit filename="../../Source/core/AudioMixer2.cpp"/>
-    <Unit filename="../../Source/core/AudioMixer2.h">
+    <Unit filename="../../Source/core/AudioMixer.cpp"/>
+    <Unit filename="../../Source/core/AudioMixer.h">
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
@@ -165,8 +165,6 @@
     </Unit>
     <Unit filename="../../Source/core/AudioSourceProcessor.cpp"/>
     <Unit filename="../../Source/core/AudioSourceProcessor.h"/>
-    <Unit filename="../../Source/core/AudioMixer.cpp"/>
-    <Unit filename="../../Source/core/AudioMixer.h"/>
     <Unit filename="../../Source/core/ProjectManager.cpp"/>
     <Unit filename="../../Source/core/ProjectManager.h"/>
     <Unit filename="../../Source/core/SampleAudioRegion.cpp"/>
