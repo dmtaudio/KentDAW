@@ -10,8 +10,8 @@
 
 #include "ProjectManager.h"
 
-ProjectManager::ProjectManager(AudioEngine *audioEngine, ArrangeWindow* arrangeWindow) : audioEngine(audioEngine),
-	arrangeWindow(arrangeWindow),
+ProjectManager::ProjectManager(AudioEngine *audioEngine, ArrangeWindow* arrangeWindow) : arrangeWindow(arrangeWindow),
+    audioEngine(audioEngine),
 	projectFilePathsArray()
 {
 	pElements = new XmlElement("Project_Elements");
