@@ -14,12 +14,15 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "AudioTrack.h"
 #include "AudioEngine.h"
+#include "AudioRegionFactory.h"
+#include "AudioTrackFactory.h"
+#include "../ui/ArrangeWindow.h"
 
 class ProjectManager
 {
     
 public:
-    ProjectManager(AudioEngine* audioEngine);
+    ProjectManager(AudioEngine* audioEngine, ArrangeWindow* arrangeWindow);
     ~ProjectManager();
 
 	//ProjectManager Management
@@ -31,6 +34,7 @@ public:
     
 private:
 	AudioTrack* track;
+	ArrangeWindow* arrangeWindow;
 	AudioEngine* audioEngine;
 	ScopedPointer<XmlElement>pElements;
 	Array<String> projectFilePathsArray;

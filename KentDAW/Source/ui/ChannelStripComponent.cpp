@@ -104,6 +104,7 @@ void ChannelStripComponent::resized()
     
 }
 
+/*
 bool ChannelStripComponent::isInterestedInFileDrag(const StringArray & files)
 {
     bool accepted;
@@ -136,6 +137,7 @@ void ChannelStripComponent::filesDropped(const StringArray & files, int x, int y
         track->add(*region);
     }
 }
+*/
 
 void ChannelStripComponent::sliderValueChanged(Slider* movedSlider)
 {

@@ -12,16 +12,17 @@
 #define ARRANGEWINDOW_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "ChannelStripComponent.h"
+#include "TrackComponent.h"
 #include "../core/AudioTrack.h"
+#include "../core/AudioRegion.h"
 #include "../core/AudioEngine.h"
 #include <list>
+#include <map>
 
 //==============================================================================
 /*
 */
-class ArrangeWindow    : public Viewport,
-    Button::Listener
+class ArrangeWindow    : public Component
 {
 public:
     ArrangeWindow(AudioEngine *audioEngine);
@@ -29,17 +30,14 @@ public:
 
     void paint (Graphics&);
     void resized();
-    void createGuiForTrack(AudioTrack *track);
+    void createGuiForTrack(AudioTrack* track);
 
 private:
-    TextButton *btn;
-    AudioEngine *audioEngine;
-    std::list<ChannelStripComponent *> channelStrips;
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ArrangeWindow)
+	AudioEngine *audioEngine;
+	std::list<TrackComponent*> trackComponents;
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ArrangeWindow)
 
-        // Inherited via Listener
-        virtual void buttonClicked(Button *) override;
+   
 };
-
 
 #endif  // ARRANGEWINDOW_H_INCLUDED
