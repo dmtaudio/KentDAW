@@ -64,7 +64,7 @@ void ArrangeWindow::buttonClicked(Button *button)
         AudioTrack *track = AudioTrackFactory::build();
 
         // Command stuff
-        audioEngine->getMixer()->addNewTrack(track, 5001, 6001);
+        audioEngine->getMixer()->addTrack(track);
         createGuiForTrack(track);
     }
 }

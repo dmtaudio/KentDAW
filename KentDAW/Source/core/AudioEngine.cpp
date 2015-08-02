@@ -13,10 +13,8 @@
 static AudioDeviceManager* sharedAudioDeviceManager;
 
 AudioEngine::AudioEngine()
-: graphPlayer(),
-initialised(false)
+: graphPlayer()
 {
-	if(sharedAudioDeviceManager == nullptr)
     {
 	bool showMidiInputOptions = false;
 	bool showMidiOutputSelector = false;
@@ -39,7 +37,7 @@ initialised(false)
     deviceBufferSize = sharedAudioDeviceManager->getCurrentAudioDevice()->getCurrentBufferSizeSamples();
     
 	//Create a mixer, set up the player and callback.
-	mixer = new AudioMixer2();
+	mixer = new AudioMixer();
 
 		graphPlayer.setProcessor(mixer->getProcessorGraph());
 		setDefaultDeviceCallback();
@@ -171,7 +169,7 @@ BigInteger AudioEngine::getDeviceChannels(ChannelType type)
     }
 }
 
-AudioMixer2* AudioEngine::getMixer()
+AudioMixer* AudioEngine::getMixer()
 {
     return mixer;
 }

@@ -46,13 +46,13 @@ public:
     BigInteger getDeviceChannels(ChannelType type);
     
     double getProcessorUsage();
-    AudioMixer2* getMixer();
+    AudioMixer* getMixer();
     
 private:
     // Callback related stuff
     CriticalSection lock;
     AudioProcessorPlayer graphPlayer;
-    AudioMixer2* mixer;
+    AudioMixer* mixer;
     
     // Midi
     MidiBuffer incomingMidi;
