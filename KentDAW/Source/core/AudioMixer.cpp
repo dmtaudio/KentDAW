@@ -31,6 +31,8 @@ AudioMixer::AudioMixer()
                          oChannels, // number of outputs
                          sampleRate, // sampleRate
                          bufferSize);
+    
+    resetGraph();
 }
 
 AudioMixer::~AudioMixer(){}
