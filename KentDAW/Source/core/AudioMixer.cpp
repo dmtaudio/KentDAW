@@ -34,13 +34,15 @@ AudioMixer::AudioMixer()
     
 }
 
-AudioMixer::~AudioMixer(){}
+AudioMixer::~AudioMixer()
+{
+    delete processorGraph;
+}
 
 void AudioMixer::resetGraph()
 {
     processorGraph->clear();
     createDefaultNodes();
-    
 }
 
 void AudioMixer::remapGraph()

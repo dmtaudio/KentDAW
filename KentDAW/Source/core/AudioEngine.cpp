@@ -39,9 +39,9 @@ AudioEngine::AudioEngine()
 	//Create a mixer, set up the player and callback.
 	mixer = new AudioMixer();
 
+    mixer->resetGraph();
     graphPlayer.setProcessor(mixer->getProcessorGraph());
 		setDefaultDeviceCallback();
-        mixer->resetGraph();
 
 }
 
