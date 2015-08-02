@@ -32,7 +32,6 @@ AudioMixer::AudioMixer()
                          sampleRate, // sampleRate
                          bufferSize);
     
-    resetGraph();
 }
 
 AudioMixer::~AudioMixer(){}
