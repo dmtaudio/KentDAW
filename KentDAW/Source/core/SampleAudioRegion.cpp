@@ -11,7 +11,7 @@
 #include "SampleAudioRegion.h"
 
 SampleAudioRegion::SampleAudioRegion(AudioFormatReader* reader, int64 startTime, bool shouldLoop) :
-	AudioRegion(startTime, startTime - reader->lengthInSamples, reader->lengthInSamples), _shouldLoop(shouldLoop), _reader(reader) {
+	AudioRegion(0, startTime + reader->lengthInSamples, 0), _shouldLoop(shouldLoop), _reader(reader) {
 }
 
 void SampleAudioRegion::prepareToPlay(int samplesPerBlockExpected, double sampleRate) {
@@ -23,7 +23,8 @@ void SampleAudioRegion::releaseResources() {
 }
 
 void SampleAudioRegion::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill) {
-	_reader->read(bufferToFill.buffer, 0, _samples, _position, true, true);
+	_reader->read(bufferToFill.buffer, bufferToFill.startSample, bufferToFill.numSamples, _position, true, true);
+    _position += bufferToFill.numSamples;
 }
 
 bool SampleAudioRegion::isLooping() const {
