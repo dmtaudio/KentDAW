@@ -10,6 +10,7 @@
 
 #include "ProjectManager.h"
 #include "AudioRegionFactory.h"
+#include "AudioTrackFactory.h"
 
 ProjectManager::ProjectManager(AudioEngine *audioEngine) : audioEngine(audioEngine),
 	projectFilePathsArray()
@@ -121,6 +122,7 @@ void ProjectManager::importAudioFileToProjectManager()
 		File audioFile(chooser.getResult());
 		String filePath(audioFile.getFullPathName());
 		projectFilePathsArray.add(filePath);
+		AudioTrack *track = AudioTrackFactory::build();
 		audioEngine->getMixer()->addTrack(track);
 		AudioRegion *region = AudioRegionFactory::build(filePath, 0);
 		track->add(*region);
