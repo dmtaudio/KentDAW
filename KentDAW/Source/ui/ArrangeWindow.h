@@ -20,8 +20,7 @@
 //==============================================================================
 /*
 */
-class ArrangeWindow    : public Viewport,
-    Button::Listener
+class ArrangeWindow    : public Component
 {
 public:
     ArrangeWindow(AudioEngine *audioEngine);
@@ -32,14 +31,11 @@ public:
     void createGuiForTrack(AudioTrack *track);
 
 private:
-    TextButton *btn;
-    AudioEngine *audioEngine;
-    std::list<ChannelStripComponent *> channelStrips;
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ArrangeWindow)
+	AudioEngine *audioEngine;
 
-        // Inherited via Listener
-        virtual void buttonClicked(Button *) override;
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ArrangeWindow)
+
+   
 };
-
 
 #endif  // ARRANGEWINDOW_H_INCLUDED

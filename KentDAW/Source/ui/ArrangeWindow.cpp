@@ -15,10 +15,7 @@
 //==============================================================================
 ArrangeWindow::ArrangeWindow(AudioEngine *audioEngine) : audioEngine(audioEngine)
 {
-    btn = new TextButton("Add track", "Add track");
 
-    addAndMakeVisible(btn);
-    btn->addListener(this);
 }
 
 ArrangeWindow::~ArrangeWindow()
@@ -40,31 +37,15 @@ void ArrangeWindow::paint (Graphics& g)
 
 void ArrangeWindow::resized()
 {
-    int i = 0;
 
-    for (auto current = channelStrips.begin(), end = channelStrips.end(); current != end; ++current) {
-        (*current)->setBounds(0, i++ * 300, 100, 300 * 0.6);
-    }
-
-    btn->setBounds(getWidth() / 2 - btn->getWidth() / 2, 0, 200, 60);
 }
 
 void ArrangeWindow::createGuiForTrack(AudioTrack * track)
 {
-    ChannelStripComponent *channelStrip = new ChannelStripComponent(track);
+	
+	//ChannelStripComponent *channelStrip = new ChannelStripComponent(track);
+	//channelStrips.push_back(channelStrip);
+    //addAndMakeVisible(channelStrip);
+    //resized();
 
-    channelStrips.push_back(channelStrip);
-    addAndMakeVisible(channelStrip);
-    resized();
-}
-
-void ArrangeWindow::buttonClicked(Button *button)
-{
-    if (button == btn) {
-        AudioTrack *track = AudioTrackFactory::build();
-
-        // Command stuff
-        audioEngine->getMixer()->addTrack(track);
-        createGuiForTrack(track);
-    }
 }
