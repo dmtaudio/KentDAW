@@ -12,7 +12,7 @@
 #define AUDIOENGINE_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "AudioMixer2.h"
+#include "AudioMixer.h"
 
 class AudioEngine
 {
