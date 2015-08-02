@@ -34,6 +34,12 @@ public:
     void stop();
     
     void setPosition(double position);
+    
+    struct Level
+    {
+        float peak;
+        bool isClipping;
+    };
 
 private:
     int currentProcessor;
