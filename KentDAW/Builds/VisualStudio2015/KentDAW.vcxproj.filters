@@ -346,6 +346,9 @@
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\core\EQProcessor.cpp">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\core\MidiManager.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
@@ -1649,6 +1652,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h">
       <Filter>KentDAW\Source\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\core\EQProcessor.h">
+      <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\MidiManager.h">
       <Filter>KentDAW\Source\core</Filter>

@@ -143,6 +143,11 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/core/EQProcessor.cpp"/>
+    <Unit filename="../../Source/core/EQProcessor.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/core/MidiManager.cpp"/>
     <Unit filename="../../Source/core/MidiManager.h">
       <Option compile="0"/>

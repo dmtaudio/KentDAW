@@ -138,6 +138,7 @@
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
+    <ClCompile Include="..\..\Source\core\EQProcessor.cpp"/>
     <ClCompile Include="..\..\Source\core\MidiManager.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioTrackFactory.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioRegionFactory.cpp"/>
@@ -1293,6 +1294,7 @@
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
     <ClInclude Include="..\..\Source\ui\MainComponent.h"/>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h"/>
+    <ClInclude Include="..\..\Source\core\EQProcessor.h"/>
     <ClInclude Include="..\..\Source\core\MidiManager.h"/>
     <ClInclude Include="..\..\Source\core\AudioTrackFactory.h"/>
     <ClInclude Include="..\..\Source\core\AudioRegionFactory.h"/>

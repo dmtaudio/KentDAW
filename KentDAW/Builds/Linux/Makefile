@@ -58,6 +58,7 @@ OBJECTS := \
   $(OBJDIR)/BinaryData_6333ce47.o \
   $(OBJDIR)/MainComponent_4eca1cd2.o \
   $(OBJDIR)/TransportComponent_90926750.o \
+  $(OBJDIR)/EQProcessor_aabe923f.o \
   $(OBJDIR)/MidiManager_b1275f25.o \
   $(OBJDIR)/AudioTrackFactory_b681268e.o \
   $(OBJDIR)/AudioRegionFactory_43999451.o \
@@ -146,6 +147,11 @@ $(OBJDIR)/MainComponent_4eca1cd2.o: ../../Source/ui/MainComponent.cpp
 $(OBJDIR)/TransportComponent_90926750.o: ../../Source/ui/TransportComponent.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling TransportComponent.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/EQProcessor_aabe923f.o: ../../Source/core/EQProcessor.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling EQProcessor.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/MidiManager_b1275f25.o: ../../Source/core/MidiManager.cpp

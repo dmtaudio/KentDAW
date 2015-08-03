@@ -39,6 +39,8 @@
               file="Source/ui/TransportComponent.h"/>
       </GROUP>
       <GROUP id="{39540C8A-9231-599A-B87D-F460CBB5ADC9}" name="core">
+        <FILE id="TPWTQe" name="EQProcessor.cpp" compile="1" resource="0" file="Source/core/EQProcessor.cpp"/>
+        <FILE id="zrC9cW" name="EQProcessor.h" compile="0" resource="0" file="Source/core/EQProcessor.h"/>
         <FILE id="PmJpc7" name="MidiManager.cpp" compile="1" resource="0" file="Source/core/MidiManager.cpp"/>
         <FILE id="gyTQYB" name="MidiManager.h" compile="0" resource="0" file="Source/core/MidiManager.h"/>
         <FILE id="ps6msJ" name="AudioTrackFactory.cpp" compile="1" resource="0"
