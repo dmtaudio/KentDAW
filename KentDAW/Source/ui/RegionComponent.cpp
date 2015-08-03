@@ -32,10 +32,9 @@ void RegionComponent::setFile(const File & file)
 
 void RegionComponent::paint (Graphics& g)
 {
-	g.fillAll(Colours::darkgrey);
 	g.setColour(Colours::lightblue);
 	Rectangle<int> thumbArea(getLocalBounds());
-	thumbnail.drawChannels(g, thumbArea.reduced(2), _region->getStartTime(), _region->getEndTime(), 1.0f);
+	thumbnail.drawChannels(g, thumbArea.reduced(2), 0, thumbnail.getTotalLength(), 1.0f);
 }
 
 void RegionComponent::resized()
