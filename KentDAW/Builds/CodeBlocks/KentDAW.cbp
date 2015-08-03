@@ -98,6 +98,16 @@
       <Option compile="0"/>
       <Option link="0"/>
     </Unit>
+    <Unit filename="../../Source/ui/RegionComponent.cpp"/>
+    <Unit filename="../../Source/ui/RegionComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
+    <Unit filename="../../Source/ui/TrackComponent.cpp"/>
+    <Unit filename="../../Source/ui/TrackComponent.h">
+      <Option compile="0"/>
+      <Option link="0"/>
+    </Unit>
     <Unit filename="../../Source/ui/MixerComponent.cpp"/>
     <Unit filename="../../Source/ui/MixerComponent.h">
       <Option compile="0"/>

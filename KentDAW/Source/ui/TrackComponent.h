@@ -13,22 +13,28 @@
 
 #include "../../JuceLibraryCode/JuceHeader.h"
 #include "../core/AudioTrack.h"
+#include "RegionComponent.h"
 
 class TrackComponent : public Component
 	//private ScrollBarListener
 	//private Timer
 {
 public:
-	TrackComponent(AudioTrack *track);
+	TrackComponent(AudioTrack *track, int trackNumber);
 	~TrackComponent();
 
+	void createRegionGUI(AudioRegion* region, AudioFormatManager& formatManager, File& audioFile);
 	void updateTrackRegions();
+	int getTrackNumber();
+	void setTrackNumber(int trackNumber);
 
 	void paint(Graphics& g);
 	void resized();
 
 private:
-	AudioTrack *track;
+	std::vector<RegionComponent*> regionComponents;
+	AudioTrack *_track;
+	int _trackNumber;
 };
 
 #endif  // TRACKCOMPONENT_H_INCLUDED

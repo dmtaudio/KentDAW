@@ -13,9 +13,10 @@
 #include "../core/AudioTrackFactory.h"
 
 //==============================================================================
-ArrangeWindow::ArrangeWindow(AudioEngine *audioEngine) : audioEngine(audioEngine)
+ArrangeWindow::ArrangeWindow(AudioEngine *audioEngine) : _audioEngine(audioEngine),
+	trackComponents()
 {
-	trackNumber = 1;
+	//setOpaque(true);
 }
 
 ArrangeWindow::~ArrangeWindow()
@@ -44,15 +45,21 @@ void ArrangeWindow::resized()
 	}
 }
 
-void ArrangeWindow::createGuiForTrack(AudioTrack* track)
+void ArrangeWindow::createGuiForTrack(AudioTrack* track, int trackNumber)
 {	
-	TrackComponent *trackGUI = new TrackComponent(track);
+	TrackComponent *trackGUI = new TrackComponent(track, trackNumber);
 	trackComponents.push_back(trackGUI);
 	addAndMakeVisible(trackGUI);
 	resized();
 	
 }
 
-void ArrangeWindow::AddRegionToTrackGUI(File &file, int trackNumber)
+void ArrangeWindow::addRegionToTrackGUI(AudioRegion* region, int trackNumber, AudioFormatManager& formatManager, File& audioFile)
 {
+	for (auto current = trackComponents.begin(), end = trackComponents.end(); current != end; ++current) {
+		if ((*current)->getTrackNumber() == trackNumber)
+		{
+			(*current)->createRegionGUI(region, formatManager, audioFile);
+		}
+	}
 }

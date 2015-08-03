@@ -10,27 +10,56 @@
 
 #include "TrackComponent.h"
 
-TrackComponent::TrackComponent(AudioTrack *track)	: track(track)
+TrackComponent::TrackComponent(AudioTrack *track, int trackNumber)	: _track(track),
+	regionComponents()
 {
+	_trackNumber = trackNumber;
 }
 
 TrackComponent::~TrackComponent()
 {
 }
 
+void TrackComponent::createRegionGUI(AudioRegion* region, AudioFormatManager& formatManager, File& audioFile)
+{
+	RegionComponent *regionGUI = new RegionComponent(region, formatManager, audioFile);
+	regionComponents.push_back(regionGUI);
+	addAndMakeVisible(regionGUI);
+	resized();
+
+	setOpaque(true);
+}
+
 void TrackComponent::updateTrackRegions()
 {
 }
 
+int TrackComponent::getTrackNumber()
+{
+	return _trackNumber;
+}
+
+void TrackComponent::setTrackNumber(int trackNumber)
+{
+	_trackNumber = trackNumber;
+}
+
 void TrackComponent::paint(Graphics & g)
 {
-	g.fillAll(Colours::black);   // clear the background
-
 	g.setColour(Colours::grey);
-	g.drawRect(0, 0, getParentWidth(), getParentHeight());   // draw an outline around the component
+	g.drawRect(0, 0, getParentWidth(), getParentHeight());
 }
 
 void TrackComponent::resized()
 {
+	Rectangle<int> r(getLocalBounds().reduced(4));
+	r.removeFromBottom(6);
+	
+	int i = 0;
 
+	for (auto current = regionComponents.begin(), end = regionComponents.end(); current != end; ++current) {
+		Rectangle<int> r(getLocalBounds().reduced(4));
+		r.removeFromBottom(6);
+		(*current)->setBounds(r.removeFromBottom(140));
+	}
 }
