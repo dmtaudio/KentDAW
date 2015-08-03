@@ -23,7 +23,7 @@ public:
 	TrackComponent(AudioTrack *track, int trackNumber);
 	~TrackComponent();
 
-	void createRegionGUI(AudioRegion* region);
+	void createRegionGUI(AudioRegion* region, AudioFormatManager& formatManager, File& audioFile);
 	void updateTrackRegions();
 	int getTrackNumber();
 	void setTrackNumber(int trackNumber);

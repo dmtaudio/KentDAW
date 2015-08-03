@@ -16,6 +16,7 @@
 ArrangeWindow::ArrangeWindow(AudioEngine *audioEngine) : _audioEngine(audioEngine),
 	trackComponents()
 {
+	//setOpaque(true);
 }
 
 ArrangeWindow::~ArrangeWindow()
@@ -53,12 +54,12 @@ void ArrangeWindow::createGuiForTrack(AudioTrack* track, int trackNumber)
 	
 }
 
-void ArrangeWindow::addRegionToTrackGUI(AudioRegion* region, int trackNumber)
+void ArrangeWindow::addRegionToTrackGUI(AudioRegion* region, int trackNumber, AudioFormatManager& formatManager, File& audioFile)
 {
 	for (auto current = trackComponents.begin(), end = trackComponents.end(); current != end; ++current) {
 		if ((*current)->getTrackNumber() == trackNumber)
 		{
-			(*current)->createRegionGUI(region);
+			(*current)->createRegionGUI(region, formatManager, audioFile);
 		}
 	}
 }

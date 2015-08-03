@@ -20,12 +20,14 @@ TrackComponent::~TrackComponent()
 {
 }
 
-void TrackComponent::createRegionGUI(AudioRegion* region)
+void TrackComponent::createRegionGUI(AudioRegion* region, AudioFormatManager& formatManager, File& audioFile)
 {
-	RegionComponent *regionGUI = new RegionComponent(*region);
+	RegionComponent *regionGUI = new RegionComponent(region, formatManager, audioFile);
 	regionComponents.push_back(regionGUI);
 	addAndMakeVisible(regionGUI);
 	resized();
+
+	setOpaque(true);
 }
 
 void TrackComponent::updateTrackRegions()
@@ -44,19 +46,20 @@ void TrackComponent::setTrackNumber(int trackNumber)
 
 void TrackComponent::paint(Graphics & g)
 {
-	g.fillAll(Colours::black);
-
 	g.setColour(Colours::grey);
 	g.drawRect(0, 0, getParentWidth(), getParentHeight());
 }
 
 void TrackComponent::resized()
 {
-	/*
+	Rectangle<int> r(getLocalBounds().reduced(4));
+	r.removeFromBottom(6);
+	
 	int i = 0;
 
 	for (auto current = regionComponents.begin(), end = regionComponents.end(); current != end; ++current) {
-		(*current)->setBounds(0, i++ * 100, getParentWidth(), 100);
+		Rectangle<int> r(getLocalBounds().reduced(4));
+		r.removeFromBottom(6);
+		(*current)->setBounds(r.removeFromBottom(140));
 	}
-	*/
 }

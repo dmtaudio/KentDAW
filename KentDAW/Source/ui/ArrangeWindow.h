@@ -29,8 +29,8 @@ public:
     void paint (Graphics&);
     void resized();
     void createGuiForTrack(AudioTrack* track, int trackNumber);
-	void addRegionToTrackGUI(AudioRegion* region, int trackNumber);
-	void updateArrangeWindow();
+	void addRegionToTrackGUI(AudioRegion* region, int trackNumber, AudioFormatManager& formatManager, File& audioFile);
+	//void updateArrangeWindow();
 
 private:
 	AudioEngine *_audioEngine;

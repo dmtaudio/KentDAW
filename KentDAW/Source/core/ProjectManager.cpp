@@ -127,7 +127,7 @@ void ProjectManager::importAudioFileToProjectManager()
 		AudioRegion *region = AudioRegionFactory::build(filePath, 0);
 		track->add(*region);
 		arrangeWindow->createGuiForTrack(track, _trackNumber);
-		arrangeWindow->addRegionToTrackGUI(region, _trackNumber);
+		arrangeWindow->addRegionToTrackGUI(region, _trackNumber, formatManager, audioFile);
 		_trackNumber++;
 	}
 }

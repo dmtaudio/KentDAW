@@ -20,7 +20,7 @@
 class RegionComponent    : public Component
 {
 public:
-    RegionComponent(AudioRegion& region);
+    RegionComponent(AudioRegion* region, AudioFormatManager& formatManager, const File& file);
     ~RegionComponent();
 
 	void setFile(const File& file);
@@ -29,6 +29,10 @@ public:
     void resized();
 
 private:
+	AudioRegion* _region;
+	AudioThumbnailCache thumbnailCache;
+	AudioThumbnail thumbnail;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RegionComponent)
 };
 
