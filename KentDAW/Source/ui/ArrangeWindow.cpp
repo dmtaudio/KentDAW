@@ -15,6 +15,7 @@
 //==============================================================================
 ArrangeWindow::ArrangeWindow(AudioEngine *audioEngine) : audioEngine(audioEngine)
 {
+	trackNumber = 1;
 }
 
 ArrangeWindow::~ArrangeWindow()
@@ -39,7 +40,7 @@ void ArrangeWindow::resized()
 	int i = 0;
 
 	for (auto current = trackComponents.begin(), end = trackComponents.end(); current != end; ++current) {
-		(*current)->setBounds(0, i++ * 200, getParentWidth(), 200);
+		(*current)->setBounds(0, i++ * 100, getParentWidth(), 100);
 	}
 }
 
@@ -49,9 +50,9 @@ void ArrangeWindow::createGuiForTrack(AudioTrack* track)
 	trackComponents.push_back(trackGUI);
 	addAndMakeVisible(trackGUI);
 	resized();
-	//ChannelStripComponent *channelStrip = new ChannelStripComponent(track);
-	//channelStrips.push_back(channelStrip);
-    //addAndMakeVisible(channelStrip);
-    //resized();
+	
+}
 
+void ArrangeWindow::AddRegionToTrackGUI(File &file, int trackNumber)
+{
 }

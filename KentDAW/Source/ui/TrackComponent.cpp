@@ -12,10 +12,13 @@
 
 TrackComponent::TrackComponent(AudioTrack *track)	: track(track)
 {
-	
 }
 
 TrackComponent::~TrackComponent()
+{
+}
+
+void TrackComponent::updateTrackRegions()
 {
 }
 

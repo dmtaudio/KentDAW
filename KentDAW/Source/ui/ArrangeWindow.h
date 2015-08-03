@@ -16,12 +16,10 @@
 #include "../core/AudioTrack.h"
 #include "../core/AudioRegion.h"
 #include "../core/AudioEngine.h"
-#include <list>
-#include <map>
+#include <vector>
 
 //==============================================================================
-/*
-*/
+
 class ArrangeWindow    : public Component
 {
 public:
@@ -32,9 +30,12 @@ public:
     void resized();
     void createGuiForTrack(AudioTrack* track);
 
+	void AddRegionToTrackGUI(File & file, int trackNumber);
+
 private:
+	int trackNumber;
 	AudioEngine *audioEngine;
-	std::list<TrackComponent*> trackComponents;
+	std::vector<TrackComponent*> trackComponents;
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ArrangeWindow)
 
    
