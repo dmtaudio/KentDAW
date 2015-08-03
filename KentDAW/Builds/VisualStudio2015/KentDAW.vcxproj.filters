@@ -319,12 +319,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\ui\RegionComponent.cpp">
-      <Filter>KentDAW\Source\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\ui\TrackComponent.cpp">
-      <Filter>KentDAW\Source\ui</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\ui\MixerComponent.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
@@ -352,7 +346,7 @@
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp">
       <Filter>KentDAW\Source\ui</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\core\AudioMixer.cpp">
+    <ClCompile Include="..\..\Source\core\MidiManager.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\core\AudioTrackFactory.cpp">
@@ -365,6 +359,9 @@
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\core\AudioSourceProcessor.cpp">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\core\AudioMixer.cpp">
       <Filter>KentDAW\Source\core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\core\ProjectManager.cpp">
@@ -1626,12 +1623,6 @@
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h">
       <Filter>KentDAW\Source\utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\ui\RegionComponent.h">
-      <Filter>KentDAW\Source\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\ui\TrackComponent.h">
-      <Filter>KentDAW\Source\ui</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\ui\MixerComponent.h">
       <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
@@ -1659,7 +1650,7 @@
     <ClInclude Include="..\..\Source\ui\TransportComponent.h">
       <Filter>KentDAW\Source\ui</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\core\AudioMixer.h">
+    <ClInclude Include="..\..\Source\core\MidiManager.h">
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\AudioTrackFactory.h">
@@ -1672,6 +1663,9 @@
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\AudioSourceProcessor.h">
+      <Filter>KentDAW\Source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\core\AudioMixer.h">
       <Filter>KentDAW\Source\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\core\ProjectManager.h">

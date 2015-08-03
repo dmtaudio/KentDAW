@@ -65,6 +65,8 @@ private:
     
     int trackNodeID, mixerNodeID;
     
+    int sampleRate, bufferSize;
+    
     TimeSliceThread* readAheadThread;
 };
 

@@ -129,8 +129,6 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\ui\RegionComponent.cpp"/>
-    <ClCompile Include="..\..\Source\ui\TrackComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\MixerComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\ChannelStripComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\MeterComponent.cpp"/>
@@ -140,11 +138,12 @@
     <ClCompile Include="..\..\Source\ui\BinaryData.cpp"/>
     <ClCompile Include="..\..\Source\ui\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\ui\TransportComponent.cpp"/>
-    <ClCompile Include="..\..\Source\core\AudioMixer.cpp"/>
+    <ClCompile Include="..\..\Source\core\MidiManager.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioTrackFactory.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioRegionFactory.cpp"/>
     <ClCompile Include="..\..\Source\core\ChannelStripProcessor.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioSourceProcessor.cpp"/>
+    <ClCompile Include="..\..\Source\core\AudioMixer.cpp"/>
     <ClCompile Include="..\..\Source\core\ProjectManager.cpp"/>
     <ClCompile Include="..\..\Source\core\SampleAudioRegion.cpp"/>
     <ClCompile Include="..\..\Source\core\AudioRegion.cpp"/>
@@ -1285,8 +1284,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\utils\BufferDisplay.h"/>
-    <ClInclude Include="..\..\Source\ui\RegionComponent.h"/>
-    <ClInclude Include="..\..\Source\ui\TrackComponent.h"/>
     <ClInclude Include="..\..\Source\ui\MixerComponent.h"/>
     <ClInclude Include="..\..\Source\ui\ChannelStripComponent.h"/>
     <ClInclude Include="..\..\Source\ui\MeterComponent.h"/>
@@ -1296,11 +1293,12 @@
     <ClInclude Include="..\..\Source\ui\BinaryData.h"/>
     <ClInclude Include="..\..\Source\ui\MainComponent.h"/>
     <ClInclude Include="..\..\Source\ui\TransportComponent.h"/>
-    <ClInclude Include="..\..\Source\core\AudioMixer.h"/>
+    <ClInclude Include="..\..\Source\core\MidiManager.h"/>
     <ClInclude Include="..\..\Source\core\AudioTrackFactory.h"/>
     <ClInclude Include="..\..\Source\core\AudioRegionFactory.h"/>
     <ClInclude Include="..\..\Source\core\ChannelStripProcessor.h"/>
     <ClInclude Include="..\..\Source\core\AudioSourceProcessor.h"/>
+    <ClInclude Include="..\..\Source\core\AudioMixer.h"/>
     <ClInclude Include="..\..\Source\core\ProjectManager.h"/>
     <ClInclude Include="..\..\Source\core\SampleAudioRegion.h"/>
     <ClInclude Include="..\..\Source\core\AudioRegion.h"/>

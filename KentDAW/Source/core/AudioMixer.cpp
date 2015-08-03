@@ -64,12 +64,15 @@ void AudioMixer::addTrack(AudioTrack *track)
         AudioSourceProcessor* trackProcessor = new AudioSourceProcessor(trackTransport, false);
         sourceProcessorMap.set(trackNodeID, trackProcessor);
         processorGraph->addNode(trackProcessor, trackNodeID);
+        trackProcessor->setPlayConfigDetails(2, 2, sampleRate, bufferSize);
         
         ChannelStripProcessor* stripProcessor = new ChannelStripProcessor();
         processorGraph->addNode(stripProcessor, mixerNodeID);
+        stripProcessor->setPlayConfigDetails(2, 2, sampleRate, bufferSize);
         channelStripMap.set(mixerNodeID, stripProcessor);
         processorGraph->addConnection(trackNodeID, 0, mixerNodeID, 0);
         processorGraph->addConnection(trackNodeID, 1, mixerNodeID, 1);
+        
         
         processorGraph->addConnection(mixerNodeID, 0, OUTPUT_NODE_ID, 0);
         processorGraph->addConnection(mixerNodeID, 1, OUTPUT_NODE_ID, 1);
