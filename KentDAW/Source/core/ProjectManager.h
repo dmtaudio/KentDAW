@@ -33,9 +33,10 @@ public:
 	void importAudioFileToProjectManager();
     
 private:
+	int _trackNumber;
 	AudioTrack* track;
 	ArrangeWindow* arrangeWindow;
-	AudioEngine* audioEngine;
+	AudioEngine* _audioEngine;
 	ScopedPointer<XmlElement>pElements;
 	Array<String> projectFilePathsArray;
 	AudioFormatManager formatManager;

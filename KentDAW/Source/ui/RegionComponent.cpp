@@ -12,7 +12,7 @@
 #include "RegionComponent.h"
 
 //==============================================================================
-RegionComponent::RegionComponent(AudioFormatManager& formatManager, File& file)
+RegionComponent::RegionComponent(AudioRegion &region)
 {
 
 }

@@ -11,12 +11,13 @@
 #include "ProjectManager.h"
 
 ProjectManager::ProjectManager(AudioEngine *audioEngine, ArrangeWindow* arrangeWindow) : arrangeWindow(arrangeWindow),
-    audioEngine(audioEngine),
+    _audioEngine(audioEngine),
 	projectFilePathsArray()
 {
 	pElements = new XmlElement("Project_Elements");
 	formatManager.registerBasicFormats();
 	createBasicProject("Untitled Project");
+	int _trackNumber = 1;
 }
 
 ProjectManager::~ProjectManager()
@@ -122,10 +123,11 @@ void ProjectManager::importAudioFileToProjectManager()
 		String filePath(audioFile.getFullPathName());
 		projectFilePathsArray.add(filePath);
 		AudioTrack *track = AudioTrackFactory::build();
-		audioEngine->getMixer()->addTrack(track);
+		_audioEngine->getMixer()->addTrack(track);
 		AudioRegion *region = AudioRegionFactory::build(filePath, 0);
 		track->add(*region);
-		arrangeWindow->createGuiForTrack(track);
-		arrangeWindow->AddRegionToTrackGUI(audioFile, 1);
+		arrangeWindow->createGuiForTrack(track, _trackNumber);
+		arrangeWindow->addRegionToTrackGUI(region, _trackNumber);
+		_trackNumber++;
 	}
 }

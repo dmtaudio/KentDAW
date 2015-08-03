@@ -12,6 +12,7 @@
 #define REGIONCOMPONENT_H_INCLUDED
 
 #include "../../JuceLibraryCode/JuceHeader.h"
+#include "../core/AudioRegion.h"
 
 //==============================================================================
 /*
@@ -19,7 +20,7 @@
 class RegionComponent    : public Component
 {
 public:
-    RegionComponent(AudioFormatManager& formatManager, File& file);
+    RegionComponent(AudioRegion& region);
     ~RegionComponent();
 
 	void setFile(const File& file);

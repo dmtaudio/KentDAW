@@ -28,13 +28,13 @@ public:
 
     void paint (Graphics&);
     void resized();
-    void createGuiForTrack(AudioTrack* track);
-
-	void AddRegionToTrackGUI(File & file, int trackNumber);
+    void createGuiForTrack(AudioTrack* track, int trackNumber);
+	void addRegionToTrackGUI(AudioRegion* region, int trackNumber);
+	void updateArrangeWindow();
 
 private:
-	int trackNumber;
-	AudioEngine *audioEngine;
+	AudioEngine *_audioEngine;
+	//HashMap<int, TrackComponent*> trackComponents;
 	std::vector<TrackComponent*> trackComponents;
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ArrangeWindow)
 
