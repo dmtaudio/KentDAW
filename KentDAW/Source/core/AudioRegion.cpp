@@ -44,5 +44,5 @@ bool AudioRegion::overlaps(const AudioRegion& region) const {
 }
 
 bool AudioRegion::overlaps(int64 startTime, int64 endTime) const {
-	return _startTime >= startTime && _startTime <= endTime || _endTime >= startTime && _endTime <= endTime;
+	return (_startTime >= startTime && _startTime <= endTime) || (_endTime >= startTime && _endTime <= endTime);
 }

@@ -45,6 +45,14 @@ void AudioMixer::resetGraph()
     createDefaultNodes();
 }
 
+void AudioMixer::createDefaultNodes()
+{
+    auto input = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode);
+    auto output = new AudioProcessorGraph::AudioGraphIOProcessor(AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode);
+    processorGraph->addNode(input, INPUT_NODE_ID);
+    processorGraph->addNode(output, OUTPUT_NODE_ID);
+}
+
 void AudioMixer::addTrack(AudioTrack *track)
 {
     if(track != 0)
@@ -68,6 +76,48 @@ void AudioMixer::addTrack(AudioTrack *track)
         ++trackNodeID;
         ++mixerNodeID;
     }
+}
+
+void AudioMixer::remapGraph()
+{
+    int node = 4000;
+    HashMap<int, AudioTrack*>::Iterator track (trackMap);
+    while(track.next())
+    {
+        trackMap.set(node, track.getValue());
+        ++node;
+    }
+    trackMap.remove(trackMap.size() - 1);
+    node = 4000;
+    HashMap<int, AudioTransportSource*>::Iterator transport (transportMap);
+    while(transport.next())
+    {
+        transportMap.set(node, transport.getValue());
+        ++node;
+    }
+    transportMap.remove(transportMap.size() - 1);
+    node = 4000;
+    HashMap<int, AudioSourceProcessor*>::Iterator processor (sourceProcessorMap);
+    while(processor.next())
+    {
+        sourceProcessorMap.set(node, processor.getValue());
+        processorGraph->addNode(processor.getValue(), node);
+        ++node;
+    }
+    sourceProcessorMap.remove(sourceProcessorMap.size() - 1);
+    node = 5000;
+    HashMap<int, ChannelStripProcessor*>::Iterator channelStrip (channelStripMap);
+    while(channelStrip.next())
+    {
+        channelStripMap.set(node, channelStrip.getValue());
+        processorGraph->addNode(channelStrip.getValue(), node);
+        processorGraph->addConnection(node, 0, node - 1000, 0);
+        processorGraph->addConnection(node, 1, node - 1000, 1);
+        processorGraph->addConnection(node, 0, OUTPUT_NODE_ID, 0);
+        processorGraph->addConnection(node, 1, OUTPUT_NODE_ID, 1);
+        ++node;
+    }
+    channelStripMap.remove(channelStripMap.size() - 1);
 }
 
 void AudioMixer::removeTrack(int trackNumber)
