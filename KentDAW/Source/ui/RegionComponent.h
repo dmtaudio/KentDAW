@@ -19,8 +19,10 @@
 class RegionComponent    : public Component
 {
 public:
-    RegionComponent();
+    RegionComponent(AudioFormatManager& formatManager, File& file);
     ~RegionComponent();
+
+	void setFile(const File& file);
 
     void paint (Graphics&);
     void resized();

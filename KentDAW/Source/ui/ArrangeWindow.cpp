@@ -47,6 +47,8 @@ void ArrangeWindow::resized()
 void ArrangeWindow::createGuiForTrack(AudioTrack* track)
 {	
 	TrackComponent *trackGUI = new TrackComponent(track);
+	trackGUI->setComponentID("Track " + trackNumber);
+	trackNumber++;
 	trackComponents.push_back(trackGUI);
 	addAndMakeVisible(trackGUI);
 	resized();
