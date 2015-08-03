@@ -35,7 +35,7 @@ public:
     virtual void prepareToPlay (double sampleRate, int estimatedSamplesPerBlock) = 0;
     virtual void releaseResources () = 0;
     virtual void processBlock (AudioSampleBuffer &buffer, MidiBuffer &midiMessages) = 0;
-    virtual void processBlockBypassed (AudioSampleBuffer &buffer, MidiBuffer &midiMessages);
+    virtual void processBlockBypassed (AudioSampleBuffer &buffer, MidiBuffer &midiMessages) = 0;
     
     void setFrequency(float freq);
     void setQFactor(float qFactor);

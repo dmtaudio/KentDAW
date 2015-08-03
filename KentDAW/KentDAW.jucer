@@ -9,13 +9,13 @@
         <FILE id="g35lzt" name="BufferDisplay.h" compile="0" resource="0" file="Source/utils/BufferDisplay.h"/>
       </GROUP>
       <GROUP id="{F1590CD7-AAC5-B3CD-0441-65B231D39579}" name="ui">
-        <FILE id="xLXrcD" name="RegionComponent.cpp" compile="1" resource="0"
+        <FILE id="D42044" name="RegionComponent.cpp" compile="1" resource="0"
               file="Source/ui/RegionComponent.cpp"/>
-        <FILE id="NtuLbB" name="RegionComponent.h" compile="0" resource="0"
+        <FILE id="dNN0CL" name="RegionComponent.h" compile="0" resource="0"
               file="Source/ui/RegionComponent.h"/>
-        <FILE id="iSR0WU" name="TrackComponent.cpp" compile="1" resource="0"
+        <FILE id="lF4GEA" name="TrackComponent.cpp" compile="1" resource="0"
               file="Source/ui/TrackComponent.cpp"/>
-        <FILE id="RzMbLi" name="TrackComponent.h" compile="0" resource="0"
+        <FILE id="T2POQr" name="TrackComponent.h" compile="0" resource="0"
               file="Source/ui/TrackComponent.h"/>
         <FILE id="WtPUfm" name="MixerComponent.cpp" compile="1" resource="0"
               file="Source/ui/MixerComponent.cpp"/>
@@ -140,6 +140,54 @@
         <MODULEPATH id="juce_audio_utils" path="../Juce"/>
       </MODULEPATHS>
     </VS2015>
+    <VS2013 targetFolder="Builds/VisualStudio2013">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="KentDAW"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="2" targetName="KentDAW"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../Juce"/>
+        <MODULEPATH id="juce_events" path="../Juce"/>
+        <MODULEPATH id="juce_graphics" path="../Juce"/>
+        <MODULEPATH id="juce_data_structures" path="../Juce"/>
+        <MODULEPATH id="juce_gui_basics" path="../Juce"/>
+        <MODULEPATH id="juce_gui_extra" path="../Juce"/>
+        <MODULEPATH id="juce_cryptography" path="../Juce"/>
+        <MODULEPATH id="juce_video" path="../Juce"/>
+        <MODULEPATH id="juce_opengl" path="../Juce"/>
+        <MODULEPATH id="juce_audio_basics" path="../Juce"/>
+        <MODULEPATH id="juce_audio_devices" path="../Juce"/>
+        <MODULEPATH id="juce_audio_formats" path="../Juce"/>
+        <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+        <MODULEPATH id="juce_audio_utils" path="../Juce"/>
+      </MODULEPATHS>
+    </VS2013>
+    <VS2012 targetFolder="Builds/VisualStudio2012">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="KentDAW"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="2" targetName="KentDAW"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../Juce"/>
+        <MODULEPATH id="juce_events" path="../Juce"/>
+        <MODULEPATH id="juce_graphics" path="../Juce"/>
+        <MODULEPATH id="juce_data_structures" path="../Juce"/>
+        <MODULEPATH id="juce_gui_basics" path="../Juce"/>
+        <MODULEPATH id="juce_gui_extra" path="../Juce"/>
+        <MODULEPATH id="juce_cryptography" path="../Juce"/>
+        <MODULEPATH id="juce_video" path="../Juce"/>
+        <MODULEPATH id="juce_opengl" path="../Juce"/>
+        <MODULEPATH id="juce_audio_basics" path="../Juce"/>
+        <MODULEPATH id="juce_audio_devices" path="../Juce"/>
+        <MODULEPATH id="juce_audio_formats" path="../Juce"/>
+        <MODULEPATH id="juce_audio_processors" path="../Juce"/>
+        <MODULEPATH id="juce_audio_utils" path="../Juce"/>
+      </MODULEPATHS>
+    </VS2012>
     <LINUX_MAKE targetFolder="Builds/Linux">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" libraryPath="/usr/X11R6/lib/" isDebug="1" optimisation="1"

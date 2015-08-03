@@ -53,6 +53,11 @@ void EQProcessor::resetCoefficents()
     _old_y = _y;
 }
 
+void processBlockBypassed (AudioSampleBuffer &buffer, MidiBuffer &midiMessages)
+{
+    
+}
+
 void EQProcessor::setFreqAndQFactor(float freq, float qFactor)
 {
     setFrequency(freq);
