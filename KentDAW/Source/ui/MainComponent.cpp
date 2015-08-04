@@ -43,8 +43,19 @@ MainContentComponent::MainContentComponent()
 		addAndMakeVisible(fileTree);
 		addAndMakeVisible(statusBar);
 
+        if(!transport->isVisible() || !timer->isVisible())
+        {
+            showTransportWindow();
+            transport->setVisible(true);
+            timer->setVisible(true);
+        }
+        else
+        {
+            transport->setVisible(false);
+            timer->setVisible(false);
+        }
 		setOpaque(true);
-    }    
+    }
 
 
 	directoryList.setDirectory(File::getSpecialLocation(File::userHomeDirectory), true, true);
