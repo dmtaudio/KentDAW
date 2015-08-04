@@ -20,9 +20,9 @@ EQProcessor::~EQProcessor()
     
 }
 
-void EQProcessor::prepareToPlay(double sampleRate, int estimatedSamplesPerBlock)
+void EQProcessor::prepareToPlay(double sampleRate_, int)
 {
-    _sampleRate = (int) sampleRate;
+    _sampleRate = (int) sampleRate_;
     
     for(auto c : _cs)
         c = 0.0f;
@@ -53,7 +53,7 @@ void EQProcessor::resetCoefficents()
     _old_y = _y;
 }
 
-void processBlockBypassed (AudioSampleBuffer &buffer, MidiBuffer &midiMessages)
+void processBlockBypassed (AudioSampleBuffer &, MidiBuffer &)
 {
     
 }

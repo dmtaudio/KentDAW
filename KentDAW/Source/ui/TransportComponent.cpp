@@ -59,8 +59,8 @@ void TimerComponent::drawCurrentTime(Graphics& g)
     if(isRecording)
     {
         g.setColour(Colour(255,0,0));
-        minutes = floor(totalRecordTime/60000.0);
-        seconds = floor((totalRecordTime - minutes*60000.0)/1000.0);
+        minutes = (int)floor(totalRecordTime/60000.0);
+        seconds = (int)floor((totalRecordTime - minutes*60000.0)/1000.0);
     }
     else
     {
@@ -69,8 +69,8 @@ void TimerComponent::drawCurrentTime(Graphics& g)
         else
             g.setColour(Colours::whitesmoke);
         
-        minutes = floor(totalRecordTime/60000.0);
-        seconds = floor((totalRecordTime - minutes*60000.0)/1000.0);
+        minutes = (int)floor(totalRecordTime/60000.0);
+        seconds = (int)floor((totalRecordTime - minutes*60000.0)/1000.0);
     }
     
     String m = formatTimeToString(minutes);
@@ -133,12 +133,12 @@ String TimerComponent::formatTimeToString(unsigned int val)
     String str;
     if(val < 10)
     {
-        sprintf(buff, "0%u", val);
+        sprintf_s(buff, "0%u", val);
         str = buff;
     }
     else
     {
-        sprintf(buff, "%u", val);
+        sprintf_s(buff, "%u", val);
         str = buff;
     }
     return(str);
@@ -307,7 +307,7 @@ void TransportComponent::buttonClicked(Button *button)
     }
 }
 
-void TransportComponent::paint (Graphics& g)
+void TransportComponent::paint (Graphics&)
 {
   
 }

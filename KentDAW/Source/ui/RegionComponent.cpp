@@ -22,9 +22,11 @@ RegionComponent::RegionComponent(AudioRegion* region, AudioFormatManager& format
 
 RegionComponent::~RegionComponent()
 {
+	thumbnail.clear();
+	thumbnailCache.clear();
 }
 
-void RegionComponent::setFile(const File & file)
+void RegionComponent::setFile(const File&)
 {
 }
 

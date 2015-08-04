@@ -26,33 +26,33 @@ public:
     void releaseResources();
     
     const String getName() const;
-    const String getInputChannelName(const int channelIndex) const;
-    const String getOutputChannelName(const int channelIndex) const;
+    const String getInputChannelName(int channelIndex) const;
+    const String getOutputChannelName(int channelIndex) const;
     
-    bool isInputChannelStereoPair(int index) const { return false; }
-    bool isOutputChannelStereoPair(int index) const { return false; }
+    bool isInputChannelStereoPair(int) const { return false; }
+    bool isOutputChannelStereoPair(int) const { return false; }
     
     bool acceptsMidi() const { return false; }
     bool producesMidi() const { return false; }
     
     int getNumParameters() { return 0; }
-    const String getParameterName(int paramaterIndex) { return String::empty; }
-    float getParameter(int parameterIndex) { return 0.0f; }
-    const String getParameterText(int parameterIndex) { return String::empty; }
-    void setParameter(int parameterIndex, float newValue) {};
+    const String getParameterName(int) { return String::empty; }
+    float getParameter(int) { return 0.0f; }
+    const String getParameterText(int) { return String::empty; }
+    void setParameter(int, float) {};
     
     int getNumPrograms() { return 0; }
     int getCurrentProgram() { return 0; }
-    void setCurrentProgram(int index) {};
-    const String getProgramName(int index) { return String::empty; }
-    void changeProgramName(int index,const String& name) {};
+    void setCurrentProgram(int) {};
+    const String getProgramName(int) { return String::empty; }
+    void changeProgramName(int,const String&) {};
     
     bool silenceInProducesSilenceOut() const { return false; }
     double getTailLengthSeconds() const { return 0.0f; }
     bool hasEditor() const { return false; }
     
-    void getStateInformation(MemoryBlock& destData) {};
-    void setStateInformation(const void* data, int sizeBytes) {};
+    void getStateInformation(MemoryBlock&) {};
+    void setStateInformation(const void*, int) {};
     
     AudioProcessorEditor* createEditor() { return 0; }
     

@@ -26,7 +26,7 @@ MidiManager::~MidiManager()
         delete input;
 }
 
-void MidiManager::handleIncomingMidiMessage(MidiInput *source, const MidiMessage &message)
+void MidiManager::handleIncomingMidiMessage(MidiInput*, const MidiMessage &message)
 {
     if(message.isNoteOn())
     {
@@ -49,7 +49,7 @@ int MidiManager::getCurrentNoteNumber()
     return noteNumber;
 }
 
-float MidiManager::getCurrentNoteHz()
+double MidiManager::getCurrentNoteHz()
 {
     return noteHz;
 }

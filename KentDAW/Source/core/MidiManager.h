@@ -23,7 +23,7 @@ public:
     void handleIncomingMidiMessage (MidiInput* source, const MidiMessage& message);
     
     int getCurrentNoteNumber();
-    float getCurrentNoteHz();
+    double getCurrentNoteHz();
     int getCurrentControlNumber();
     int getCurrentControlValue();
     bool isMidiNoteOn();
@@ -36,7 +36,7 @@ private:
     MidiInput* input;
     
     int noteNumber;
-    float noteHz;
+    double noteHz;
     bool noteOn;
     int controlNumber;
     int controlValue;

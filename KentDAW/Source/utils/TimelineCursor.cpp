@@ -96,7 +96,7 @@ void TimelineCursor::mouseDown(const MouseEvent &e)
     }
 }
 
-void TimelineCursor::mouseUp(const MouseEvent &e)
+void TimelineCursor::mouseUp(const MouseEvent &)
 {
     if(_showCursor)
     {
@@ -124,7 +124,7 @@ void TimelineCursor::startTimer()
     }
 }
 
-void TimelineCursor::setPlayerPosition(int mouseX)
+void TimelineCursor::setPlayerPosition(int)
 {
     const int firstPixel = roundToInt(getWidth() * _offsetRatio);
     double position = _xScale * (_mouseX - firstPixel);

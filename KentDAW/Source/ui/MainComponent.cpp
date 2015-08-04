@@ -105,7 +105,7 @@ StringArray MainContentComponent::getMenuBarNames()
     return menuItems;
 }
 
-PopupMenu MainContentComponent::getMenuForIndex(int index, const String &name)
+PopupMenu MainContentComponent::getMenuForIndex(int, const String &name)
 {
     PopupMenu menu;
 
@@ -136,7 +136,7 @@ PopupMenu MainContentComponent::getMenuForIndex(int index, const String &name)
     return menu;
 }
 
-void MainContentComponent::menuItemSelected(int menuItemID, int index)
+void MainContentComponent::menuItemSelected(int menuItemID, int)
 {
     switch(menuItemID)
     {
@@ -272,11 +272,11 @@ void MainContentComponent::getCommandInfo(CommandID commandID, ApplicationComman
             result.setInfo ("Forward", "Stop the track", transportCategory, 0);
     }
 }
-void MainContentComponent::getAllCommands(Array<CommandID>& commands)
+void MainContentComponent::getAllCommands(Array<CommandID>&)
 {
     
 }
-bool MainContentComponent::perform (const ApplicationCommandTarget::InvocationInfo& info)
+bool MainContentComponent::perform (const ApplicationCommandTarget::InvocationInfo&)
 {
     return false;
 }

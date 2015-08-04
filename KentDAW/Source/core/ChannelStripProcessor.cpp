@@ -42,6 +42,10 @@ float ChannelStripProcessor::getParameter(int index)
 	{
 		return muteGain;
 	}
+	else
+	{
+		return 0.0f;
+	}
 }
 
 void ChannelStripProcessor::setParameter(int index, float newValue)
@@ -60,11 +64,11 @@ void ChannelStripProcessor::setMuteParameter()
 {
 	if (muted)
 	{
-		muted == false;
+		muted = false;
 	}
 	else
 	{
-		muted == true;
+		muted = true;
 	}
 }
 
@@ -82,6 +86,7 @@ const String ChannelStripProcessor::getParameterName(int index)
 	{
 		return "Mute";
 	}
+	return "Bad Selection";
 }
 
 const String ChannelStripProcessor::getParameterText(int index)
@@ -98,6 +103,7 @@ const String ChannelStripProcessor::getParameterText(int index)
 	{
 		return String(muted);
 	}
+	return "Bad Selection";
 }
 
 const String ChannelStripProcessor::getInputChannelName(int channelIndex) const
@@ -110,12 +116,12 @@ const String ChannelStripProcessor::getOutputChannelName(int channelIndex) const
 	return String(channelIndex + 1);
 }
 
-bool ChannelStripProcessor::isInputChannelStereoPair(int index) const
+bool ChannelStripProcessor::isInputChannelStereoPair(int) const
 {
 	return true;
 }
 
-bool ChannelStripProcessor::isOutputChannelStereoPair(int index) const
+bool ChannelStripProcessor::isOutputChannelStereoPair(int) const
 {
 	return true;
 }
@@ -158,21 +164,21 @@ int ChannelStripProcessor::getCurrentProgram()
 	return 0;
 }
 
-void ChannelStripProcessor::setCurrentProgram(int index)
+void ChannelStripProcessor::setCurrentProgram(int)
 {
 }
 
-const String ChannelStripProcessor::getProgramName(int index)
+const String ChannelStripProcessor::getProgramName(int)
 {
 	return String();
 }
 
-void ChannelStripProcessor::changeProgramName(int index, const String& newName)
+void ChannelStripProcessor::changeProgramName(int, const String&)
 {
 }
 
 //==============================================================================
-void ChannelStripProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
+void ChannelStripProcessor::prepareToPlay(double, int)
 {
 
 }
@@ -182,7 +188,7 @@ void ChannelStripProcessor::releaseResources()
 
 }
 
-void ChannelStripProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& midiMessages)
+void ChannelStripProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer&)
 {
 	if (!muted)
 	{
@@ -197,7 +203,7 @@ void ChannelStripProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& 
 		}
 		else if (panning > 0.5)
 		{
-			buffer.applyGain(0, 0, buffer.getNumSamples(), gain / (panning - 0.5));
+			buffer.applyGain(0, 0, buffer.getNumSamples(), gain / (panning - 0.5f));
 			buffer.applyGain(1, 0, buffer.getNumSamples(), gain);
 		}
 	}
@@ -210,14 +216,14 @@ void ChannelStripProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& 
 		buffer.clear(i, 0, buffer.getNumSamples());
 }
 
-void ChannelStripProcessor::getStateInformation(MemoryBlock& destData)
+void ChannelStripProcessor::getStateInformation(MemoryBlock&)
 {
 	// You should use this method to store your parameters in the memory block.
 	// You could do that either as raw data, or use the XML or ValueTree classes
 	// as intermediaries to make it easy to save and load complex data.
 }
 
-void ChannelStripProcessor::setStateInformation(const void* data, int sizeInBytes)
+void ChannelStripProcessor::setStateInformation(const void*, int)
 {
 	// You should use this method to restore your parameters from this memory block,
 	// whose contents will have been created by the getStateInformation() call.

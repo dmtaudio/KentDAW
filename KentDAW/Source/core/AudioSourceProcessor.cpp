@@ -41,9 +41,9 @@ const String AudioSourceProcessor::getOutputChannelName(const int channelIndex) 
     return String(channelIndex + 1);
 }
 
-void AudioSourceProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
+void AudioSourceProcessor::prepareToPlay(double sampleRate_, int samplesPerBlock)
 {
-    source->prepareToPlay(samplesPerBlock, sampleRate);
+    source->prepareToPlay(samplesPerBlock, sampleRate_);
 }
 
 void AudioSourceProcessor::releaseResources()
@@ -51,7 +51,7 @@ void AudioSourceProcessor::releaseResources()
     source->releaseResources();
 }
 
-void AudioSourceProcessor::processBlock(AudioSampleBuffer &buffer, MidiBuffer &midiMessages)
+void AudioSourceProcessor::processBlock(AudioSampleBuffer &buffer, MidiBuffer&)
 {
     AudioSourceChannelInfo channelInfo;
     channelInfo.buffer = &buffer;

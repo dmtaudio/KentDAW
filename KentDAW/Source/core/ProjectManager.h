@@ -34,7 +34,6 @@ public:
     
 private:
 	int _trackNumber;
-	AudioTrack* track;
 	ArrangeWindow* arrangeWindow;
 	AudioEngine* _audioEngine;
 	ScopedPointer<XmlElement>pElements;

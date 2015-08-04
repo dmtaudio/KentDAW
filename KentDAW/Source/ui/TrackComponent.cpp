@@ -52,11 +52,6 @@ void TrackComponent::paint(Graphics & g)
 
 void TrackComponent::resized()
 {
-	Rectangle<int> r(getLocalBounds().reduced(4));
-	r.removeFromBottom(6);
-	
-	int i = 0;
-
 	for (auto current = regionComponents.begin(), end = regionComponents.end(); current != end; ++current) {
 		Rectangle<int> r(getLocalBounds().reduced(4));
 		r.removeFromBottom(6);

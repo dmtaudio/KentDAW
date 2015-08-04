@@ -17,8 +17,8 @@ AudioMixer::AudioMixer()
 : currentProcessor()
 {
     int iChannels(2), oChannels(2);
-    double sampleRate(0.0f);
-    int bufferSize(0);
+    sampleRate = 0.0;
+    bufferSize = 0;
     trackNodeID = 4000;
     mixerNodeID = 5000;
     AudioIODevice* current = AudioEngine::getSharedAudioDeviceManager().getCurrentAudioDevice();
