@@ -42,7 +42,10 @@ float ChannelStripProcessor::getParameter(int index)
 	{
 		return muteGain;
 	}
-	return 0.0f;
+	else
+	{
+		return 0.0f;
+	}
 }
 
 void ChannelStripProcessor::setParameter(int index, float newValue)

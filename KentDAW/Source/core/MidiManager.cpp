@@ -49,7 +49,7 @@ int MidiManager::getCurrentNoteNumber()
     return noteNumber;
 }
 
-float MidiManager::getCurrentNoteHz()
+double MidiManager::getCurrentNoteHz()
 {
     return noteHz;
 }
