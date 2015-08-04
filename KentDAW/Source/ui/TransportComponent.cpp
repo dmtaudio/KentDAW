@@ -133,12 +133,12 @@ String TimerComponent::formatTimeToString(unsigned int val)
     String str;
     if(val < 10)
     {
-        sprintf_s(buff, "0%u", val);
+        sprintf(buff, "0%u", val);
         str = buff;
     }
     else
     {
-        sprintf_s(buff, "%u", val);
+        sprintf(buff, "%u", val);
         str = buff;
     }
     return(str);

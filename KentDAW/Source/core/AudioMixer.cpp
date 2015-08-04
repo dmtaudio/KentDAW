@@ -36,6 +36,7 @@ AudioMixer::AudioMixer()
 
 AudioMixer::~AudioMixer()
 {
+    processorGraph->clear();
     delete processorGraph;
 }
 
