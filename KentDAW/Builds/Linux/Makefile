@@ -49,6 +49,7 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS := \
+  $(OBJDIR)/TimelineCursor_14235a1e.o \
   $(OBJDIR)/RegionComponent_16cc4137.o \
   $(OBJDIR)/TrackComponent_467eefee.o \
   $(OBJDIR)/MixerComponent_356b39f0.o \
@@ -105,6 +106,11 @@ clean:
 strip:
 	@echo Stripping KentDAW
 	-@strip --strip-unneeded $(OUTDIR)/$(TARGET)
+
+$(OBJDIR)/TimelineCursor_14235a1e.o: ../../Source/utils/TimelineCursor.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling TimelineCursor.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/RegionComponent_16cc4137.o: ../../Source/ui/RegionComponent.cpp
 	-@mkdir -p $(OBJDIR)
