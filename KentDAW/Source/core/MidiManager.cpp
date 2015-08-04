@@ -81,7 +81,7 @@ bool MidiManager::getControlChange()
 
 void MidiManager::controlChangeOff()
 {
-    controlChangeOff();
+    controlChange = false;
 }
 
 int MidiManager::getCurrentMidiVelocity()
