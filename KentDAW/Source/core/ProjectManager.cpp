@@ -17,7 +17,7 @@ ProjectManager::ProjectManager(AudioEngine *audioEngine, ArrangeWindow* arrangeW
 	pElements = new XmlElement("Project_Elements");
 	formatManager.registerBasicFormats();
 	createBasicProject("Untitled Project");
-	int _trackNumber = 1;
+	_trackNumber = 1;
 }
 
 ProjectManager::~ProjectManager()

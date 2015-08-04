@@ -26,7 +26,7 @@ MidiManager::~MidiManager()
         delete input;
 }
 
-void MidiManager::handleIncomingMidiMessage(MidiInput *source, const MidiMessage &message)
+void MidiManager::handleIncomingMidiMessage(MidiInput*, const MidiMessage &message)
 {
     if(message.isNoteOn())
     {

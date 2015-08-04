@@ -36,7 +36,7 @@ private:
     MidiInput* input;
     
     int noteNumber;
-    float noteHz;
+    double noteHz;
     bool noteOn;
     int controlNumber;
     int controlValue;

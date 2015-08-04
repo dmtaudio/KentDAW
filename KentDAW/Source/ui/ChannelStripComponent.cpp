@@ -17,7 +17,7 @@
 ChannelStripComponent::ChannelStripComponent(AudioTrack *track) : track(track)
 {
     // just for testing purposes
-    mLevel.peak = 0.3;
+    mLevel.peak = 0.3f;
     mLevel.isClipping = false;
     
     addAndMakeVisible(meter = new MeterComponent());
@@ -67,11 +67,11 @@ void ChannelStripComponent::paint (Graphics& g)
 {
     Colour backgroundColour = Colours::transparentBlack;
     
-    g.setGradientFill(ColourGradient(backgroundColour.brighter(0.25f), 0, 0, backgroundColour.darker(0.25f), 0, getHeight(), 0));
+    g.setGradientFill(ColourGradient(backgroundColour.brighter(0.25f), 0.0f, 0.0f, backgroundColour.darker(0.25f), 0.0f, (float) getHeight(), 0));
     
     g.fillAll ();   // clear the background
     
-    g.drawLine(0, 0, getWidth(), getHeight());
+    g.drawLine(0.0f, 0.0f, (float)getWidth(), (float)getHeight());
 
 }
 
@@ -143,7 +143,7 @@ void ChannelStripComponent::sliderValueChanged(Slider* movedSlider)
 {
     if(movedSlider == volumeSlider)
     {
-        mLevel.peak = volumeSlider->getValue();
+        mLevel.peak = (float)volumeSlider->getValue();
         if(mLevel.peak > 1.0f)
         {
             mLevel.isClipping = true;
@@ -158,7 +158,7 @@ void ChannelStripComponent::sliderValueChanged(Slider* movedSlider)
     }
 }
 
-void ChannelStripComponent::labelTextChanged(Label* changedLabel)
+void ChannelStripComponent::labelTextChanged(Label*)
 {
     // change this to something sensible
     //label->setText("This text has been changed", NotificationType::dontSendNotification);
