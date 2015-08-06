@@ -70,8 +70,6 @@ public:
             Play,
             Record,
             Stop,
-            Forward,
-            Backward,
             toStart,
             toEnd
         };
