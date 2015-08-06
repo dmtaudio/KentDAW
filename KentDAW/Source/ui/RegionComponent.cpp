@@ -12,12 +12,14 @@
 #include "RegionComponent.h"
 
 //==============================================================================
-RegionComponent::RegionComponent(AudioRegion* region, AudioFormatManager& formatManager, const File& file) 
-	:	_region(region),
-		thumbnailCache(5),
-		thumbnail(512, formatManager,thumbnailCache)
+RegionComponent::RegionComponent(AudioRegion* region, AudioFormatManager& formatManager, const File& file)
+	: _region(region),
+	_formatManager(formatManager),
+	inputSource(file),
+	thumbnailCache(5),
+	thumbnail(512, formatManager, thumbnailCache)
 {
-	thumbnail.setSource(new FileInputSource(file));
+	thumbnail.setSource(&inputSource);
 }
 
 RegionComponent::~RegionComponent()

@@ -100,6 +100,7 @@ private:
     ScopedPointer<TransportComponent> transport;
     ScopedPointer<TimerComponent> timer;
     ScopedPointer<ArrangeWindow> arrangeWindow;
+	ScopedPointer<Viewport> arrangeWindowViewport;
 
 	//Left Side
 	ScopedPointer<LeftSidebar> leftSideBar;
