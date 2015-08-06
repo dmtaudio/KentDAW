@@ -1,20 +1,21 @@
 /*
-  ==============================================================================
-
-    TimelineCursor.cpp
-    Created: 4 Aug 2015 1:51:35pm
-    Author:  dtl
-
-  ==============================================================================
-*/
+ ==============================================================================
+ 
+ TimelineCursor.cpp
+ Created: 4 Aug 2015 1:51:35pm
+ Author:  dtl
+ 
+ ==============================================================================
+ */
 
 #include "TimelineCursor.h"
 
 TimelineCursor::TimelineCursor(AudioTransportSource& source)
 : _transporSource(source), _currentSampleRate(44100.0), _zoomRatio(1.0),
-  _offsetRatio(0.0), _stopTimer(false), _showCursor(true)
+_offsetRatio(0.0), _stopTimer(false), _showCursor(true)
 {
     //_transporSource.addChangeListener(this);
+    
 }
 
 TimelineCursor::~TimelineCursor()
@@ -41,13 +42,13 @@ void TimelineCursor::setStartOffsetRatio(double startOffset)
 void TimelineCursor::setCursorVisability(bool displayCursor)
 {
     _showCursor = displayCursor;
-    startTimer();
+    startTimerIfCursorIsVisible();
 }
 
 void TimelineCursor::paint(juce::Graphics &g)
 {
     if(_showCursor)
-        g.drawImageAt(cursor, _currentXCoords - 1, 0);
+        g.drawImageAt(cursor, _currentXCoords, 0);
 }
 
 void TimelineCursor::resized()
@@ -76,12 +77,6 @@ void TimelineCursor::timerCallback()
     }
 }
 
-void TimelineCursor::transportStateChanged(AudioTransportSource *source)
-{
-    if(source == &_transporSource)
-        startTimer();
-}
-
 void TimelineCursor::mouseDown(const MouseEvent &e)
 {
     if(_showCursor)
@@ -91,32 +86,37 @@ void TimelineCursor::mouseDown(const MouseEvent &e)
         setPlayerPosition(e.x);
         
         _stopTimer = false;
-        Timer::startTimer(40);
+        startTimer(40);
         repaint();
     }
 }
 
-void TimelineCursor::mouseUp(const MouseEvent &)
+void TimelineCursor::mouseUp(const MouseEvent &e)
 {
     if(_showCursor)
     {
         setMouseCursor(MouseCursor::NormalCursor);
-        startTimer();
+        startTimerIfCursorIsVisible();
     }
 }
 
 void TimelineCursor::mouseDrag(const MouseEvent &e)
 {
     if(_showCursor)
-        setPlayerPosition(e.x);
+    {
+        _currentXCoords = e.x;
+        setPlayerPosition(_currentXCoords);
+        repaint();
+    }
+    
 }
 
-void TimelineCursor::startTimer()
+void TimelineCursor::startTimerIfCursorIsVisible()
 {
     if(_showCursor)
     {
         _stopTimer = false;
-        Timer::startTimer(40);
+        startTimer(40);
     }
     else
     {
@@ -124,11 +124,23 @@ void TimelineCursor::startTimer()
     }
 }
 
-void TimelineCursor::setPlayerPosition(int)
+void TimelineCursor::setPlayerPosition(int mousePosX)
 {
     const int firstPixel = roundToInt(getWidth() * _offsetRatio);
-    double position = _xScale * (_mouseX - firstPixel);
+    double position = _xScale * (mousePosX - firstPixel);
     _transporSource.setPosition(position);
+}
+
+void TimelineCursor::start()
+{
+    _transporSource.start();
+    repaint();
+}
+
+void TimelineCursor::stop()
+{
+    _transporSource.stop();
+    repaint();
 }
 
 
