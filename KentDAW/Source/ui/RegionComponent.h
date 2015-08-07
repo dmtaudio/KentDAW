@@ -30,6 +30,8 @@ public:
 
 private:
 	AudioRegion* _region;
+	AudioFormatManager& _formatManager;
+	FileInputSource inputSource;
 	AudioThumbnailCache thumbnailCache;
 	AudioThumbnail thumbnail;
     

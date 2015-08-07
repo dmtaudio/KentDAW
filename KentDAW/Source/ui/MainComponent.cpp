@@ -25,6 +25,7 @@ MainContentComponent::MainContentComponent()
 
 	//Arrange Window
     arrangeWindow = new ArrangeWindow(audioEngine);
+	arrangeWindowViewport = new Viewport();
 	projectManager = new ProjectManager(audioEngine, arrangeWindow);
 
 	//Left Side
@@ -39,6 +40,8 @@ MainContentComponent::MainContentComponent()
     {
         addAndMakeVisible(menuBar);
 		addAndMakeVisible(arrangeWindow);
+		addAndMakeVisible(arrangeWindowViewport);
+		arrangeWindowViewport->setViewedComponent(arrangeWindow);
 		addAndMakeVisible(leftSideBar);
 		addAndMakeVisible(fileTree);
 		addAndMakeVisible(statusBar);
@@ -220,7 +223,10 @@ void MainContentComponent::resized()
 
     menuBar->setBounds(0, 0, getWidth(), 20);
 	leftSideBar->setBounds(0, 20, getParentWidth() / 4, getParentHeight() - 50);
-	arrangeWindow->setBounds(getParentWidth() / 4, 20, getParentWidth() / 2, (getParentHeight()/100)*80);
+	
+	arrangeWindowViewport->setBounds(getParentWidth() / 4, 20, getParentWidth() / 2, (getParentHeight()/100)*80);
+	arrangeWindow->setBounds(getParentWidth()/4,20,getParentWidth()/2,(getParentHeight()/100)*80);
+	
 	
 	//File Tree Right Side Of Screen
 	Rectangle<int> fileTreeContainer((getParentWidth()/4)*3+1,20,getParentWidth()/4, getParentHeight()-50);
