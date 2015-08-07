@@ -32,6 +32,9 @@ private:
 	AudioRegion* _region;
 	AudioThumbnailCache thumbnailCache;
 	AudioThumbnail thumbnail;
+    
+    inline double pixelsToTime(double pixels);
+    inline double timeToPixels(double seconds);
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RegionComponent)
 };

@@ -15,9 +15,10 @@
 RegionComponent::RegionComponent(AudioRegion* region, AudioFormatManager& formatManager, const File& file) 
 	:	_region(region),
 		thumbnailCache(5),
-		thumbnail(512, formatManager,thumbnailCache)
+		thumbnail(1024, formatManager,thumbnailCache)
 {
 	thumbnail.setSource(new FileInputSource(file));
+    setOpaque(true);
 }
 
 RegionComponent::~RegionComponent()
@@ -34,9 +35,10 @@ void RegionComponent::setFile(const File&)
 
 void RegionComponent::paint (Graphics& g)
 {
-	g.setColour(Colours::lightblue);
+    g.fillAll(Colours::black);
+	g.setColour(Colours::lightgreen);
 	Rectangle<int> thumbArea(getLocalBounds());
-	thumbnail.drawChannels(g, thumbArea.reduced(2), 0, thumbnail.getTotalLength(), 1.0f);
+	thumbnail.drawChannels(g, thumbArea.reduced(2), 0.0f, thumbnail.getTotalLength(), 1.0f);
 }
 
 void RegionComponent::resized()
