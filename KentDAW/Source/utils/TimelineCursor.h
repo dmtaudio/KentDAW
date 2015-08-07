@@ -19,21 +19,10 @@ class TimelineCursor : public Component,
     
 public:
     
-    TimelineCursor(AudioTransportSource& source);
+    TimelineCursor(AudioTransportSource& source, Range<double> parentRange);
     ~TimelineCursor();
     
-    class  Listener
-    {
-    public:
-        Listener()          {}
-        virtual ~Listener() {}
-        
-        virtual bool positionChanged(AudioTransportSource& source) = 0;
-        virtual void transportChanged(AudioTransportSource& source) = 0;
-    };
-    
-    void addListener(Listener* const listener) {listeners.add(listener);}
-    void removeListener(Listener* const listener) {listeners.remove(listener);}
+    void setVisibleRange(Range<double> range);
     
     void setZoomRatio(double zoomRatio);
     void setStartOffsetRatio(double startOffset);
@@ -56,20 +45,25 @@ public:
     //void changeListenerCallback (ChangeBroadcaster* source);
     
 protected:
-    ListenerList<Listener> listeners;
+    void updateCursorPosition();
     
 private:
     AudioTransportSource& _transporSource;
     double _currentSampleRate;
-    double _trackLength, _oneOverTrackLength;
+    double _trackLength;
     double _zoomRatio, _offsetRatio;
     bool _stopTimer, _showCursor;
+    Range<double> _visibleRange;
+    bool _followTransport, _canMoveTransport;
     
     Image cursor;
     
-    int _previousXCoords, _currentXCoords;
-    float _xScale;
+    int _currentXCoords;
     double _mouseX;
+    
+    float timeToX(const double time) const;
+    float xToTime(const float x) const;
+    float timeToSamples(const float time) const;
     
     void startTimerIfCursorIsVisible();
     void setPlayerPosition(int mouseX);

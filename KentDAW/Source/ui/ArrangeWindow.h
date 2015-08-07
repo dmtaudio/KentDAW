@@ -12,6 +12,7 @@
 #define ARRANGEWINDOW_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "TimelineCursor.h"
 #include "TrackComponent.h"
 #include "../core/AudioTrack.h"
 #include "../core/AudioRegion.h"
@@ -25,6 +26,8 @@ class ArrangeWindow    : public Component
 public:
     ArrangeWindow(AudioEngine *audioEngine);
     ~ArrangeWindow();
+    
+    void setVisibleRange(Range<double> range);
 
     void paint (Graphics&);
     void resized();
@@ -34,8 +37,18 @@ public:
 
 private:
 	AudioEngine *_audioEngine;
+    ScopedPointer<TimelineCursor> cursor;
 	//HashMap<int, TrackComponent*> trackComponents;
-	std::vector<TrackComponent*> trackComponents;
+    std::vector<TrackComponent*> trackComponents;
+    
+    Range<double> _visibleRange;
+    
+    // just for testing
+    AudioFormatManager formatManager;
+    AudioFormatReader* reader;
+    ScopedPointer<AudioFormatReaderSource> source;
+    AudioTransportSource transport;
+    
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ArrangeWindow)
 
    

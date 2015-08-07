@@ -16,12 +16,30 @@
 ArrangeWindow::ArrangeWindow(AudioEngine *audioEngine) : _audioEngine(audioEngine),
 	trackComponents()
 {
+    formatManager.registerBasicFormats();
+    reader = formatManager.createReaderFor(File("~/Documents/03_Borders.wav"));
+    source = new AudioFormatReaderSource(reader, true);
+    transport.setSource(source);
+    _visibleRange = Range<double>(0.0, transport.getTotalLength());
+    cursor = new TimelineCursor(transport, _visibleRange);
+    addAndMakeVisible(cursor);
+    cursor->setCursorVisability(true);
 	//setOpaque(true);
 }
 
 ArrangeWindow::~ArrangeWindow()
 {
 }
+
+void ArrangeWindow::setVisibleRange(Range<double> range)
+{
+    if(cursor != nullptr)
+    {
+        cursor->setVisibleRange(range);
+        _visibleRange = range;
+    }
+}
+
 
 void ArrangeWindow::paint (Graphics& g)
 {
@@ -43,6 +61,7 @@ void ArrangeWindow::resized()
 	for (auto current = trackComponents.begin(), end = trackComponents.end(); current != end; ++current) {
 		(*current)->setBounds(0, i++ * 100, getParentWidth(), 100);
 	}
+    cursor->setSize(getParentWidth(), getParentHeight());
 }
 
 void ArrangeWindow::createGuiForTrack(AudioTrack* track, int trackNumber)

@@ -10,9 +10,10 @@
 
 #include "TimelineCursor.h"
 
-TimelineCursor::TimelineCursor(AudioTransportSource& source)
+TimelineCursor::TimelineCursor(AudioTransportSource& source, Range<double> parentRange)
 : _transporSource(source), _currentSampleRate(44100.0), _zoomRatio(1.0),
-_offsetRatio(0.0), _stopTimer(false), _showCursor(true)
+_offsetRatio(0.0), _stopTimer(false), _showCursor(true), _visibleRange(parentRange),
+_canMoveTransport(true)
 {
     //_transporSource.addChangeListener(this);
     
@@ -62,14 +63,11 @@ void TimelineCursor::resized()
 
 void TimelineCursor::timerCallback()
 {
-    const int firstPixel = roundToInt(getWidth() * _offsetRatio);
-    _previousXCoords = _currentXCoords;
-    _currentXCoords = firstPixel + roundToInt(getWidth() * _oneOverTrackLength * _transporSource.getCurrentPosition() / _zoomRatio);
-    if(_currentXCoords != _previousXCoords)
-    {
-        repaint(_previousXCoords = 2, 0, 5, getHeight());
-        repaint(_currentXCoords = 2, 0, 5, getHeight());
-    }
+    if(_canMoveTransport)
+        updateCursorPosition();
+
+    repaint(_currentXCoords = 2, 0, 5, getHeight());
+
     if(_stopTimer)
     {
         _stopTimer = false;
@@ -82,7 +80,6 @@ void TimelineCursor::mouseDown(const MouseEvent &e)
     if(_showCursor)
     {
         setMouseCursor(MouseCursor::IBeamCursor);
-        _xScale = (float) ((_trackLength / getWidth() * _zoomRatio));
         setPlayerPosition(e.x);
         
         _stopTimer = false;
@@ -126,23 +123,39 @@ void TimelineCursor::startTimerIfCursorIsVisible()
 
 void TimelineCursor::setPlayerPosition(int mousePosX)
 {
-    const int firstPixel = roundToInt(getWidth() * _offsetRatio);
-    double position = _xScale * (mousePosX - firstPixel);
+    double time = xToTime((float) mousePosX);
+    double position = timeToSamples(time);
     _transporSource.setPosition(position);
 }
 
-void TimelineCursor::start()
+void TimelineCursor::updateCursorPosition()
 {
-    _transporSource.start();
+    _currentXCoords = timeToX(_transporSource.getCurrentPosition() - 0.75f
+                              );
     repaint();
 }
 
-void TimelineCursor::stop()
+void TimelineCursor::setVisibleRange(Range<double> range)
 {
-    _transporSource.stop();
+    _visibleRange = range;
+    updateCursorPosition();
     repaint();
 }
 
+float TimelineCursor::timeToX(const double time) const
+{
+    return getWidth() * (float) ((time - _visibleRange.getStart()) / (_visibleRange.getLength()));
+}
+
+float TimelineCursor::xToTime(const float x) const
+{
+    return (x / getWidth()) * (_visibleRange.getLength()) + _visibleRange.getStart();
+}
+
+float TimelineCursor::timeToSamples(const float time) const
+{
+    return time * _currentSampleRate;
+}
 
 
 

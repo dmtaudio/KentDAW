@@ -47,7 +47,8 @@ void TrackComponent::setTrackNumber(int trackNumber)
 void TrackComponent::paint(Graphics & g)
 {
 	g.setColour(Colours::grey);
-	g.drawRect(0, 0, getParentWidth(), getParentHeight());
+    g.fillAll();
+    //g.drawRect(0, 0, getParentWidth(), getParentHeight());
 }
 
 void TrackComponent::resized()
