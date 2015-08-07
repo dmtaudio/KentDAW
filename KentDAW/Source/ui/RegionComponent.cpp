@@ -12,12 +12,14 @@
 #include "RegionComponent.h"
 
 //==============================================================================
-RegionComponent::RegionComponent(AudioRegion* region, AudioFormatManager& formatManager, const File& file) 
-	:	_region(region),
-		thumbnailCache(5),
-		thumbnail(1024, formatManager,thumbnailCache)
+RegionComponent::RegionComponent(AudioRegion* region, AudioFormatManager& formatManager, const File& file)
+	: _region(region),
+	_formatManager(formatManager),
+	inputSource(file),
+	thumbnailCache(5),
+	thumbnail(512, formatManager, thumbnailCache)
 {
-	thumbnail.setSource(new FileInputSource(file));
+	thumbnail.setSource(&inputSource);
     setOpaque(true);
 }
 
@@ -37,7 +39,9 @@ void RegionComponent::paint (Graphics& g)
 {
     g.fillAll(Colours::black);
 	g.setColour(Colours::lightgreen);
-	Rectangle<int> thumbArea(getLocalBounds());
+    Rectangle<int> bounds =  getLocalBounds();
+    bounds.setWidth(thumbnail.getTotalLength());
+	Rectangle<int> thumbArea(bounds);
 	thumbnail.drawChannels(g, thumbArea.reduced(2), 0.0f, thumbnail.getTotalLength(), 1.0f);
 }
 

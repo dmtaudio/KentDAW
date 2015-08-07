@@ -35,8 +35,9 @@ private:
 	AudioThumbnailCache thumbnailCache;
 	AudioThumbnail thumbnail;
     
-    inline double pixelsToTime(double pixels);
+    inline double samplesToTime(int numSamps, int sampleRate) { return numSamps / sampleRate; };
     inline double timeToPixels(double seconds);
+    inline double pixelsToTime(double pixels);
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RegionComponent)
 };
